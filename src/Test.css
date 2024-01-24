@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    height: 500px; /* Adjust as needed */
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Center the line vertically */
+    height: 2px;
+    background-color: black;
+}
+
+.image {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%; /* Start centered on the line */
+    transition: top 0.5s; /* Smooth transition for the sliding effect */
+    display: none; /* Hide initially */
+}
+
+#image1 {
+    display: block; /* Show the first image initially */
+}
