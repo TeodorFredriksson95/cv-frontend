@@ -1,0 +1,126 @@
+
+.parent-container-shifting-directions {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+.header-image-container {
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .header-image-container img {
+    width: 30%;
+    margin-right: 7%;
+  }
+  
+  .header-image-container h1 {
+    margin-top: -5%;
+    font-family: var(--MS_EBI);
+    color: white;
+    font-size: 5em;
+  }
+  
+  .changing-paths-container-one, .changing-paths-container-two {
+    color: white;
+    font-family: var(--MS_LI);
+  }
+  .changing-paths-container-one {
+    margin-top: 10%;
+  
+  }
+  
+  .changing-paths-container-one p:nth-child(-n+2) {
+    width: 80%;
+  }
+  
+  .response-text-one, .response-text-two, .response-text-four{
+    margin-top: 10%;
+    font-family: var(--MS_SBI);
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .response-text-three {
+    margin-bottom: 10%;
+    margin-top: 5%;
+    font-family: var(--MS_SBI);
+  }
+  
+  .changing-paths-container-two p{
+    text-align: center;
+  }
+  
+  .changing-paths-container-two p:nth-child(-n+1) {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .dot-what-text {
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  
+  .launching-concepts-absolute-container {
+    position: absolute;
+    margin-bottom: 10px;
+    width: 100%;
+    color: aqua;
+    height: 20%;
+    font-size: 1.2em;
+  }
+  
+  #concept1 {
+    position: absolute;
+    top: 0%;
+    right: 10%;
+  }
+  
+  #concept2 {
+    position: absolute;
+    top: 15%;
+    right: 50%;
+  }
+  
+  #concept3 {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+  }
+  
+  #concept5 {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+  }
+  
+  #concept6 {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+  }
+  
+  #concept4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+  
+  .wiggle {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-style: wavy;
+  }
+
+  .last {
+    margin-top: 10%;
+  }

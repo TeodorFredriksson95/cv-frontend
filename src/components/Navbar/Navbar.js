@@ -1,5 +1,6 @@
 import { Outlet, Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import './Navbar.css'
 
 const Navbar = () => {  
   return(

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import TimelineBorn from './TimelineBorn';
+import './TimeLine.css'
 
 const FixedTimeLine = () => {
 const fixedContainerRef = useRef(); // Ref for the container
@@ -36,6 +36,8 @@ function animateValue(obj, start, end, duration) {
   } 
 
 const handleScroll = () => {
+const width = window.innerWidth
+console.log(width);
 
 let img1 = document.querySelector(".townimg1");
 let img2 = document.querySelector(".townimg2");

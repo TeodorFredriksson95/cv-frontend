@@ -1,3 +1,4 @@
+import './ShiftingDirections.css'
 
 const ShiftingDirections = () => {
     return (
@@ -51,7 +52,7 @@ const ShiftingDirections = () => {
                 <h2 id="concept1">"Variables!"</h2>
                 <h2 id="concept2">"Data types!"</h2>
                 <h2 id="concept3">"Arrays!"</h2>
-                <h1 id="concept4">"The red wiggle of death is your <span class="wiggle">FRIEND</span>!"</h1>
+                <h1 id="concept4">"The red wiggle of death is your <span className="wiggle">FRIEND</span>!"</h1>
                 <h2 id="concept5">"The four pillars!"</h2>
                 <h2 id="concept6">"MVC!"</h2>
             </div>

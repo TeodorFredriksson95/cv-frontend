@@ -1,5 +1,7 @@
 import { Icon } from '@iconify-icon/react';
 
+import './WorkExperience.css'
+
 const WorkExperience = () => {
 
 

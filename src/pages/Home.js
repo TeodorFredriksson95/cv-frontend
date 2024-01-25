@@ -1,10 +1,10 @@
-import HeroContent from "../components/HeroContent";
-import TimelineBorn from "../components/TimelineBorn";
-import TimeLineWebDev from "../components/TimeLineWebDev";
-import FixedTimeLine from "../components/Timeline";
-import ScriptVsDev from "../components/ScriptVsDev";
-import WorkExperience from "../components/WorkExperience";
-import ShiftingDirections from "../components/ShiftingDirections";
+import HeroContent from "../components/HeroContent/HeroContent";
+import TimelineBorn from "../components/TimeLineBorn/TimelineBorn";
+import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
+import FixedTimeLine from "../components/TimeLine/Timeline";
+import ScriptVsDev from "../components/ScriptVsDev/ScriptVsDev";
+import WorkExperience from "../components/WorkExperience/WorkExperience";
+import ShiftingDirections from "../components/ShiftingDirections/ShiftingDirections";
 
 import { useEffect } from "react";
 

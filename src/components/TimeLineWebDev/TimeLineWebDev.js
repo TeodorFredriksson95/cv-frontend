@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import createObserver from '../util/createObserver';
+import createObserver from '../../util/createObserver';
+import './TimeLineWebDev.css'
 
 const TimeLineWebDev = () => {
     const webDevRef = useRef(); // Ref for the web-dev container

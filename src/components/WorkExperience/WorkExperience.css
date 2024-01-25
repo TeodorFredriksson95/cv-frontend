@@ -1,0 +1,182 @@
+
+.leadership-header {
+    display: flex;
+    margin-top: 20%;
+    justify-content: end;
+  }
+  
+  .leadership-header img {
+    width: 30%;
+  }
+  
+  .leadershipTitles {
+    font-family: var(--MS_EBI);
+    color: white;
+    font-size: 2em;
+    line-height: 80%;
+    text-align: right;
+    width: 70%;
+  }
+  
+  .leadershipTitles p {
+    font-family: var(--MS_LI);
+    font-size: 0.7em;
+    text-align: right;
+    width: 80%;
+    margin-left: auto;
+  }
+  
+  .end-title {
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+    color: white;
+    font-size: 1.5em;
+    font-family: var(--MS_BI);
+  }
+  
+  .flowchart-text-container {
+    margin-top: 15%;
+    display: flex;
+  }
+  
+  .flow-chart-image {
+    width: 50%;
+  }
+  
+  .flow-chart-image img {
+    width: 100%;
+  }
+  
+  .flowchart-text {
+    flex-basis: 50%;
+    color: white;
+    font-family: var(--MS_LI);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flowchart-text p {
+    width: 60%;
+    font-size: 1.2em;
+  
+  }
+  
+  .second-flowchart-container{
+    margin-top: 10%;
+    display: flex;
+  }
+  
+  .second-flowchart-image img {
+    width: 100%;
+  }
+  
+  .second-flowchart-text {
+    color: white;
+    font-family: var(--MS_LI);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    flex-basis: 70%; 
+  }
+  
+  .second-flowchart-text p {
+    width: 50%;
+    font-size: 1.2em;
+  
+  }
+  
+  
+  .scorecard-and-text-flex-container {
+    display: flex;
+    justify-content: center; /* Adjust as needed */
+    margin-top: 10%; /* Adjust as needed */
+  }
+  
+  
+  .scorecard-container {
+    margin-right: 5em;
+    border: 2px solid #43ECD8;
+    border-radius: 1%;
+    background-color: rgba(0, 169, 139, 0.5);
+    box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    width: 35%;
+    flex-direction: column; /* Aligns checklist items vertically */
+    align-items: center; /* Centers checklist items horizontally */
+  }
+  
+  .scorecard-container h1 {
+    color: white;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-family: var(--MS_SBI);
+    font-size: 3em;
+  }
+  
+  .scorecard-item { 
+    display: flex;
+    align-items: center; /* Aligns text and checkbox */
+    justify-content: space-between;
+    width: 70%;
+    margin-bottom: 3em; /* Space between items */
+  
+  }
+  
+  .scorecard-text {
+    color: white;
+    font-family: var(--MS_LI);
+    text-align: left;
+    margin-right: 10px; /* Space before the checkbox */
+  }
+  
+  .scorecard-checkbox {
+    color: white;
+  }
+  
+  .scorecard-paragraph-container {
+    flex-basis: 30%; /* Adjust as needed */
+    text-align: center;
+    color: white;
+    font-family: var(--MS_LI);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  .scorecard-paragraph-container p {
+    width: 80%;
+    font-size: 1.2em;
+  }
+  
+  .scorecard-lines {
+    width: 70%;
+    border-top: 1px solid white;
+    margin-bottom: 1em;
+    align-self: flex-start;
+    margin-left: 15%;
+  }
+  
+
+  
+.graduation-text {
+    width: 50%;
+    margin-top: 15% !important;
+    /* margin-left: 9%; */
+    margin: auto;
+    font-family: var(--MS_LI);
+    color: white;
+    font-size: 1.2em;
+  }
+  
+  .response-text {
+    margin-left: 60%;
+    margin-top: 10%;
+    text-align: left;
+    font-family: var(--MS_MI);
+    color: white;
+  }
+  

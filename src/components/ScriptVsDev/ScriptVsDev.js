@@ -1,4 +1,6 @@
 
+import './ScriptVsDev.css'
+
 const ScriptVsDev = () => {
     return (
         <div>

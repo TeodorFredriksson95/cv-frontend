@@ -1,0 +1,43 @@
+
+
+
+.the-beginning-container {
+    margin-top: 20%;
+    display: flex;
+  }
+  
+  .the-beginning-container img{
+    flex-grow: 2;
+    flex-basis: 25%;
+  }
+  
+  .narrator-paragraph-container {
+    flex-grow: 1;
+    flex-basis: 70%;
+  }
+  
+  .narrator-paragraph-container h1 {
+    font-family: var(--MS_EBI);
+    color: white;
+    font-size: 6em;
+    line-height: 80%;
+    width: 100%;
+  }
+  
+  .narrator-paragraph-container.active p{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  
+  .narrator-paragraph-container p{
+    margin-top: 3em;
+    width: 80%;
+    text-align: start;
+    font-family: var(--MS_LI);
+    color: white;
+    font-size: large;
+    opacity: 0;
+    transform: translateX(20%);
+    transition: transform 2s, opacity 2s ease-in-out;
+  }
+  

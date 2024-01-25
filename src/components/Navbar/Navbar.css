@@ -1,0 +1,45 @@
+
+.navbar {
+    z-index: 10000;
+    pointer-events:auto;
+    top: 0;
+    position: fixed;
+    justify-content: flex-end;
+    display: flex;
+    background-color: transparent;
+    width: 100%;
+  }
+  
+  .navbar li{
+    margin: 1em;
+    display: inline;
+    
+  }
+  
+  
+  .active-link {
+    pointer-events:auto;
+    font-family: var(--MS_Bold);
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    padding: 5px;
+  }
+  
+  .active-link:active, .active-link:focus-within, .active-link:hover{
+    color: turquoise; /* Red color for the active link */
+    font-weight: bold;
+    /* other styles as needed */
+  }
+  
+  .active-link:focus-within {
+    border: 2px solid turquoise;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  
+  .scroll-active {
+    color: red; /* Scroll-based color change */
+  }
+  
+  
