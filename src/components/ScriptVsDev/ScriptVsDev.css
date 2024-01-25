@@ -10,30 +10,23 @@
     box-shadow: 0px 0px 10px 5px rgba(0, 204, 204, 0.39),
     inset 0px 0px 10px 20px rgba(0, 0, 0, 0.5);
     justify-content: center;
-    /* border-bottom: 1px solid white; */
   }
   
   .script-combatant-container {
     margin-right: -5em;
     display: flex;
     flex-direction: column;
-    display: flex;
     justify-content: start;
     align-items: start;
   
   }
   
   .script-combatant-container p{
-  font-family: var(--MS_LI);
-  color: white;
   margin-left: 2em;
   text-wrap: nowrap;
   }
   
   .script-combatant-container h3{
-    font-size: 2em;
-    font-family: var(--MS_BI);
-    color: white;
     margin-bottom: 0;
     margin-top: 0;
     }
@@ -46,39 +39,28 @@
   
   
   .versus-image-and-title{
-    height: 80%;
+    height: 70%;
     display: flex;
-    /* border: 1px solid gold; */
     flex-direction: column;
     align-self: flex-end;
   }
   
   .versus-image-and-title img{
-    height: 70%;
+    margin: auto;
+    height: 60%;
+    width: 80%;
   }
   
   .versus-image-and-title h3{
     margin: auto;
-    font-family: var(--MS_SBI);
-    color: white;
   }
-  
-  .colorPara {
-    color: white;
-    font-family: var(--MS_LI);
-    font-size: 1.3em;
-  
-  }
+ 
   
   .versus-script-tag-paragraph {
     margin-top: 2em;
     width: 60%;
   }
   
-  .colorPara span {
-    font-family: var(--MS_SBI);
-    font-size: 1.2em;
-  }
   
   .versus-script-ending p{
     margin-top: 10em;
@@ -88,11 +70,9 @@
     text-align: center;
   }
   
-  .versus-script-cliffhanger p{
-    margin-top: 10em;
+  .versus-script-cliffhanger h2{
+    margin-top: 3em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 1.8em;
-    font-family: var(--MS_EBI);
   }

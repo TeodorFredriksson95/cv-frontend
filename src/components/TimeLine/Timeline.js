@@ -36,8 +36,6 @@ function animateValue(obj, start, end, duration) {
   } 
 
 const handleScroll = () => {
-const width = window.innerWidth
-console.log(width);
 
 let img1 = document.querySelector(".townimg1");
 let img2 = document.querySelector(".townimg2");
@@ -45,7 +43,6 @@ let img3 = document.querySelector(".townimg3");
 
 
 const scrollPosition = window.scrollY;
-console.log(scrollPosition)
   if (scrollPosition < 500) {
       setIsFixed(false);
   }

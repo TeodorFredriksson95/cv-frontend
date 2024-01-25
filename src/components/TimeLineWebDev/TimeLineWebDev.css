@@ -14,27 +14,9 @@
     
   }
   
-  .svg-container p {
-    transform: translateY(-110%);
-    padding-top: 5%;
-    font-family: var(--MS_SBI);
-    font-size: 1.2em;
-    color: black;
-    width: 40%;
-    border-bottom: 2px solid black;
-    transition: transform 0.3s ;
-  }
   
-  .svg-container.activate p {
-      transform: translateY(0%);
-  }
-  
-  .web-dev-title h1{
-    font-family: var(--MS_EBI);
-    font-size: 5em;
-    color: white;
-  }
-  
+
+ 
   .web-dev-title h1, .web-dev-title h3, .web-dev-title p {
     margin: 0;  
   }
@@ -43,19 +25,28 @@
     margin-left: 8%;
   }
   
-  .web-dev-title h3 {
+ 
+  #curtain-text {
+    transform: translateY(-80%);
+    opacity: 0;
     font-family: var(--MS_SBI);
-    color: white;
+    font-size: var(--narrator-paragraph-size);
+    color: black;
+    width: 40%;
+    border-bottom: 2px solid black;
+    transition: transform 0.5s, opacity 0.5s;
+    padding-top: 5%;
   }
-  
-  .web-dev-title p {
-    font-family: var(--MS_LI);
-    color: white;
-  }
-  
+
+  #curtain-text.activate{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+
   #webdev-h3 {
     transform: translateX(-80%);
-    transition: transform 1s ease-in;
+    transition: transform 0.7s ease-in;
   }
   
   #webdev-h3.animate {
@@ -65,7 +56,7 @@
   #webdev-p {
     opacity: 0;
     transform: translateX(-10%);
-    transition: opacity 3s ease-in, transform 1s ease-in;
+    transition: opacity 2s ease-in, transform 1s ease-in;
   }
   
   
@@ -81,13 +72,7 @@
     
   }
   
-  .web-dev-continuation h1 {
-    color: white;
-    font-family: var(--MS_EBI);
-    font-size: 4em;
-    
-  }
-  
+
   .image-container {
   
     margin-top: 10%;
@@ -115,10 +100,7 @@
   .web-dev-magic-paragraph-container{
     position: relative;
     margin-top: 45%;
-    color: white;
-    font-family: var(--MS_LI);
     width: 100%;
-    font-size: 1.5em;
     margin-left: auto;
     margin-right: auto;
   }
@@ -129,10 +111,7 @@
     margin-right: auto;
   }
   
-  .ominous-thought span {
-    font-family: var(--MS_BI);
-    font-size: 1.1em;
-  }
+ 
   
   .happy-thought {
     width: 90%;
@@ -162,8 +141,6 @@
   
   
   .one h1 {
-    /* will-change: opacity, transform; */
-    color: #24a8e6;
     opacity: 0;
     transform: translate(-150px, -50px) rotate(-180deg);
   }
@@ -174,7 +151,8 @@
     animation: revolveScale .4s forwards;
   }
   
-  
+  /* WOW TEXT ANIMATION START */
+
   @keyframes revolveScale {
     60% {
       transform: translate(20px, 20px) rotate(30deg) scale(.3);
@@ -203,8 +181,54 @@
     animation-delay: .25s;
   }
   
+    /* WOW TEXT ANIMATION END */
+
+  
+  /* AND SO HE DID TITLE ANIMATION START */
+  #and-so-he-did {
+    animation: glow 2s ease-in-out infinite alternate ;
+  }
   
   
-  
-  
-  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
+
+    /* AND SO HE DID TITLE ANIMATION END */
+
+.image-container img {
+  opacity: 0;
+}
+
+    .image-container img {
+      animation: slideIn 0.5s ease forwards;
+    }
+    
+    .image-container img:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    .image-container img:nth-child(2) {
+      animation-delay: 0.5s; /* Delay of half a second */
+    }
+    
+    .image-container img:nth-child(3) {
+      animation-delay: 1s; /* Delay of one second */
+    }
+    
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-200%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

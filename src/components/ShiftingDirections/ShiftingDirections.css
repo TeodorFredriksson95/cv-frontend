@@ -18,15 +18,9 @@
   
   .header-image-container h1 {
     margin-top: -5%;
-    font-family: var(--MS_EBI);
-    color: white;
-    font-size: 5em;
+
   }
   
-  .changing-paths-container-one, .changing-paths-container-two {
-    color: white;
-    font-family: var(--MS_LI);
-  }
   .changing-paths-container-one {
     margin-top: 10%;
   
@@ -38,7 +32,6 @@
   
   .response-text-one, .response-text-two, .response-text-four{
     margin-top: 10%;
-    font-family: var(--MS_SBI);
     text-align: center;
     width: 60%;
     margin-left: auto;
@@ -48,7 +41,6 @@
   .response-text-three {
     margin-bottom: 10%;
     margin-top: 5%;
-    font-family: var(--MS_SBI);
   }
   
   .changing-paths-container-two p{
@@ -116,6 +108,7 @@
   }
   
   .wiggle {
+    font-style: italic;
     text-decoration: underline;
     text-decoration-color: red;
     text-decoration-style: wavy;

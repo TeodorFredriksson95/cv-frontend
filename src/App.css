@@ -4,7 +4,24 @@
   --MS_SBI:"MontserratSemiBoldItalic";
   --MS_EBI:"MontserratExtraBoldItalic";
   --MS_BI:"MontserratBoldItalic";
-  --MS_MI:"MontserratMediumItalic"
+  --MS_MI:"MontserratMediumItalic";
+  
+  --text_color: white;
+  --title_color: white;
+  --title-h2-color: turquoise;
+  --continuation-text-color: rgb(217, 235, 236);
+  
+  
+  --h1-text-size: 100px;
+  --h2-text-size: 65px;
+  --h3-text-size: 30px;
+  --h4-text-size: 20px;
+
+  --continuation-text-size: 50px;
+  
+  --narrator-paragraph-size: 22px;
+  --response-paragraph-size: 24px;
+  /* --title-text-size: */
 }
 
 body {
@@ -16,9 +33,6 @@ body {
   height: 1110vh; */
 }
 
-p {
-  font-size: 1.2em;
-}
 
 @keyframes GradientAnimation {
   0%{background-position:0% 50%}
@@ -28,4 +42,75 @@ p {
 
 .content-page {
   padding: 2em;
+}
+
+/* 
+
+
+ */
+
+/* Main Title */
+ .main-title {
+  font-size: 65px;
+  font-family: var(--MS_Bold);
+  color: var(--title_color);
+ }
+
+ /* Section title */
+.section-title-h1 {
+  font-family: var(--MS_EBI);
+  color: var(--title-h2-color);
+  font-size: var(--h1-text-size);
+  line-height: 80%;
+}
+
+/* Section Subtitle */
+.section-title-h2 {
+  font-family: var(--MS_EBI);
+  font-size: var(--h2-text-size);
+  color: var(--title-h2-color);
+}
+
+.section-title-h3 {
+  font-family: var(--MS_BI);
+  font-size: var(--h3-text-size);
+  color: var(--text_color);
+}
+
+/* Section Title Subparagraph */
+ .section-title-h4 {
+  font-family: var(--MS_LI);
+  color: var(--text_color);
+  font-size: var(--h4-text-size);
+ }
+
+ /* Narrator Paragraph */
+ .narrator-paragraph-text {
+  color: var(--text_color);
+  font-family: var(--MS_LI);
+  font-size: var(--narrator-paragraph-size);
+ }
+
+ /* response paragraph */
+.response-paragraph {
+  color: var(--text_color);
+  font-family: var(--MS_SBI);
+  font-size:var(--response-paragraph-size) ;
+}
+
+.word-highlight {
+  font-family: var(--MS_SBI);
+  color: turquoise;
+  font-size: 1.1em;
+}
+
+.thought-word-highlight {
+  color: turquoise;
+  font-weight: bold;
+}
+
+.continuations {
+  color: var(--continuation-text-color);
+  font-family: var(--MS_BI);
+  font-size: var(--continuation-text-size);
 }

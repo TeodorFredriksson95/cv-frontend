@@ -19,22 +19,13 @@
   
   .hero-title {
     margin-top: 3em;
-    color: white;
-    font-family: var(--MS_Bold);
     width: 70%;
     padding-top: 1em;
   }
   
   
   .hero-title h1 {
-    font-size: 4em;
     margin: 0;
   }
-  
-  .hero-title h4 {
-    font-family: var(--MSLI);
-    font-style: italic;
-  }
-  
-  
+
   

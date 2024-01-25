@@ -18,7 +18,6 @@
   } 
   
   .absolutecontainer {
-    /* background-color: green; */
     position: relative;
     width: 100%;
     height: 100%;
@@ -43,41 +42,33 @@
   
   .text-container {
     position: absolute;
-    top: 55%; /* Adjust this value to position the text below the line */
+    top: 55%; 
     width: 100%;
     text-align: center;
-    color: white; /* Adjust color as needed */
-    font-weight: bold;
-    /* Other styling as needed */
+    color: var(--text_color);
+    font-family: var(--MS_Bold);
   }
   
-  .text-container.active {
-    color: black;
-    font-weight: bold;
-  }
-  
+
   
   .overflowcontainer {
-    /* background-color: blue; */
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100px; /* Adjust as needed */
-    width: 200px; /* Adjust as needed */
+    height: 100px; 
+    width: 200px; 
     overflow: hidden;
   }
   
   
   .townimg1 {
-    /* border: 1px solid green; */
     margin-bottom: -6em !important;
     width: 50% !important;
     left: 25%;
   }
   
   .townimg3 {
-    /* border: 1px solid green; */
     margin-bottom: -6em !important;
     width: 40% !important;
     left: 32%;
@@ -89,20 +80,17 @@
       margin-bottom: -3em;
       position: absolute;
       bottom: 0;
-      width: 100%; /* Adjust as needed */
+      width: 100%;
       height: auto;
       transition: margin-bottom 1s ease-in-out;
   }
   
   
   .townimg1.active {
-    /* background-color: black; */
-  
     margin-bottom: 0;
   }
   
   .townimg2.active {
-    /* background-color: aqua; */
     margin-bottom: 0;
   }
   
@@ -111,8 +99,6 @@
     margin-bottom: 0 !important;
   }
   .townimg3.active {
-  
-    /* background-color: greenyellow; */
     width: 40% !important;
     margin-bottom: 0 !important;   
   }

@@ -1,12 +1,17 @@
 
-const createObserver = (ref, animationClassName, threshold) => {
+const createObserver = (ref, animationClassName, threshold, endAnimation) => {
 
     const observer = new IntersectionObserver(entries => {
 
         entries.forEach(entry => {
+            console.log(entry.target.id, entry.isIntersecting); // Debug log
+            
             if (entry.isIntersecting) {
                 entry.target.classList.add(animationClassName);
-                observer.unobserve(entry.target); // Stop observing after animation is triggered
+
+                if (endAnimation) {
+                    observer.unobserve(entry.target); // Stop observing after animation is triggered
+                }
             } else {
                 entry.target.classList.remove(animationClassName);
             }

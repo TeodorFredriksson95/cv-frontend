@@ -33,8 +33,8 @@ const TimelineBorn = () => {
     <div className="the-beginning-container">
     <img src="achildisbornedit3.png"/>
     <div className="narrator-paragraph-container" ref={paragraphRef}>
-      <h1>The Beginning</h1>
-      <p>
+      <h1 className="section-title-h1">The <br/>Beginning</h1>
+      <p className="narrator-paragraph-text">
         This young boy would spend his days like most others. Climbing trees,
         drawing, playing football - and doing short of nothing to avoid his math
         homework. All the while his desire to create things which he could claim

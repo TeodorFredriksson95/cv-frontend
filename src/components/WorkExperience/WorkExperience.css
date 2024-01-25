@@ -10,17 +10,15 @@
   }
   
   .leadershipTitles {
-    font-family: var(--MS_EBI);
-    color: white;
-    font-size: 2em;
-    line-height: 80%;
     text-align: right;
     width: 70%;
   }
   
+  .titles-line-height {
+    line-height: 80%;
+  }
+  
   .leadershipTitles p {
-    font-family: var(--MS_LI);
-    font-size: 0.7em;
     text-align: right;
     width: 80%;
     margin-left: auto;
@@ -30,9 +28,7 @@
     text-align: center;
     margin: auto;
     margin-top: 15%;
-    color: white;
-    font-size: 1.5em;
-    font-family: var(--MS_BI);
+
   }
   
   .flowchart-text-container {
@@ -50,11 +46,10 @@
   
   .flowchart-text {
     flex-basis: 50%;
-    color: white;
-    font-family: var(--MS_LI);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   
   .flowchart-text p {
@@ -73,8 +68,6 @@
   }
   
   .second-flowchart-text {
-    color: white;
-    font-family: var(--MS_LI);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,9 +76,7 @@
   }
   
   .second-flowchart-text p {
-    width: 50%;
-    font-size: 1.2em;
-  
+    width: 50%;  
   }
   
   
@@ -139,8 +130,6 @@
   .scorecard-paragraph-container {
     flex-basis: 30%; /* Adjust as needed */
     text-align: center;
-    color: white;
-    font-family: var(--MS_LI);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,18 +154,13 @@
 .graduation-text {
     width: 50%;
     margin-top: 15% !important;
-    /* margin-left: 9%; */
     margin: auto;
-    font-family: var(--MS_LI);
-    color: white;
-    font-size: 1.2em;
   }
   
   .response-text {
     margin-left: 60%;
     margin-top: 10%;
     text-align: left;
-    font-family: var(--MS_MI);
-    color: white;
+    border-bottom: 1px solid white;
   }
   
