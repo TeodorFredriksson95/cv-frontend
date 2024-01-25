@@ -4,6 +4,7 @@ import TimeLineWebDev from "../components/TimeLineWebDev";
 import FixedTimeLine from "../components/Timeline";
 import ScriptVsDev from "../components/ScriptVsDev";
 import WorkExperience from "../components/WorkExperience";
+import ShiftingDirections from "../components/ShiftingDirections";
 
 import { useEffect } from "react";
 
@@ -39,6 +40,7 @@ const Home = () => {
         <TimeLineWebDev />
         <ScriptVsDev />
         <WorkExperience />
+        <ShiftingDirections />
       </div>
     )
   };

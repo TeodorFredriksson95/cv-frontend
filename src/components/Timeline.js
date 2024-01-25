@@ -81,12 +81,12 @@ console.log(scrollPosition)
   img2.classList.remove("active");
   img1.classList.remove("active");
 } else if (scrollPosition >= 4150) {
-  setIsFixed(true);
+  setIsFixed(false);
   updateCounter("value", 2021);
   img2.classList.remove("active");
-  img1.classList.add("active");
+  img1.classList.remove("active");
   img3.classList.remove("active");
-}
+} 
 }
 
   useEffect(() => {
