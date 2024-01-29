@@ -33,9 +33,13 @@
   
     .versus-image {
       align-self: center;
+      transform: scale(0.0);
+      transition: transform .4s ease-in-out;
     }
   
-  
+    .versus-image.activate {
+      transform: scale(1);
+    }
   
   
   .versus-image-and-title{
@@ -76,3 +80,87 @@
     margin-right: auto;
     text-align: center;
   }
+  
+  .script-combatant-container, .versus-image-and-title{
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: transform 1s, opacity 0.7s ease-in-out;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  }
+  
+  .script-combatant-container.activate, .versus-image-and-title.activate{
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+
+.script-para-1 {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: transform 1s, opacity .8s ease-in-out;
+}
+
+.script-para-1.activate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.script-para-2 {
+  opacity: 0;
+  transform: translateY(-30%);
+  transition: transform 1s, opacity .8s ease-in-out;
+}
+
+.script-para-2.activate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.for-a-time span {
+  opacity: 0;
+}
+
+.for-a-time.activate span {
+  animation: fadeIn 3s forwards;
+}
+
+
+
+@keyframes fadeIn {
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.for-a-time.activate span:nth-of-type(2) {
+  animation-delay: .05s;
+}
+.for-a-time.activate span:nth-of-type(3) {
+  animation-delay: .07s;
+}
+.for-a-time.activate span:nth-of-type(4) {
+  animation-delay: .11s;
+}
+.for-a-time.activate span:nth-of-type(5) {
+  animation-delay: .15s;
+}
+.for-a-time.activate span:nth-of-type(6) {
+  animation-delay: .19s;
+}
+.for-a-time.activate span:nth-of-type(7) {
+  animation-delay: .23s;
+}
+.for-a-time.activate span:nth-of-type(8) {
+  animation-delay: .27s;
+}
+.for-a-time.activate span:nth-of-type(9) {
+  animation-delay: .31s;
+}
+.for-a-time.activate span:nth-of-type(10) {
+  animation-delay: .45s;
+}
+.for-a-time.activate span:nth-of-type(11) {
+  animation-delay: .49s;
+}

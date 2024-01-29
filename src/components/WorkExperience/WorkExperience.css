@@ -161,6 +161,76 @@
     margin-left: 60%;
     margin-top: 10%;
     text-align: left;
-    border-bottom: 1px solid white;
   }
   
+.work-experience-para1 {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: transform 1s, opacity 1s ease-in-out;
+}
+
+.work-experience-para1.activate {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+
+.para2-overflow-text-1, .para2-overflow-text-2, .para3-overflow-text-1, .para3-overflow-text-2,
+.second-flowchart-text, .para5-overflow-text-1, .para5-overflow-text-2, .para5-overflow-text-3, .para5-overflow-text-4 {
+  overflow: hidden;
+}
+
+.para2-overflow-text-2 p {
+  border-bottom: 1px solid white;
+}
+
+.para2-overflow-text-1 p, .para2-overflow-text-2 p{
+  transform: translateX(100%);
+  transition: transform .5s ease-in-out;
+}
+
+.para2-overflow-text-1.activate p, .para2-overflow-text-2.activate p{
+  transform: translateX(0%);
+}
+
+#and-so-he-did {
+  animation: glow 2s ease-in-out infinite alternate ;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #2d9da9;
+  }
+  to {
+    text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+  }
+}
+
+.para3-overflow-text-1 p, .para3-overflow-text-2 p{
+  transform: translateY(-120%);
+  transition: transform .5s ease-in-out;
+}
+
+.para3-overflow-text-1.activate p, .para3-overflow-text-2.activate p{
+  transform: translateY(0%);
+}
+
+.second-flowchart-text p {
+  transform: translateX(-200%);
+  transition: transform .5s ease-in-out;
+}
+.second-flowchart-text.activate p {
+  transform: translateX(0%);
+  transition: transform .5s ease-in-out;
+}
+
+.para5-overflow-text-1 p, .para5-overflow-text-2 p, .para5-overflow-text-3 p, .para5-overflow-text-4 p {
+  transform: translateY(-200%);
+  transition: transform .5s ease-in-out;
+}
+.para5-overflow-text-1.activate p, .para5-overflow-text-2.activate p,
+ .para5-overflow-text-3.activate p, .para5-overflow-text-4.activate p {
+  transform: translateY(0%);
+  transition: transform .5s ease-in-out;
+}

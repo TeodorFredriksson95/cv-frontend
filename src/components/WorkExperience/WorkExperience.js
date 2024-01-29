@@ -1,9 +1,36 @@
 import { Icon } from '@iconify-icon/react';
+import { useEffect, useRef } from 'react';
+import createObserver from '../../util/createObserver';
 
 import './WorkExperience.css'
 
 const WorkExperience = () => {
+    const para1 = useRef();
+    const para2_overflow_1 = useRef();
+    const para2_overflow_2 = useRef();
+    const para3_overflow_1 = useRef();
+    const para3_overflow_2 = useRef();
+    const para4_overflow_1 = useRef();
+    const para5_overflow_1 = useRef();
+    const para5_overflow_2 = useRef();
+    const para5_overflow_3 = useRef();
+    const para5_overflow_4 = useRef();
 
+    useEffect(() => {
+        createObserver(para1, 'activate', 0.3);
+        createObserver(para2_overflow_1, 'activate', 1);
+        createObserver(para2_overflow_2, 'activate', 1);
+
+        createObserver(para3_overflow_1, 'activate', 1, true);
+        createObserver(para3_overflow_2, 'activate', 1, true);
+
+        createObserver(para4_overflow_1, 'activate', .7, true);
+
+        createObserver(para5_overflow_1, 'activate', .8, true);
+        createObserver(para5_overflow_2, 'activate', .8, true);
+        createObserver(para5_overflow_3, 'activate', .8, true);
+        createObserver(para5_overflow_4, 'activate', .8, true);
+    }, [])
 
     return (
         <div>
@@ -21,7 +48,7 @@ const WorkExperience = () => {
             </div>
  
             <div className="graduation-text">
-                <p className='narrator-paragraph-text'>
+                <p className='narrator-paragraph-text work-experience-para1' ref={para1}>
 
                 As the young man graduated from high school with a degree in 
                 vehicles and transportation, he still felt his future career lied elsewhere. 
@@ -30,36 +57,46 @@ const WorkExperience = () => {
                 </p>
             </div>
             <div className="response-text">
-               <p className='response-paragraph'>
-                <span className='thought-word-highlight'>-”Perfect”</span> the young man thought to himself.
-                <p>
-                    -”A chance to make some easy money while I figure out what I want to do with my life”.
-                    </p>
-                </p>
+                <div className='para2-overflow-1'>
+                    <div className=' para2-overflow-text-1'ref={para2_overflow_1}>
+                        <p className='response-paragraph' >
+                            <span className='thought-word-highlight'>-”Perfect”</span> the young man thought to himself.
+                        </p>
+                    </div>
+                    <div className='para2-overflow-text-2'ref={para2_overflow_2}>
+                        <p className='response-paragraph'>
+                            -”A chance to make some easy money while I figure out what I want to do with my life”.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div className="end-title ">
-                <p className='continuations'>Little did he know, this choice would change him forever..</p>
+                <p className='continuations' id='and-so-he-did'>Little did he know, this choice would change him forever..</p>
             </div>
             <div className="flowchart-text-container">
                 <div className="flow-chart-image">
                     <img src="flowchartedit1.png"/>
                 </div>
                 <div className="flowchart-text">
-                    <p className='narrator-paragraph-text'>
-                    The young man came to realize quickly, that this store was revered. 
-                    Both by customers and by competitors. The expectations were high.
-                    </p>
-                    <p className='narrator-paragraph-text'>
-                        First class customer service, a creatively organized stock, beautifully 
-                        stocked shelves and a gross profit rivaled by few  - all made possible by daily
-                        analysis and a breakneck pace.
+                <div className='para3-overflow-text-1' ref={para3_overflow_1}>
+                        <p className='narrator-paragraph-text' >
+                            The young man came to realize quickly, that this store was revered. 
+                            Both by customers and by competitors. The expectations were high.
                         </p>
+                    </div>
+                    <div className='para3-overflow-text-2' ref={para3_overflow_2}>
+                        <p className='narrator-paragraph-text'>
+                            First class customer service, a creatively organized stock, beautifully 
+                            stocked shelves and a gross profit rivaled by few  - all made possible by daily
+                            analysis and a breakneck pace.
+                        </p>
+                    </div>
                 </div>
 
             </div>
 
             <div className="second-flowchart-container">
-                <div className="second-flowchart-text">
+                <div className="second-flowchart-text" ref={para4_overflow_1}>
                     <p className='narrator-paragraph-text'>
                     This suited the young man perfectly. He quickly rose 
                     through the ranks, showing promise through initiative and 
@@ -99,18 +136,26 @@ const WorkExperience = () => {
                         <div className='scorecard-lines'></div>
                 </div>
                 <div className="scorecard-paragraph-container">
-                    <p className='narrator-paragraph-text '>
-                        For a long time, he felt great satisfaction in striving for new knowledge and converting this into substantial results.<br/>
-                    </p>
-                    <p className='narrator-paragraph-text '>
-                        As he grew with his experiences, he wished for nothing more than to help others reach their own dreams and goals.<br/>
-                    </p>
-                    <p className='narrator-paragraph-text '>
-                        The young man believed there was always valuable life lessons to be found, even in the most mundane tasks.<br/>
-                    </p>
-                    <p className='narrator-paragraph-text '>
-                        He took great pride in his effort to inspire and motivate his peers, as someone had previously done for him.<br/>
-                    </p>
+                <div className='para5-overflow-text-1' ref={para5_overflow_1}>
+                        <p className='narrator-paragraph-text '>
+                            For a long time, he felt great satisfaction in striving for new knowledge and converting this into substantial results.<br/>
+                        </p>
+                    </div>
+                    <div className='para5-overflow-text-2' ref={para5_overflow_2}>
+                        <p className='narrator-paragraph-text '>
+                            As he grew with his experiences, he wished for nothing more than to help others reach their own dreams and goals.<br/>
+                        </p>
+                    </div>
+                    <div className='para5-overflow-text-3' ref={para5_overflow_3}>
+                        <p className='narrator-paragraph-text '>
+                            The young man believed there was always valuable life lessons to be found, even in the most mundane tasks.<br/>
+                        </p>
+                    </div>
+                    <div className='para5-overflow-text-4' ref={para5_overflow_4}>
+                        <p className='narrator-paragraph-text '>
+                            He took great pride in his effort to inspire and motivate his peers, as someone had previously done for him.<br/>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

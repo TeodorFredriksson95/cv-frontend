@@ -15,7 +15,7 @@ const TimelineBorn = () => {
           }
         });
       },
-      { threshold: 0.1 } // Adjust as needed
+      { threshold: 0.1 }
     );
 
     if (paragraphRef.current) {

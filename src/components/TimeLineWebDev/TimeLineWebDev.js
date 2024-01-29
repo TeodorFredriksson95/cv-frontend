@@ -7,14 +7,18 @@ const TimeLineWebDev = () => {
     const h3Ref = useRef();
     const pRef = useRef();
     const imageP = useRef();
+    const shootImage = useRef();
+    const para1 = useRef();
+    const para2 = useRef();
 
     useEffect(() => {
      createObserver(webDevRef, 'animate', 0.1, false)
      createObserver(h3Ref, 'animate', 0.1)
     createObserver(pRef, 'animate', 1)
     createObserver(imageP, 'activate', 0.3);
-        
-
+    createObserver(shootImage, 'activate', 0.3);
+    createObserver(para1, 'activate', 0.3);
+    createObserver(para2, 'activate', 0.3);
     }, []);
 
     return (
@@ -32,7 +36,7 @@ const TimeLineWebDev = () => {
             </div>
             <div className='web-dev-continuation'>
                 <h1 className='continuations' id='and-so-he-did'>And so he did...</h1>
-                <div className='image-container'>
+                <div className='image-container' ref={shootImage}>
                     <img src='htmlcomputer.png'/>
                     <img src='htmlcomputer.png'/>
                     <img src='htmlcomputer.png'/>
@@ -40,7 +44,7 @@ const TimeLineWebDev = () => {
             </div>
             <div className='web-dev-magic-paragraph-container'>
             <div className='ominous-thought'>
-                    <p className='narrator-paragraph-text'>
+                    <p className='narrator-paragraph-text' id='para1' ref={para1}>
                     But while the h1, h2, and even h3 tags seemed fun,
                     and the little invisible boxes that let him place his navigation 
                     bar <span className='word-highlight'>right</span> at the top of the page worked just like magic, he eventually started 
@@ -48,7 +52,7 @@ const TimeLineWebDev = () => {
                     </p>
                 </div>
                 <div className='happy-thought'>
-                    <p className='response-paragraph'>
+                    <p className='response-paragraph' id='para2' ref={para2}>
                         “..Boy, I could spend a whole lifetime just browsing any of these amazing pages!
                         <span className='thought-word-highlight' ><br/>I'm getting pretty good at this!</span>”
                     </p>

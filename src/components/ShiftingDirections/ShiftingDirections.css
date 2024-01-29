@@ -12,12 +12,11 @@
   }
   
   .header-image-container img {
-    width: 30%;
-    margin-right: 7%;
+    width: 90%;
   }
   
   .header-image-container h1 {
-    margin-top: -5%;
+    margin-top: -15%;
 
   }
   
@@ -117,3 +116,16 @@
   .last {
     margin-top: 10%;
   }
+  
+.we-image-overflow-container {
+   overflow-x: hidden;
+  }
+
+.we-image-overflow-container img {
+    transform: translateX(130%) scaleY(0);
+    transition: transform .5s ease-in-out;
+  }
+
+.we-image-overflow-container.activate img {
+  transform: translateX(0) scaleY(1);
+}

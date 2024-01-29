@@ -1,11 +1,25 @@
 import './ShiftingDirections.css'
+import createObserver from '../../util/createObserver';
+
+import { useEffect, useRef } from 'react';
 
 const ShiftingDirections = () => {
+    const image_overflow = useRef();
+    const title_overflow = useRef();
+    useEffect(() => {
+        createObserver(image_overflow, 'activate', 0.3, true);
+        createObserver(title_overflow, 'activate', 0.3, true);
+
+    },[])
     return (
         <div className="parent-container-shifting-directions">
             <div className="header-image-container">
-                <img src="shiftingdirectionsedit1.png"/>
-                <h1 className='section-title-h1'>Shifting<br/>Directions</h1>
+                <div className='we-image-overflow-container' ref={image_overflow}>
+                    <img src="shiftingdirectionsedit1.png"/>
+                </div>
+                <div className='we-title-overflow-container' ref={title_overflow}>
+                    <h1 className='section-title-h1'>Shifting<br/>Directions</h1>
+                </div>
             </div>
             <div className="changing-paths-container-one">
                 <p className='narrator-paragraph-text'>
