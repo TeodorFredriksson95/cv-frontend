@@ -5,6 +5,7 @@ import FixedTimeLine from "../components/TimeLine/Timeline";
 import ScriptVsDev from "../components/ScriptVsDev/ScriptVsDev";
 import WorkExperience from "../components/WorkExperience/WorkExperience";
 import ShiftingDirections from "../components/ShiftingDirections/ShiftingDirections";
+import TechStack from "../components/TechStack/TechStack";
 
 import { useEffect } from "react";
 
@@ -41,6 +42,7 @@ const Home = () => {
         <ScriptVsDev />
         <WorkExperience />
         <ShiftingDirections />
+        <TechStack />
       </div>
     )
   };

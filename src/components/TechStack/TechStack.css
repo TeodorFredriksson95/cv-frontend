@@ -1,0 +1,79 @@
+.tech-stack-container {
+    position: relative;
+}
+
+.text-overflow-container {
+    overflow: hidden;
+    margin-left: 10%;  
+}
+
+.tech-container {
+    display: flex;
+    justify-content: start;
+    margin-left: 20%;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+.tech-icon {
+    align-self: center;
+    color: turquoise;
+}
+
+.frameworks-container {
+    margin-top: 10%;
+}
+
+.frameworks-row1 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#github {   
+    color: white;
+}
+
+.beginning-of-the-end-container {
+    display: flex;
+    margin-top: 15%;
+}
+
+.beginning-of-the-end-container img {
+    align-items: center;
+}
+.last-image-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15%;
+}
+
+
+.looking-for-dev-text {
+    font-family: var(--MS_EBI);
+    font-size: 50px;
+    color: white;   
+}
+
+#contribute, #atmosphere, #work {
+    font-family: var(--MS_EBI);
+}
+
+#contribute {
+    color: turquoise;
+}
+
+#atmosphere, #work {
+    color: #ff80f3ff;
+}
+
+
+.last-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: turquoise;
+}
+
+.tech-icon-last {
+    color: #ff80f3ff;
+}
