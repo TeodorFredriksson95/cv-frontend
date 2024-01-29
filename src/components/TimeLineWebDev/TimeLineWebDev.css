@@ -134,7 +134,7 @@
   
   
   
-  .animate h1 {
+  .animate h1, .one h1 {
     display: inline-block;
   }
   

@@ -9,7 +9,7 @@ const TimeLineWebDev = () => {
     const imageP = useRef();
 
     useEffect(() => {
-     createObserver(webDevRef, 'animate', 0.1, true)
+     createObserver(webDevRef, 'animate', 0.1, false)
      createObserver(h3Ref, 'animate', 0.1)
     createObserver(pRef, 'animate', 1)
     createObserver(imageP, 'activate', 0.3);
