@@ -41,7 +41,7 @@ const ShiftingDirections = () => {
         createObserver(para7_overflow_container_7, 'activate', 1, true);
         createObserver(para7_overflow_container_8, 'activate', 1, true);
 
-        createObserver(cannon1, 'activate', .5, false);
+        createObserver(cannon1, 'activate', .5, true);
 
     },[])
     return (
@@ -119,13 +119,13 @@ const ShiftingDirections = () => {
                     </p>
                 </div>
             </div>
-            <div className="launching-concepts-absolute-container">
-                <h2 ref={cannon1} className='concept1' id="concept1">"Variables!"</h2>
+            <div className="launching-concepts-absolute-container cannon-container" ref={cannon1}>
+                <h2  className='concept1' id="concept1">"Variables!"</h2>
                 <h2 id="concept2">"Data types!"</h2>
                 <h2 id="concept3">"Arrays!"</h2>
-                <h1 id="concept4">"The red wiggle of death is your <span className="wiggle">FRIEND</span>!"</h1>
                 <h2 id="concept5">"The four pillars!"</h2>
                 <h2 id="concept6">"MVC!"</h2>
+                <h1 id="concept4">"The red wiggle of death is your<br/> <span className="wiggle">FRIEND!</span>"</h1>
             </div>
         </div>
     )

@@ -1,12 +1,36 @@
 import './TechStack.css'
 import { Icon } from '@iconify-icon/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+
+import createObserver from '../../util/createObserver';
 
 
 const TechStack = () => {
     const iconWidth = 100;
     const iconHeight = 100;
     const [containerHeight, setContainerHeight] = useState(0);
+
+    const icon_and_para1 = useRef();
+    const icon_and_para2 = useRef();
+    const icon_and_para3 = useRef();
+    const icon_and_para4 = useRef();
+    const icon_and_para5 = useRef();
+
+    const tech_stack_para1 = useRef();
+    const tech_stack_para2 = useRef();
+
+    const searching = useRef();
+
+    createObserver(icon_and_para1, 'activate', 1, true);
+    createObserver(icon_and_para2, 'activate', 1, true);
+    createObserver(icon_and_para3, 'activate', 1, true);
+    createObserver(icon_and_para4, 'activate', 1, true);
+    createObserver(icon_and_para5, 'activate', 1, true);
+
+    createObserver(tech_stack_para1, 'activate', .5, true);
+    createObserver(tech_stack_para2, 'activate', .8, true);
+
+    createObserver(searching, 'activate', .8, true);
 
     useEffect(() => {
         const container = document.querySelector('.launching-concepts-absolute-container');
@@ -17,34 +41,34 @@ const TechStack = () => {
 
     return (
         <div className='tech-stack-container' style={{ marginTop: `${containerHeight*1.30}px` }}>
-            <div className='tech-container'>
-                <Icon width={iconWidth} height={iconHeight} icon="pajamas:api" className='tech-icon'/>
+            <div className='tech-container tech-1' ref={icon_and_para1}>
+                <Icon width={iconWidth} height={iconHeight} icon="pajamas:api" id='api-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>He worked on API's</p>
                 </div>
             </div>
-            <div className='tech-container'>
-                <Icon width={iconWidth} height={iconHeight} icon="gala:data" className='tech-icon'/>
+            <div className='tech-container tech-2' ref={icon_and_para2}>
+                <Icon width={iconWidth} height={iconHeight} icon="gala:data" id='data-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Databases</p>
                 </div>
             </div>
-            <div className='tech-container'>
-                <Icon width={iconWidth} height={iconHeight} icon="circum:mobile-3" className='tech-icon'/>
+            <div className='tech-container tech-3' ref={icon_and_para3}>
+                <Icon width={iconWidth} height={iconHeight} icon="circum:mobile-3" id='mobile-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Mobile Apps</p>
                 </div>
             </div>
-            <div className='tech-container'>
-                <Icon width={iconWidth} height={iconHeight} icon="mdi:application-brackets-outline" className='tech-icon'/>
+            <div className='tech-container tech-4' ref={icon_and_para4}>
+                <Icon width={iconWidth} height={iconHeight} icon="mdi:application-brackets-outline" id='web-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Web Apps</p>
                 </div>
             </div>
-            <div className='tech-container'>
-                <Icon width={iconWidth} height={iconHeight} icon="carbon:platforms" className='tech-icon'/>
+            <div className='tech-container tech-5' ref={icon_and_para5}>
+                <Icon width={iconWidth} height={iconHeight} icon="carbon:platforms" id='cross-platform-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
-                    <p className='section-title-h3'>He even made many of them cross-platform</p>
+                    <p className='section-title-h3'>He even made some of them cross-platform</p>
                 </div>
             </div>
             <div className='frameworks-container'>
@@ -54,22 +78,41 @@ const TechStack = () => {
                     <Icon width={iconWidth} height={iconHeight} icon="skill-icons:react-dark" className='tech-icon'/>
                     <Icon width={iconWidth} height={iconHeight} icon="skill-icons:visualstudio-dark" className='tech-icon'/>
                     <Icon width={iconWidth} height={iconHeight} icon="skill-icons:dotnet" className='tech-icon'/>
+                </div>
+                <div className='frameworks-row1'>
                     <Icon width={iconWidth} height={iconHeight} icon="iconoir:github" id='github'/>
+                    <Icon width={iconWidth} height={iconHeight} icon="logos:firebase" className='tech-icon'/>
+                    <Icon width={iconWidth} height={iconHeight} icon="skill-icons:godot-dark" className='tech-icon'/>
+                    <Icon width={iconWidth} height={iconHeight} icon="skill-icons:prisma" className='tech-icon'/>
+                    <Icon width={iconWidth} height={iconHeight} icon="devicon:xamarin" className='tech-icon'/>
                 </div>
             </div>
-            <div className='beginning-of-the-end-container'>
+            <div className='beginning-of-the-end-container tech-stack-para1' ref={tech_stack_para1}>
                 <p className="response-text-one response-paragraph">
                 All of a sudden, the young man had graduated.
                 </p>
                 <img src='handsinairedit1.png'/>
             </div>
             <div>
-            <p className="response-text-one response-paragraph">
-            And even though he has yet to find a company to call home, I know he’s still out there..
-            </p>
-            <p className="response-text-one section-title-h2">
-            ..searching
-            </p>
+                <div className='tech-stack-para2' ref={tech_stack_para2}>
+                    <p className="response-text-one response-paragraph">
+                    And even though he has yet to find a company to call home, I know he’s still out there..
+                    </p>
+                </div>
+            <h2 className="response-text-one section-title-h2 searching" ref={searching}>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span>s</span>
+                <span>e</span>
+                <span>a</span>
+                <span>r</span>
+                <span>c</span>
+                <span>h</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </h2>
             <div className='last-image-container'>
                 <div className='looking-for-dev-text-container'>
 
