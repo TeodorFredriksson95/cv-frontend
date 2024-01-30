@@ -129,3 +129,54 @@
 .we-image-overflow-container.activate img {
   transform: translateX(0) scaleY(1);
 }
+
+.para6-overflow-container-1, .para6-overflow-container-2, .para6-overflow-container-3,
+.para6-overflow-container-4, .para7-overflow-container-1, .para7-overflow-container-2,
+.para7-overflow-container-3, .para7-overflow-container-4, .para7-overflow-container-5,
+.para7-overflow-container-6, .para7-overflow-container-7, .para7-overflow-container-8 {
+  overflow: hidden;
+}
+
+/*LEFT TO RIGHT START*/
+.para6-overflow-container-1 p, .para6-overflow-container-2 p, .para6-overflow-container-3 p {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform .7s, opacity .7s ease-in-out;
+}
+
+.para6-overflow-container-1.activate p, .para6-overflow-container-2.activate p, .para6-overflow-container-3.activate p {
+  transform: translateX(0);
+  opacity: 1;
+}
+/*LEFT TO RIGHT END*/
+
+
+/* TOP DOWN START */
+.para6-overflow-container-4 p, .para7-overflow-container-2 p, .para7-overflow-container-4 p, .para7-overflow-container-7 p {
+  transform: translateY(-10%);
+  opacity: 0;
+  transition: transform .7s, opacity .7s ease-in-out;
+}
+
+.para6-overflow-container-4.activate p, .para7-overflow-container-2.activate p,
+.para7-overflow-container-4.activate p, .para7-overflow-container-7.activate p {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* TOP DOWN END */
+
+
+/*RIGHT TO LEFT START*/
+.para7-overflow-container-1 p, .para7-overflow-container-3 p, .para7-overflow-container-5 p,
+.para7-overflow-container-6 p, .para7-overflow-container-8 p {
+  transform: translateX(10%);
+  opacity: 0;
+  transition: transform .7s, opacity .7s ease-in-out;
+}
+
+.para7-overflow-container-1.activate p, .para7-overflow-container-3.activate p, .para7-overflow-container-5.activate p,
+.para7-overflow-container-6.activate p, .para7-overflow-container-8.activate p {
+  transform: translateX(0);
+  opacity: 1;
+}
+/*RIGHT TO LEFT END*/
