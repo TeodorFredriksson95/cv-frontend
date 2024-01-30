@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 const ShiftingDirections = () => {
     const image_overflow = useRef();
     const title_overflow = useRef();
+    const cannon1 = useRef();
 
     const para6_overflow_container_1 = useRef();
     const para6_overflow_container_2 = useRef();
@@ -39,6 +40,8 @@ const ShiftingDirections = () => {
         createObserver(para7_overflow_container_6, 'activate', 1, true);
         createObserver(para7_overflow_container_7, 'activate', 1, true);
         createObserver(para7_overflow_container_8, 'activate', 1, true);
+
+        createObserver(cannon1, 'activate', .5, false);
 
     },[])
     return (
@@ -117,7 +120,7 @@ const ShiftingDirections = () => {
                 </div>
             </div>
             <div className="launching-concepts-absolute-container">
-                <h2 id="concept1">"Variables!"</h2>
+                <h2 ref={cannon1} className='concept1' id="concept1">"Variables!"</h2>
                 <h2 id="concept2">"Data types!"</h2>
                 <h2 id="concept3">"Arrays!"</h2>
                 <h1 id="concept4">"The red wiggle of death is your <span className="wiggle">FRIEND</span>!"</h1>

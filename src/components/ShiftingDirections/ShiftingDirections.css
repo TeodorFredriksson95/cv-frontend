@@ -180,3 +180,35 @@
   opacity: 1;
 }
 /*RIGHT TO LEFT END*/
+
+.concept1 {
+  opacity: 0;
+  transform: scale(3);
+}
+
+.concept1.activate {
+  animation: cannonBall .4s forwards;
+}
+
+/* WOW TEXT ANIMATION START */
+
+@keyframes cannonBall {
+  60% {
+    opacity: .5;
+    transform: scale(3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* .activate h1:nth-of-type(2) {
+  animation-delay: .05s;
+}
+.activate h1:nth-of-type(3) {
+  animation-delay: .1s;
+} */
