@@ -32,7 +32,9 @@ const TimeLineWebDev = () => {
             </div>
             <div className='svg-container'>
                 <img src='keeperedit3.svg'></img>
-                <p ref={imageP} id='curtain-text'>As chance would have it, the young boys father would at this time become the founder of a swedish branch of a german football  supporter club. Thus, he tasked the child with creating a website.</p>
+                <div className='football-text-container' ref={imageP}>
+                <p id='curtain-text'>As chance would have it, the young boys father would at this time become the founder of a swedish branch of a german football  supporter club. Thus, he tasked the child with creating a website.</p>
+                </div>
             </div>
             <div className='web-dev-continuation'>
                 <h1 className='continuations' id='and-so-he-did'>And so he did...</h1>
@@ -54,7 +56,7 @@ const TimeLineWebDev = () => {
                 <div className='happy-thought'>
                     <p className='response-paragraph' id='para2' ref={para2}>
                         “..Boy, I could spend a whole lifetime just browsing any of these amazing pages!
-                        <span className='thought-word-highlight-turq' ><br/>I'm getting pretty good at this!</span>”
+                        <span className='word-highlight-pink' ><br/>I'm getting pretty good at this!</span>”
                     </p>
                 </div>
             </div>

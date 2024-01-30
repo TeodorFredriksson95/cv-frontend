@@ -18,7 +18,7 @@ const Home = () => {
 
       navbarItems.forEach(item => {
         if (!item.matches(':hover, :focus')) {
-          if (scrollPosition >= 1595 && scrollPosition <= 2000) {
+          if (scrollPosition >= 2100 && scrollPosition <= 2499) {
             item.classList.add('scroll-active');
           } else {
             item.classList.remove('scroll-active');

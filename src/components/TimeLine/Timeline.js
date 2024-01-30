@@ -37,55 +37,61 @@ function animateValue(obj, start, end, duration) {
 
 const handleScroll = () => {
 
-let img1 = document.querySelector(".townimg1");
-let img2 = document.querySelector(".townimg2");
-let img3 = document.querySelector(".townimg3");
+  
+  let img1 = document.querySelector(".townimg1");
+  let img2 = document.querySelector(".townimg2");
+  let img3 = document.querySelector(".townimg3");
+  
+  const scrollPosition = window.scrollY;
+  
+  console.log(scrollPosition)
+  
 
-
-const scrollPosition = window.scrollY;
-  if (scrollPosition < 500) {
-      setIsFixed(false);
-  }
-
-  if (scrollPosition < 200) {
+  if (scrollPosition < 510) {
     img1.classList.remove("active");
     img2.classList.remove("active");
     img3.classList.remove("active");
+    setIsFixed(false);
   }
-  else if (scrollPosition >= 600 && scrollPosition < 940) {
+  else if (scrollPosition >= 600 && scrollPosition <= 801) {
         setIsFixed(true);
         updateCounter("value", 1995);
     
-
   img1.classList.add("active");
   img2.classList.remove("active");
   img3.classList.remove("active");
-} else if (scrollPosition >= 940 && scrollPosition < 1400) {
+} else if (scrollPosition >= 1400 && scrollPosition < 1700) {
   setIsFixed(true);
    updateCounter("value", 2009);
 
   img1.classList.remove("active");
   img2.classList.add("active");
   img3.classList.remove("active");
-} else if (scrollPosition >= 1400 && scrollPosition <= 2000) {
-      img2.classList.remove("active");
-      img3.classList.remove("active");
-      img1.classList.remove("active");
-      setIsFixed(false);
-
-} else if (scrollPosition >= 2000 && scrollPosition < 4150) {
-  setIsFixed(true);
+} else if (scrollPosition >= 5000 && scrollPosition <= 5220) {
   updateCounter("value", 2014);
+  setIsFixed(true);
   img3.classList.add("active");
   img2.classList.remove("active");
   img1.classList.remove("active");
-} else if (scrollPosition >= 4150) {
-  setIsFixed(false);
+} else if (scrollPosition >= 8595 && scrollPosition <= 8798) {
   updateCounter("value", 2021);
-  img2.classList.remove("active");
+  setIsFixed(true);
+  img2.classList.add("active");
   img1.classList.remove("active");
   img3.classList.remove("active");
-} 
+} else if (scrollPosition >= 14700 && scrollPosition <= 15000) {
+  updateCounter("value", 2024);
+  setIsFixed(true);
+  img2.classList.remove("active");
+  img1.classList.add("active");
+  img3.classList.remove("active");
+}
+else {
+  img1.classList.remove("active");
+  img2.classList.remove("active");
+  img3.classList.remove("active");
+  setIsFixed(false);
+}
 }
 
   useEffect(() => {

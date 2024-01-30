@@ -28,7 +28,6 @@
 .tech-1 .text-overflow-container p, .tech-2 .text-overflow-container p, .tech-3 .text-overflow-container p,
 .tech-4 .text-overflow-container p, .tech-5 .text-overflow-container p {
     transform: translateX(-100%);
-    transition: transform .5s ease-in-out;
 }
 
 .tech-1.activate #api-icon, .tech-2.activate #data-icon, .tech-3.activate #mobile-icon,
@@ -39,7 +38,7 @@
 .tech-1.activate .text-overflow-container p, .tech-2.activate .text-overflow-container p, .tech-3.activate .text-overflow-container p,
 .tech-4.activate .text-overflow-container p, .tech-5.activate .text-overflow-container p {
     transform: translateX(0%);
-    transition: transform .5s ease-in-out;
+    transition: transform .3s ease-in-out;
     transition-delay: .5s;
 }
 
@@ -64,7 +63,7 @@
 }
 
 .frameworks-container {
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 .frameworks-row1 {
@@ -109,6 +108,13 @@
 #atmosphere, #work {
     color: #ff80f3ff;
 }
+
+  .searching-container{
+    margin-top: 30%;
+  }
+  .searching-container h2{
+    margin-top: 30%;
+  }
 
 
 .last-text {

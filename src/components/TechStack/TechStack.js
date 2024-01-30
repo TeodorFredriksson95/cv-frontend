@@ -93,7 +93,7 @@ const TechStack = () => {
                 </p>
                 <img src='handsinairedit1.png'/>
             </div>
-            <div>
+            <div className='searching-container'>
                 <div className='tech-stack-para2' ref={tech_stack_para2}>
                     <p className="response-text-one response-paragraph">
                     And even though he has yet to find a company to call home, I know he’s still out there..

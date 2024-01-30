@@ -57,17 +57,17 @@ const ShiftingDirections = () => {
             <div className="changing-paths-container-one">
                 <div className='para6-overflow-container-1' ref={para6_overflow_container_1}>
                     <p className='narrator-paragraph-text '>
-                    After six years, the job which was once meant to be temporary, had turned into something else entirely. It had served as the young mans proving grounds, demanding him to explore his strengths and weaknesses and he had loved it. But it was about to come to and end.
+                    After six years, the job which was once meant to be temporary, had turned into something else entirely. It had served as the young mans proving grounds, demanding him to explore his strengths and weaknesses and he had loved it. But it was about to come to and <span className='word-highlight-pink'>end</span>.
                     </p>
                 </div>
                 <div className='para6-overflow-container-2' ref={para6_overflow_container_2}>
                     <p className='narrator-paragraph-text'>
-                    The young man felt his current path forced him into a static sense of forward. He wanted more than that, or at least something different. Somewhere, or something, that could feed his thirst for learning new things while still being able to put his creativity to use and see tangible res. And once again test the mettle of his skill.
+                    The young man felt his current path forced him into a static sense of forward. He wanted more than that, or at least something different. Somewhere, or something, that could feed his thirst for learning <span className='word-highlight-turq'>new</span> things while still being able to put his creativity to use and see tangible results. And once again test the mettle of his skill.
                     </p>
                 </div>
                 <div className='para6-overflow-container-3' ref={para6_overflow_container_3}>
                     <p className='narrator-paragraph-text'>
-                    And so the young man reflected upon what he truly wanted in life. Eventually he boiled it down to the following;
+                    And so the young man reflected upon what he truly wanted in life. Eventually he boiled it down to the <span className='word-highlight-pink'>following</span>;
                     </p>
                 </div>
                 <div className='para6-overflow-container-4' ref={para6_overflow_container_4}>
@@ -94,12 +94,12 @@ const ShiftingDirections = () => {
                 </div>
                 <div className='para7-overflow-container-4' ref={para7_overflow_container_4}>
                     <p className="response-text-three response-paragraph">
-                    -“Oh boy, you should totally check out <span className='word-highlight-turq'>.NET!</span> They all seem wanting for <span className='word-highlight-turq'>nothing</span>.”
+                    -“Oh boy, you should totally check out <span className='word-highlight-pink'>.NET!</span> They all seem wanting for <span className='word-highlight-turq'>nothing</span>.”
                     </p>
                 </div>
                 <div className='para7-overflow-container-5' ref={para7_overflow_container_5}>
                     <p className="dot-what-text narrator-paragraph-text">
-                        At first the young man shrugged at this. Dot-who-the-what-now?
+                        At first the young man shrugged at this. <span className='word-highlight-pink'>Dot-who-the-what-now? </span>
                         But time is a funny thing and in quiet contemplation he started to reminisce about the days when he tried to make a website for his fathers football supporter club.
                     </p>
                 </div>  
