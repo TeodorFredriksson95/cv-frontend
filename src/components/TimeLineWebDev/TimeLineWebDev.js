@@ -47,14 +47,14 @@ const TimeLineWebDev = () => {
                     <p className='narrator-paragraph-text' id='para1' ref={para1}>
                     But while the h1, h2, and even h3 tags seemed fun,
                     and the little invisible boxes that let him place his navigation 
-                    bar <span className='word-highlight'>right</span> at the top of the page worked just like magic, he eventually started 
+                    bar <span className='word-highlight-turq'>right</span> at the top of the page worked just like magic, he eventually started 
                     to think ominous thoughts..
                     </p>
                 </div>
                 <div className='happy-thought'>
                     <p className='response-paragraph' id='para2' ref={para2}>
                         “..Boy, I could spend a whole lifetime just browsing any of these amazing pages!
-                        <span className='thought-word-highlight' ><br/>I'm getting pretty good at this!</span>”
+                        <span className='thought-word-highlight-turq' ><br/>I'm getting pretty good at this!</span>”
                     </p>
                 </div>
             </div>

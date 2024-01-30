@@ -94,7 +94,7 @@ const ShiftingDirections = () => {
                 </div>
                 <div className='para7-overflow-container-4' ref={para7_overflow_container_4}>
                     <p className="response-text-three response-paragraph">
-                    -“Oh boy, you should totally check out <span className='word-highlight'>.NET!</span> They all seem wanting for <span className='word-highlight'>nothing</span>.”
+                    -“Oh boy, you should totally check out <span className='word-highlight-turq'>.NET!</span> They all seem wanting for <span className='word-highlight-turq'>nothing</span>.”
                     </p>
                 </div>
                 <div className='para7-overflow-container-5' ref={para7_overflow_container_5}>
@@ -110,7 +110,7 @@ const ShiftingDirections = () => {
                 </div>
                 <div className='para7-overflow-container-7' ref={para7_overflow_container_7}>
                     <p className="response-text-four response-paragraph">
-                    “I’m wiser now. Better. Stronger. <span className='word-highlight'>FASTER!</span> I can do anything. And this might just be perfect!”
+                    “I’m wiser now. Better. Stronger. <span className='word-highlight-turq'>FASTER!</span> I can do anything. And this might just be perfect!”
                     </p>
                 </div>
                 <div className='para7-overflow-container-8' ref={para7_overflow_container_8}>

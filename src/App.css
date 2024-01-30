@@ -98,7 +98,7 @@ body {
   font-size:var(--response-paragraph-size) ;
 }
 
-.word-highlight {
+.word-highlight-turq {
   font-family: var(--MS_SBI);
   color: turquoise;
   font-size: 1.1em;
@@ -107,6 +107,12 @@ body {
 .thought-word-highlight {
   color: turquoise;
   font-weight: bold;
+}
+
+.word-highlight-pink {
+  font-family: var(--MS_SBI);
+  color: #ff80f3ff;
+  font-size: 1.1em;
 }
 
 .continuations {

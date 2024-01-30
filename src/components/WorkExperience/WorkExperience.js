@@ -60,7 +60,7 @@ const WorkExperience = () => {
                 <div className='para2-overflow-1'>
                     <div className=' para2-overflow-text-1'ref={para2_overflow_1}>
                         <p className='response-paragraph' >
-                            <span className='thought-word-highlight'>-”Perfect”</span> the young man thought to himself.
+                            <span className='word-highlight-turq'>-”Perfect”</span> the young man thought to himself.
                         </p>
                     </div>
                     <div className='para2-overflow-text-2'ref={para2_overflow_2}>
@@ -80,7 +80,7 @@ const WorkExperience = () => {
                 <div className="flowchart-text">
                 <div className='para3-overflow-text-1' ref={para3_overflow_1}>
                         <p className='narrator-paragraph-text' >
-                            The young man came to realize quickly, that this store was revered. 
+                            The young man came to realize quickly, that this store was <span className='word-highlight-pink'>revered</span>. 
                             Both by customers and by competitors. The expectations were high.
                         </p>
                     </div>
@@ -88,7 +88,7 @@ const WorkExperience = () => {
                         <p className='narrator-paragraph-text'>
                             First class customer service, a creatively organized stock, beautifully 
                             stocked shelves and a gross profit rivaled by few  - all made possible by daily
-                            analysis and a breakneck pace.
+                            analysis and a <span className='word-highlight-turq'>breakneck</span> pace.
                         </p>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const WorkExperience = () => {
                     <p className='narrator-paragraph-text'>
                     This suited the young man perfectly. He quickly rose 
                     through the ranks, showing promise through initiative and 
-                    commitment and even got the chance to attend a <span className='word-highlight'>“Business and Leadership”</span> program. 
+                    commitment and even got the chance to attend a <span className='word-highlight-turq'>“Business and Leadership”</span> program. 
                     </p>
                 </div>
                 <div className="second-flowchart-image">
@@ -136,26 +136,31 @@ const WorkExperience = () => {
                         <div className='scorecard-lines'></div>
                 </div>
                 <div className="scorecard-paragraph-container">
-                <div className='para5-overflow-text-1' ref={para5_overflow_1}>
-                        <p className='narrator-paragraph-text '>
-                            For a long time, he felt great satisfaction in striving for new knowledge and converting this into substantial results.<br/>
-                        </p>
-                    </div>
-                    <div className='para5-overflow-text-2' ref={para5_overflow_2}>
-                        <p className='narrator-paragraph-text '>
-                            As he grew with his experiences, he wished for nothing more than to help others reach their own dreams and goals.<br/>
-                        </p>
-                    </div>
+                            {/* Originially next to last */}
                     <div className='para5-overflow-text-3' ref={para5_overflow_3}>
                         <p className='narrator-paragraph-text '>
-                            The young man believed there was always valuable life lessons to be found, even in the most mundane tasks.<br/>
+                            The young man believed there was <span className='word-highlight-pink'>always</span> valuable life lessons to be found, even in the most mundane tasks.<br/>
                         </p>
                     </div>
+                        {/* Originally second */}
+                    <div className='para5-overflow-text-2' ref={para5_overflow_2}>
+                        <p className='narrator-paragraph-text '>
+                            As he grew with his experiences, he wished for nothing more than to <span className='word-highlight-pink'>help</span> others reach their own dreams and goals.<br/>
+                        </p>
+                    </div>
+                    {/* Originally last */}
                     <div className='para5-overflow-text-4' ref={para5_overflow_4}>
                         <p className='narrator-paragraph-text '>
-                            He took great pride in his effort to inspire and motivate his peers, as someone had previously done for him.<br/>
+                            He took great pride in his effort to inspire and <span className='word-highlight-pink'>motivate</span> his peers, as someone had previously done for him.<br/>
                         </p>
                     </div>
+                    <div className='para5-overflow-text-1' ref={para5_overflow_1}>
+                        <p className='narrator-paragraph-text '>
+                            {/* Originally first */}
+                            For the longest time, he felt great satisfaction in striving for new knowledge and converting this into substantial <span className='word-highlight-pink'>results</span>.<br/>
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
