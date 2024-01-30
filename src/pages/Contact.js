@@ -12,7 +12,14 @@ const Contact = () => {
     
   },[])
 
-    return <h1>Contact Me</h1>;
+    return(
+      <div className="content-page">
+
+        <div>
+          <h1 className="section-title-h1">Contact Me</h1>;
+        </div>
+      </div>
+      )
   };
   
   export default Contact;

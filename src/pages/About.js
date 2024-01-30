@@ -66,6 +66,8 @@ const onScroll = () => {
 
   }, []);
   return (
+    <div className="content-page">
+
     //fixed container
     <div className={`fixedcontainer ${isFixed ? 'fixed' : ''}`} ref={fixedContainerRef}>
 
@@ -83,6 +85,7 @@ const onScroll = () => {
         <div className='text-container'>Your Text Here</div> {/* Add this line */}
 
       </div>
+    </div>
     </div>
   )
 }
