@@ -24,7 +24,7 @@ const TimeLineWebDev = () => {
     return (
         <div className="web-dev-container">
             <div className="web-dev-title ">
-                <div className='section-title-h2 one'  ref={webDevRef}>
+                <div className='one'  ref={webDevRef}>
                     <h1>"</h1><h1>W</h1><h1>o</h1><h1>W</h1><h1>!</h1><h1>"</h1>
                 </div>
                 <h3 id="webdev-h3" className='section-title-h3' ref={h3Ref}>Web development looks so cool!</h3>

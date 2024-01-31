@@ -1,5 +1,6 @@
 
 .navbar {
+  border: 1px solid blue;
     z-index: 10000;
     pointer-events:auto;
     top: 0;

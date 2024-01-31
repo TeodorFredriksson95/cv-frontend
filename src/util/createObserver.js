@@ -3,9 +3,7 @@ const createObserver = (ref, animationClassName, threshold, endAnimation) => {
 
     const observer = new IntersectionObserver(entries => {
         
-        entries.forEach(entry => {
-            console.log(entry.target.id, entry.isIntersecting); // Debug log
-            
+        entries.forEach(entry => {            
             if (entry.isIntersecting) {
                 entry.target.classList.add(animationClassName);
 

@@ -143,6 +143,10 @@
   
   
   .one h1 {
+    font-family: var(--MS_EBI);
+    color: var(--title-h2-color);
+    font-size: 7em;
+    line-height: 80%;
     opacity: 0;
     transform: translate(-150px, -50px) rotate(-180deg);
   }
