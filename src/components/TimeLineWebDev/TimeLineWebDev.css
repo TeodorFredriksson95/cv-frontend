@@ -260,3 +260,55 @@
     opacity: 1;
     transform: translateY(0%);
   }
+
+  @media (max-width: 768px) {
+    
+    .one h1 {
+      font-size: 4em;
+    }
+    
+    .svg-container img {
+      height: 30%;
+    }
+  
+    .football-text-container p {
+      position: relative; /* Needed for absolute positioning of pseudo-element */
+      font-family: var(--MS_LI);
+      font-size: var(--narrator-paragraph-size);
+      color: white;
+      width: 60%;
+      margin-top: 0;
+      border-bottom: none;
+    }
+
+    .football-text-container p::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 70%; /* Adjust this to move the line up or down */
+      transform: translateY(-50%); /* Center it vertically */
+      height: 50%; /* Adjust the height as needed */
+      width: 2px; /* Width of the 'border' */
+      background-color: turquoise;
+    }
+    .football-text-container.activate p {
+      margin-left: 10%;
+    }
+    .web-dev-title h3, .web-dev-title p {
+      margin-left: 10%;
+    }
+
+    .image-container{
+      height: 10%;
+    }
+
+    .ominous-thought {
+      width: 90%;
+    }
+
+    .happy-thought span {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+  }

@@ -35,4 +35,14 @@
     margin: 0;
   }
 
+  @media (max-width: 768px) {
+        .logo {
+          display: none;
+        }
+        
+        .hero-content {
+          margin-top: 0;
+        }
+    }
+
   

@@ -31,7 +31,7 @@ const TimeLineWebDev = () => {
                 <p id="webdev-p" className='narrator-paragraph-text' ref={pRef}>But will the script tag prove too great a foe?</p>
             </div>
             <div className='svg-container'>
-                <img src='keeperedit3.svg'></img>
+                <img src='keepertransparentsvgedit5.png'></img>
                 <div className='football-text-container' ref={imageP}>
                 <p id='curtain-text'>As chance would have it, the young boys father would at this time become the founder of a swedish branch of a german football  supporter club. Thus, he tasked the child with creating a website.</p>
                 </div>

@@ -21,6 +21,8 @@
   
   --narrator-paragraph-size: 1.3em;
   --response-paragraph-size: 1.5em;
+
+  --line-height: 80%;
   /* --title-text-size: */
 }
 
@@ -45,11 +47,6 @@ body {
   100%{background-position:0% 50%}
 }
 
-.content-page {
-  border: 2px solid green;
-  padding: 2em;
-}
-
 .content-page, body {
   margin: 0;
   padding: 0;
@@ -68,7 +65,7 @@ body {
   font-family: var(--MS_EBI);
   color: var(--title-h2-color);
   font-size: var(--h1-text-size);
-  line-height: 80%;
+  line-height: var(--line-height);
 }
 
 /* Section Subtitle */
@@ -126,4 +123,26 @@ body {
   color: var(--continuation-text-color);
   font-family: var(--MS_BI);
   font-size: var(--continuation-text-size);
+}
+
+
+
+@media (max-width: 768px) {
+  :root {
+    --h1-text-size: 3em;
+    --h2-text-size: 4em;
+    --h3-text-size: 1.5em;
+    --h4-text-size: 1em;
+  
+    --continuation-text-size: 3em;
+    
+    --narrator-paragraph-size: 1em;
+    --response-paragraph-size: 1em;
+
+    --line-height: 100%;
+    
+  }
+  .main-title {
+    font-size: 3em;
+  }
 }
