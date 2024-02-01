@@ -41,7 +41,9 @@
       transform: scale(1);
     }
   
-  
+  .aka-name {
+    display: none;
+  }
   .versus-image-and-title{
     height: 70%;
     display: flex;
@@ -163,4 +165,38 @@
 }
 .for-a-time.activate span:nth-of-type(11) {
   animation-delay: .49s;
+}
+
+
+@media (max-width: 768px) {
+  .versus-div-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .versus-image img {
+    width: 100%;
+  }
+  .versus-image {
+    scale: 2; 
+  }
+  .aka-name {
+    display: block;
+  }
+
+  .versus-image-and-title img {
+    display: none;
+  }
+  .versus-image-and-title {
+    height: 30%;
+  }
+
+  .versus-script-tag-paragraph {
+    width: 100%;
+  }
+  .versus-script-tag-paragraph p{
+    width: 90%;
+  }
+  .versus-script-ending p {
+    width: 90%;
+  }
 }

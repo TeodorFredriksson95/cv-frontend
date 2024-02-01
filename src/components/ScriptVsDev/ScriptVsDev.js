@@ -33,7 +33,7 @@ const ScriptVsDev = () => {
                 <img src="Versusedit3.png"/>
             </div>
             <div className="versus-image-and-title" ref={devCombatant}>
-                <h3 className='section-title-h3'>Young Dev</h3>
+                <h3 className='section-title-h3'>Young<span className='aka-name'>"Copy Pasta"</span> Dev</h3>
                 <img src="youngdevedit1.png"/>
             </div>
         

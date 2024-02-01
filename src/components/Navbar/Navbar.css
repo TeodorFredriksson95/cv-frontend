@@ -1,6 +1,5 @@
 
 .navbar {
-  border: 1px solid blue;
     z-index: 10000;
     pointer-events:auto;
     top: 0;
@@ -28,9 +27,8 @@
   }
   
   .active-link:active, .active-link:focus-within, .active-link:hover{
-    color: turquoise; /* Red color for the active link */
+    color: turquoise; 
     font-weight: bold;
-    /* other styles as needed */
   }
   
   .active-link:focus-within {
@@ -40,7 +38,11 @@
   }
   
   .scroll-active {
-    color: red; /* Scroll-based color change */
+    color: red; 
   }
   
-  
+  @media (max-width: 768px) {
+    .navbar{
+      display: block;
+    }
+  }

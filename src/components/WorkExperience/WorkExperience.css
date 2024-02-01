@@ -232,3 +232,32 @@
   transform: translateY(0%);
   transition: transform .5s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .leadership-header{
+    display: block;
+  }
+  .leadership-header img {
+    display: none;
+  }
+
+  .titles-line-height {
+    line-height: 100%;
+  }
+  .leadershipTitles {
+    margin: auto;
+    width: 95%;
+    text-align: right;
+  }
+
+  .graduation-text {
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+  }
+
+  .response-text{
+    margin-left: 30%;
+  }
+
+}

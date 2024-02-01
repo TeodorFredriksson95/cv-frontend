@@ -32,11 +32,11 @@
   .football-text-container p {
     transform: translateY(-80%);
     opacity: 0;
-    font-family: var(--MS_SBI);
+    font-family: var(--MS_LI);
     font-size: var(--narrator-paragraph-size);
-    color: black;
+    color: white;
     width: 40%;
-    border-bottom: 2px solid black;
+    margin-left: 8%;
     transition: transform 0.5s, opacity 0.5s;
     padding-top: 5%;
   }

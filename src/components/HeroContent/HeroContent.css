@@ -1,6 +1,5 @@
 .logo {
     margin-top: 2em;
-    border: 1px solid gold;
   }
 
   .logo img {
@@ -9,7 +8,6 @@
   }
   
 .hero-content {
-  border: 1px solid red;
     margin-top: 2em;
     padding-top: 3em;
     padding-left: 3em;
@@ -26,7 +24,6 @@
   
   .hero-title {
     margin-top: 3em;
-    width: 70%;
     padding-top: 1em;
   }
   
@@ -43,6 +40,7 @@
         .hero-content {
           margin-top: 0;
         }
+        
     }
 
   

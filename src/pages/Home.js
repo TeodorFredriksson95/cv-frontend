@@ -35,15 +35,14 @@ const Home = () => {
     return (
       <div className="content-page">
         
-        <TimeLineWebDev />
-        {/* 
         <HeroContent />
+        <FixedTimeLine /> 
         <TimelineBorn />
-        <FixedTimeLine />
-        
-        
+        <TimeLineWebDev />
         <ScriptVsDev />
         <WorkExperience />
+        {/* 
+        
         <ShiftingDirections />
         <TechStack /> */}
       </div>
