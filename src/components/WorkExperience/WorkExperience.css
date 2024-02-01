@@ -259,5 +259,25 @@
   .response-text{
     margin-left: 30%;
   }
+  .flowchart-text-container {
+    display: block;
+  }
+  .flow-chart-image {
+    margin: auto;
+    width: 90%;
+  }
+.second-flowchart-image {
+  width: 30%;
+}
 
+.second-flowchart-text p {
+  width: 70%;
+}
+.scorecard-and-text-flex-container {
+  display: block;
+}
+.scorecard-container {
+  width: 90%;
+  margin: auto;
+}
 }

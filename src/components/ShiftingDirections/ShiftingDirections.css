@@ -101,7 +101,7 @@
   
   #concept4 {
     position: absolute;
-    left: 25%;
+    left: 35%;
     top: 40%;
     text-align: center;
   }
@@ -236,4 +236,56 @@
 }
 .activate h1:nth-of-type(1) {
   animation-delay: 2.7s;
+}
+
+.launching-concepts-absolute-container-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .launching-concepts-absolute-container {
+    display: none;
+  }
+
+  .para6-overflow-container-4, .para7-overflow-container-2, .para7-overflow-container-4 {
+    width: 90%;
+  margin: auto;
+  }
+.para7-overflow-container-5,.para7-overflow-container-6 {
+  width: 80%;
+}
+.launching-concepts-absolute-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: turquoise;
+  width: 90%;
+  margin: auto;
+}
+
+.launching-concept1, .launching-concept2, .launching-concept3,
+.launching-concept4, .launching-concept5, .launching-concept6 {
+  margin-bottom: 20%;
+}
+
+.launching-concept1 h2, .launching-concept2 h2, .launching-concept3 h2,
+.launching-concept4 h2, .launching-concept5 h2, .launching-concept6 h2 {
+  padding: .5em;
+  font-size: 3em;
+  opacity: 0;
+  transition: font-size .2s ease-in, opacity .2s ease-in;
+}
+
+.launching-concept1.activate h2, .launching-concept2.activate h2, .launching-concept3.activate h2,
+.launching-concept4.activate h2, .launching-concept5.activate h2, .launching-concept6.activate h2  {
+font-size: 2em;
+padding: .5em;
+  opacity: 1;
+  margin: auto;
+}
+.launching-concept6 {
+  line-height: 80%;
+}
+
 }

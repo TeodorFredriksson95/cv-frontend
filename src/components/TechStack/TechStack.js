@@ -6,8 +6,10 @@ import createObserver from '../../util/createObserver';
 
 
 const TechStack = () => {
-    const iconWidth = 100;
-    const iconHeight = 100;
+    const [iconSize, setIconSize] = useState({ width: 100, height: 100 });
+
+    let iconWidth = 100;
+    let iconHeight = 100;
     const [containerHeight, setContainerHeight] = useState(0);
 
     const icon_and_para1 = useRef();
@@ -21,52 +23,60 @@ const TechStack = () => {
 
     const searching = useRef();
 
-    createObserver(icon_and_para1, 'activate', 1, true);
-    createObserver(icon_and_para2, 'activate', 1, true);
-    createObserver(icon_and_para3, 'activate', 1, true);
-    createObserver(icon_and_para4, 'activate', 1, true);
-    createObserver(icon_and_para5, 'activate', 1, true);
-
-    createObserver(tech_stack_para1, 'activate', .5, true);
-    createObserver(tech_stack_para2, 'activate', .8, true);
-
-    createObserver(searching, 'activate', .8, true);
-
+    
     useEffect(() => {
+        const updateIconSize = () => {
+            const newSize = window.innerWidth < 800 ? { width: 50, height: 50 } : { width: 100, height: 100 };
+            setIconSize(newSize);
+        };
+        updateIconSize();
+        window.addEventListener('resize', updateIconSize);
+        createObserver(icon_and_para1, 'activate', 1, true);
+        createObserver(icon_and_para2, 'activate', 1, true);
+        createObserver(icon_and_para3, 'activate', 1, true);
+        createObserver(icon_and_para4, 'activate', 1, true);
+        createObserver(icon_and_para5, 'activate', 1, true);
+    
+        createObserver(tech_stack_para1, 'activate', .5, true);
+        createObserver(tech_stack_para2, 'activate', .8, true);
+    
+        createObserver(searching, 'activate', .8, true);
         const container = document.querySelector('.launching-concepts-absolute-container');
         if (container) {
             setContainerHeight(container.offsetHeight);
         }
+        return () => window.removeEventListener('resize', updateIconSize);
+
     }, []);
 
     return (
         <div className='tech-stack-container' style={{ marginTop: `${containerHeight*1.30}px` }}>
             <div className='tech-container tech-1' ref={icon_and_para1}>
-                <Icon width={iconWidth} height={iconHeight} icon="pajamas:api" id='api-icon' className='tech-icon'/>
+                <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="pajamas:api" id='api-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>He worked on API's</p>
                 </div>
             </div>
             <div className='tech-container tech-2' ref={icon_and_para2}>
-                <Icon width={iconWidth} height={iconHeight} icon="gala:data" id='data-icon' className='tech-icon'/>
+                <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="gala:data" id='data-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Databases</p>
                 </div>
             </div>
             <div className='tech-container tech-3' ref={icon_and_para3}>
-                <Icon width={iconWidth} height={iconHeight} icon="circum:mobile-3" id='mobile-icon' className='tech-icon'/>
+                <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="circum:mobile-3" id='mobile-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Mobile Apps</p>
                 </div>
             </div>
             <div className='tech-container tech-4' ref={icon_and_para4}>
-                <Icon width={iconWidth} height={iconHeight} icon="mdi:application-brackets-outline" id='web-icon' className='tech-icon'/>
+                <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="mdi:application-brackets-outline" id='web-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>Web Apps</p>
                 </div>
             </div>
             <div className='tech-container tech-5' ref={icon_and_para5}>
-                <Icon width={iconWidth} height={iconHeight} icon="carbon:platforms" id='cross-platform-icon' className='tech-icon'/>
+                <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="carbon:platforms" id='cross-platform-icon' className='tech-icon'/>
                 <div className='text-overflow-container'>
                     <p className='section-title-h3'>He even made some of them cross-platform</p>
                 </div>

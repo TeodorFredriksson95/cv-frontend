@@ -22,6 +22,13 @@ const ShiftingDirections = () => {
     const para7_overflow_container_7 = useRef();
     const para7_overflow_container_8 = useRef();
 
+    const mobileCannon1 = useRef();
+    const mobileCannon2 = useRef();
+    const mobileCannon3 = useRef();
+    const mobileCannon4 = useRef();
+    const mobileCannon5 = useRef();
+    const mobileCannon6 = useRef();
+
 
     useEffect(() => {
         createObserver(image_overflow, 'activate', 0.3, true);
@@ -40,6 +47,13 @@ const ShiftingDirections = () => {
         createObserver(para7_overflow_container_6, 'activate', 1, true);
         createObserver(para7_overflow_container_7, 'activate', 1, true);
         createObserver(para7_overflow_container_8, 'activate', 1, true);
+
+        createObserver(mobileCannon1, 'activate', .6, true);
+        createObserver(mobileCannon2, 'activate', .6, true);
+        createObserver(mobileCannon3, 'activate', .6, true);
+        createObserver(mobileCannon4, 'activate', .6, true);
+        createObserver(mobileCannon5, 'activate', .6, true);
+        createObserver(mobileCannon6, 'activate', .6, true);
 
         createObserver(cannon1, 'activate', .5, true);
 
@@ -125,7 +139,29 @@ const ShiftingDirections = () => {
                 <h2 id="concept3">"Arrays!"</h2>
                 <h2 id="concept5">"The four pillars!"</h2>
                 <h2 id="concept6">"MVC!"</h2>
-                <h1 id="concept4">"The red wiggle of death is your<br/> <span className="wiggle">FRIEND!</span>"</h1>
+                <h1 id="concept4">"The red wiggle is your<br/> <span className="wiggle">FRIEND!</span>"</h1>
+            </div>
+            <div className="launching-concepts-absolute-container-mobile">
+                <div className='launching-concept1' ref={mobileCannon1}>
+                    <h2>"Variables!"</h2>
+                </div>
+                <div className='launching-concept2' ref={mobileCannon2}>
+                    <h2>"Data types!"</h2>
+                </div>
+                <div className='launching-concept3' ref={mobileCannon3}>
+                    <h2>"Arrays!"</h2>
+                </div>
+                <div className='launching-concept4' ref={mobileCannon4}>
+                    <h2>"The four pillars!"</h2>
+                </div>
+                <div className='launching-concept5' ref={mobileCannon5}>
+                    <h2>"MVC!"</h2>
+                </div>
+                <div className='launching-concept6' ref={mobileCannon6}>
+                    <h2>"The red wiggle </h2>
+                    <h2>is your</h2>
+                    <h2><span className="wiggle">FRIEND!</span>"</h2>
+                </div>
             </div>
         </div>
     )
