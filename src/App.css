@@ -1,24 +1,23 @@
 :root {
-  --MS_Bold:"MontserratBold";
-  --MS_LI:"MontserratLightItalic";
-  --MS_SBI:"MontserratSemiBoldItalic";
-  --MS_EBI:"MontserratExtraBoldItalic";
-  --MS_BI:"MontserratBoldItalic";
-  --MS_MI:"MontserratMediumItalic";
-  
+  --MS_Bold: "MontserratBold";
+  --MS_LI: "MontserratLightItalic";
+  --MS_SBI: "MontserratSemiBoldItalic";
+  --MS_EBI: "MontserratExtraBoldItalic";
+  --MS_BI: "MontserratBoldItalic";
+  --MS_MI: "MontserratMediumItalic";
+
   --text_color: white;
   --title_color: white;
   --title-h2-color: turquoise;
   --continuation-text-color: rgb(217, 235, 236);
-  
-  
+
   --h1-text-size: 6em;
   --h2-text-size: 4em;
   --h3-text-size: 2em;
   --h4-text-size: 1.2em;
 
   --continuation-text-size: 3.5em;
-  
+
   --narrator-paragraph-size: 1.3em;
   --response-paragraph-size: 1.5em;
 
@@ -27,10 +26,10 @@
 }
 
 body {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(180deg, #2d073d, 5%, #110a20, 50%, #030423);
-  
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #2d073d, 5%, #110a20, 50%, #030423);
+
   /* background-image: url("../public/secondBackgroundCV1.png"); */
 
   /* background: linear-gradient(135deg, rgba(48, 0, 72, 0.8) 0%, rgba(48, 0, 68, 0.858) 50%, rgba(0, 0, 0, 0.8) 100%),
@@ -40,27 +39,32 @@ body {
   height: 1110vh; */
 }
 
-
 @keyframes GradientAnimation {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.content-page, body {
+.content-page,
+body {
   margin: 0;
   padding: 0;
 }
 
-
 /* Main Title */
- .main-title {
+.main-title {
   font-size: 4em;
   font-family: var(--MS_Bold);
   color: var(--title_color);
- }
+}
 
- /* Section title */
+/* Section title */
 .section-title-h1 {
   font-family: var(--MS_EBI);
   color: var(--title-h2-color);
@@ -81,25 +85,37 @@ body {
   color: var(--text_color);
 }
 
+.section-title-h3 {
+  font-family: var(--MS_BI);
+  font-size: var(--h3-text-size);
+  color: var(--text_color);
+}
+
 /* Section Title Subparagraph */
- .section-title-h4 {
+.section-title-h4 {
   font-family: var(--MS_LI);
   color: var(--text_color);
   font-size: var(--h4-text-size);
- }
+}
 
- /* Narrator Paragraph */
- .narrator-paragraph-text {
+.tech-stack-text {
+  font-family: var(--MS_BI);
+  font-size: var(--h4-text-size);
+  color: var(--text_color);
+}
+
+/* Narrator Paragraph */
+.narrator-paragraph-text {
   color: var(--text_color);
   font-family: var(--MS_LI);
   font-size: var(--narrator-paragraph-size);
- }
+}
 
- /* response paragraph */
+/* response paragraph */
 .response-paragraph {
   color: var(--text_color);
   font-family: var(--MS_SBI);
-  font-size:var(--response-paragraph-size) ;
+  font-size: var(--response-paragraph-size);
 }
 
 .word-highlight-turq {
@@ -125,22 +141,19 @@ body {
   font-size: var(--continuation-text-size);
 }
 
-
-
 @media (max-width: 768px) {
   :root {
     --h1-text-size: 3em;
     --h2-text-size: 2.5em;
     --h3-text-size: 1.5em;
     --h4-text-size: 1em;
-  
+
     --continuation-text-size: 2em;
-    
+
     --narrator-paragraph-size: 1em;
     --response-paragraph-size: 1em;
 
     --line-height: 100%;
-    
   }
   .main-title {
     font-size: 3em;
