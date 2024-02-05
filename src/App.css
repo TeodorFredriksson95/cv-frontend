@@ -15,15 +15,12 @@
   --h1-text-size: 6em;
   --h2-text-size: 4em;
   --h3-text-size: 2em;
-  --h4-text-size: 1.2em;
   --tech-stack-text-size: 1em;
 
   --continuation-text-size: 3.5em;
 
-  --narrator-paragraph-size: 1.3em;
   --response-paragraph-size: 1.5em;
 
-  --line-height: 80%;
   /* --title-text-size: */
 }
 
@@ -138,7 +135,79 @@ body {
   font-size: var(--continuation-text-size);
 }
 
-@media (max-width: 800px) {
+/* small smartphones: 320px up to 360px*/
+@media (min-width: 320px) {
+  :root {
+    --h1-text-size: 2.5em;
+    --h4-text-size: 1.2em;
+
+    --narrator-paragraph-size: 1em;
+    --line-height: 100%;
+  }
+}
+/* large smartphones: 360px to 480px*/
+@media (min-width: 360px) {
+  :root {
+    --h1-text-size: 3em;
+  }
+}
+
+/* tablets: portrait mode - 600px to 800px*/
+@media (min-width: 600px) {
+  :root {
+    --h1-text-size: 3.5em;
+  }
+}
+
+/* tablets: landscape mode - 800px to 1024px*/
+@media (min-width: 800px) {
+  :root {
+    --h1-text-size: 4em;
+    --narrator-paragraph-size: 1.2em;
+  }
+}
+
+/* small laptops and large tablets: 1024px to 1280px (hybrids)*/
+@media (min-width: 1024px) {
+}
+
+/* medium screens: 1280px to 1440px */
+@media (min-width: 1280px) {
+  :root {
+    --h1-text-size: 5em;
+    --h4-text-size: 1.4em;
+
+    --narrator-paragraph-size: 1.4em;
+  }
+}
+
+/* large screens: 1440px to 1680px */
+@media (min-width: 1440px) {
+  :root {
+    --h1-text-size: 6em;
+    --h4-text-size: 1.6em;
+
+    --narrator-paragraph-size: 1.4em;
+  }
+}
+
+/* extra large screens: 1680px to 1920px */
+@media (min-width: 1680px) {
+  :root {
+    --h1-text-size: 7em;
+    --narrator-paragraph-size: 1.6em;
+  }
+}
+@media (min-width: 1920px) {
+  :root {
+    --h1-text-size: 8em;
+    --narrator-paragraph-size: 1.8em;
+  }
+}
+
+/* extra huge screens (4k etc) : 1920px+ */
+
+/* @media (max-width: 800px) {
   :root {
     --h1-text-size: 4em;
     --h2-text-size: 3em;
@@ -175,4 +244,4 @@ body {
   :root {
     --tech-stack-text-size: 1em;
   }
-}
+} */

@@ -88,6 +88,7 @@
   }
 }
 
+/* large screens: 1440px to 1680px */
 @media (min-width: 1440px) {
   .main-title {
     font-size: 5em;
@@ -96,6 +97,8 @@
     max-width: 80%;
   }
 }
+
+/* large screens: 1680px to 1920px */
 @media (min-width: 1680px) {
   .main-title {
     font-size: 6em;
@@ -108,6 +111,6 @@
 /* tablets: landscape mode - 800px to 1024px*/
 /* small laptops and large tablets: 1024px to 1280px (hybrids)*/
 /* medium screens: 1280px to 1440px */
-/* large screens: 1440px to 1920px */
-/* large screens: 1440px to 1920px */
-/* extra large screens (4k etc) : 1920px+ */
+/* large screens: 1440px to 1680px */
+/* extra large screens: 1680px to 1920px */
+/* extra huge screens (4k etc) : 1920px+ */

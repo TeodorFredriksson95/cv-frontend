@@ -1,74 +1,64 @@
-.the-beginning-container {
-  margin-top: 20%;
-  display: flex;
-}
-
-.the-beginning-container img {
-  flex-grow: 2;
-  flex-basis: 25%;
-}
-
-.narrator-paragraph-container {
-  overflow: hidden;
-  flex-grow: 1;
-  flex-basis: 70%;
-}
-
-.narrator-paragraph-container h1 {
-  width: 80%;
-}
-
-.narrator-paragraph-container p {
-  margin-top: 3em;
-  width: 80%;
-  text-align: start;
-  opacity: 0;
-  transform: translateX(20%);
-  transition: transform 2s, opacity 2s ease-in-out;
-}
-
-.narrator-paragraph-container.active p {
-  opacity: 1;
-  transform: translateX(0%);
-}
-
-@media (max-width: 800px) {
-  .narrator-paragraph-container {
-    margin-left: 5%;
-    margin-bottom: 0;
-  }
-
-  .narrator-paragraph-container p {
-    margin-top: 5%;
-    margin-bottom: 0;
-  }
-  .narrator-paragraph-container h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .the-beginning-container img {
-    align-self: flex-end;
-    height: 30%;
-  }
-}
-
-@media (max-width: 480px) {
-  .narrator-paragraph-container.active p {
-    text-align: center;
-  }
-
-  .narrator-paragraph-container h1 {
-    text-align: center;
-    margin: auto;
-  }
-
-  .narrator-paragraph-text {
-    margin-left: auto;
-    margin-right: auto;
+/* small smartphones: 320px up to 360px*/
+@media (min-width: 320px) {
+  .the-beginning-container {
+    margin-top: 20%;
+    display: flex;
   }
 
   .the-beginning-container img {
     display: none;
   }
+  .narrator-paragraph-container h1 {
+    text-align: center;
+    margin: auto;
+  }
+  .narrator-paragraph-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .narrator-paragraph-container p {
+    margin-top: 5%;
+  }
+
+  .narrator-paragraph-container {
+    overflow: hidden;
+    flex-grow: 1;
+    flex-basis: 70%;
+  }
+
+  .narrator-paragraph-container p {
+    width: 80%;
+    text-align: start;
+    opacity: 0;
+    transform: translateX(20%);
+    transition: transform 2s, opacity 2s ease-in-out;
+  }
+
+  .narrator-paragraph-container.active p {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
+
+/* large smartphones: 360px to 480px*/
+
+/* tablets: portrait mode - 600px to 800px*/
+
+/* tablets: landscape mode - 800px to 1024px*/
+@media (min-width: 800px) {
+  .the-beginning-container img {
+    display: flex;
+    margin-left: 2%;
+    max-width: 30%;
+    width: 30%;
+  }
+}
+
+/* small laptops and large tablets: 1024px to 1280px (hybrids)*/
+@media (min-width: 1024px) {
+}
+
+/* medium screens: 1280px to 1440px */
+/* large screens: 1440px to 1680px */
+/* extra large screens: 1680px to 1920px */
+/* extra huge screens (4k etc) : 1920px+ */

@@ -35,9 +35,9 @@ const Home = () => {
   return (
     <div className="content-page">
       <HeroContent />
+      <TimelineBorn />
       {/* 
 
-<TimelineBorn />
 <TimeLineWebDev />
 <ScriptVsDev />
 <WorkExperience />
