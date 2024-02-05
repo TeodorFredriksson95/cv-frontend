@@ -240,6 +240,58 @@
   transition: transform 0.5s ease-in-out;
 }
 
+@media (min-width: 600px) and (max-width: 800px) {
+  .leadership-header {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .graduation-text {
+    width: 80%;
+  }
+
+  .end-title {
+    width: 90%;
+  }
+
+  .flow-chart-image {
+    margin-left: 5%;
+  }
+
+  .flow-chart-image img {
+    height: 100%;
+  }
+  .flowchart-text p {
+    margin-top: 0;
+    width: 85%;
+  }
+  .second-flowchart-text p {
+    width: 80%;
+  }
+  .scorecard-paragraph-container p {
+    width: 100%;
+  }
+
+  .scorecard-paragraph-container {
+    flex-basis: 40%;
+    justify-content: space-between;
+  }
+
+  .scorecard-container {
+    width: 50%;
+    margin-right: 4em;
+  }
+  .scorecard-and-text-flex-container {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .para5-overflow-text-1.activate p,
+  .para5-overflow-text-2.activate p,
+  .para5-overflow-text-3.activate p,
+  .para5-overflow-text-4.activate p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
 @media (max-width: 480px) {
   .leadership-header {
     display: block;

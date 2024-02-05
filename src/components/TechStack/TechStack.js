@@ -36,6 +36,11 @@ const TechStack = () => {
         const newframeworkIconSize = { width: 50, height: 50 };
         setIconSize(newSize);
         setFrameworkIconSize(newframeworkIconSize);
+      } else if (window.innerWidth <= 810 && window.innerWidth > 600) {
+        const newSize = { width: 100, height: 100 };
+        const newframeworkIconSize = { width: 100, height: 100 };
+        setIconSize(newSize);
+        setFrameworkIconSize(newframeworkIconSize);
       }
     };
     updateIconSize();

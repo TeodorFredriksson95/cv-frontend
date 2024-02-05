@@ -58,6 +58,10 @@
   margin: auto;
 }
 
+.script-para-1 {
+  margin-left: 5%;
+}
+
 .versus-script-tag-paragraph {
   margin-top: 2em;
   width: 60%;
@@ -161,7 +165,25 @@
   animation-delay: 0.49s;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 800px) {
+  .versus-div-container {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .versus-image-and-title img {
+    display: none;
+  }
+  .versus-image-and-title h3 {
+    text-align: center;
+  }
+  .script-combatant-container h3,
+  .script-combatant-container p {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 360px) {
   .versus-div-container {
     margin-left: 5%;
     margin-right: 5%;
@@ -170,7 +192,7 @@
     width: 100%;
   }
   .versus-image {
-    scale: 2;
+    scale: 1.5;
   }
   .aka-name {
     font-size: 0.8em;

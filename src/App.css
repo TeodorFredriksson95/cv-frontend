@@ -138,6 +138,15 @@ body {
   font-size: var(--continuation-text-size);
 }
 
+@media (max-width: 800px) {
+  :root {
+    --h1-text-size: 4em;
+    --h2-text-size: 3em;
+    --continuation-text-size: 2em;
+    --tech-stack-text-size: 1.8em;
+  }
+}
+
 @media (max-width: 480px) {
   :root {
     --h1-text-size: 3em;

@@ -1,52 +1,25 @@
-.logo {
-  margin-top: 2em;
-}
-
-.logo img {
-  max-width: 100%;
-  margin: auto;
-}
-
-.hero-content {
-  margin-top: 2em;
-  padding-top: 3em;
-  padding-left: 3em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.main-title {
-  font-size: 4em;
-  font-family: var(--MS_Bold);
-  color: var(--title_color);
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.hero-title {
-  margin-top: 3em;
-  padding-top: 1em;
-}
-
-.hero-title h1 {
-  margin: 0;
-}
-
-@media (max-width: 480px) {
+/* small smartphones: 320px up to 360px*/
+@media (min-width: 320px) {
+  .hero-content {
+    padding-top: 3em;
+    display: flex;
+  }
   .logo {
     display: none;
   }
 
-  .hero-content {
-    margin-top: 0;
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
   }
-
+  .hero-title {
+    margin-top: 3em;
+    padding-top: 1em;
+  }
   .main-title {
+    font-family: var(--MS_Bold);
+    color: var(--title_color);
     font-size: 3em;
     display: block;
     width: 100%;
@@ -64,3 +37,77 @@
     padding-left: 0;
   }
 }
+
+/* large smartphones: 360px to 480px NOT NEEDED ATM*/
+
+/* tablets: portrait mode - 600px to 800px*/
+@media (min-width: 600px) {
+  .main-title {
+    font-size: 3em;
+    width: 90%;
+    text-align: left;
+  }
+  .hero-title h4 {
+    text-align: left;
+    margin: 0 5%;
+  }
+}
+
+/* tablets: landscape mode - 800px to 1024px*/
+@media (min-width: 800px) {
+  .logo {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 30%;
+    margin-right: 2%;
+    margin-top: 3em;
+  }
+  .logo img {
+    max-width: 100%;
+  }
+
+  .main-title {
+    flex-grow: 1;
+    flex-basis: 70%;
+  }
+  .hero-title h4 {
+    margin: 2% 5%;
+  }
+}
+/* small laptops and large tablets: 1024px to 1280px (hybrids)*/
+@media (min-width: 1024px) {
+  .main-title {
+    font-size: 4em;
+  }
+}
+
+/* medium screens: 1280px to 1440px */
+@media (min-width: 1280px) {
+  .main-title {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-title {
+    font-size: 5em;
+  }
+  .logo img {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1680px) {
+  .main-title {
+    font-size: 6em;
+  }
+}
+
+/* small smartphones: 320px up to 360px*/
+/* large smartphones: 360px to 480px*/
+/* tablets: portrait mode - 600px to 800px*/
+/* tablets: landscape mode - 800px to 1024px*/
+/* small laptops and large tablets: 1024px to 1280px (hybrids)*/
+/* medium screens: 1280px to 1440px */
+/* large screens: 1440px to 1920px */
+/* large screens: 1440px to 1920px */
+/* extra large screens (4k etc) : 1920px+ */
