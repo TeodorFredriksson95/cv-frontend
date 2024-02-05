@@ -1,48 +1,48 @@
-
 .navbar {
-    z-index: 10000;
-    pointer-events:auto;
-    top: 0;
-    position: fixed;
-    justify-content: flex-end;
-    display: flex;
-    background-color: transparent;
-    width: 100%;
+  z-index: 10000;
+  pointer-events: auto;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  width: 100%;
+}
+
+.navbar li {
+  margin: 1em;
+  display: inline;
+}
+
+.active-link {
+  pointer-events: auto;
+  font-family: var(--MS_Bold);
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  padding: 5px;
+}
+
+.active-link:active,
+.active-link:focus-within,
+.active-link:hover {
+  color: turquoise;
+  font-weight: bold;
+}
+
+.active-link:focus-within {
+  border: 2px solid turquoise;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.scroll-active {
+  color: red;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: block;
+    text-align: center;
   }
-  
-  .navbar li{
-    margin: 1em;
-    display: inline;
-    
-  }
-  
-  
-  .active-link {
-    pointer-events:auto;
-    font-family: var(--MS_Bold);
-    text-decoration: none;
-    color: white;
-    font-size: large;
-    padding: 5px;
-  }
-  
-  .active-link:active, .active-link:focus-within, .active-link:hover{
-    color: turquoise; 
-    font-weight: bold;
-  }
-  
-  .active-link:focus-within {
-    border: 2px solid turquoise;
-    padding: 3px;
-    border-radius: 5px;
-  }
-  
-  .scroll-active {
-    color: red; 
-  }
-  
-  @media (max-width: 768px) {
-    .navbar{
-      display: block;
-    }
-  }
+}

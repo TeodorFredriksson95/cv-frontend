@@ -41,10 +41,10 @@ const Home = () => {
       <WorkExperience />
       <ShiftingDirections />
       <TechStack />
-
       {/* 
       <FixedTimeLine /> 
-       
+
+      
       */}
     </div>
   );

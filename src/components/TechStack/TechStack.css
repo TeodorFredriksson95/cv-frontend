@@ -1,5 +1,4 @@
 .tech-stack-container {
-  border: 1px solid red;
   position: relative;
 }
 
@@ -130,7 +129,6 @@
 }
 .searching-container h2 {
   margin-top: 30%;
-  border: 1px solid red;
 }
 
 .last-text {
@@ -218,7 +216,7 @@
   animation-delay: 0.53s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .beginning-of-the-end-container {
     flex-direction: column;
   }
@@ -229,7 +227,6 @@
   }
   .tech-stack-container {
     margin-top: 10% !important;
-    margin-left: 0;
   }
   #last-img {
     display: none;
@@ -247,5 +244,16 @@
   }
   .searching {
     font-size: 2em;
+  }
+}
+
+@media (max-width: 360px) {
+  .hungry-dev {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 320px) {
+  .hungry-dev {
+    font-size: 1.5em;
   }
 }

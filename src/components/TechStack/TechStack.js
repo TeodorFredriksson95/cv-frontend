@@ -6,6 +6,7 @@ import createObserver from "../../util/createObserver";
 
 const TechStack = () => {
   const [iconSize, setIconSize] = useState({ width: 100, height: 100 });
+  const [frameworkIconSize, setFrameworkIconSize] = useState({ width: 100, height: 100 });
 
   let iconWidth = 100;
   let iconHeight = 100;
@@ -23,9 +24,19 @@ const TechStack = () => {
   const searching = useRef();
 
   useEffect(() => {
+    console.log(window.innerWidth);
     const updateIconSize = () => {
-      const newSize = window.innerWidth < 800 ? { width: 50, height: 50 } : { width: 100, height: 100 };
-      setIconSize(newSize);
+      if (window.innerWidth <= 503 && window.innerWidth > 430) {
+        const newSize = { width: 75, height: 75 };
+        const newframeworkIconSize = { width: 75, height: 75 };
+        setIconSize(newSize);
+        setFrameworkIconSize(newframeworkIconSize);
+      } else if (window.innerWidth <= 430) {
+        const newSize = { width: 50, height: 50 };
+        const newframeworkIconSize = { width: 50, height: 50 };
+        setIconSize(newSize);
+        setFrameworkIconSize(newframeworkIconSize);
+      }
     };
     updateIconSize();
     window.addEventListener("resize", updateIconSize);
@@ -80,18 +91,18 @@ const TechStack = () => {
       </div>
       <div className="frameworks-container">
         <div className="frameworks-row1">
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:vscode-dark" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:javascript" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:react-dark" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:visualstudio-dark" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:dotnet" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:vscode-dark" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:javascript" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:react-dark" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:visualstudio-dark" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:dotnet" className="tech-icon" />
         </div>
         <div className="frameworks-row1">
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="iconoir:github" id="github" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="logos:firebase" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:godot-dark" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="skill-icons:prisma" className="tech-icon" />
-          <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="devicon:xamarin" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="iconoir:github" id="github" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="logos:firebase" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:godot-dark" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="skill-icons:prisma" className="tech-icon" />
+          <Icon width={`${frameworkIconSize.width}px`} height={`${frameworkIconSize.height}px`} icon="devicon:xamarin" className="tech-icon" />
         </div>
       </div>
       <div className="beginning-of-the-end-container tech-stack-para1" ref={tech_stack_para1}>
@@ -118,7 +129,7 @@ const TechStack = () => {
         </h2>
         <div className="last-image-container">
           <div className="looking-for-dev-text-container">
-            <p className="looking-for-dev-text">
+            <p className="looking-for-dev-text hungry-dev">
               Are you looking for a developer, hungry to <span id="contribute">contribute</span> to your <span id="atmosphere">atmosphere</span> and <span id="atmosphere">progress</span>?
             </p>
             <p className="looking-for-dev-text last-text">

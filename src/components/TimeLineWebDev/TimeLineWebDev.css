@@ -242,7 +242,7 @@
   transform: translateY(0%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .one h1 {
     font-size: 4em;
   }
@@ -257,7 +257,6 @@
     font-size: var(--narrator-paragraph-size);
     color: white;
     width: 60%;
-    margin-top: 0;
     border-bottom: none;
   }
 
@@ -265,11 +264,11 @@
     content: "";
     position: absolute;
     right: 0;
-    top: 70%; /* Adjust this to move the line up or down */
-    transform: translateY(-50%); /* Center it vertically */
-    height: 50%; /* Adjust the height as needed */
-    width: 2px; /* Width of the 'border' */
-    background-color: turquoise;
+    top: 70%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 2px;
+    background-color: #ff80f3ff;
   }
   .football-text-container.activate p {
     margin-left: 10%;
@@ -284,6 +283,7 @@
   }
 
   .ominous-thought {
+    overflow: hidden;
     width: 90%;
   }
 
@@ -294,5 +294,18 @@
 
   #webdev-p {
     transform: translateX(-15%);
+  }
+}
+
+@media (max-width: 360px) {
+  .football-text-container p::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 2px;
+    background-color: #ff80f3ff;
   }
 }

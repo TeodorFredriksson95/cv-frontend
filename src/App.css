@@ -6,6 +6,7 @@
   --MS_BI: "MontserratBoldItalic";
   --MS_MI: "MontserratMediumItalic";
 
+  --tech-stack-text-size: 1em;
   --text_color: white;
   --title_color: white;
   --title-h2-color: turquoise;
@@ -15,6 +16,7 @@
   --h2-text-size: 4em;
   --h3-text-size: 2em;
   --h4-text-size: 1.2em;
+  --tech-stack-text-size: 1em;
 
   --continuation-text-size: 3.5em;
 
@@ -58,11 +60,6 @@ body {
 }
 
 /* Main Title */
-.main-title {
-  font-size: 4em;
-  font-family: var(--MS_Bold);
-  color: var(--title_color);
-}
 
 /* Section title */
 .section-title-h1 {
@@ -100,7 +97,7 @@ body {
 
 .tech-stack-text {
   font-family: var(--MS_BI);
-  font-size: var(--h4-text-size);
+  font-size: var(--tech-stack-text-size);
   color: var(--text_color);
 }
 
@@ -141,12 +138,13 @@ body {
   font-size: var(--continuation-text-size);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   :root {
     --h1-text-size: 3em;
     --h2-text-size: 2.5em;
     --h3-text-size: 1.5em;
     --h4-text-size: 1em;
+    --tech-stack-text-size: 1.3em;
 
     --continuation-text-size: 2em;
 
@@ -155,7 +153,17 @@ body {
 
     --line-height: 100%;
   }
-  .main-title {
-    font-size: 3em;
+}
+
+@media (max-width: 360px) {
+  :root {
+    --h2-text-size: 2em;
+    --tech-stack-text-size: 1.1em;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --tech-stack-text-size: 1em;
   }
 }
