@@ -34,13 +34,13 @@ const Home = () => {
   }, []);
   return (
     <div className="content-page">
+      <WorkExperience />
+      {/* 
       <HeroContent />
       <TimelineBorn />
       <TimeLineWebDev />
-      {/* 
+      <ScriptVsDev />
 
-<ScriptVsDev />
-<WorkExperience />
 <ShiftingDirections />
 <TechStack />
 <FixedTimeLine /> 

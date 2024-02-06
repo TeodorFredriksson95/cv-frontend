@@ -46,10 +46,14 @@
     font-size: 3em;
     width: 90%;
     text-align: left;
+    text-wrap: nowrap;
   }
   .hero-title h4 {
     text-align: left;
     margin: 0 5%;
+  }
+  .dev-journey-text-block {
+    display: block;
   }
 }
 
@@ -73,6 +77,9 @@
   .hero-title h4 {
     margin: 2% 5%;
   }
+  .hero-content {
+    margin-top: 10%;
+  }
 }
 /* small laptops and large tablets: 1024px to 1280px (hybrids)*/
 @media (min-width: 1024px) {
@@ -90,8 +97,12 @@
 
 /* large screens: 1440px to 1680px */
 @media (min-width: 1440px) {
+  .hero-content {
+    margin-top: 15%;
+  }
+
   .main-title {
-    font-size: 5em;
+    font-size: 6em;
   }
   .logo img {
     max-width: 80%;
@@ -103,6 +114,16 @@
   .main-title {
     font-size: 6em;
   }
+  .logo {
+    justify-content: end;
+  }
+}
+
+/* extra huge screens (4k etc) : 1920px+ */
+@media (min-width: 1920px) {
+  .main-title {
+    font-size: 8em;
+  }
 }
 
 /* small smartphones: 320px up to 360px*/
@@ -113,4 +134,3 @@
 /* medium screens: 1280px to 1440px */
 /* large screens: 1440px to 1680px */
 /* extra large screens: 1680px to 1920px */
-/* extra huge screens (4k etc) : 1920px+ */
