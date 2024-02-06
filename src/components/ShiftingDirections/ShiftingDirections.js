@@ -63,7 +63,7 @@ const ShiftingDirections = () => {
           <img src="shiftingdirectionsedit1.png" />
         </div>
         <div className="we-title-overflow-container" ref={title_overflow}>
-          <h1 className="section-title-h1">
+          <h1 className="section-title-h2">
             Shifting
             <br />
             Directions
@@ -107,12 +107,12 @@ const ShiftingDirections = () => {
         </div>
         <div className="para7-overflow-container-4" ref={para7_overflow_container_4}>
           <p className="response-text-three response-paragraph">
-            -“Oh boy, you should totally check out <span className="word-highlight-pink">.NET!</span> They all seem wanting for <span className="word-highlight-turq">nothing</span>.”
+            “Oh boy, you should totally check out <span className="word-highlight-pink">.NET!</span> They all seem wanting for <span className="word-highlight-turq">nothing</span>.”
           </p>
         </div>
         <div className="para7-overflow-container-5" ref={para7_overflow_container_5}>
           <p className="dot-what-text narrator-paragraph-text">
-            At first the young man shrugged at this. <span className="word-highlight-pink">Dot-who-the-what-now? </span>
+            At first the young man shrugged at this. <span className="word-highlight-pink dot-who-the-block">Dot-who-the-what-now? </span>
             But time is a funny thing and in quiet contemplation he started to reminisce about the days when he tried to make a website for his fathers football supporter club.
           </p>
         </div>
@@ -132,7 +132,7 @@ const ShiftingDirections = () => {
           </p>
         </div>
       </div>
-      <div className="launching-concepts-absolute-container cannon-container" ref={cannon1}>
+      {/* <div className="launching-concepts-absolute-container cannon-container" ref={cannon1}>
         <h2 className="concept1" id="concept1">
           "Variables!"
         </h2>
@@ -144,8 +144,8 @@ const ShiftingDirections = () => {
           "The red wiggle is your
           <br className="wiggle-break" /> <span className="wiggle">FRIEND!</span>"
         </h1>
-      </div>
-      <div className="launching-concepts-absolute-container-mobile">
+      </div> */}
+      {/* <div className="launching-concepts-absolute-container-mobile">
         <div className="launching-concept1" ref={mobileCannon1}>
           <h2>"Variables!"</h2>
         </div>
@@ -168,7 +168,7 @@ const ShiftingDirections = () => {
             <span className="wiggle">FRIEND!</span>"
           </h2>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

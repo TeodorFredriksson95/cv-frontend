@@ -363,9 +363,15 @@
 /* extra large screens: 1680px to 1920px */
 @media (min-width: 1680px) {
 }
+.leadershipTitles {
+  line-height: 0.4;
+}
 
 /* extra huge screens (4k etc) : 1920px+ */
 @media (min-width: 1920px) {
+  .leadershipTitles {
+    line-height: 0.3;
+  }
 }
 
 .work-experience-para1 {
