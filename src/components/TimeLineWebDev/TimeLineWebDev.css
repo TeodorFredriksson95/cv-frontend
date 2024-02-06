@@ -3,41 +3,8 @@
   margin-top: 5%;
 }
 
-.svg-container img {
-  opacity: 1;
-  position: absolute;
-  width: 100%;
-  z-index: -100;
-  left: 0;
-  height: 80%;
-}
-
-.web-dev-title h1,
-.web-dev-title h3,
-.web-dev-title p {
-  margin: 0;
-}
-
-.web-dev-title h3,
-.web-dev-title p,
-.svg-paragraph {
-  margin-left: 8%;
-}
-
 .football-text-container {
   overflow: hidden;
-}
-
-.football-text-container p {
-  transform: translateY(-80%);
-  opacity: 0;
-  font-family: var(--MS_LI);
-  font-size: var(--narrator-paragraph-size);
-  color: white;
-  width: 40%;
-  margin-left: 8%;
-  transition: transform 0.5s, opacity 0.5s;
-  padding-top: 5%;
 }
 
 .football-text-container.activate p {
@@ -65,56 +32,9 @@
   padding: 1em;
 }
 
-.web-dev-continuation {
-  margin-top: 30%;
-  text-align: center;
-}
-
-.image-container {
-  margin-top: 10%;
-  box-sizing: border-box;
-  opacity: 1;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  height: 30%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0px 1px 20px 2px rgba(152, 149, 149, 0.55);
-  /* inset 0px 0px 5px rgba(255, 255, 255, 0.7); */
-  z-index: -1;
-}
-
 .image-container img {
   height: 70%;
   margin: auto;
-}
-
-.web-dev-magic-paragraph-container {
-  position: relative;
-  margin-top: 45%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ominous-thought {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.happy-thought {
-  width: 90%;
-  margin: auto;
-  margin-top: 15%;
-  text-align: center;
-  font-family: var(--MS_LI);
-}
-
-.happy-thought span {
-  font-family: var(--MS_BI);
 }
 
 #webdev-p.animate {
@@ -125,15 +45,6 @@
 .animate h1,
 .one h1 {
   display: inline-block;
-}
-
-.one h1 {
-  font-family: var(--MS_EBI);
-  color: var(--title-h2-color);
-  font-size: 7em;
-  line-height: 80%;
-  opacity: 0;
-  transform: translate(-150px, -50px) rotate(-180deg);
 }
 
 .one.animate h1 {
@@ -242,83 +153,200 @@
   transform: translateY(0%);
 }
 
-@media (max-width: 800px) {
-  .svg-container img {
-    width: 100%;
-    height: 40%;
-  }
-  .football-text-container p {
-    width: 60%;
-  }
-  .image-container {
-    height: 20%;
-  }
-}
-
-@media (max-width: 480px) {
+@media (min-width: 320px) {
   .one h1 {
-    font-size: 4em;
+    font-family: var(--MS_EBI);
+    color: var(--title-h2-color);
+    font-size: 3em;
+    line-height: 80%;
+    opacity: 0;
+    transform: translate(-150px, -50px) rotate(-180deg);
   }
 
-  .svg-container img {
-    height: 30%;
+  .web-dev-title h1,
+  .web-dev-title h3,
+  .web-dev-title p {
+    margin-top: 1%;
+    margin-bottom: 0;
+  }
+
+  .web-dev-title p,
+  .web-dev-title h3 {
+    margin-left: 10%;
   }
 
   .football-text-container p {
-    position: relative; /* Needed for absolute positioning of pseudo-element */
+    transform: translateY(-80%);
+    opacity: 0;
     font-family: var(--MS_LI);
     font-size: var(--narrator-paragraph-size);
     color: white;
-    width: 60%;
-    border-bottom: none;
+    width: 100%;
+    transition: transform 0.5s, opacity 0.5s;
   }
 
-  .football-text-container p::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 70%;
-    transform: translateY(-50%);
-    height: 50%;
-    width: 2px;
-    background-color: #ff80f3ff;
+  .football-text-container p {
+    margin-block-end: 0;
   }
-  .football-text-container.activate p {
-    margin-left: 10%;
+
+  .svg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    overflow: hidden;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .web-dev-title h3,
-  .web-dev-title p {
-    margin-left: 10%;
+
+  .image-placeholder {
+    width: 50%;
+    height: 75px;
+    align-self: flex-end;
+    border: 1px solid red;
+  }
+
+  .web-dev-continuation {
+    margin-top: 30%;
+    text-align: center;
   }
 
   .image-container {
-    height: 10%;
+    margin-top: 10%;
+    box-sizing: border-box;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 7%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 1px 20px 2px rgba(152, 149, 149, 0.55);
+    /* inset 0px 0px 5px rgba(255, 255, 255, 0.7); */
+    z-index: -1;
+  }
+
+  .web-dev-magic-paragraph-container {
+    position: relative;
+    margin-top: 60%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .ominous-thought {
     overflow: hidden;
     width: 90%;
+    margin: auto;
+  }
+
+  .happy-thought {
+    width: 90%;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    font-family: var(--MS_LI);
   }
 
   .happy-thought span {
-    display: inline-block;
-    margin-bottom: 10px;
+    font-family: var(--MS_BI);
   }
 
-  #webdev-p {
-    transform: translateX(-15%);
+  .line-padding {
+    display: block;
+    margin-top: 5%;
   }
 }
 
-@media (max-width: 360px) {
-  .football-text-container p::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 60%;
-    transform: translateY(-50%);
-    height: 50%;
-    width: 2px;
-    background-color: #ff80f3ff;
+/* large smartphones: 360px to 480px*/
+@media (min-width: 480px) {
+  .one {
+    margin-left: 5%;
+  }
+  .one h1 {
+    font-size: 3.5em;
+  }
+  .image-container {
+    height: 10%;
+  }
+}
+@media (min-width: 600px) {
+  .one h1 {
+    font-size: 5em;
+  }
+
+  .image-container {
+    height: 13%;
+  }
+}
+
+@media (min-width: 800px) {
+  .svg-container {
+    flex-direction: row;
+  }
+
+  .football-text-container {
+    flex-grow: 1;
+    flex-basis: 70%;
+  }
+
+  .image-placeholder {
+    border: 1px solid gold;
+    flex-grow: 1;
+    max-height: 100%;
+    flex-basis: 30%;
+  }
+  .image-container {
+    height: 15%;
+  }
+  .web-dev-magic-paragraph-container {
+    margin-top: 40%;
+  }
+}
+
+/* small laptops and large tablets: 1024px to 1280px (hybrids)*/
+@media (min-width: 1024px) {
+  .image-container {
+    height: 18%;
+  }
+}
+
+/* medium screens: 1280px to 1440px */
+@media (min-width: 1280px) {
+  .web-dev-title h1,
+  .web-dev-title h3,
+  .web-dev-title p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .one h1 {
+    font-size: 7em;
+  }
+}
+
+/* large screens: 1440px to 1680px */
+@media (min-width: 1440px) {
+  .image-container {
+    height: 20%;
+  }
+}
+
+/* extra large screens: 1680px to 1920px */
+@media (min-width: 1680px) {
+  .image-container {
+    height: 22%;
+  }
+}
+
+/* extra huge screens (4k etc) : 1920px+ */
+@media (min-width: 1920px) {
+  .image-container {
+    height: 25%;
+  }
+  .one h1 {
+    font-size: 10em;
   }
 }

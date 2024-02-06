@@ -36,9 +36,9 @@ const Home = () => {
     <div className="content-page">
       <HeroContent />
       <TimelineBorn />
+      <TimeLineWebDev />
       {/* 
 
-<TimeLineWebDev />
 <ScriptVsDev />
 <WorkExperience />
 <ShiftingDirections />
