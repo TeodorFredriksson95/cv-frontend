@@ -158,7 +158,7 @@
   }
 
   .versus-logo-container img {
-    width: 100%;
+    width: 80%;
   }
 
   .dev-combatant {
@@ -182,6 +182,16 @@
 @media (min-width: 600px) {
   .versus-script-tag-paragraph {
     margin-top: 40%;
+  }
+}
+
+@media (min-width: 800px) {
+  .script-combatant {
+    justify-self: center;
+    margin-right: 25%;
+  }
+  .dev-combatant {
+    margin-right: 30%;
   }
 }
 

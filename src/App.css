@@ -175,7 +175,7 @@ body {
   :root {
     --h1-text-size: 4em;
     --h2-text-size: 3.5em;
-    --h3-text-size: 2em;
+    --h3-text-size: 2.5em;
     --narrator-paragraph-size: 1.6em;
     --response-paragraph-size: 1.6em;
     --continuation-text-size: 3em;
@@ -187,7 +187,7 @@ body {
   :root {
     --continuation-text-size: 3.5em;
     --h2-text-size: 4em;
-    --h3-text-size: 2.3em;
+    --h3-text-size: 2.8em;
     --h4-text-size: 1.6em;
   }
 }
