@@ -9,7 +9,7 @@
 
 .football-text-container.activate p {
   opacity: 1;
-  transform: translateY(0%);
+  transform: translateX(0%);
 }
 
 #webdev-h3 {
@@ -27,6 +27,11 @@
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 
+#webdev-p.animate {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
 .web-dev-container {
   margin-top: 30%;
   padding: 1em;
@@ -35,11 +40,6 @@
 .image-container img {
   height: 70%;
   margin: auto;
-}
-
-#webdev-p.animate {
-  transform: translateX(0%);
-  opacity: 1;
 }
 
 .animate h1,
@@ -172,11 +172,11 @@
 
   .web-dev-title p,
   .web-dev-title h3 {
-    margin-left: 10%;
+    margin-left: 5%;
   }
 
   .football-text-container p {
-    transform: translateY(-80%);
+    transform: translateX(-80%);
     opacity: 0;
     font-family: var(--MS_LI);
     font-size: var(--narrator-paragraph-size);
@@ -200,11 +200,13 @@
     margin-right: auto;
   }
 
-  .image-placeholder {
+  .keeper-overflow-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .keeper-overflow-container img {
     width: 50%;
-    height: 75px;
-    align-self: flex-end;
-    border: 1px solid red;
   }
 
   .web-dev-continuation {
@@ -224,7 +226,6 @@
     justify-content: space-evenly;
     background-color: rgb(0, 0, 0);
     box-shadow: 0px 1px 20px 2px rgba(152, 149, 149, 0.55);
-    /* inset 0px 0px 5px rgba(255, 255, 255, 0.7); */
     z-index: -1;
   }
 
@@ -262,9 +263,6 @@
 
 /* large smartphones: 360px to 480px*/
 @media (min-width: 480px) {
-  .one {
-    margin-left: 5%;
-  }
   .one h1 {
     font-size: 3.5em;
   }
@@ -282,9 +280,21 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .svg-container {
     flex-direction: row;
+  }
+  .keeper-overflow-container img {
+    width: 100%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition-delay: 0.5s;
+  }
+
+  .keeper-overflow-container.activate img {
+    transform: translateX(0%);
+    opacity: 1;
   }
 
   .football-text-container {
@@ -292,8 +302,8 @@
     flex-basis: 70%;
   }
 
-  .image-placeholder {
-    border: 1px solid gold;
+  .keeper-overflow-container {
+    overflow: hidden;
     flex-grow: 1;
     max-height: 100%;
     flex-basis: 30%;
@@ -310,6 +320,9 @@
 @media (min-width: 1024px) {
   .image-container {
     height: 18%;
+  }
+  .football-text-container {
+    margin-right: 5%;
   }
 }
 

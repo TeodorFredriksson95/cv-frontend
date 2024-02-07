@@ -15,9 +15,9 @@ const ScriptVsDev = () => {
     createObserver(scriptCombatant, "activate", 0.6, true);
     createObserver(devCombatant, "activate", 0.9, true);
     createObserver(versusImage, "activate", 0.8, true);
-    createObserver(scriptPara1, "activate", 0.8);
-    createObserver(scriptPara2, "activate", 0.8);
-    createObserver(scriptPara3, "activate", 0.8);
+    createObserver(scriptPara1, "activate", 0.8, true);
+    createObserver(scriptPara2, "activate", 0.8, true);
+    createObserver(scriptPara3, "activate", 0.8, true);
   }, []);
   return (
     <div>

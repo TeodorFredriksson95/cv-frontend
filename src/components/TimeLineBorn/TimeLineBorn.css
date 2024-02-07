@@ -1,7 +1,7 @@
 /* small smartphones: 320px up to 360px*/
 @media (min-width: 320px) {
   .the-beginning-container {
-    margin-top: 20%;
+    margin-top: 50%;
     display: flex;
   }
 
@@ -41,16 +41,29 @@
 }
 
 /* large smartphones: 360px to 480px*/
+@media (min-width: 360px) {
+  .the-beginning-container {
+    margin-top: 70%;
+  }
+}
 
 /* tablets: portrait mode - 600px to 800px*/
+@media (min-width: 480px) {
+  .the-beginning-container {
+    margin-top: 70%;
+  }
+}
 
 /* tablets: landscape mode - 800px to 1024px*/
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .the-beginning-container img {
     display: flex;
     margin-left: 2%;
     max-width: 30%;
     width: 30%;
+  }
+  .the-beginning-container {
+    margin-top: 25%;
   }
 }
 

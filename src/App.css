@@ -173,7 +173,7 @@ body {
 }
 
 /* tablets: landscape mode - 800px to 1024px*/
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   :root {
     --h1-text-size: 4em;
     --h2-text-size: 3.5em;

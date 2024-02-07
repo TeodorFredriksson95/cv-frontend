@@ -73,15 +73,20 @@ const ShiftingDirections = () => {
       <div className="changing-paths-container-one">
         <div className="para6-overflow-container-1" ref={para6_overflow_container_1}>
           <p className="narrator-paragraph-text ">
-            After six years, the job which was once meant to be temporary, had turned into something else entirely. It had served as the young mans proving grounds, demanding him to explore his
-            strengths and weaknesses and he had loved it. But it was about to come to and <span className="word-highlight-pink">end</span>.
+            After six years, the job which was once meant to be temporary, had turned into something else entirely.{" "}
+            <span className="break-block">
+              It had served as the young mans proving grounds, demanding him to explore his strengths and weaknesses and he had loved it. But it was about to come to an
+              <span className="word-highlight-pink"> end</span>.
+            </span>
           </p>
         </div>
         <div className="para6-overflow-container-2" ref={para6_overflow_container_2}>
           <p className="narrator-paragraph-text">
-            The young man felt his current path forced him into a static sense of forward. He wanted more than that, or at least something different. Somewhere, or something, that could feed his
-            thirst for learning <span className="word-highlight-turq">new</span> things while still being able to put his creativity to use and see tangible results. And once again test the mettle of
-            his skill.
+            The young man felt his current path forced him into a static sense of forward. He wanted more than that, or at least something different.{" "}
+            <span className="break-block">
+              Somewhere, or something, that could feed his thirst for learning <span className="word-highlight-turq">new</span> things while still being able to put his creativity to use and see
+              tangible results. And once again test the mettle of his skill.
+            </span>
           </p>
         </div>
         <div className="para6-overflow-container-3" ref={para6_overflow_container_3}>

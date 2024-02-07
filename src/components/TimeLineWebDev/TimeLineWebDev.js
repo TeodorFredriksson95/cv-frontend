@@ -6,19 +6,21 @@ const TimeLineWebDev = () => {
   const webDevRef = useRef(); // Ref for the web-dev container
   const h3Ref = useRef();
   const pRef = useRef();
+  const keeperRef = useRef();
   const imageP = useRef();
   const shootImage = useRef();
   const para1 = useRef();
   const para2 = useRef();
 
   useEffect(() => {
-    createObserver(webDevRef, "animate", 0.1, false);
-    createObserver(h3Ref, "animate", 0.1);
-    createObserver(pRef, "animate", 1);
-    createObserver(imageP, "activate", 0.3);
-    createObserver(shootImage, "activate", 0.3);
-    createObserver(para1, "activate", 0.3);
-    createObserver(para2, "activate", 0.3);
+    createObserver(webDevRef, "animate", 0.1, true);
+    createObserver(h3Ref, "animate", 0.1, true);
+    createObserver(pRef, "animate", 0.5, true);
+    createObserver(keeperRef, "activate", 0.5, true);
+    createObserver(imageP, "activate", 0.3, true);
+    createObserver(shootImage, "activate", 0.3, true);
+    createObserver(para1, "activate", 0.3, true);
+    createObserver(para2, "activate", 0.3, true);
   }, []);
 
   return (
@@ -35,19 +37,20 @@ const TimeLineWebDev = () => {
         <h3 id="webdev-h3" className="section-title-h3" ref={h3Ref}>
           Web development looks so cool!
         </h3>
-        <p id="webdev-p" className="narrator-paragraph-text" ref={pRef}>
+        <p id="webdev-p" className="narrator-paragraph-text webdev-p" ref={pRef}>
           But will the script tag prove too great a foe?
         </p>
       </div>
       <div className="svg-container">
-        {/* <img src="keepertransparentsvgedit5.png"></img> */}
         <div className="football-text-container" ref={imageP}>
           <p id="curtain-text">
             As chance would have it, the young boys father would at this time become the founder of a swedish branch of a german football supporter club. Thus, he tasked the child with creating a
             website.
           </p>
         </div>
-        <div className="image-placeholder"></div>
+        <div className="keeper-overflow-container" ref={keeperRef}>
+          <img src="keeperedit4.png" />
+        </div>
       </div>
       <div className="web-dev-continuation">
         <h1 className="continuations" id="and-so-he-did">

@@ -55,9 +55,9 @@ const WorkExperience = () => {
     updateIconSize();
     window.addEventListener("resize", updateIconSize);
 
-    createObserver(para1, "activate", 0.3);
-    createObserver(para2_overflow_1, "activate", 1);
-    createObserver(para2_overflow_2, "activate", 1);
+    createObserver(para1, "activate", 0.3, true);
+    createObserver(para2_overflow_1, "activate", 1, true);
+    createObserver(para2_overflow_2, "activate", 1, true);
 
     createObserver(para3_overflow_1, "activate", 1, true);
     createObserver(para3_overflow_2, "activate", 1, true);
@@ -73,7 +73,7 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <div>
+    <div className="work-experience-container">
       <div className="leadership-header">
         <img src="leadershiptest1.png" />
         <div className="leadershipTitles">

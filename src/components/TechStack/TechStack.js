@@ -51,6 +51,9 @@ const TechStack = () => {
       } else if (window.innerWidth >= 1920) {
         const newSize = { width: 180, height: 180 };
         setIconSize(newSize);
+      } else {
+        const newSize = { width: 40, height: 40 };
+        setIconSize(newSize);
       }
     };
     updateIconSize();
@@ -119,7 +122,7 @@ const TechStack = () => {
       </div>
       <div className="beginning-of-the-end-container tech-stack-para1" ref={tech_stack_para1}>
         <p className="tech-stack-response-text-one response-paragraph">All of a sudden, the young man had graduated.</p>
-        <img src="handsinairedit1.png" />
+        <img src="graduationhats.png" />
       </div>
       <div className="searching-container">
         <div className="tech-stack-para2" ref={tech_stack_para2}>
@@ -150,7 +153,7 @@ const TechStack = () => {
             <img src="beforedawnpng3.png" id="last-img" />
           </div>
         </div>
-        <div>
+        <div className="get-in-touch">
           <p className="looking-for-dev-text last-text">
             GET IN TOUCH NOW{" "}
             <span>

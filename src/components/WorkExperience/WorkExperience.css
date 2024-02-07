@@ -1,5 +1,8 @@
 /* small smartphones: 320px up to 360px*/
 @media (min-width: 320px) {
+  .work-experience-container {
+    margin-top: 50%;
+  }
   .leadership-header {
     margin-top: 20%;
   }
@@ -21,7 +24,9 @@
   }
 
   .graduation-text {
-    margin: auto;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
     width: 80%;
   }
   .response-text {
@@ -33,8 +38,14 @@
   .end-title {
     text-align: center;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 45%;
   }
+
+  .para3-overflow-text-1,
+  .para3-overflow-text-2 {
+    margin-top: 10%;
+  }
+
   .para2-overflow-text-1,
   .para2-overflow-text-2,
   .para3-overflow-text-1,
@@ -46,6 +57,13 @@
   .para5-overflow-text-4 {
     overflow: hidden;
   }
+
+  .para5-overflow-text-1,
+  .para5-overflow-text-2,
+  .para5-overflow-text-3,
+  .para5-overflow-text-4 {
+    width: 80%;
+  }
   .flowchart-text-container {
     margin-top: 15%;
     display: flex;
@@ -55,7 +73,9 @@
     width: 100%;
   }
   .flow-chart-image {
-    margin: auto;
+    margin-top: 35%;
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
   }
 
@@ -71,7 +91,7 @@
 
   .second-flowchart-container {
     flex-direction: row;
-    margin-top: 10%;
+    margin-top: 40%;
     display: flex;
     justify-content: space-between;
   }
@@ -84,6 +104,7 @@
   .second-flowchart-image img {
     width: 100%;
     height: 50%;
+    align-self: center;
   }
 
   .scorecard-and-text-flex-container {
@@ -94,7 +115,9 @@
   }
 
   .scorecard-container {
-    margin: auto;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px solid #43ecd8;
     border-radius: 1%;
     background-color: rgba(0, 169, 139, 0.5);
@@ -223,7 +246,7 @@
   }
 }
 /* tablets: landscape mode - 800px to 1024px*/
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .flowchart-text p {
     width: 80%;
   }
@@ -251,6 +274,18 @@
 @media (min-width: 1024px) {
   .versus-logo-container img {
     width: 100%;
+  }
+
+  .second-flowchart-container {
+    margin-top: 20%;
+  }
+
+  .work-experience-container {
+    margin-top: 35%;
+  }
+
+  .end-title {
+    margin-top: 25%;
   }
   .para3-overflow-text-1,
   .para3-overflow-text-2 {
@@ -301,6 +336,7 @@
   }
 
   .scorecard-and-text-flex-container {
+    margin-top: 15%;
     margin-bottom: 10%;
     flex-direction: row;
   }
@@ -351,6 +387,9 @@
   .leadershipTitles p {
     width: 80%;
   }
+  .work-experience-container {
+    margin-top: 25%;
+  }
 
   .leadership-header img {
     width: 60%;
@@ -363,14 +402,12 @@
 /* extra large screens: 1680px to 1920px */
 @media (min-width: 1680px) {
 }
-.leadershipTitles {
-  line-height: 0.4;
-}
 
 /* extra huge screens (4k etc) : 1920px+ */
 @media (min-width: 1920px) {
-  .leadershipTitles {
-    line-height: 0.3;
+  #and-so-he-did {
+    margin: a;
+    width: 80%;
   }
 }
 

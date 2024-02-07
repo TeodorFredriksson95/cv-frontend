@@ -1,5 +1,8 @@
 @media (min-width: 320px) {
-  .beginning-of-the-end-container img,
+  .get-in-touch {
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
   .looking-for-dev-image-container img {
     display: none;
   }
@@ -22,7 +25,7 @@
     margin-top: 30%;
   }
   .searching-container h2 {
-    margin-top: 30%;
+    margin-top: 40%;
   }
 
   .last-text {
@@ -78,7 +81,7 @@
   }
 
   .frameworks-container {
-    margin-top: 20%;
+    margin-top: 30%;
   }
 
   .frameworks-row1 {
@@ -93,15 +96,19 @@
 
   .beginning-of-the-end-container {
     display: flex;
-    margin-top: 15%;
+    margin-top: 35%;
+  }
+  .beginning-of-the-end-container img {
+    width: 40%;
   }
 
-  .beginning-of-the-end-container img {
-    align-items: center;
+  .beginning-of-the-end-container p {
+    margin-left: 5%;
   }
+
   .last-image-container {
     display: block;
-    margin-top: 15%;
+    margin-top: 35%;
   }
 
   .looking-for-dev-text {
@@ -111,9 +118,9 @@
   }
 
   .hungry-dev {
-    width: 90%;
+    width: 80%;
     margin: auto;
-    text-align: center;
+    text-align: left;
   }
 
   #contribute,
@@ -161,6 +168,9 @@
   }
 }
 @media (min-width: 600px) {
+  .beginning-of-the-end-container.tech-stack-para1 p {
+    width: 50%;
+  }
   .looking-for-dev-text {
     font-size: 2em;
   }
@@ -168,12 +178,20 @@
     margin-left: 7%;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .looking-for-dev-text {
     font-size: 2.5em;
   }
 }
 @media (min-width: 1024px) {
+  .beginning-of-the-end-container {
+    margin-top: 20%;
+  }
+
+  .searching-container h2 {
+    margin-top: 30%;
+  }
+
   .last-image-container {
     display: flex;
     justify-content: flex-end;
@@ -194,6 +212,9 @@
   .last-text {
     justify-content: start;
     margin-left: 5%;
+  }
+  .tech-stack-container {
+    margin-top: 15%;
   }
 }
 @media (min-width: 1280px) {
@@ -246,7 +267,7 @@
 .tech-3 .text-overflow-container p,
 .tech-4 .text-overflow-container p,
 .tech-5 .text-overflow-container p {
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform 0.3s ease-in-out;
   transition-delay: 0.5s;
 }
