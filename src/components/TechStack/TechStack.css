@@ -228,8 +228,9 @@
     margin-left: 10%;
     margin-right: 10%;
   }
-  .last-text {
-    margin-left: 10%;
+
+  .get-in-touch {
+    margin-top: 0;
   }
 }
 @media (min-width: 1440px) {
