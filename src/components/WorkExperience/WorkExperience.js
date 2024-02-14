@@ -111,7 +111,7 @@ const WorkExperience = () => {
       </div>
       <div className="flowchart-text-container">
         <div className="flow-chart-image">
-          <img src="flowchartedit1.png" />
+          <img src="flowchartedit2.png" />
         </div>
         <div className="flowchart-text">
           <div className="para3-overflow-text-1" ref={para3_overflow_1}>
