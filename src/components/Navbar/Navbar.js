@@ -21,6 +21,16 @@ const Navbar = () => {
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/skillset" className="active-link">
+            Skill Set
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/apipage" className="active-link">
+            API
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
