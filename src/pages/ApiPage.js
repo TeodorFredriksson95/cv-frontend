@@ -1,23 +1,15 @@
-import { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import Navbar from "../components/Navbar/Navbar";
+import ApiPageHeader from "../components/ApiPage/ApiPageHeader";
+import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 
 const ApiPage = () => {
-  useEffect(() => {
-    const navbarItems = document.querySelectorAll(".navbar a"); // Select all links within .navbar
-
-    navbarItems.forEach((item) => {
-      if (!item.matches(":hover, :focus")) {
-        item.classList.remove("scroll-active");
-      }
-    });
-  }, []);
-
+  useEffect(() => {}, []);
   return (
-    <div className="content-page">
-      <div>
-        <h1 className="section-title-h1">Api Page</h1>;
-      </div>
+    <div>
+      <ApiPageHeader />
+      <TimeLineWebDev />
     </div>
   );
 };
-
 export default ApiPage;

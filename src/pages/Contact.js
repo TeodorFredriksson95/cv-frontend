@@ -1,25 +1,15 @@
-import { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import Navbar from "../components/Navbar/Navbar";
+import ContactHeader from "../components/Contact/ContactHeader";
+import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 
 const Contact = () => {
-  useEffect(() => {
-    const navbarItems = document.querySelectorAll('.navbar a'); // Select all links within .navbar
-
-    navbarItems.forEach(item => {
-      if (!item.matches(':hover, :focus')) {
-          item.classList.remove('scroll-active');
-      }
-    });
-    
-  },[])
-
-    return(
-      <div className="content-page">
-
-        <div>
-          <h1 className="section-title-h1">Contact Me</h1>;
-        </div>
-      </div>
-      )
-  };
-  
-  export default Contact;
+  useEffect(() => {}, []);
+  return (
+    <div>
+      <ContactHeader />
+      <TimeLineWebDev />
+    </div>
+  );
+};
+export default Contact;
