@@ -1,0 +1,25 @@
+.reach-out-button {
+  background-color: #e7008b;
+  width: 480px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  border-radius: 10px;
+}
+
+.reach-out-button:hover {
+  background-color: #fd129f;
+  cursor: pointer;
+}
+
+.reach-out-button-text {
+  font-family: var(--MS_Bold);
+  font-size: 2em;
+  color: white;
+}
+
+.reach-out-link {
+  text-decoration: none;
+}

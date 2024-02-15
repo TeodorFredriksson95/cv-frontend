@@ -1,0 +1,59 @@
+.contact-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+.contact-header::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../../../public/contactimgedit2.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.about-title {
+  font-family: var(--MS_Bold);
+  color: var(--title_color);
+}
+
+@media (min-width: 320px) {
+  .contact-header {
+    height: 20vh;
+  }
+}
+@media (min-width: 360px) {
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 600px) {
+  .contact-header {
+    height: 50vh;
+  }
+}
+@media (min-width: 800px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 1440px) {
+  .contact-header {
+    height: 90vh;
+  }
+}
+@media (min-width: 1680px) {
+}
+@media (min-width: 1920px) {
+  .contact-header {
+    height: 100vh;
+  }
+}

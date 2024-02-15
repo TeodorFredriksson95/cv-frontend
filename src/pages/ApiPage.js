@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar/Navbar";
-import ApiPageHeader from "../components/ApiPage/ApiPageHeader";
+import ApiPageHeader from "../components/ApiPage/Header/ApiPageHeader";
 import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 
 const ApiPage = () => {
@@ -8,7 +8,6 @@ const ApiPage = () => {
   return (
     <div>
       <ApiPageHeader />
-      <TimeLineWebDev />
     </div>
   );
 };

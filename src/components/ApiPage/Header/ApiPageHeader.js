@@ -1,19 +1,19 @@
-import "./ContactHeader.css";
+import "./ApiPageHeader.css";
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../Navbar/Navbar";
 
-const ContactHeader = () => {
+const ApiPageHeader = () => {
   useEffect(() => {}, []);
   return (
-    <div className="contact-header">
+    <div className="api-header">
       <Navbar />
 
       <div className="about-hero-content clearfix">
         <div className="about-hero-title">
-          <h1 className="about-title">Contact</h1>
+          <h1 className="about-title no-main-page-title">API</h1>
         </div>
       </div>
     </div>
   );
 };
-export default ContactHeader;
+export default ApiPageHeader;

@@ -1,0 +1,21 @@
+.view-skills-button {
+  background-color: rgb(56, 172, 161);
+  width: 480px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  border-radius: 10px;
+}
+
+.view-skills-button:hover {
+  background-color: rgb(61, 196, 183);
+  cursor: pointer;
+}
+
+.view-skills-button-text {
+  font-family: var(--MS_Bold);
+  font-size: 2em;
+  color: white;
+}

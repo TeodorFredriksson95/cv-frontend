@@ -1,7 +1,7 @@
 import "./AboutHeader.css";
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../Navbar/Navbar";
-import TimeLineWebDev from "../TimeLineWebDev/TimeLineWebDev";
+import Navbar from "../../Navbar/Navbar";
+import TimeLineWebDev from "../../TimeLineWebDev/TimeLineWebDev";
 
 const AboutHeader = () => {
   useEffect(() => {}, []);
@@ -11,7 +11,7 @@ const AboutHeader = () => {
 
       <div className="about-hero-content clearfix">
         <div className="about-hero-title">
-          <h1 className="about-title">About</h1>
+          <h1 className="about-title no-main-page-title">About</h1>
         </div>
       </div>
     </div>
