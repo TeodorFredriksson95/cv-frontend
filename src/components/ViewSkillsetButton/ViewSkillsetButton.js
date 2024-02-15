@@ -7,7 +7,7 @@ const ViewSkillsetButton = () => {
   return (
     <div className="view-skills-button">
       <NavLink to="/skillset" className="reach-out-link">
-        <p className="view-skills-button-text">View Skill Set</p>/
+        <p className="view-skills-button-text">View Skill Set</p>
       </NavLink>
     </div>
   );
