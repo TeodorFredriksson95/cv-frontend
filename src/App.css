@@ -127,7 +127,6 @@ body {
   font-size: var(--non_main_page_title);
 }
 
-/* small smartphones: 320px up to 360px*/
 @media (min-width: 320px) {
   :root {
     --h1-text-size: 2.5em;
