@@ -26,6 +26,9 @@
 @media (min-width: 360px) {
 }
 @media (min-width: 480px) {
+  .view-skills-button-text {
+    font-size: 1.5em;
+  }
 }
 @media (min-width: 600px) {
 }
@@ -38,6 +41,12 @@
 @media (min-width: 1440px) {
 }
 @media (min-width: 1680px) {
+  .view-skills-button-text {
+    font-size: 1.8em;
+  }
 }
 @media (min-width: 1920px) {
+  .view-skills-button-text {
+    font-size: 2em;
+  }
 }

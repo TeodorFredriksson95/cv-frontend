@@ -37,10 +37,10 @@ const AboutContentSection = () => {
           </span>
           If you were to ask me which I prefer - backend or frontend - I wouldn’t be able to decide. The best way I can describe it is this;
           <span className="inline-text">
-            <span className="block-separator">
+            <span className="block-separator highlight">
               -A Cadillac, Bentley or Lamborghini is often a very beautiful car with the ability to turn heads. But take away the engine and the appeal quickly evaporates.
             </span>
-            <span className="block-separator">-Now put the engine back, but strip the car of everything but it’s chassis and ask “who wants a ride?”.</span>
+            <span className="block-separator highlight">-Now put the engine back, but strip the car of everything but it’s chassis and ask “who wants a ride?”.</span>
           </span>
           Now this is a crude analogy, and having studied as a car mechanic in my teens, I know plenty who’d prefer one over the other.
           <span className="block-separator">But to me, it is the combination of the two, the engine and the exterior, the backend and the frontend, what makes the end result beautiful.</span>Having
