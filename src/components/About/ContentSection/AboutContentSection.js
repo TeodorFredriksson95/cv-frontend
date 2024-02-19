@@ -1,10 +1,10 @@
-import "./ContentSection.css";
+import "./AboutContentSection.css";
 import React, { useEffect, useState, useRef } from "react";
 
 import ReachOutButton from "../../ReachOutButton/ReachOutButton";
 import ViewSkillsetButton from "../../ViewSkillsetButton/ViewSkillsetButton";
 
-const ContentSection = () => {
+const AboutContentSection = () => {
   useEffect(() => {}, []);
   return (
     <div>
@@ -13,11 +13,13 @@ const ContentSection = () => {
           <div className="profile-img-container">
             <img src="profileimg.png" />
           </div>
-          <div className="entry-text-container">
+          <div className="about-entry-text-container">
             <p className="remove-browser-margin">
-              My name is Teodor Fredriksson, and i’m a junior developer. If you made it all the way to the end of the main page, then you can probably already guess that I like story telling. My
-              mother, the journalist, did her best to teach me at a young age the proper ways to build articles that captivates the reader. With an inherent need for creative outlet, text based
-              mediums have thus for a long time served as such.
+              My name is Teodor Fredriksson, and i’m a junior developer. If you made it all the way to the end of the main page, then you can probably already guess that I like story telling.
+              <span className="entry-text-separator">
+                My mother, the journalist, did her best to teach me at a young age the proper ways to build articles that captivates the reader. With an inherent need for creative outlet, text based
+                mediums have thus for a long time served as such.
+              </span>
             </p>
           </div>
         </div>
@@ -34,14 +36,16 @@ const ContentSection = () => {
             dive into many different aspects of life and engage in them - all for me to understand the need, in order to deliver a great product./
           </span>
           If you were to ask me which I prefer - backend or frontend - I wouldn’t be able to decide. The best way I can describe it is this;
-          <span className="block-separator">
-            -A Cadillac, Bentley or Lamborghini is often a very beautiful car with the ability to turn heads. But take away the engine and the appeal quickly evaporates.
-          </span>{" "}
-          <span className="block-separator">-Now put the engine back, but strip the car of everything but it’s chassis and ask “who wants a ride?”.</span>
+          <span className="inline-text">
+            <span className="block-separator">
+              -A Cadillac, Bentley or Lamborghini is often a very beautiful car with the ability to turn heads. But take away the engine and the appeal quickly evaporates.
+            </span>
+            <span className="block-separator">-Now put the engine back, but strip the car of everything but it’s chassis and ask “who wants a ride?”.</span>
+          </span>
           Now this is a crude analogy, and having studied as a car mechanic in my teens, I know plenty who’d prefer one over the other.
           <span className="block-separator">But to me, it is the combination of the two, the engine and the exterior, the backend and the frontend, what makes the end result beautiful.</span>Having
           said that I feel obligated to also mention that I view the road to becoming a genuine fullstack developer his salt a long and diverse one, and I thoroughly enjoy deep diving into both
-          concepts.{" "}
+          concepts.
           <span className="block-separator">
             I’m ironically finding it impossible to write an introduction to myself without mentioning my former place of work - ICA. ICA is a Swedish supermarket franchise, and it served as my place
             of work for more than six years.
@@ -69,10 +73,14 @@ const ContentSection = () => {
         </p>
       </div>
       <div className="about-buttons-container">
-        <ReachOutButton />
-        <ViewSkillsetButton />
+        <div className="reach-button">
+          <ReachOutButton />
+        </div>
+        <div className="viewskills-button">
+          <ViewSkillsetButton />
+        </div>
       </div>
     </div>
   );
 };
-export default ContentSection;
+export default AboutContentSection;

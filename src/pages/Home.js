@@ -11,6 +11,8 @@ import { useEffect } from "react";
 
 const Home = () => {
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const navbarItems = document.querySelectorAll(".navbar a"); // Select all links within .navbar
 
     const onScroll = () => {

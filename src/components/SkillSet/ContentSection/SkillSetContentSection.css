@@ -1,0 +1,99 @@
+.entry-text-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.flex-box-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.coms-container {
+  margin-top: 5%;
+}
+
+.backend-container,
+.communications-container {
+  background-color: rgb(15, 248, 248, 46%);
+  margin-right: 5%;
+}
+.frontend-container {
+  background-color: rgb(231, 0, 139, 51%);
+}
+
+.communications-container {
+  background-color: orange;
+}
+
+.frontend-container,
+.backend-container,
+.communications-container,
+.get-in-touch-container {
+  width: 40%;
+  border-radius: 10px;
+  padding-bottom: 2%;
+}
+
+.tech-stack-container {
+  margin-bottom: 10%;
+}
+
+.tech-title {
+  text-align: center;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+.list-items {
+  font-family: var(--MS_Bold);
+  color: white;
+  line-height: 2;
+}
+
+.second-container {
+  margin-top: 5%;
+}
+
+.about-reach-out-text {
+  font-family: var(--MS_BI);
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+.reach-out-button-container {
+  margin: auto;
+  width: 50%;
+}
+.reach-out-button-container p {
+  font-size: 1em;
+}
+
+.skills-follow-progress-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 50%;
+}
+
+.skills-follow-progress-text p {
+  font-family: var(--MS_BI);
+  color: white;
+  font-size: 3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-follow-progress-text {
+  display: flex;
+}
+
+.skills-icons-container {
+  display: flex;
+  justify-content: space-evenly;
+}

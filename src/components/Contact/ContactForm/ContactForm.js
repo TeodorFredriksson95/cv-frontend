@@ -2,6 +2,7 @@ import ReachOutButton from "../../ReachOutButton/ReachOutButton";
 import { Icon } from "@iconify-icon/react";
 
 import "./ContactForm.css";
+import { NavLink } from "react-router-dom";
 
 const ContactForm = () => {
   return (
@@ -43,8 +44,12 @@ const ContactForm = () => {
             <p className="">Follow my progress</p>
           </div>
           <div className="icons-container">
-            <span class="devicon-plain--linkedin-wordmark"></span>
-            <span class="logos--github"></span>
+            <a className="linkedinlink" href="https://www.linkedin.com/in/teodor-fredriksson-919606b9/" target="_blank" rel="noopener noreferrer">
+              <span class="devicon-plain--linkedin-wordmark"></span>
+            </a>
+            <a className="linkedinlink" href="https://github.com/TeodorFredriksson95" target="_blank" rel="noopener noreferrer">
+              <span class="logos--github"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -52,5 +57,4 @@ const ContactForm = () => {
   );
 };
 
-// width={250} height={250} className="linkedin"
 export default ContactForm;

@@ -5,11 +5,11 @@ import React, { useEffect, useState } from "react";
 
 const ViewSkillsetButton = () => {
   return (
-    <div className="view-skills-button">
-      <NavLink to="/skillset" className="reach-out-link">
+    <NavLink to="/skillset" className="reach-out-link">
+      <div className="view-skills-button">
         <p className="view-skills-button-text">View Skill Set</p>
-      </NavLink>
-    </div>
+      </div>
+    </NavLink>
   );
 };
 

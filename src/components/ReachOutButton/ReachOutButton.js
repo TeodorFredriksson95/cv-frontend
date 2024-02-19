@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 
 const ReachOutButton = () => {
   return (
-    <div className="reach-out-button">
-      <NavLink to="/contact" className="reach-out-link">
+    <NavLink to="/contact" className="reach-out-link">
+      <div className="reach-out-button">
         <p className="reach-out-button-text">Reach Out</p>
-      </NavLink>
-    </div>
+      </div>
+    </NavLink>
   );
 };
 

@@ -48,6 +48,7 @@
   text-align: center;
   width: 80%;
   margin: auto;
+  margin-top: 10%;
 }
 .contact-form-container {
   padding-left: 10%;
@@ -148,10 +149,12 @@ textarea {
 
 .icons-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
+
 .devicon-plain--linkedin-wordmark {
-  margin-right: 10%;
+  display: flex;
+  cursor: pointer;
   width: 12em;
   height: 10em;
   background-repeat: no-repeat;
@@ -160,6 +163,10 @@ textarea {
 }
 
 .logos--github {
+  display: flex;
+
+  cursor: pointer;
+
   width: 10em;
   height: 10em;
   background-repeat: no-repeat;

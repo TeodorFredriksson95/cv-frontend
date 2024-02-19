@@ -5,7 +5,9 @@ import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 import ContactForm from "../components/Contact/ContactForm/ContactForm";
 
 const Contact = () => {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <ContactHeader />

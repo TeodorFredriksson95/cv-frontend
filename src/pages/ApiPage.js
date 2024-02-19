@@ -4,7 +4,9 @@ import ApiPageHeader from "../components/ApiPage/Header/ApiPageHeader";
 import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 
 const ApiPage = () => {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <ApiPageHeader />
