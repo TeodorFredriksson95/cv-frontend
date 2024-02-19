@@ -23,10 +23,11 @@
   font-weight: bold;
 }
 
-.active-link:focus-within {
+.active {
   border: 2px solid turquoise;
   padding: 3px;
   border-radius: 5px;
+  color: turquoise;
 }
 
 .scroll-active {

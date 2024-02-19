@@ -7,27 +7,27 @@ const Navbar = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" end className="active-link">
+          <NavLink to="/" end className="active-link" activeClassname="active">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className="active-link">
+          <NavLink to="/about" className="active-link" activeClassname="active">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" className="active-link">
+          <NavLink to="/contact" className="active-link" activeClassname="active">
             Contact
           </NavLink>
         </li>
         <li>
-          <NavLink to="/skillset" className="active-link">
+          <NavLink to="/skillset" className="active-link" activeClassname="active">
             Skill Set
           </NavLink>
         </li>
         <li>
-          <NavLink to="/apipage" className="active-link">
+          <NavLink to="/apipage" className="active-link" activeClassname="active">
             API
           </NavLink>
         </li>
