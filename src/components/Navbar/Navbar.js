@@ -31,6 +31,11 @@ const Navbar = () => {
             API
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/resources" className="active-link" activeClassname="active">
+            Resources
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

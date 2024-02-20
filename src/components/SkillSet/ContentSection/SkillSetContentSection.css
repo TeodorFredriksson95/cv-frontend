@@ -5,17 +5,16 @@
   text-align: center;
 }
 
-.coms-container {
-  margin-top: 5%;
-}
-
 .backend-container,
 .communications-container {
-  background-color: rgb(15, 248, 248, 46%);
   margin-right: 5%;
 }
 .frontend-container {
   background-color: rgb(231, 0, 139, 51%);
+}
+
+.backend-container {
+  background-color: rgb(15, 248, 248, 46%);
 }
 
 .communications-container {
@@ -26,13 +25,8 @@
 .backend-container,
 .communications-container,
 .get-in-touch-container {
-  width: 40%;
   border-radius: 10px;
   padding-bottom: 2%;
-}
-
-.tech-stack-container {
-  margin-bottom: 10%;
 }
 
 .tech-title {
@@ -43,25 +37,16 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .list-items {
   font-family: var(--MS_Bold);
   color: white;
   line-height: 2;
 }
 
-.about-reach-out-text {
-  font-family: var(--MS_BI);
-  color: white;
-  font-size: 2em;
-  text-align: center;
-}
-
 .reach-out-button-container {
   margin: auto;
   width: 50%;
-}
-.reach-out-button-container p {
-  font-size: 1em;
 }
 
 .skills-follow-progress-container {
@@ -88,6 +73,10 @@
 }
 
 @media (min-width: 320px) {
+  .skillset-entry-text-separator {
+    display: block;
+    margin-top: 5%;
+  }
   .flex-box-container {
     display: block;
   }
@@ -133,9 +122,7 @@
     width: 90%;
     text-align: center;
   }
-  .flex-box {
-    justify-content: center;
-  }
+
   .tech-title {
     padding-top: 1em;
     font-size: 2em;
@@ -191,7 +178,7 @@
     margin-right: 2%;
   }
   .githublink {
-    margin-left: 2%;
+    padding-right: 3%;
   }
 }
 @media (min-width: 1024px) {
@@ -216,6 +203,9 @@
 @media (min-width: 1280px) {
 }
 @media (min-width: 1440px) {
+  .skillset-entry-text-separator {
+    display: inline;
+  }
   .list-items ul li {
     font-size: 1.5em;
   }
