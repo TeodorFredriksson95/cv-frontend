@@ -5,12 +5,6 @@
   text-align: center;
 }
 
-.flex-box-container {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
 .coms-container {
   margin-top: 5%;
 }
@@ -55,10 +49,6 @@
   line-height: 2;
 }
 
-.second-container {
-  margin-top: 5%;
-}
-
 .about-reach-out-text {
   font-family: var(--MS_BI);
   color: white;
@@ -84,7 +74,6 @@
 .skills-follow-progress-text p {
   font-family: var(--MS_BI);
   color: white;
-  font-size: 3em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -96,4 +85,146 @@
 .skills-icons-container {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media (min-width: 320px) {
+  .flex-box-container {
+    display: block;
+  }
+  .flex-box-container {
+    width: 100%;
+  }
+  .frontend-container,
+  .backend-container,
+  .communications-container,
+  .get-in-touch-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+  }
+
+  .list-items ul {
+    padding-inline-start: 1.5em;
+  }
+  .list-items ul li {
+    font-size: 0.8em;
+  }
+  .skills-follow-progress-text p {
+    font-size: 2.5em;
+    margin-block-end: 0;
+  }
+  .skills-icons-container {
+    display: block;
+    margin-bottom: 10%;
+  }
+
+  .devicon-plain--linkedin-wordmark,
+  .logos--github {
+    margin: auto;
+  }
+  .devicon-plain--linkedin-wordmark {
+    height: 8em;
+  }
+  .logos--github {
+    height: 2em;
+  }
+  .skills-follow-progress-container {
+    width: 90%;
+    text-align: center;
+  }
+  .flex-box {
+    justify-content: center;
+  }
+  .tech-title {
+    padding-top: 1em;
+    font-size: 2em;
+  }
+  .flex-box {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 360px) {
+}
+@media (min-width: 480px) {
+  .list-items ul li {
+    font-size: 1em;
+  }
+  .list-items ul {
+    padding-inline-start: 40px;
+  }
+}
+@media (min-width: 600px) {
+  .skills-icons-container {
+    display: flex;
+    margin-bottom: 10%;
+  }
+
+  .devicon-plain--linkedin-wordmark,
+  .logos--github {
+    margin: auto;
+  }
+  .devicon-plain--linkedin-wordmark {
+    height: 10em;
+  }
+  .logos--github {
+    height: 10em;
+  }
+  .reach-out-button-container p {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 800px) {
+  .list-items ul li {
+    font-size: 1em;
+  }
+  .tech-title {
+    font-size: 2.5em;
+  }
+  .reach-out-button-container p {
+    font-size: 1.5em;
+  }
+  .skills-icons-container {
+    justify-content: center;
+  }
+  .linkedinlink {
+    margin-right: 2%;
+  }
+  .githublink {
+    margin-left: 2%;
+  }
+}
+@media (min-width: 1024px) {
+  .skills-follow-progress-text p,
+  .tech-title {
+    font-size: 3em;
+  }
+  .flex-box-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .backend-container,
+  .communications-container {
+    margin-right: 5%;
+  }
+  .communications-container,
+  .get-in-touch-container {
+    margin-top: 5%;
+  }
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 1440px) {
+  .list-items ul li {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1680px) {
+  .list-items ul li {
+    font-size: 1.8em;
+  }
+}
+@media (min-width: 1920px) {
 }
