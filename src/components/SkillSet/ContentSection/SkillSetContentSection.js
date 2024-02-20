@@ -8,8 +8,8 @@ const SkillSetContentSection = () => {
         <p className="narrator-paragraph-text">
           Over the past 3 years I have worked on databases, mobile apps, web apps, design schemas and game development.
           <span className="skillset-entry-text-separator">
-            The work has been done in various environmental settings such as school, internship, freelance and personal projects. Below you can see an overview of what tech stack I’m primarily working
-            with.
+            {" "}
+            The work has been done in various settings such as school, internships, freelance work and personal projects. Below you can see an overview of what tech stack I’m primarily working with.
           </span>
         </p>
       </div>

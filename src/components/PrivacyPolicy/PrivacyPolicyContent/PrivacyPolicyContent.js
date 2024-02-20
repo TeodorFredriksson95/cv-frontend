@@ -29,7 +29,7 @@ const PrivacyPolicyContent = () => {
           <p className="bread-text">The personal information you provide through the contact form is used for the following purposes:</p>
           <ul className="policy-list">
             <li className="policy-list-item">To review and consider potential recruitment offers.</li>
-            <li className="policy-list-item">To review your message for potential business opportunities.</li>
+            <li className="policy-list-item">To review your message for potential business inquiries.</li>
             <li className="policy-list-item">To improve features and the quality of the website based on your feedback.</li>
           </ul>
         </div>
@@ -44,14 +44,14 @@ const PrivacyPolicyContent = () => {
           <h2 className="section-title-h3">4. Protection of Your Personal Information</h2>
           <p className="bread-text">
             I take appropriate technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, please note that no
-            internet transmission is entirely secure or error-free; therefore, we cannot guarantee the absolute security of the information transmitted to and from our website.
+            internet transmission is entirely secure or error-free; therefore, I cannot guarantee the absolute security of the information transmitted to and from this website.
           </p>
         </div>
         <div className="policy-section-container">
           <h2 className="section-title-h3">5. Your Rights</h2>
           <p className="bread-text">
             You have the right to access, correct, or delete your personal information that I hold. You also have the right to restrict or object to certain processing of your personal information. If
-            you wish to exercise any of these rights, please contact us at [CreateNewEmailForThis@hotmail.com].
+            you wish to exercise any of these rights, please contact me at Teofredev@gmail.com.
           </p>
         </div>
         <div className="policy-section-container">
@@ -63,7 +63,7 @@ const PrivacyPolicyContent = () => {
         </div>
         <div className="policy-section-container">
           <h2 className="section-title-h3">7. Contact Me</h2>
-          <p className="bread-text">If you have any questions or concerns about this Privacy Policy or the treatment of your personal information, please contact us at [Your Contact Information]. </p>
+          <p className="bread-text">If you have any questions or concerns about this Privacy Policy or the treatment of your personal information, please contact me at Teofredev@gmail.com. </p>
         </div>
         <div className="policy-section-container">
           <p className="bread-text">This Privacy Policy is effective as of [2024-02-20].</p>

@@ -3,6 +3,7 @@ import { Icon } from "@iconify-icon/react";
 import { useEffect, useState, useRef } from "react";
 
 import createObserver from "../../util/createObserver";
+import ReachOutButton from "../ReachOutButton/ReachOutButton";
 
 const TechStack = () => {
   const [iconSize, setIconSize] = useState({ width: 100, height: 100 });
@@ -147,20 +148,23 @@ const TechStack = () => {
             <p className="looking-for-dev-text hungry-dev">
               Are you looking for a developer, hungry to <span id="contribute">contribute</span> to your <span id="atmosphere">atmosphere</span> and <span id="atmosphere">progress</span>?
             </p>
+            <div className="techstack-reach-out-button-container">
+              <ReachOutButton />
+            </div>
           </div>
 
           <div className="looking-for-dev-image-container">
             <img src="beforedawnpng3.png" id="last-img" />
           </div>
         </div>
-        <div className="get-in-touch">
+        {/* <div className="get-in-touch">
           <p className="looking-for-dev-text last-text">
             GET IN TOUCH NOW{" "}
             <span>
               <Icon width={iconSize.width} height={iconSize.height} icon="quill:forward" className="tech-icon-last" />
             </span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -120,7 +120,12 @@
   .hungry-dev {
     width: 80%;
     margin: auto;
-    text-align: left;
+    text-align: center;
+  }
+  .techstack-reach-out-button-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
   }
 
   #contribute,
@@ -177,13 +182,29 @@
   .tech-container {
     margin-left: 7%;
   }
+  .techstack-reach-out-button-container {
+    width: 50%;
+  }
 }
 @media (min-width: 768px) {
   .looking-for-dev-text {
     font-size: 2.5em;
   }
+  .techstack-reach-out-button-container {
+    width: 50%;
+  }
 }
 @media (min-width: 1024px) {
+  .techstack-reach-out-button-container {
+    margin: 10%;
+  }
+  .hungry-dev {
+    text-align: left;
+  }
+  .frameworks-container {
+    margin-top: 20%;
+  }
+
   .beginning-of-the-end-container {
     margin-top: 20%;
   }

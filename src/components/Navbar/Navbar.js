@@ -11,27 +11,27 @@ const Navbar = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to="/" end className="active-link" activeClassname="active">
+          <NavLink to="/" end className="active-link" activeclassname="active">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className="active-link" activeClassname="active">
+          <NavLink to="/about" className="active-link" activeclassname="active">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" className="active-link" activeClassname="active">
+          <NavLink to="/contact" className="active-link" activeclassname="active">
             Contact
           </NavLink>
         </li>
         <li>
-          <NavLink to="/skillset" className="active-link" activeClassname="active">
+          <NavLink to="/skillset" className="active-link" activeclassname="active">
             Skill Set
           </NavLink>
         </li>
         <li>
-          <NavLink to="/apipage" className="active-link" activeClassname="active">
+          <NavLink to="/apipage" className="active-link" activeclassname="active">
             API
           </NavLink>
         </li>
@@ -43,12 +43,12 @@ const Navbar = () => {
           {isDropdownVisible && (
             <ul className="dropdown">
               <li className="dropdown-li">
-                <NavLink to="/resources" className="active-link" activeClassName="active">
+                <NavLink to="/resources" className="active-link" activeclassname="active">
                   Resources
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/privacypolicy" className="active-link" activeClassName="active">
+                <NavLink to="/privacypolicy" className="active-link" activeclassname="active">
                   Privacy Policy
                 </NavLink>
               </li>

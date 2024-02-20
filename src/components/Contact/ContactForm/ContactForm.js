@@ -1,5 +1,6 @@
 import ReachOutButton from "../../ReachOutButton/ReachOutButton";
 import { Icon } from "@iconify-icon/react";
+import emailjs from "emailjs-com";
 
 import "./ContactForm.css";
 import { NavLink } from "react-router-dom";
@@ -10,7 +11,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    category: "Freelance_proposal", // Assuming this as default selected value
+    category: "Freelance Proposal", // Assuming this as default selected value
     message: "",
     privacyPolicyAgreement: false,
   });
@@ -28,16 +29,27 @@ const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 5000);
-
-    setFormData({
-      name: "",
-      email: "",
-      category: "Freelance_proposal",
-      message: "",
-      privacyPolicyAgreement: false,
-    });
+    emailjs.sendForm("service_ixdgdqm", "template_z5geyda", event.target, "Q7PgfF7xgu_nHDpPV").then(
+      (result) => {
+        console.log(result);
+        console.log(result.text);
+        console.log(event.target);
+        setShowToast(true); // Show success toast
+        setTimeout(() => setShowToast(false), 5000); // Hide toast after 5 seconds
+        // Clear the form fields here
+        setFormData({
+          name: "",
+          email: "",
+          category: "Freelance Proposal",
+          message: "",
+          privacyPolicyAgreement: false,
+        });
+      },
+      (error) => {
+        console.log(error.text);
+        // Optionally, show an error toast if the email sending fails
+      }
+    );
   };
   return (
     <div>
@@ -54,21 +66,19 @@ const ContactForm = () => {
             <label className="input-block">Email</label>
             <input className="input2" type="text" required name="email" value={formData.email} onChange={handleChange} />
             <label className="input-block">Category</label>
-            <div class="custom-select">
-              <select className="select1" required value={formData.category} onChange={handleChange}>
+            <div className="custom-select">
+              <select name="category" className="select1" required value={formData.category} onChange={handleChange}>
                 <option value="Recruiter">Recruiter</option>
-                <option value="Freelance_proposal" selected>
-                  Freelance proposal
-                </option>
+                <option value="Freelance Proposal">Freelance Proposal</option>
                 <option value="Collaboration">Collaboration</option>
                 <option value="Other">Other</option>
               </select>
             </div>
             <div className="text-area-container">
               <label className="input-block">Message</label>
-              <textarea className="text-area" required value={formData.message} onChange={handleChange}></textarea>
+              <textarea name="message" className="text-area" required value={formData.message} onChange={handleChange} />
               <div className="privacy-policy-agreement">
-                <input type="checkbox" id="privacyPolicyAgreement" name="privacyPolicyAgreement" required checked={formData.privacyPolicyAgreement} onChange={handleChange} />
+                <input type="checkbox" id="privacyPolicyAgreement" name="privacyPolicyAgreement" required />
                 <label className="agree-text" htmlFor="privacyPolicyAgreement">
                   I agree to the{" "}
                   <NavLink to="/privacypolicy">
@@ -78,7 +88,7 @@ const ContactForm = () => {
                 </label>
               </div>
               <div className="send-button-container">
-                <input type="submit" value="Send" className="send-button" />
+                <input type="submit" value="send" className="send-button" />
               </div>
             </div>
           </form>
@@ -89,10 +99,10 @@ const ContactForm = () => {
           </div>
           <div className="icons-container">
             <a className="linkedinlink" href="https://www.linkedin.com/in/teodor-fredriksson-919606b9/" target="_blank" rel="noopener noreferrer">
-              <span class="devicon-plain--linkedin-wordmark"></span>
+              <span className="devicon-plain--linkedin-wordmark"></span>
             </a>
             <a className="githublink" href="https://github.com/TeodorFredriksson95" target="_blank" rel="noopener noreferrer">
-              <span class="logos--github"></span>
+              <span className="logos--github"></span>
             </a>
           </div>
         </div>

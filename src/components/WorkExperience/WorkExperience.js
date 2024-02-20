@@ -116,7 +116,7 @@ const WorkExperience = () => {
         <div className="flowchart-text">
           <div className="para3-overflow-text-1" ref={para3_overflow_1}>
             <p className="narrator-paragraph-text">
-              The young man came to realize quickly, that this store was <span className="word-highlight-turq">revered</span>. Both by customers and by competitors. The expectations were high.
+              The young man quickly came to realize that this store was <span className="word-highlight-turq">revered</span>. Both by customers and by competitors. The expectations were high.
             </p>
           </div>
           <div className="para3-overflow-text-2" ref={para3_overflow_2}>
