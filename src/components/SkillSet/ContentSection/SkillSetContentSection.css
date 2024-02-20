@@ -71,7 +71,7 @@
   width: 50%;
 }
 
-.skills-follow-progress-text p {
+.skills-follow-progress-text h2 {
   font-family: var(--MS_BI);
   color: white;
   margin-left: auto;
@@ -110,7 +110,7 @@
   .list-items ul li {
     font-size: 0.8em;
   }
-  .skills-follow-progress-text p {
+  .skills-follow-progress-text h2 {
     font-size: 2.5em;
     margin-block-end: 0;
   }
@@ -195,7 +195,6 @@
   }
 }
 @media (min-width: 1024px) {
-  .skills-follow-progress-text p,
   .tech-title {
     font-size: 3em;
   }
@@ -219,6 +218,9 @@
 @media (min-width: 1440px) {
   .list-items ul li {
     font-size: 1.5em;
+  }
+  .skills-follow-progress-text h2 {
+    font-size: 4em;
   }
 }
 @media (min-width: 1680px) {

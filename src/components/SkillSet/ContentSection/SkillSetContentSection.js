@@ -88,7 +88,7 @@ const SkillSetContentSection = () => {
 
         <div className="skills-follow-progress-container">
           <div className="skills-follow-progress-text">
-            <p className="">Follow my progress</p>
+            <h2 className="tech-stack-text tech-title">Follow my progress</h2>
           </div>
           <div className="skills-icons-container">
             <a className="linkedinlink" href="https://www.linkedin.com/in/teodor-fredriksson-919606b9/" target="_blank" rel="noopener noreferrer">

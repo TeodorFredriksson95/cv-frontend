@@ -6,7 +6,7 @@ const TimelineBorn = () => {
   const paragraphRef = useRef();
 
   useEffect(() => {
-    createObserver(paragraphRef, "active", 0.5, true);
+    createObserver(paragraphRef, "activate", 0.5, true);
   }, []);
 
   return (
