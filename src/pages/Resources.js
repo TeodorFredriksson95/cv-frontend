@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ApiPageHeader from "../components/ApiPage/Header/ApiPageHeader";
+import ResourcesHeader from "../components/Resources/Header/ResourcesHeader";
+import ResourcesContent from "../components/Resources/ResourcesContent/ResourcesContent";
 
 const Resources = () => {
   useEffect(() => {
@@ -7,7 +9,8 @@ const Resources = () => {
   }, []);
   return (
     <div>
-      <ApiPageHeader />
+      <ResourcesHeader />
+      <ResourcesContent />
     </div>
   );
 };

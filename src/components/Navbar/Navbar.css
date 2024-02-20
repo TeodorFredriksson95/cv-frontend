@@ -24,7 +24,7 @@
 }
 
 .active {
-  border: 2px solid turquoise;
+  /* border: 2px solid turquoise; */
   padding: 3px;
   border-radius: 5px;
   color: turquoise;
@@ -32,6 +32,31 @@
 
 .scroll-active {
   color: red;
+}
+
+.dropdown {
+  margin-right: 3% !important;
+  display: none; /*display:none*/
+  position: absolute;
+  right: 0;
+  top: 35%;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown li {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.navbar li:hover .dropdown {
+  display: block;
 }
 
 @media (min-width: 320px) {

@@ -93,6 +93,12 @@ body {
   font-size: var(--narrator-paragraph-size);
 }
 
+.bread-text {
+  color: var(--text_color);
+  font-family: var(--MS_LI);
+  font-size: var(--bread-text-size);
+}
+
 /* response paragraph */
 .response-paragraph {
   color: var(--text_color);
@@ -138,6 +144,7 @@ body {
     --tech-stack-text-size: 1em;
     --continuation-text-size: 2em;
 
+    --bread-text-size: 1em;
     --narrator-paragraph-size: 1em;
     --response-paragraph-size: 1em;
 
@@ -160,6 +167,7 @@ body {
     --h4-text-size: 1.3em;
 
     --tech-stack-text-size: 1.3em;
+    --bread-text-size: 1.2em;
     --narrator-paragraph-size: 1.3em;
     --response-paragraph-size: 1.3em;
   }
@@ -175,6 +183,7 @@ body {
     --continuation-text-size: 3em;
 
     --tech-stack-text-size: 1.5em;
+    --bread-text-size: 1.3em;
     --narrator-paragraph-size: 1.5em;
     --response-paragraph-size: 1.5em;
   }
@@ -188,6 +197,7 @@ body {
     --h3-text-size: 2.5em;
 
     --tech-stack-text-size: 2em;
+    --bread-text-size: 1.4em;
     --narrator-paragraph-size: 1.6em;
     --response-paragraph-size: 1.6em;
     --continuation-text-size: 3em;
@@ -222,6 +232,7 @@ body {
 
     --response-paragraph-size: 2em;
     --narrator-paragraph-size: 2em;
+    --bread-text-size: 1.6em;
   }
 }
 
@@ -238,6 +249,7 @@ body {
     --tech-stack-text-size: 3.2em;
     --response-paragraph-size: 2.1em;
     --narrator-paragraph-size: 2.1em;
+    --bread-text-size: 1.8em;
   }
 }
 /* extra large screens: 1680px to 1920px */
@@ -253,6 +265,7 @@ body {
     --tech-stack-text-size: 3.6em;
     --response-paragraph-size: 2.3em;
     --narrator-paragraph-size: 2.3em;
+    --bread-text-size: 2em;
 
     --continuation-text-size: 5em;
   }
@@ -277,6 +290,7 @@ body {
     --continuation-text-size: 6em;
     --response-paragraph-size: 2.8em;
     --narrator-paragraph-size: 2.8em;
+    --bread-text-size: 2.5em;
   }
 }
 

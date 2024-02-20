@@ -1,8 +1,12 @@
 import { Outlet, Link, NavLink, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(true);
+  // useEffect(() => {
+  //   setIsDropdownVisible(true);
+  // }, []);
   return (
     <nav className="navbar">
       <ul>
@@ -31,10 +35,25 @@ const Navbar = () => {
             API
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/resources" className="active-link" activeClassname="active">
-            Resources
-          </NavLink>
+        <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
+          <a href="#" className="active-link">
+            Other
+          </a>
+
+          {isDropdownVisible && (
+            <ul className="dropdown">
+              <li className="dropdown-li">
+                <NavLink to="/resources" className="active-link" activeClassName="active">
+                  Resources
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/privacypolicy" className="active-link" activeClassName="active">
+                  Privacy Policy
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </li>
       </ul>
     </nav>

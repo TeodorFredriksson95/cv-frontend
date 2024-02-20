@@ -13,6 +13,7 @@ import Layout from "./pages/Layout";
 import SkillSet from "./pages/SkillSet";
 import ApiPage from "./pages/ApiPage";
 import Resources from "./pages/Resources";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="skillset" element={<SkillSet />} />
           <Route path="apipage" element={<ApiPage />} />
           <Route path="resources" element={<Resources />} />
+          <Route path="privacypolicy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

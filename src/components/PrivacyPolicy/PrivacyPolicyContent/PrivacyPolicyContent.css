@@ -1,0 +1,58 @@
+.policy-content-section {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+.policy-section-container {
+  margin-bottom: 10%;
+}
+.policy-list {
+  width: 70%;
+  font-family: var(--MS_LI);
+  color: var(--text_color);
+  font-size: 1.5em;
+}
+
+@media (min-width: 320px) {
+  .policy-list {
+    font-size: 1em;
+    width: 80%;
+  }
+  .policy-content-section {
+    margin-top: 20%;
+  }
+}
+@media (min-width: 360px) {
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 600px) {
+  .policy-list {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 800px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {
+  .policy-list {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 1440px) {
+  .policy-list {
+    font-size: 1.4em;
+  }
+}
+@media (min-width: 1680px) {
+  .policy-list {
+    font-size: 1.7em;
+  }
+}
+@media (min-width: 1920px) {
+  .policy-list {
+    font-size: 2em;
+  }
+}
