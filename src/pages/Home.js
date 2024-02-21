@@ -8,6 +8,7 @@ import ShiftingDirections from "../components/ShiftingDirections/ShiftingDirecti
 import TechStack from "../components/TechStack/TechStack";
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   useEffect(() => {
@@ -36,6 +37,10 @@ const Home = () => {
   }, []);
   return (
     <div className="content-page">
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Embark on a journey with me from childhood dreams to becoming a passionate junior developer, where every line of code is a step towards creation." />
+      </Helmet>
       <HeroContent />
       <TimelineBorn />
       <TimeLineWebDev />

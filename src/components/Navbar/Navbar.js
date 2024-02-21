@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="hamburger" onClick={toggleMobileMenu}>
-        {isMobileMenuVisible ? <span class="mdi--close"></span> : <span class="quill--hamburger"></span>}
+        {isMobileMenuVisible ? <span className="mdi--close"></span> : <span className="quill--hamburger"></span>}
       </div>
       {isMobileMenuVisible && (
         <ul className="mobile-dropdown">
