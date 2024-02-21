@@ -11,12 +11,11 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    category: "Freelance Proposal", // Assuming this as default selected value
+    category: "Freelance Proposal",
     message: "",
     privacyPolicyAgreement: false,
   });
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prevState) => ({
@@ -25,18 +24,16 @@ const ContactForm = () => {
     }));
   };
 
-  // Simulate form submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    emailjs.sendForm("service_ixdgdqm", "template_z5geyda", event.target, "Q7PgfF7xgu_nHDpPV").then(
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID).then(
       (result) => {
         console.log(result);
         console.log(result.text);
         console.log(event.target);
-        setShowToast(true); // Show success toast
-        setTimeout(() => setShowToast(false), 5000); // Hide toast after 5 seconds
-        // Clear the form fields here
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 5000);
         setFormData({
           name: "",
           email: "",
@@ -47,7 +44,7 @@ const ContactForm = () => {
       },
       (error) => {
         console.log(error.text);
-        // Optionally, show an error toast if the email sending fails
+        <Toast show={showToast} message="There was an error sending your message" />;
       }
     );
   };
