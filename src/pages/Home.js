@@ -39,6 +39,7 @@ const Home = () => {
     <div className="content-page">
       <Helmet>
         <title>Home</title>
+        <meta property="og:image" content="https://www.unidevweb.com/weblinkimage.jpg" />
         <meta name="description" content="Embark on a journey with me from childhood dreams to becoming a passionate junior developer, where every line of code is a step towards creation." />
       </Helmet>
       <HeroContent />
