@@ -53,11 +53,9 @@
 .active-link:focus-within,
 .active-link:hover {
   color: turquoise;
-  font-weight: bold;
 }
 
 .active {
-  padding: 3px;
   border-radius: 5px;
   color: turquoise;
 }
