@@ -57,9 +57,9 @@ const TimeLineWebDev = () => {
           And so he did...
         </h1>
         <div className="image-container" ref={shootImage}>
-          <img src="htmlcomputer.png" />
-          <img src="htmlcomputer.png" />
-          <img src="htmlcomputer.png" />
+          <img src="htmledit3.jpg" />
+          <img src="route66.jpg" />
+          <img src="navigation.jpg" />
         </div>
       </div>
 

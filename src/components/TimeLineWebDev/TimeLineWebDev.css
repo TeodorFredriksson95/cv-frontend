@@ -40,6 +40,7 @@
 .image-container img {
   height: 70%;
   margin: auto;
+  border-radius: 10px;
 }
 
 .animate h1,
