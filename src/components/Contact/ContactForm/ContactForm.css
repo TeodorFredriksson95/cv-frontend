@@ -100,9 +100,8 @@ textarea {
 input[type="text"],
 .text-area,
 input[type="select"] {
-  padding-left: 1%;
+  padding-left: 1em;
 }
-
 textarea {
   padding: 1%;
   border-radius: 0.25rem;
@@ -186,6 +185,9 @@ textarea {
 }
 .privacy-policy-agreement {
   display: flex;
+}
+.privacy-link {
+  text-decoration: none;
 }
 .onHover:hover {
   color: #e7008b;

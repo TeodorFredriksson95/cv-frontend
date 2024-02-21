@@ -3,10 +3,57 @@ import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuVisible(!isMobileMenuVisible);
+    console.log("mobile menu triggered");
+  };
+
   return (
     <nav className="navbar">
-      <ul>
+      <div className="hamburger" onClick={toggleMobileMenu}>
+        {isMobileMenuVisible ? <span class="mdi--close"></span> : <span class="quill--hamburger"></span>}
+      </div>
+      {isMobileMenuVisible && (
+        <ul className="mobile-dropdown">
+          <li className="dropdown-li">
+            <NavLink to="/" end className="active-link">
+              Home
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/about" className="active-link">
+              About
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/contact" className="active-link">
+              Contact
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/skillset" className="active-link">
+              Skill Set
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/privacypolicy" className="active-link" activeclassname="active">
+              Privacy
+              <br /> Policy
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/credits" className="active-link" activeclassname="active">
+              Credits
+            </NavLink>
+          </li>
+        </ul>
+      )}
+
+      <ul className="full-nav">
         <li>
           <NavLink to="/" end className="active-link" activeclassname="active">
             Home

@@ -81,7 +81,7 @@ const ContactForm = () => {
                 <input type="checkbox" id="privacyPolicyAgreement" name="privacyPolicyAgreement" required />
                 <label className="agree-text" htmlFor="privacyPolicyAgreement">
                   I agree to the{" "}
-                  <NavLink to="/privacypolicy">
+                  <NavLink to="/privacypolicy" className="privacy-link">
                     <span className="word-highlight-pink onHover">Privacy Policy</span>
                   </NavLink>
                   .

@@ -1,0 +1,25 @@
+.links-no-underline {
+  text-decoration: none;
+}
+
+.links-no-underline:hover {
+  color: #fd129f;
+}
+
+.image-credit-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.freepik-container,
+.storyset-container,
+.rawpixel-container {
+  margin-bottom: 5%;
+}
+
+.no-separator {
+  margin-block-end: 0.5em;
+}
