@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(true);
-  // useEffect(() => {
-  //   setIsDropdownVisible(true);
-  // }, []);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   return (
     <nav className="navbar">
       <ul>
@@ -43,13 +40,13 @@ const Navbar = () => {
           {isDropdownVisible && (
             <ul className="dropdown">
               <li className="dropdown-li">
-                <NavLink to="/resources" className="active-link" activeclassname="active">
-                  Resources
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/privacypolicy" className="active-link" activeclassname="active">
                   Privacy Policy
+                </NavLink>
+              </li>
+              <li className="dropdown-li">
+                <NavLink to="/credits" className="active-link" activeclassname="active">
+                  Credits
                 </NavLink>
               </li>
             </ul>

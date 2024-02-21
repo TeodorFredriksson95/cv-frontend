@@ -16,7 +16,7 @@
     transition: transform 0.4s ease-in-out;
   }
   .versus-logo-container.activate {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 
   .script-combatant p {
@@ -201,7 +201,7 @@
   }
 
   .versus-logo-container {
-    width: 60%;
+    width: 50%;
   }
 
   .script-combatant {
