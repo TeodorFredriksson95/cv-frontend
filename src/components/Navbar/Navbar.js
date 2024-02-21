@@ -74,11 +74,11 @@ const Navbar = () => {
             Skill Set
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/apipage" className="active-link" activeclassname="active">
             API
           </NavLink>
-        </li>
+        </li> */}
         <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
           <a href="#" className="active-link">
             Other
