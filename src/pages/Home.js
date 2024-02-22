@@ -39,11 +39,6 @@ const Home = () => {
     <div className="content-page">
       <Helmet>
         <title>Home</title>
-        <meta property="og:title" content="A Junior Dev Journey" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.unidevweb.com" />
-        <meta property="og:image" content="https://www.unidevweb.com/weblinkimage.jpg" />
-        <meta property="og:description" content="Embark on a journey with me from childhood dreams to becoming a passionate junior developer, where every line of code is a step towards creation." />
         <meta name="description" content="Embark on a journey with me from childhood dreams to becoming a passionate junior developer, where every line of code is a step towards creation." />
       </Helmet>
       <HeroContent />
