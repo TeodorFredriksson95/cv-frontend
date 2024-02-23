@@ -1,5 +1,11 @@
+import NoPageContent from "../components/NoPage/NoPageContent";
+
 const NoPage = () => {
-    return <h1>404</h1>;
-  };
-  
-  export default NoPage;
+  return (
+    <div>
+      <NoPageContent />
+    </div>
+  );
+};
+
+export default NoPage;
