@@ -9,6 +9,8 @@ import TechStack from "../components/TechStack/TechStack";
 
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import HomeHeader from "../components/Home/HomeHeader/HomeHeader";
+import HomeContent from "../components/Home/HomeContent/HomeContent";
 
 const Home = () => {
   useEffect(() => {
@@ -39,15 +41,13 @@ const Home = () => {
     <div className="content-page">
       <Helmet>
         <title>Home</title>
-        <meta name="description" content="Embark on a journey with me from childhood dreams to becoming a passionate junior developer, where every line of code is a step towards creation." />
+        <meta
+          name="description"
+          content="Embark on the journey of a passionate junior developer showcasing a unique story and diverse skill set, aimed at unlocking freelancing opportunities or a role in a forward-thinking company. Explore my projects, track my progress, and discover how my experiences shape my approach to development."
+        />
       </Helmet>
-      <HeroContent />
-      <TimelineBorn />
-      <TimeLineWebDev />
-      <ScriptVsDev />
-      <WorkExperience />
-      <ShiftingDirections />
-      <TechStack />
+      <HomeHeader />
+      <HomeContent />
       {/* 
 
 <FixedTimeLine /> 

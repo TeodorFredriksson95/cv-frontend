@@ -60,6 +60,16 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/story" className="active-link" activeclassname="active">
+            Story
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/skillset" className="active-link" activeclassname="active">
+            Skill Set
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/about" className="active-link" activeclassname="active">
             About
           </NavLink>
@@ -69,11 +79,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/skillset" className="active-link" activeclassname="active">
-            Skill Set
-          </NavLink>
-        </li>
+
         {/* <li>
           <NavLink to="/apipage" className="active-link" activeclassname="active">
             API

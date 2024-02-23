@@ -1,12 +1,12 @@
 @media (min-width: 320px) {
-  .header::before {
+  .home-header::before {
     content: "";
     position: absolute;
     top: 0%;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("../../../public/storyheader.webp");
+    background-image: url("../../../../public/headerimageedit8.webp");
     background-size: cover;
     background-position: center;
     opacity: 1;
@@ -51,14 +51,14 @@
 }
 
 @media (min-width: 480px) {
-  .header::before {
+  .home-header::before {
     height: 50vh;
   }
 }
 
 /* tablets: portrait mode - 600px to 800px*/
 @media (min-width: 600px) {
-  .header::before {
+  .home-header::before {
     height: 40vh;
   }
   .main-title {
@@ -78,7 +78,7 @@
 
 /* tablets: landscape mode - 800px to 1024px*/
 @media (min-width: 768px) {
-  .header::before {
+  .home-header::before {
     height: 50vh;
   }
   .logo {
@@ -115,7 +115,7 @@
 
 /* medium screens: 1280px to 1440px */
 @media (min-width: 1280px) {
-  .header::before {
+  .home-header::before {
     height: 70vh;
   }
   .main-title {
@@ -125,7 +125,7 @@
 
 /* large screens: 1440px to 1680px */
 @media (min-width: 1440px) {
-  .header::before {
+  .home-header::before {
     height: 60vh;
   }
   .hero-content {
@@ -142,7 +142,7 @@
 
 /* large screens: 1680px to 1920px */
 @media (min-width: 1680px) {
-  .header::before {
+  .home-header::before {
     height: 90vh;
   }
   .hero-title {

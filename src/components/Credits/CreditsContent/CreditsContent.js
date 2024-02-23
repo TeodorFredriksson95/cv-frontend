@@ -217,6 +217,19 @@ const CreditsContent = () => {
             by WangXiNa on Freepik
           </div>
         </div>
+        <div className="various-creators-container">
+          <div className="credits-link-div">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="word-highlight-pink links-no-underline"
+              href="https://www.freepik.com/free-photo/book-that-has-word-mountain-it_41073765.htm#fromView=search&page=1&position=3&uuid=77fe824c-609c-4251-bd38-d38917b941ca"
+            >
+              Image
+            </a>{" "}
+            by vecstock on Freepik
+          </div>
+        </div>
       </div>
     </div>
   );
