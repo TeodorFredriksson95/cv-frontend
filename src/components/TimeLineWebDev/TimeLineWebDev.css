@@ -155,6 +155,9 @@
 }
 
 @media (min-width: 320px) {
+  .web-dev-container {
+    margin-top: 60%;
+  }
   .one h1 {
     font-family: var(--MS_EBI);
     color: var(--title-h2-color);
@@ -211,18 +214,18 @@
   }
 
   .web-dev-continuation {
-    margin-top: 30%;
+    margin-top: 40%;
     text-align: center;
   }
 
   .image-container {
-    margin-top: 10%;
+    margin-top: 30%;
     box-sizing: border-box;
     opacity: 1;
     position: absolute;
     width: 100%;
     left: 0;
-    height: 7%;
+    height: 10%;
     display: flex;
     justify-content: space-evenly;
     background-color: rgb(0, 0, 0);
@@ -242,12 +245,13 @@
     overflow: hidden;
     width: 90%;
     margin: auto;
+    padding-top: 30%;
   }
 
   .happy-thought {
     width: 90%;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 25%;
     text-align: center;
     font-family: var(--MS_LI);
   }
@@ -282,6 +286,12 @@
 }
 
 @media (min-width: 768px) {
+  .ominous-thought {
+    padding-top: 15%;
+  }
+  .web-dev-container {
+    margin-top: 40%;
+  }
   .svg-container {
     flex-direction: row;
   }
@@ -315,10 +325,16 @@
   .web-dev-magic-paragraph-container {
     margin-top: 40%;
   }
+  .web-dev-continuation {
+    margin-top: 30%;
+  }
 }
 
 /* small laptops and large tablets: 1024px to 1280px (hybrids)*/
 @media (min-width: 1024px) {
+  .web-dev-container {
+    margin-top: 30%;
+  }
   .image-container {
     height: 18%;
   }

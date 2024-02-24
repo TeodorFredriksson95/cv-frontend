@@ -28,6 +28,7 @@ const SkillSetContentSection = () => {
               </ul>
               <ul>
                 <li>SQL</li>
+                <li>MySQL</li>
                 <li>SQLite </li>
                 <li>Azure</li>
                 <li>Firebase</li>
@@ -49,6 +50,7 @@ const SkillSetContentSection = () => {
                 <li>React</li>
                 <li>Xamarin </li>
                 <li>Inkscape</li>
+                <li>Mobile First</li>
               </ul>
               <ul>
                 <li>CSS</li>
@@ -57,7 +59,7 @@ const SkillSetContentSection = () => {
               </ul>
               <ul>
                 <li>HTML</li>
-                <li>Aesprite </li>
+                <li>Aseprite </li>
                 <li>Expo Go</li>
               </ul>
             </div>

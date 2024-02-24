@@ -1,7 +1,7 @@
 /* small smartphones: 320px up to 360px*/
 @media (min-width: 320px) {
   .the-beginning-container {
-    margin-top: 50%;
+    margin-top: 70%;
     display: flex;
   }
 

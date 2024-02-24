@@ -25,6 +25,16 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="dropdown-li">
+            <NavLink to="/skillset" className="active-link">
+              Skill Set
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
+            <NavLink to="/story" className="active-link">
+              Story
+            </NavLink>
+          </li>
+          <li className="dropdown-li">
             <NavLink to="/about" className="active-link">
               About
             </NavLink>
@@ -32,11 +42,6 @@ const Navbar = () => {
           <li className="dropdown-li">
             <NavLink to="/contact" className="active-link">
               Contact
-            </NavLink>
-          </li>
-          <li className="dropdown-li">
-            <NavLink to="/skillset" className="active-link">
-              Skill Set
             </NavLink>
           </li>
           <li className="dropdown-li">
@@ -86,8 +91,8 @@ const Navbar = () => {
           </NavLink>
         </li> */}
         <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
-          <a href="#" className="active-link">
-            Other
+          <a href="#" className="active-link other-link">
+            Other ▼
           </a>
 
           {isDropdownVisible && (

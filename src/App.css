@@ -142,7 +142,7 @@ body {
     --non_main_page_title: 3em;
 
     --tech-stack-text-size: 1em;
-    --continuation-text-size: 2em;
+    --continuation-text-size: 1em;
 
     --bread-text-size: 1em;
     --narrator-paragraph-size: 1em;
@@ -155,7 +155,7 @@ body {
 @media (min-width: 360px) {
   :root {
     --h1-text-size: 3em;
-    --continuation-text-size: 2.5em;
+    --continuation-text-size: 1.5em;
   }
 }
 
@@ -180,7 +180,7 @@ body {
 
     --h1-text-size: 3.5em;
     --h3-text-size: 2em;
-    --continuation-text-size: 3em;
+    --continuation-text-size: 2.5em;
 
     --tech-stack-text-size: 1.5em;
     --bread-text-size: 1.3em;
