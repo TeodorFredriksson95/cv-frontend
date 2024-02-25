@@ -67,12 +67,6 @@ body {
   color: var(--text_color);
 }
 
-.section-title-h3 {
-  font-family: var(--MS_BI);
-  font-size: var(--h3-text-size);
-  color: var(--text_color);
-}
-
 /* Section Title Subparagraph */
 .section-title-h4 {
   font-family: var(--MS_LI);

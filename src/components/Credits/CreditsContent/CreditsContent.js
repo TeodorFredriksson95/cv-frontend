@@ -11,21 +11,21 @@ const CreditsContent = () => {
           page.
         </p>
       </div>
-      <div className="image-credit-container bread-text">
+      <div className="image-credit-container">
         <h2 className="section-title-h3 no-separator">Images</h2>
         <div className="freepik-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
+              className="word-highlight-pink links-no-underline "
               href="https://www.freepik.com/free-vector/hand-drawn-silhouette-set_58597579.htm#query=walking%20silhouette&position=1&from_view=search&track=ais&uuid=8699b30f-d995-4656-b804-76f66ae930a5"
             >
               Image{" "}
             </a>
             by Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -36,7 +36,7 @@ const CreditsContent = () => {
             </a>
             by Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -47,7 +47,7 @@ const CreditsContent = () => {
             </a>
             by Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const CreditsContent = () => {
             </a>
             by Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -69,7 +69,7 @@ const CreditsContent = () => {
             </a>
             by Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +82,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="storyset-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -93,7 +93,7 @@ const CreditsContent = () => {
             </a>{" "}
             by storyset on Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -106,7 +106,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="rawpixel-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -117,7 +117,7 @@ const CreditsContent = () => {
             </a>{" "}
             by rawpixel.com on Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -128,7 +128,7 @@ const CreditsContent = () => {
             </a>{" "}
             by rawpixel.com on Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +139,7 @@ const CreditsContent = () => {
             </a>{" "}
             by rawpixel.com on Freepik
           </div>
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -152,7 +152,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -165,7 +165,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -178,7 +178,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -191,7 +191,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -204,7 +204,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -217,7 +217,7 @@ const CreditsContent = () => {
           </div>
         </div>
         <div className="various-creators-container">
-          <div className="credits-link-div">
+          <div className="credits-link-div bread-text">
             <a
               target="_blank"
               rel="noopener noreferrer"

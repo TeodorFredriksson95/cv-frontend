@@ -22,12 +22,6 @@ const StoryContent = () => {
       <WorkExperience />
       <ShiftingDirections />
       <TechStack />
-      {/* 
-
-<FixedTimeLine /> 
-
-      
-      */}
     </div>
   );
 };
