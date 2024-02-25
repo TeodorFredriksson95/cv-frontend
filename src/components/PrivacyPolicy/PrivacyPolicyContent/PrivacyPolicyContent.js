@@ -1,6 +1,5 @@
 import "./PrivacyPolicyContent.css";
-import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../../Navbar/Navbar";
+import React, { useEffect } from "react";
 
 const PrivacyPolicyContent = () => {
   useEffect(() => {}, []);

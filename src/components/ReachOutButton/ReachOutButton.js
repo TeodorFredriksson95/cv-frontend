@@ -1,6 +1,6 @@
 import "./ReachOutButton.css";
 import { NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const ReachOutButton = () => {
   return (

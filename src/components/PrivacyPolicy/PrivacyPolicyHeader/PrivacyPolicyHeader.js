@@ -1,5 +1,5 @@
 import "./PrivacyPolicyHeader.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../Navbar/Navbar";
 
 const PrivacyPolicyHeader = () => {

@@ -1,6 +1,5 @@
 import "./SkillSetContentSection.css";
 import ReachOutButton from "../../ReachOutButton/ReachOutButton";
-import { NavLink } from "react-router-dom";
 const SkillSetContentSection = () => {
   return (
     <div>
@@ -54,6 +53,7 @@ const SkillSetContentSection = () => {
               </ul>
               <ul>
                 <li>CSS</li>
+                <li>Figma</li>
                 <li>Bootstrap </li>
                 <li>GIMP</li>
               </ul>
@@ -71,15 +71,17 @@ const SkillSetContentSection = () => {
             <div className="list-items flex-box">
               <ul>
                 <li>Agile</li>
-                <li>SCRUM </li>
+                <li>SCRUM</li>
+                <li>Mob Programming</li>
               </ul>
               <ul>
                 <li>Miro</li>
-                <li>Trello </li>
+                <li>Trello</li>
+                <li>Pair Programming</li>
               </ul>
               <ul>
                 <li>Discord</li>
-                <li>Slack </li>
+                <li>Slack</li>
               </ul>
             </div>
           </div>

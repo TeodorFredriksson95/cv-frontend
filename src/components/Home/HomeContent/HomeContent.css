@@ -58,6 +58,10 @@
 }
 
 @media (min-width: 320px) {
+  .box {
+    box-shadow: 0px 0px 5px 3px rgba(128, 128, 128, 0.639);
+  }
+
   .grid-container {
     grid-template-columns: 1fr;
   }
@@ -94,6 +98,9 @@
   }
 }
 @media (min-width: 1024px) {
+  .box {
+    box-shadow: 0px 0px 5px 3px rgba(128, 128, 128, 0.226);
+  }
   .grid-container {
     grid-template-columns: 1fr 1fr;
   }

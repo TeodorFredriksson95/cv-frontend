@@ -1,6 +1,5 @@
 import "./CreditsContent.css";
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../../Navbar/Navbar";
 
 const CreditsContent = () => {
   useEffect(() => {}, []);

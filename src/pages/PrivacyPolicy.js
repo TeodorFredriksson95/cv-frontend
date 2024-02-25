@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
         <title>Privacy Policy</title>
         <meta
           name="description"
-          content="Your privacy matters. Learn how we respect user rights, adhere to data protection laws, and responsibly manage the information collected for meaningful engagement."
+          content="Your privacy matters. Learn how I respect user rights, adhere to data protection laws, and responsibly manage the information collected for meaningful engagement."
         />
       </Helmet>
       <PrivacyPolicyHeader />

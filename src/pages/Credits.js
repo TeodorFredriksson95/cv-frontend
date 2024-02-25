@@ -11,7 +11,7 @@ const Credits = () => {
     <div>
       <Helmet>
         <title>Credits</title>
-        <meta name="description" content="Acknowledging the creators behind the free resources that enhance our digital spaces. Links to images and assets that bring vibrancy to my projects." />
+        <meta name="description" content="Acknowledging the creators behind the free resources that enhance this digital spaces. Links to images and assets that bring vibrancy to my projects." />
       </Helmet>
       <CreditsHeader />
       <CreditsContent />

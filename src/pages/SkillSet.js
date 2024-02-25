@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../components/Navbar/Navbar";
 import SkillSetHeader from "../components/SkillSet/Header/SkillSetHeader";
-import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
 import SkillSetContentSection from "../components/SkillSet/ContentSection/SkillSetContentSection";
 import { Helmet } from "react-helmet";
 

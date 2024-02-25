@@ -1,7 +1,6 @@
 import "./AboutHeader.css";
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../../Navbar/Navbar";
-import TimeLineWebDev from "../../TimeLineWebDev/TimeLineWebDev";
 
 const AboutHeader = () => {
   useEffect(() => {}, []);

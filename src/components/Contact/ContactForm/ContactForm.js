@@ -1,5 +1,3 @@
-import ReachOutButton from "../../ReachOutButton/ReachOutButton";
-import { Icon } from "@iconify-icon/react";
 import emailjs from "emailjs-com";
 
 import "./ContactForm.css";
