@@ -1,19 +1,48 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
-
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  const [navbarBg, setNavbarBg] = useState(true);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuVisible(!isMobileMenuVisible);
     console.log("mobile menu triggered");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const show = currentScrollY > 50;
+      const isDesktopView = window.innerWidth > 768;
+
+      if (isDesktopView) {
+        if (show) {
+          setNavbarBg(false);
+        } else {
+          setNavbarBg(true);
+        }
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isVisible ? "" : "navbar-hidden"} ${navbarBg ? "" : "navbar-scrolled"}`}>
       <div className="hamburger" onClick={toggleMobileMenu}>
         {isMobileMenuVisible ? <span className="mdi--close"></span> : <span className="quill--hamburger"></span>}
       </div>

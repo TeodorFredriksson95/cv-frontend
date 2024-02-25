@@ -21,6 +21,20 @@
   z-index: 2;
 }
 
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.navbar-scrolled {
+  background-color: rgba(0, 0, 0, 0.758);
+}
+
 .mobile-dropdown {
   display: flex;
   position: absolute;
@@ -126,10 +140,9 @@
     z-index: 10000;
     pointer-events: auto;
     top: 0;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: flex-end;
-    background-color: transparent;
     width: 100%;
   }
   .full-nav {
@@ -137,7 +150,8 @@
   }
   .navbar ul {
     margin-right: 2%;
-    margin-top: 3%;
+    margin-bottom: 1%;
+    margin-top: 1%;
   }
   .navbar a {
     font-size: 1em;
