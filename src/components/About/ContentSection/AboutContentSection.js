@@ -11,11 +11,11 @@ const AboutContentSection = () => {
       <div className="content-section-container">
         <div className="entry-flex">
           <div className="profile-img-container">
-            <img src="profileimg.png" />
+            <img src="profileimg.png" alt="Image of the creator of the page" />
           </div>
           <div className="about-entry-text-container">
             <p className="remove-browser-margin">
-              My name is Teodor Fredriksson, and i’m a junior developer. If you made it all the way to the end of the main page, then you can probably already guess that I like story telling.
+              My name is Teodor Fredriksson, and I’m a junior developer. If you made it all the way to the end of the main page, then you can probably already guess that I like story telling.
               <span className="entry-text-separator">
                 {" "}
                 My mother, the journalist, did her best to teach me at a young age the proper ways to build articles that captivates the reader. With an inherent need for creative outlet, text based

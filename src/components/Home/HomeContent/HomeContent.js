@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./HomeContent.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 
 const HomeContent = () => {
   useEffect(() => {}, []);
@@ -11,7 +11,7 @@ const HomeContent = () => {
           <NavLink to="/story" className="active-link" activeclassname="active">
             <div className="box b1">
               <div className="img-container">
-                <img src="/thumbnails/storyheader.webp" alt="Description1" />
+                <img src="/thumbnails/storyheader.webp" alt="An open book with a mountain rising from the pages" />
               </div>
               <p className="narrator-paragraph-text no-margin-top">Story</p>
             </div>
@@ -19,7 +19,7 @@ const HomeContent = () => {
           <NavLink to="/skillset" className="active-link" activeclassname="active">
             <div className="box b2">
               <div className="img-container">
-                <img src="/thumbnails/skillheaderedit6.webp" alt="Description1" />
+                <img src="/thumbnails/skillheaderedit6.webp" alt="A hand reaching for a touchpad" />
               </div>
               <p className="narrator-paragraph-text no-margin-top">Skill Set</p>
             </div>
@@ -27,7 +27,7 @@ const HomeContent = () => {
           <NavLink to="/contact" className="active-link" activeclassname="active">
             <div className="box b4">
               <div className="img-container">
-                <img src="/thumbnails/contactheaderedit3.webp" alt="Description1" />
+                <img src="/thumbnails/contactheaderedit3.webp" alt="A set of hands lightly touching a world globe" />
               </div>
               <p className="narrator-paragraph-text no-margin-top">Contact</p>
             </div>
@@ -35,7 +35,7 @@ const HomeContent = () => {
           <NavLink to="/about" className="active-link" activeclassname="active">
             <div className="box b3">
               <div className="img-container">
-                <img src="/thumbnails/aboutheaderedit3.webp" alt="Description1" />
+                <img src="/thumbnails/aboutheaderedit3.webp" alt="A mechanical head in profile" />
               </div>
               <p className="narrator-paragraph-text no-margin-top">About</p>
             </div>

@@ -6,7 +6,7 @@ const NoPageContent = () => {
       <h1 className="section-title-h1">404</h1>
       <h1 className="section-title-h1">Page not found</h1>
       <div id="notfoundimage">
-        <img src="cvlogoedit4png.png" />
+        <img src="cvlogoedit4png.png" alt="A curly brace with an eye" />
       </div>
     </div>
   );

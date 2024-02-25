@@ -1,4 +1,3 @@
-import HeroContent from "../../HeroContent/HeroContent";
 import TimelineBorn from "../../TimeLineBorn/TimelineBorn";
 import TimeLineWebDev from "../../TimeLineWebDev/TimeLineWebDev";
 import FixedTimeLine from "../../TimeLine/Timeline";

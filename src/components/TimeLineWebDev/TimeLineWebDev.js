@@ -49,7 +49,7 @@ const TimeLineWebDev = () => {
           </p>
         </div>
         <div className="keeper-overflow-container" ref={keeperRef}>
-          <img src="keeperedit4.png" />
+          <img src="keeperedit4.png" alt="Silhouette of asoccer goal keeper throwing himself to the side" />
         </div>
       </div>
       <div className="web-dev-continuation">
@@ -57,9 +57,9 @@ const TimeLineWebDev = () => {
           And so he did...
         </h1>
         <div className="image-container" ref={shootImage}>
-          <img src="htmledit3.jpg" />
-          <img src="codingkid.jpg" />
-          <img src="codingstackyoung.jpg" />
+          <img src="htmledit3.jpg" alt="A retro computer with the text -HTML-" />
+          <img src="codingkid.jpg" alt="A young person facing a computer" />
+          <img src="codingstackyoung.jpg" alt="A screen with cross arrows going out towards different technology names" />
         </div>
       </div>
 

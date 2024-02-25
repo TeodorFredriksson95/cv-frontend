@@ -78,7 +78,7 @@ const TechStack = () => {
       <div className="tech-container tech-1" ref={icon_and_para1}>
         <Icon width={`${iconSize.width}px`} height={`${iconSize.height}px`} icon="pajamas:api" id="api-icon" className="tech-icon" />
         <div className="text-overflow-container">
-          <p className="tech-stack-text">He worked on API's</p>
+          <p className="tech-stack-text">He worked on APIs</p>
         </div>
       </div>
       <div className="tech-container tech-2" ref={icon_and_para2}>
@@ -123,7 +123,7 @@ const TechStack = () => {
       </div>
       <div className="beginning-of-the-end-container tech-stack-para1" ref={tech_stack_para1}>
         <p className="tech-stack-response-text-one response-paragraph">All of a sudden, the young man had graduated.</p>
-        <img src="graduationhats.png" />
+        <img src="graduationhats.png" alt="Graduation hats thrown in the air" />
       </div>
       <div className="searching-container">
         <div className="tech-stack-para2" ref={tech_stack_para2}>
@@ -154,17 +154,9 @@ const TechStack = () => {
           </div>
 
           <div className="looking-for-dev-image-container">
-            <img src="beforedawnpng3.png" id="last-img" />
+            <img src="beforedawnpng3.png" id="last-img" alt="A man watching the sunrise" />
           </div>
         </div>
-        {/* <div className="get-in-touch">
-          <p className="looking-for-dev-text last-text">
-            GET IN TOUCH NOW{" "}
-            <span>
-              <Icon width={iconSize.width} height={iconSize.height} icon="quill:forward" className="tech-icon-last" />
-            </span>
-          </p>
-        </div> */}
       </div>
     </div>
   );

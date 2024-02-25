@@ -75,7 +75,7 @@ const WorkExperience = () => {
   return (
     <div className="work-experience-container">
       <div className="leadership-header">
-        <img src="leadershiptest1.png" />
+        <img src="leadershiptest1.png" alt="A man watching a headpost with different directions, surrounded by calendars and clocks" />
         <div className="leadershipTitles">
           <div className="titles-line-height">
             <h1 className="section-title-h2">Problem Solving</h1>
@@ -111,7 +111,7 @@ const WorkExperience = () => {
       </div>
       <div className="flowchart-text-container">
         <div className="flow-chart-image">
-          <img src="flowchartedit2.png" />
+          <img src="flowchartedit2.png" alt="A flow chart depicting the essences of teamwork and results" />
         </div>
         <div className="flowchart-text">
           <div className="para3-overflow-text-1" ref={para3_overflow_1}>
@@ -136,7 +136,7 @@ const WorkExperience = () => {
           </p>
         </div>
         <div className="second-flowchart-image">
-          <img src="workflowsecondedit1.png" />
+          <img src="workflowsecondedit1.png" alt="Two people reaching for blocks in a flow chart" />
         </div>
       </div>
       <div className="scorecard-and-text-flex-container">

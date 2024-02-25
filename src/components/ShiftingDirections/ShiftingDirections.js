@@ -60,7 +60,7 @@ const ShiftingDirections = () => {
     <div className="parent-container-shifting-directions">
       <div className="header-image-container">
         <div className="we-image-overflow-container" ref={image_overflow}>
-          <img src="shiftingdirectionsedit1.png" />
+          <img src="shiftingdirectionsedit1.png" alt="Two silhouettes people with their backs to each other walking in different directions" />
         </div>
         <div className="we-title-overflow-container" ref={title_overflow}>
           <h1 className="section-title-h2">
@@ -75,7 +75,7 @@ const ShiftingDirections = () => {
           <p className="narrator-paragraph-text ">
             After six years, the job which was once meant to be temporary, had turned into something else entirely.{" "}
             <span className="break-block">
-              It had served as the young mans proving grounds, demanding him to explore his strengths and weaknesses and he had loved it. But it was about to come to an
+              It had served as the young man's proving grounds, demanding him to explore his strengths and weaknesses and he had loved it. But it was about to come to an
               <span className="word-highlight-pink"> end</span>.
             </span>
           </p>
@@ -91,7 +91,7 @@ const ShiftingDirections = () => {
         </div>
         <div className="para6-overflow-container-3" ref={para6_overflow_container_3}>
           <p className="narrator-paragraph-text">
-            And so the young man reflected upon what he truly wanted in life. Eventually he boiled it down to the <span className="word-highlight-pink">following</span>;
+            And so the young man reflected upon what he truly wanted in life. Eventually he boiled it down to the <span className="word-highlight-pink">following</span>:
           </p>
         </div>
         <div className="para6-overflow-container-4" ref={para6_overflow_container_4}>
@@ -137,43 +137,6 @@ const ShiftingDirections = () => {
           </p>
         </div>
       </div>
-      {/* <div className="launching-concepts-absolute-container cannon-container" ref={cannon1}>
-        <h2 className="concept1" id="concept1">
-          "Variables!"
-        </h2>
-        <h2 id="concept2">"Data types!"</h2>
-        <h2 id="concept3">"Arrays!"</h2>
-        <h2 id="concept5">"The four pillars!"</h2>
-        <h2 id="concept6">"MVC!"</h2>
-        <h1 id="concept4">
-          "The red wiggle is your
-          <br className="wiggle-break" /> <span className="wiggle">FRIEND!</span>"
-        </h1>
-      </div> */}
-      {/* <div className="launching-concepts-absolute-container-mobile">
-        <div className="launching-concept1" ref={mobileCannon1}>
-          <h2>"Variables!"</h2>
-        </div>
-        <div className="launching-concept2" ref={mobileCannon2}>
-          <h2>"Data types!"</h2>
-        </div>
-        <div className="launching-concept3" ref={mobileCannon3}>
-          <h2>"Arrays!"</h2>
-        </div>
-        <div className="launching-concept4" ref={mobileCannon4}>
-          <h2>"The four pillars!"</h2>
-        </div>
-        <div className="launching-concept5" ref={mobileCannon5}>
-          <h2>"MVC!"</h2>
-        </div>
-        <div className="launching-concept6" ref={mobileCannon6}>
-          <h2>"The red wiggle </h2>
-          <h2>is your</h2>
-          <h2>
-            <span className="wiggle">FRIEND!</span>"
-          </h2>
-        </div>
-      </div> */}
     </div>
   );
 };

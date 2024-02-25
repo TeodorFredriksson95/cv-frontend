@@ -28,7 +28,7 @@ const ScriptVsDev = () => {
           <h3 className="section-title-h3">&lt;/Script&gt;</h3>
         </div>
         <div className="versus-logo-container" ref={versusImage}>
-          <img src="versusedit3.png" />
+          <img src="versusedit3.png" alt="A retro Versus tag used in fighting games" />
         </div>
         <div className="combatant-container dev-combatant" ref={devCombatant}>
           <h3 className="section-title-h3">

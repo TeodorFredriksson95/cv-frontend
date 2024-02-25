@@ -11,7 +11,7 @@ const TimelineBorn = () => {
 
   return (
     <div className="the-beginning-container">
-      <img src="achildisbornedit3.png" />
+      <img src="achildisbornedit3.png" alt="Silhouette of a child reaching for a star" />
       <div className="narrator-paragraph-container" ref={paragraphRef}>
         <h1 className="section-title-h1">
           The <br />
