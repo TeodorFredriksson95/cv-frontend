@@ -72,12 +72,12 @@ const SkillSetContentSection = () => {
               <ul>
                 <li>Agile</li>
                 <li>SCRUM</li>
-                <li>Mob Programming</li>
+                <li>Pair Prog.</li>
               </ul>
               <ul>
                 <li>Miro</li>
                 <li>Trello</li>
-                <li>Pair Programming</li>
+                <li>Mob Prog.</li>
               </ul>
               <ul>
                 <li>Discord</li>

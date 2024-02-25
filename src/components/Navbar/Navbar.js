@@ -18,17 +18,22 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const show = currentScrollY > 50;
+      const show = currentScrollY > 100;
+      const navBG = currentScrollY > 100;
       const isDesktopView = window.innerWidth > 768;
 
       if (isDesktopView) {
-        if (show) {
+        if (navBG) {
           setNavbarBg(false);
         } else {
           setNavbarBg(true);
         }
-        if (currentScrollY > lastScrollY) {
-          setIsVisible(false);
+        if (show) {
+          if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
         } else {
           setIsVisible(true);
         }

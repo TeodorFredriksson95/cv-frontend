@@ -12,7 +12,7 @@ const CreditsContent = () => {
         </p>
       </div>
       <div className="image-credit-container">
-        <h2 className="section-title-h3 no-separator">Images</h2>
+        <h2 className="section-title-h3 no-separator">1. Images</h2>
         <div className="freepik-container">
           <div className="credits-link-div bread-text">
             <a

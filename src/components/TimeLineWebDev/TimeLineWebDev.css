@@ -214,7 +214,10 @@
   }
 
   .web-dev-continuation {
+    width: 90%;
     margin-top: 40%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 

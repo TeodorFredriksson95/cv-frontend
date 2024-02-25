@@ -418,7 +418,7 @@
 /* extra huge screens (4k etc) : 1920px+ */
 @media (min-width: 1920px) {
   #and-so-he-did {
-    margin: a;
+    margin: auto;
     width: 80%;
   }
 }
