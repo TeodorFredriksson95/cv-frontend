@@ -29,6 +29,18 @@ const CreditsContent = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
+              className="word-highlight-pink links-no-underline "
+              href="https://www.freepik.com/free-vector/desktop-smartphone-app-development_10276838.htm#fromView=search&page=1&position=0&uuid=e819d498-bb36-44d7-b22a-2e1cf71460d1"
+            >
+              Image{" "}
+            </a>
+            by Freepik
+          </div>
+
+          <div className="credits-link-div bread-text">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
               className="word-highlight-pink links-no-underline"
               href="https://www.freepik.com/free-vector/hand-drawn-walking-silhouette-illustration_57429743.htm#query=walking%20silhouette&position=14&from_view=search&track=ais&uuid=8699b30f-d995-4656-b804-76f66ae930a5"
             >
@@ -41,7 +53,7 @@ const CreditsContent = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-vector/classic-versus-background-with-video-game-style_1261682.htm#page=3&query=versus&position=13&from_view=search&track=sph&uuid=4a134f42-ec9d-49ca-9e9d-d3c93a7ba0fd"
+              href="https://www.freepik.com/free-photo/programming-background-with-html-text_36238366.htm#fromView=search&page=1&position=34&uuid=e98bfd09-48c0-4460-80fb-7386f9d33eac"
             >
               Image{" "}
             </a>
@@ -64,17 +76,6 @@ const CreditsContent = () => {
               rel="noopener noreferrer"
               className="word-highlight-pink links-no-underline"
               href="https://www.freepik.com/free-vector/flat-design-soccer-player-silhouette_28462503.htm#query=football%20kick%20silhouette&position=12&from_view=search&track=ais&uuid=0544677e-5f26-4f6d-9509-95a15dae730f"
-            >
-              Image{" "}
-            </a>
-            by Freepik
-          </div>
-          <div className="credits-link-div bread-text">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-vector/abstract-particle-blue-lines-technology-background_6868595.htm#page=5&query=technological&position=19&from_view=search&track=sph&uuid=17ec0a1d-db40-4a3b-a44f-2ee6582df6ab"
             >
               Image{" "}
             </a>
@@ -117,17 +118,7 @@ const CreditsContent = () => {
             </a>{" "}
             by rawpixel.com on Freepik
           </div>
-          <div className="credits-link-div bread-text">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-photo/gradient-dark-blue-futuristic-digital-grid-background_17850177.htm#query=technologic&position=24&from_view=search&track=sph&uuid=fe0e9c2f-5d95-4b35-aa09-3ffa9490daca"
-            >
-              Image
-            </a>{" "}
-            by rawpixel.com on Freepik
-          </div>
+
           <div className="credits-link-div bread-text">
             <a
               target="_blank"
@@ -157,13 +148,14 @@ const CreditsContent = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-vector/business-processes-organization-workforce-distribution-delegating-responsibilities-scheduling-planning-managerial-supervision-control-vector-isolated-concept-metaphor-illustration_12083364.htm#query=work%20flow&position=19&from_view=search&track=ais&uuid=2fa58e07-ecef-4a0a-8118-df247b425e21"
+              href="https://www.freepik.com/free-vector/cute-man-working-computer-with-coffee-cartoon-vector-icon-illustration-people-technology-icon-concept-isolated-premium-vector-flat-cartoon-style_20188201.htm#fromView=search&page=1&position=8&uuid=be9a99b3-c2b2-4c24-8528-3f12cc212a05"
             >
               Image
             </a>{" "}
-            by vectorjuice on Freepik
+            by catalyststuff on Freepik
           </div>
         </div>
+
         <div className="various-creators-container">
           <div className="credits-link-div bread-text">
             <a
@@ -176,31 +168,31 @@ const CreditsContent = () => {
             </a>{" "}
             by soepratman on Freepik
           </div>
-        </div>
-        <div className="various-creators-container">
-          <div className="credits-link-div bread-text">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-vector/advert_4870985.htm#query=routing&position=22&from_view=search&track=sph&uuid=19a052bd-84fb-4454-82b6-12955a0fede3"
-            >
-              Image
-            </a>{" "}
-            by gstudioimagen on Freepik
+          <div className="various-creators-container">
+            <div className="credits-link-div bread-text">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="word-highlight-pink links-no-underline"
+                href="https://www.freepik.com/free-photo/book-that-has-word-mountain-it_41073765.htm#fromView=search&page=1&position=3&uuid=77fe824c-609c-4251-bd38-d38917b941ca"
+              >
+                Image
+              </a>{" "}
+              by vecstock on Freepik
+            </div>
           </div>
-        </div>
-        <div className="various-creators-container">
-          <div className="credits-link-div bread-text">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-vector/futuristic-neon-blue-infographic_7077340.htm#query=tech%20navigation&position=1&from_view=search&track=ais&uuid=6bf97d57-2b6d-430d-8a39-be6870614a27"
-            >
-              Image
-            </a>{" "}
-            by pikisuperstar on Freepik
+          <div className="various-creators-container">
+            <div className="credits-link-div bread-text">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="word-highlight-pink links-no-underline"
+                href="https://www.freepik.com/free-vector/business-processes-organization-workforce-distribution-delegating-responsibilities-scheduling-planning-managerial-supervision-control-vector-isolated-concept-metaphor-illustration_12083364.htm#query=work%20flow&position=19&from_view=search&track=ais&uuid=2fa58e07-ecef-4a0a-8118-df247b425e21"
+              >
+                Image
+              </a>{" "}
+              by vectorjuice on Freepik
+            </div>
           </div>
         </div>
         <div className="various-creators-container">
@@ -214,19 +206,6 @@ const CreditsContent = () => {
               Image
             </a>{" "}
             by WangXiNa on Freepik
-          </div>
-        </div>
-        <div className="various-creators-container">
-          <div className="credits-link-div bread-text">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="word-highlight-pink links-no-underline"
-              href="https://www.freepik.com/free-photo/book-that-has-word-mountain-it_41073765.htm#fromView=search&page=1&position=3&uuid=77fe824c-609c-4251-bd38-d38917b941ca"
-            >
-              Image
-            </a>{" "}
-            by vecstock on Freepik
           </div>
         </div>
       </div>
