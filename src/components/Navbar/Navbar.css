@@ -38,7 +38,7 @@
 
 .mobile-dropdown {
   display: flex;
-  position: absolute;
+  position: fixed;
   background-color: black;
   top: 35px;
   right: 1%;
