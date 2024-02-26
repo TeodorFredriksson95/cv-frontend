@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./TimeLine.css";
 
 const FixedTimeLine = () => {
-  const fixedContainerRef = useRef(); // Ref for the container
+  const fixedContainerRef = useRef();
   const [isFixed, setIsFixed] = useState(false);
 
   function animateValue(obj, start, end, duration) {

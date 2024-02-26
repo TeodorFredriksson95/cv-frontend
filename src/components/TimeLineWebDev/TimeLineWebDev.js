@@ -3,7 +3,7 @@ import createObserver from "../../util/createObserver";
 import "./TimeLineWebDev.css";
 
 const TimeLineWebDev = () => {
-  const webDevRef = useRef(); // Ref for the web-dev container
+  const webDevRef = useRef();
   const h3Ref = useRef();
   const pRef = useRef();
   const keeperRef = useRef();
