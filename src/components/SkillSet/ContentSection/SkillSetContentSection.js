@@ -21,6 +21,7 @@ const SkillSetContentSection = () => {
                 <li>.NET</li>
                 <li>ASP.NET </li>
                 <li>EF/EFC</li>
+                <li>Postman</li>
                 <li>Swagger</li>
                 <li>GODOT</li>
                 <li>Git</li>
@@ -32,12 +33,9 @@ const SkillSetContentSection = () => {
                 <li>Azure</li>
                 <li>Firebase</li>
                 <li>Prisma</li>
-                <li>Postman</li>
               </ul>
               <ul>
                 <li>NodeJS</li>
-                <li>Javascript </li>
-                <li>Typescript</li>
                 <li>Express</li>
               </ul>
             </div>
@@ -47,8 +45,9 @@ const SkillSetContentSection = () => {
             <div className="list-items flex-box">
               <ul>
                 <li>React</li>
+                <li>Javascript </li>
+                <li>Typescript</li>
                 <li>Xamarin </li>
-                <li>Inkscape</li>
                 <li>Mobile First</li>
               </ul>
               <ul>
@@ -59,6 +58,7 @@ const SkillSetContentSection = () => {
               </ul>
               <ul>
                 <li>HTML</li>
+                <li>Inkscape</li>
                 <li>Aseprite </li>
                 <li>Expo Go</li>
               </ul>
