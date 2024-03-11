@@ -104,6 +104,11 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/login" className="active-link">
+            Login
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/story" className="active-link" activeclassname="active">
             Story
           </NavLink>

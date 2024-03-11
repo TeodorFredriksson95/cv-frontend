@@ -12,18 +12,14 @@
   --continuation-text-color: rgb(217, 235, 236);
 }
 
+.test-page {
+  height: 200vh;
+}
+
 body {
   height: 100%;
   width: 100%;
   background: linear-gradient(180deg, #090125, 5%, #110a20, 50%, #030423);
-
-  /* background-image: url("../public/secondBackgroundCV1.png"); */
-
-  /* background: linear-gradient(135deg, rgba(48, 0, 72, 0.8) 0%, rgba(48, 0, 68, 0.858) 50%, rgba(0, 0, 0, 0.8) 100%),
-  linear-gradient(45deg, rgba(72, 0, 108, 0.6) 0%, rgba(0, 0, 128, 0.6) 50%, rgba(0, 0, 0, 0.6) 100%);
-  animation: GradientAnimation 15s ease infinite;
-  background-size: 100% 100%;
-  height: 1110vh; */
 }
 
 @keyframes GradientAnimation {

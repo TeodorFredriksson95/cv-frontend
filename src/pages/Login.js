@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import LoginCard from "../components/LoginCard/LoginCard";
 
@@ -12,7 +12,9 @@ const Login = () => {
         <title>Login</title>
         <meta name="description" content="Start making calls to our public API by logging in." />
       </Helmet>
-      <LoginCard />
+      <div className="test-page">
+        <LoginCard />
+      </div>
     </div>
   );
 };
