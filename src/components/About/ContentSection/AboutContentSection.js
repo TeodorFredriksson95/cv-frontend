@@ -11,7 +11,7 @@ const AboutContentSection = () => {
       <div className="content-section-container">
         <div className="entry-flex">
           <div className="profile-img-container">
-            <img src="profileimg.png" alt="Image of the creator of the page" />
+            <img src="teoheadshotedit3.png" alt="Image of the creator of the page" />
           </div>
           <div className="about-entry-text-container">
             <p className="remove-browser-margin">
