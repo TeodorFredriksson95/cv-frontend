@@ -108,16 +108,6 @@ const Navbar = () => {
             Login
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/story" className="active-link" activeclassname="active">
-            Story
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/skillset" className="active-link" activeclassname="active">
-            Skill Set
-          </NavLink>
-        </li>
 
         <li>
           <NavLink to="/dashboard" className="active-link" activeclassname="active">
@@ -132,6 +122,16 @@ const Navbar = () => {
 
           {isDropdownVisible && (
             <ul className="dropdown full-nav-drop">
+              <li>
+                <NavLink to="/story" className="active-link" activeclassname="active">
+                  Story
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/skillset" className="active-link" activeclassname="active">
+                  Skill Set
+                </NavLink>
+              </li>
               <li>
                 <NavLink to="/about" className="active-link" activeclassname="active">
                   About
