@@ -16,24 +16,30 @@ import ApiPage from "./pages/ApiPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Credits from "./pages/Credits";
 import Story from "./pages/Story";
+import { AuthProvider } from "./context/AuthContext";
+import Dashboard from "./pages/Dashboard";
+import { ProtectedRoute } from "./Helpers/ProtectedRoute";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="skillset" element={<SkillSet />} />
-          <Route path="story" element={<Story />} />
-          <Route path="apipage" element={<ApiPage />} />
-          <Route path="credits" element={<Credits />} />
-          <Route path="privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="skillset" element={<SkillSet />} />
+            <Route path="story" element={<Story />} />
+            <Route path="apipage" element={<ApiPage />} />
+            <Route path="credits" element={<Credits />} />
+            <Route path="privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }

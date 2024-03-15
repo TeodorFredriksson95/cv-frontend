@@ -2,8 +2,12 @@ import "./LoginCard.css";
 import React, { useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const LoginCard = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
   useEffect(() => {
     window.google.accounts.id.initialize({
       client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
@@ -16,7 +20,12 @@ const LoginCard = () => {
     const authResponse = await axios.post(process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL + "/api/authenticate/google", {
       token: response.credential,
     });
-    console.log("jwt token from auth service: ", authResponse.data.token);
+
+    if (authResponse.data.token) {
+      console.log("jwt token from auth service: ", authResponse.data.token);
+      login(authResponse.data.token);
+      navigate("/dashboard");
+    }
   };
   const handleSignInClick = () => {
     if (window.google.accounts.id) {

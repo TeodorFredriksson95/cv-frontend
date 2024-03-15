@@ -118,29 +118,30 @@ const Navbar = () => {
             Skill Set
           </NavLink>
         </li>
+
         <li>
-          <NavLink to="/about" className="active-link" activeclassname="active">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" className="active-link" activeclassname="active">
-            Contact
+          <NavLink to="/dashboard" className="active-link" activeclassname="active">
+            Dashboard
           </NavLink>
         </li>
 
-        {/* <li>
-          <NavLink to="/apipage" className="active-link" activeclassname="active">
-            API
-          </NavLink>
-        </li> */}
         <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
           <a href="#" className="active-link other-link">
             Other ▼
           </a>
 
           {isDropdownVisible && (
-            <ul className="dropdown">
+            <ul className="dropdown full-nav-drop">
+              <li>
+                <NavLink to="/about" className="active-link" activeclassname="active">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" className="active-link" activeclassname="active">
+                  Contact
+                </NavLink>
+              </li>
               <li className="dropdown-li">
                 <NavLink to="/privacypolicy" className="active-link" activeclassname="active">
                   Privacy Policy
