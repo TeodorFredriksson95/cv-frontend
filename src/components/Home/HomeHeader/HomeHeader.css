@@ -11,8 +11,9 @@
     background-position: center;
     opacity: 1;
     z-index: -1;
-    height: 40vh;
+    height: 60vh;
   }
+
   .hero-content {
     display: flex;
   }
@@ -79,7 +80,7 @@
 /* tablets: landscape mode - 800px to 1024px*/
 @media (min-width: 768px) {
   .home-header::before {
-    height: 50vh;
+    height: 60vh;
   }
   .logo {
     display: flex;
@@ -103,6 +104,11 @@
     padding-top: 10%;
   }
 }
+@media (min-width: 800px) {
+  .home-header::before {
+    height: 70vh;
+  }
+}
 /* small laptops and large tablets: 1024px to 1280px (hybrids)*/
 @media (min-width: 1024px) {
   .main-title {
@@ -116,7 +122,7 @@
 /* medium screens: 1280px to 1440px */
 @media (min-width: 1280px) {
   .home-header::before {
-    height: 70vh;
+    height: 80vh;
   }
   .main-title {
     font-size: 5em;
@@ -126,7 +132,7 @@
 /* large screens: 1440px to 1680px */
 @media (min-width: 1440px) {
   .home-header::before {
-    height: 60vh;
+    height: 90vh;
   }
   .hero-content {
     padding-top: 15%;

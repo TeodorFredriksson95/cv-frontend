@@ -99,6 +99,10 @@ ul {
   color: turquoise;
 }
 
+.logout:hover {
+  cursor: pointer;
+}
+
 .active {
   border-radius: 5px;
   color: turquoise;

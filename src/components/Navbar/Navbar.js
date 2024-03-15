@@ -1,6 +1,7 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, Link, NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Navbar.css";
+import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -9,6 +10,14 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [navbarBg, setNavbarBg] = useState(true);
+
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuVisible(!isMobileMenuVisible);
@@ -58,16 +67,27 @@ const Navbar = () => {
               Home
             </NavLink>
           </li>
+          {!isAuthenticated && (
+            <li>
+              <NavLink to="/login" className="active-link">
+                Login
+              </NavLink>
+            </li>
+          )}
+
+          {isAuthenticated && (
+            <li>
+              <NavLink to="/dashboard" className="active-link" activeclassname="active">
+                Dashboard
+              </NavLink>
+            </li>
+          )}
           <li className="dropdown-li">
             <NavLink to="/skillset" className="active-link">
               Skill Set
             </NavLink>
           </li>
-          <li className="dropdown-li">
-            <NavLink to="/login" className="active-link">
-              Login
-            </NavLink>
-          </li>
+
           <li className="dropdown-li">
             <NavLink to="/story" className="active-link">
               Story
@@ -94,6 +114,13 @@ const Navbar = () => {
               Credits
             </NavLink>
           </li>
+          {isAuthenticated && (
+            <li>
+              <a onClick={handleLogout} className="active-link logout">
+                Logout
+              </a>
+            </li>
+          )}
         </ul>
       )}
 
@@ -103,17 +130,28 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/login" className="active-link">
-            Login
-          </NavLink>
-        </li>
+        {!isAuthenticated && (
+          <li>
+            <NavLink to="/login" className="active-link">
+              Login
+            </NavLink>
+          </li>
+        )}
 
-        <li>
-          <NavLink to="/dashboard" className="active-link" activeclassname="active">
-            Dashboard
-          </NavLink>
-        </li>
+        {isAuthenticated && (
+          <li>
+            <NavLink to="/dashboard" className="active-link" activeclassname="active">
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+        {isAuthenticated && (
+          <li>
+            <a onClick={handleLogout} className="active-link logout">
+              Logout
+            </a>
+          </li>
+        )}
 
         <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
           <a href="#" className="active-link other-link">
