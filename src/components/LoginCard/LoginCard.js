@@ -23,6 +23,7 @@ const LoginCard = () => {
 
     if (authResponse.data.token) {
       console.log("jwt token from auth service: ", authResponse.data.token);
+      console.log(authResponse);
       login(authResponse.data.token);
       navigate("/dashboard");
     }
