@@ -53,7 +53,7 @@
 }
 
 .generate-api-key-bar input {
-  width: 50%;
+  width: 100%;
   border-radius: 0.25rem;
   height: 40px;
   background-color: white;
@@ -64,6 +64,8 @@
 .generate-api-key-bar {
   display: flex;
   align-items: center;
+  position: relative;
+  width: 60%;
 }
 
 .gg--clipboard::after {
@@ -94,10 +96,49 @@
 }
 
 .generate-key-button button:hover {
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+  background-color: rgb(230, 230, 230);
 }
 .generate-key-button button {
   cursor: pointer;
+}
+
+#copied-notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 40px;
+  padding: 0 5px;
+  background-color: goldenrod;
+  color: white;
+  font-family: var(--MS_Bold);
+  border-radius: 0.25rem;
+  margin-top: 5px;
+}
+
+.input-notification-container {
+  position: relative;
+  flex-grow: 1;
+}
+#personal-api-key-info-container {
+  margin-top: 10px;
+  width: 50%;
+  padding: 5px 10px;
+  color: white;
+  font-family: var(--MS_LI);
+  border-radius: 0.25rem;
+  background-color: rgba(128, 128, 128, 0.733);
+  box-shadow: -3px 4px 6px rgba(107, 107, 107, 0.594);
+}
+
+#separate-dashboard-info {
+  display: block;
+  margin-top: 10px;
+}
+
+.links {
+  text-decoration: none;
+  color: turquoise;
 }
