@@ -49,7 +49,6 @@ const DashboardHeader = () => {
   }, []);
   return (
     <div className="dashboard-header">
-      <Navbar />
       <div className="dashboard-grid-layout">
         <div className="dashboard-sidebar">
           <div className="profile-header">

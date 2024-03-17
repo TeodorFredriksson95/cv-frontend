@@ -10,6 +10,8 @@ import "./fonts/static/Montserrat-LightItalic.ttf";
 import "./fonts/static/Montserrat-ExtraBoldItalic.ttf";
 import "./fonts/static/Montserrat-BoldItalic.ttf";
 import "./fonts/static/Montserrat-MediumItalic.ttf";
+import "./fonts/static/Montserrat-Medium.ttf";
+import "./fonts/static/Montserrat-Light.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

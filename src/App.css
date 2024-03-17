@@ -5,7 +5,8 @@
   --MS_EBI: "MontserratExtraBoldItalic";
   --MS_BI: "MontserratBoldItalic";
   --MS_MI: "MontserratMediumItalic";
-
+  --MS_Medium: "MontserratMedium";
+  --MS_Light: "MontserratLight";
   --text_color: white;
   --title_color: white;
   --title-h2-color: turquoise;
@@ -15,7 +16,11 @@
 .test-page {
   height: 200vh;
 }
-
+.content-container {
+  position: relative; /* You can also use 'absolute' if needed */
+  top: 100px; /* Adjust this based on the actual height of your navbar */
+  overflow-y: auto; /* Add scroll to content if needed */
+}
 body {
   height: 100%;
   width: 100%;
@@ -38,6 +43,10 @@ body {
 body {
   margin: 0;
   padding: 0;
+}
+
+.content {
+  padding-top: var(--navbar-height);
 }
 
 /* Main Title */
@@ -89,6 +98,12 @@ body {
   font-size: var(--bread-text-size);
 }
 
+.api-bread-text {
+  color: var(--text_color);
+  font-family: var(--MS_Medium);
+  font-size: var(--api-bread-text-size);
+}
+
 /* response paragraph */
 .response-paragraph {
   color: var(--text_color);
@@ -135,8 +150,10 @@ body {
     --continuation-text-size: 1em;
 
     --bread-text-size: 1em;
+    --api-bread-text-size: 1em;
     --narrator-paragraph-size: 1em;
     --response-paragraph-size: 1em;
+    --navbar-height: 50px;
 
     --line-height: 100%;
   }
@@ -158,6 +175,8 @@ body {
 
     --tech-stack-text-size: 1.3em;
     --bread-text-size: 1.2em;
+    --api-bread-text-size: 1.2em;
+
     --narrator-paragraph-size: 1.3em;
     --response-paragraph-size: 1.3em;
   }
@@ -174,6 +193,8 @@ body {
 
     --tech-stack-text-size: 1.5em;
     --bread-text-size: 1.3em;
+    --api-bread-text-size: 1.3em;
+
     --narrator-paragraph-size: 1.5em;
     --response-paragraph-size: 1.5em;
   }
@@ -188,6 +209,8 @@ body {
 
     --tech-stack-text-size: 2em;
     --bread-text-size: 1.4em;
+    --api-bread-text-size: 1.4em;
+
     --narrator-paragraph-size: 1.6em;
     --response-paragraph-size: 1.6em;
     --continuation-text-size: 3em;
@@ -203,6 +226,7 @@ body {
     --continuation-text-size: 3.5em;
     --h2-text-size: 4em;
     --h3-text-size: 2.8em;
+    --navbar-height: 63px;
     --h4-text-size: 1.6em;
   }
 }
@@ -223,6 +247,7 @@ body {
     --response-paragraph-size: 2em;
     --narrator-paragraph-size: 2em;
     --bread-text-size: 1.6em;
+    --api-bread-text-size: 1.6em;
   }
 }
 
@@ -240,6 +265,7 @@ body {
     --response-paragraph-size: 2.1em;
     --narrator-paragraph-size: 2.1em;
     --bread-text-size: 1.8em;
+    --api-bread-text-size: 1.2em;
   }
 }
 /* extra large screens: 1680px to 1920px */
@@ -256,6 +282,7 @@ body {
     --response-paragraph-size: 2.3em;
     --narrator-paragraph-size: 2.3em;
     --bread-text-size: 2em;
+    --api-bread-text-size: 1.5em;
 
     --continuation-text-size: 5em;
   }
@@ -281,6 +308,7 @@ body {
     --response-paragraph-size: 2.8em;
     --narrator-paragraph-size: 2.8em;
     --bread-text-size: 2.5em;
+    --api-bread-text-size: 2.5em;
   }
 }
 
