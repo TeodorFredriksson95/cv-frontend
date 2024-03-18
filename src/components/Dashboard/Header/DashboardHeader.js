@@ -53,7 +53,7 @@ const DashboardHeader = () => {
         <div className="dashboard-sidebar">
           <div className="profile-header">
             <div className="profile-image">
-              <img src={profileImage} />
+              <img src={profileImage} alt="Profile image" />
             </div>
             <h4 id="profile-name">Teodor Fredriksson</h4>
           </div>

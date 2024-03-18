@@ -4,7 +4,7 @@ const SkillSetContentSection = () => {
   return (
     <div>
       <div className="entry-text-container">
-        <p className="narrator-paragraph-text">
+        <p className="bread-text">
           Over the past 3 years I have worked on databases, mobile apps, web apps, design schemas and game development.
           <span className="skillset-entry-text-separator">
             {" "}

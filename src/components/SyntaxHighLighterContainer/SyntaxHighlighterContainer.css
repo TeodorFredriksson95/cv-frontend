@@ -1,0 +1,25 @@
+.syntax-highlighter-container {
+  position: relative;
+}
+
+.clipboard-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#copied-notification-api-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 40px;
+  padding: 0 5px;
+  background-color: goldenrod;
+  color: white;
+  font-family: var(--MS_Bold);
+  border-radius: 0.25rem;
+  margin-top: 5px;
+}

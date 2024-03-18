@@ -16,7 +16,7 @@
   margin-block-start: 0;
   color: var(--text_color);
   font-family: var(--MS_LI);
-  font-size: 2em;
+  font-size: var(--bread-text);
 }
 
 .block-separator {
@@ -62,9 +62,6 @@
   .main-text {
     width: 90%;
     margin: auto;
-  }
-  .remove-browser-margin {
-    font-size: 1em;
   }
 
   .block-separator-one {
@@ -123,10 +120,6 @@
     margin: auto;
   }
 
-  .remove-browser-margin {
-    font-size: 1.5em;
-  }
-
   .block-separator-one {
     font-size: 1.5em;
     margin-top: 15%;
@@ -183,28 +176,16 @@
   }
 }
 @media (min-width: 1440px) {
-  .remove-browser-margin {
-    font-size: 1.9em;
-  }
-
   .main-text {
     font-size: 1.7em;
   }
 }
 @media (min-width: 1680px) {
-  .remove-browser-margin {
-    font-size: 2em;
-  }
-
   .main-text {
     font-size: 1.9em;
   }
 }
 @media (min-width: 1920px) {
-  .remove-browser-margin {
-    font-size: 2.2em;
-  }
-
   .main-text {
     font-size: 2em;
   }
