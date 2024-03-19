@@ -5,22 +5,30 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [authToken, setAuthToken] = useState(() => {
-    const token = localStorage.getItem("authToken");
-    return token || null;
+  const [accessToken, setAccessToken] = useState(() => {
+    const accessToken = localStorage.getItem("authToken");
+    return accessToken || null;
   });
 
-  const isAuthenticated = authToken !== null;
+  const [refreshToken, setRefreshToken] = useState(() => {
+    const refreshToken = localStorage.getItem("refreshToken");
+    return refreshToken || null;
+  });
 
-  const login = (token) => {
-    setAuthToken(token);
-    localStorage.setItem("authToken", token);
+  const isAuthenticated = accessToken !== null;
+
+  const login = (accessToken, refreshToken) => {
+    setAccessToken(accessToken);
+    setRefreshToken(refreshToken);
+    localStorage.setItem("authToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
   };
 
   const logout = () => {
-    setAuthToken(null);
+    setAccessToken(null);
     localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken");
   };
 
-  return <AuthContext.Provider value={{ authToken, isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ accessToken, setAccessToken, refreshToken, setRefreshToken, isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;
 };

@@ -14,6 +14,7 @@ import "./fonts/static/Montserrat-Medium.ttf";
 import "./fonts/static/Montserrat-Light.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <App />

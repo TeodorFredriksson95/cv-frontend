@@ -21,15 +21,17 @@ const LoginCard = () => {
       token: response.credential,
     });
 
-    if (authResponse.data.token) {
-      console.log("jwt token from auth service: ", authResponse.data.token);
-      console.log(authResponse);
-      login(authResponse.data.token);
+    if (authResponse.data.accessToken) {
+      console.log("jwt token from auth service: ", authResponse.data.accessToken);
+      console.log("refresh token: " + authResponse.data.refreshToken.token);
+      login(authResponse.data.accessToken, authResponse.data.refreshToken.token);
       navigate("/dashboard");
     }
   };
   const handleSignInClick = () => {
     if (window.google.accounts.id) {
+      console.log("hello");
+      console.log(window.google.accounts.id);
       window.google.accounts.id.prompt();
     }
   };

@@ -1,13 +1,15 @@
 import "./DashboardHeader.css";
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../../Navbar/Navbar";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import useUserActivity from "../../util/useUserActivity";
 
 const DashboardHeader = () => {
   const [profileImage, setProfileImage] = useState("");
   const [apiAccessKey, setApiAccessKey] = useState("");
   const [isCTCBVisible, setIsCTCBVisible] = useState(false);
+
+  useUserActivity();
 
   const handleCopyToClipboard = async () => {
     if (apiAccessKey) {
@@ -45,7 +47,6 @@ const DashboardHeader = () => {
     if (userProfileImage) {
       setProfileImage(userProfileImage);
     }
-    console.log(userProfileImage);
   }, []);
   return (
     <div className="dashboard-header">

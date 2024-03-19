@@ -8,10 +8,9 @@ const Navbar = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [navbarBg, setNavbarBg] = useState(true);
 
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, accessToken } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -23,37 +22,6 @@ const Navbar = () => {
     setIsMobileMenuVisible(!isMobileMenuVisible);
     console.log("mobile menu triggered");
   };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
-  //     const show = currentScrollY > 100;
-  //     const navBG = currentScrollY > 100;
-  //     const isDesktopView = window.innerWidth > 768;
-
-  //     if (isDesktopView) {
-  //       if (navBG) {
-  //         setNavbarBg(false);
-  //       } else {
-  //         setNavbarBg(true);
-  //       }
-  //       if (show) {
-  //         if (currentScrollY > lastScrollY) {
-  //           setIsVisible(false);
-  //         } else {
-  //           setIsVisible(true);
-  //         }
-  //       } else {
-  //         setIsVisible(true);
-  //       }
-  //     }
-  //     setLastScrollY(currentScrollY);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [lastScrollY]);
 
   return (
     <nav className={`navbar ${isVisible ? "" : "navbar-hidden"} ${navbarBg ? "" : "navbar-scrolled"}`}>
