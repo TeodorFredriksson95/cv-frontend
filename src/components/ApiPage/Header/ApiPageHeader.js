@@ -101,7 +101,7 @@ const ApiPageHeader = () => {
               </span>
             </p>
             <p className="api-bread-text">
-              <span className="separate"> Withou further ado, let's make our first API request to the Unidevweb API!</span>
+              <span className="separate"> Withou further ado, let's make our first request to the Unidevweb API!</span>
               <span className="separate">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
             </p>
             <p className="api-bread-text important-notice-text">
@@ -163,7 +163,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title">API Keys</h4>
             <p className="api-bread-text">
               In Unidevweb's commitment to adhere to REST API standards and ensure the security and integrity of the platform and it's users, API keys are utilized as a fundamental part of the
-              authentication process. As the Unidevweb platform is anticipated to grow over time, the use of API keys allow for secure scaling of both current and future services.
+              authorization process. As the Unidevweb platform is anticipated to grow over time, the use of API keys allow for secure scaling of both current and future services.
               <span className="separate">
                 Each API key is unique to the user, enabling monitoring of usage patterns, rate limit enforcements, and identification of any abnormal or potentially malicious activity. This approach
                 not only helps in safeguarding the platform but also in providing a personalized and optimized experience for each user.
