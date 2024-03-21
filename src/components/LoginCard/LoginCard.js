@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const LoginCard = () => {
-  const navigate = useNavigate();
   const { login } = useAuth();
+  const navigate = useNavigate();
   useEffect(() => {
     window.google.accounts.id.initialize({
       client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
@@ -30,8 +30,6 @@ const LoginCard = () => {
   };
   const handleSignInClick = () => {
     if (window.google.accounts.id) {
-      console.log("hello");
-      console.log(window.google.accounts.id);
       window.google.accounts.id.prompt();
     }
   };

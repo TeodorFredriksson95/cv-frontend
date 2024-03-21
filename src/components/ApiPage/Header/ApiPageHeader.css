@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.ul-list-separate {
+  padding: 1em 2em;
+}
+
 .api-page-grid-layout {
   display: grid;
   width: 100%;

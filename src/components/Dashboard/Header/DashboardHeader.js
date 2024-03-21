@@ -1,21 +1,20 @@
 import "./DashboardHeader.css";
 import React, { useEffect, useState, useRef } from "react";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
-import useUserActivity from "../../util/useUserActivity";
+
+import useAxios from "../../util/useAxios";
 
 const DashboardHeader = () => {
   const [profileImage, setProfileImage] = useState("");
   const [apiAccessKey, setApiAccessKey] = useState("");
   const [isCTCBVisible, setIsCTCBVisible] = useState(false);
 
-  useUserActivity();
+  let api = useAxios();
 
   const handleCopyToClipboard = async () => {
     if (apiAccessKey) {
       try {
         await navigator.clipboard.writeText(apiAccessKey);
-        console.log(isCTCBVisible);
         setIsCTCBVisible(true);
         setTimeout(() => {
           setIsCTCBVisible(false);
@@ -27,16 +26,11 @@ const DashboardHeader = () => {
   };
 
   const handleButtonFetchApi = async () => {
-    const token = localStorage.getItem("authToken");
-    console.log(token);
+    let response = await api.get(process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL + "/api/generate-personal-api-key");
 
-    const response = await axios.get(process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL + "/api/generate-personal-api-key", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    console.log(response);
-    setApiAccessKey(response.data.apiKey);
+    if (response.status === 200) {
+      setApiAccessKey(response.data.apiKey);
+    }
   };
 
   useEffect(() => {
@@ -69,7 +63,9 @@ const DashboardHeader = () => {
                 <input id="api-key-input" type="text" value={apiAccessKey} readOnly placeholder="[your-personal-api-key]"></input>
                 {isCTCBVisible && <div id="copied-notification">Copied to clipboard!</div>}
               </div>
-              <span id="copy-to-clipboard" onClick={handleCopyToClipboard} className="gg--clipboard"></span>
+              <div>
+                <span id="copy-to-clipboard" onClick={handleCopyToClipboard} className="gg--clipboard"></span>
+              </div>
             </div>
             <div className="generate-key-button">
               <button onClick={handleButtonFetchApi}>Generate Key</button>

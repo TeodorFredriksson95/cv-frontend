@@ -17,10 +17,10 @@ import ApiPage from "./pages/ApiPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Credits from "./pages/Credits";
 import Story from "./pages/Story";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import { ProtectedRoute } from "./Helpers/ProtectedRoute";
-import { jwtDecode } from "jwt-decode";
+
 export default function App() {
   return (
     <AuthProvider>

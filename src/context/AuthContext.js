@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -18,16 +19,17 @@ export const AuthProvider = ({ children }) => {
   const isAuthenticated = accessToken !== null;
 
   const login = (accessToken, refreshToken) => {
-    setAccessToken(accessToken);
-    setRefreshToken(refreshToken);
     localStorage.setItem("authToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
+    setAccessToken(accessToken);
+    setRefreshToken(refreshToken);
   };
 
   const logout = () => {
-    setAccessToken(null);
     localStorage.removeItem("authToken");
     localStorage.removeItem("refreshToken");
+    setAccessToken(null);
+    setRefreshToken(null);
   };
 
   return <AuthContext.Provider value={{ accessToken, setAccessToken, refreshToken, setRefreshToken, isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;

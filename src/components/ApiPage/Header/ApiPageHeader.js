@@ -83,30 +83,30 @@ const ApiPageHeader = () => {
           </div>
           <div className="api-section" id="getting-started">
             <h4 className="section-title-h4 docs-sub-title">Getting Started</h4>
-            <p className="api-note">
-              <p className="api-bread-text">
-                Before we can make any requests to the API, we need to obtain our personal API key. Follow these simple steps in order to obtain your own personal API key:{" "}
-                <span className="separate">
-                  <ul>
-                    <li className="attribute-list-item">Login to the dashboard using your Google, Linkedin or Facebook account</li>
-                    <li className="attribute-list-item">Navigate to the dashboard section</li>
-                    <li className="attribute-list-item">Click on the "Generate Key" button</li>
-                    <li className="attribute-list-item">Copy and save your personal API key in a safe location</li>
-                  </ul>
-                </span>
-                <span className="separate">
-                  For the purpose of this introduction we will be using Node.JS and the Axios library to make our HTTP requests to the API. For more code examples using different languages and
-                  frameworks, take a look at the specific resource within the Resources section.
-                </span>
-              </p>
+            <p className="api-bread-text">
+              Before we can make any requests to the API, we need to obtain our personal API key. Follow these simple steps in order to obtain your own personal API key:{" "}
+            </p>
+            <span className="separate api-bread-text">
+              <ul className="ul-list-separate">
+                <li className="attribute-list-item">Login to the dashboard using your Google, Linkedin or Facebook account</li>
+                <li className="attribute-list-item">Navigate to the dashboard section</li>
+                <li className="attribute-list-item">Click on the "Generate Key" button</li>
+                <li className="attribute-list-item">Copy and save your personal API key in a safe location</li>
+              </ul>
+            </span>
+            <p className="api-bread-text">
+              <span className="separate">
+                For the purpose of this introduction we will be using Node.JS and the Axios library to make our HTTP requests to the API. For more code examples using different languages and
+                frameworks, take a look at the specific resource within the Resources section.
+              </span>
             </p>
             <p className="api-bread-text">
               <span className="separate"> Withou further ado, let's make our first API request to the Unidevweb API!</span>
               <span className="separate">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
-              <p className="important-notice-text">
-                <span className="important-notice">IMPORTANT:</span> notice that the personal API key is being passed through the "Authorization" header by supplying a Bearer token. This must be done
-                for all API requests.
-              </p>
+            </p>
+            <p className="api-bread-text important-notice-text">
+              <span className="important-notice">IMPORTANT:</span> notice that the personal API key is being passed through the "Authorization" header by supplying a Bearer token. This must be done
+              for all API requests.
             </p>
             <div className="api-div-container">
               {" "}
@@ -122,22 +122,19 @@ const ApiPageHeader = () => {
             {" "}
             <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={tech_stack_json_result} />
           </div>{" "}
-          <p className="api-bread-text">
-            In this response we're getting a few interesting pieces of data:
-            <span className="separate">
-              <ul>
-                <li className="attribute-list-item">
-                  the array attribute <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
-                </li>
-                <li className="attribute-list-item">
-                  <ApiAttribute attributeName={"tech_stack_id"} /> - the id of each specific tech_stack object
-                </li>
-                <li className="attribute-list-item">
-                  <ApiAttribute attributeName={"tech_stack_name"} /> - the name of each specific tech_stack object
-                </li>
-              </ul>
-            </span>
-          </p>
+          <p className="api-bread-text">In this response we're getting a few interesting pieces of data:</p>
+          <span className="separate"></span>
+          <ul className="api-bread-text">
+            <li className="attribute-list-item">
+              the array attribute <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"tech_stack_id"} /> - the id of each specific tech_stack object
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"tech_stack_name"} /> - the name of each specific tech_stack object
+            </li>
+          </ul>
           <div className="api-section" id="base-url">
             <h4 className="section-title-h4 docs-sub-title">Base URL</h4>
             <p className="api-bread-text">
@@ -165,11 +162,10 @@ const ApiPageHeader = () => {
           <div className="api-section" id="api-keys">
             <h4 className="section-title-h4 docs-sub-title">API Keys</h4>
             <p className="api-bread-text">
-              In Unidevweb's commitment to adhere to REST API standards and ensure the security and integrity of the platform, API keys are utilized as a fundamental part of the authentication
-              process. API keys serve as a simple yet effective method to identify users and authorize access to the API, ensuring that each request made to the platform is both legitimate and
-              traceable. As the Unidevweb platform is anticipated to grow over time, the use of API keys allows for secure scaling of both current and future services.
+              In Unidevweb's commitment to adhere to REST API standards and ensure the security and integrity of the platform and it's users, API keys are utilized as a fundamental part of the
+              authentication process. As the Unidevweb platform is anticipated to grow over time, the use of API keys allow for secure scaling of both current and future services.
               <span className="separate">
-                Each API key is unique to a user, enabling monitoring of usage patterns, rate limit enforcements, and identification of any abnormal or potentially malicious activity. This approach
+                Each API key is unique to the user, enabling monitoring of usage patterns, rate limit enforcements, and identification of any abnormal or potentially malicious activity. This approach
                 not only helps in safeguarding the platform but also in providing a personalized and optimized experience for each user.
               </span>
               <span className="separate">
@@ -186,25 +182,25 @@ const ApiPageHeader = () => {
               applications with secure delegated access, allowing users to grant apps (such as Unidevweb) access to their information without exposing their credentials.
               <span className="separate">
                 In the context of this API, OAuth 2.0 offers a robust and flexible framework that enables secure interactions between the user, the Unidevweb platform, and third-party applications. By
-                leveraging OAuth 2.0, the goal is to empower the user with control over how their data is accessed and used, enhancing trust and transparency.
-              </span>
-              <span className="separate">
-                <ul>
-                  <li className="attribute-list-item oauth-list">
-                    <span className="list-first-span-word">Enhanced Security:</span> OAuth 2.0 uses tokens instead of credentials for authentication, significantly reducing the risk of credential
-                    exposure. Each token is specific to the user's session, ensuring secure access to the API.
-                  </li>
-                  <li className="attribute-list-item oauth-list">
-                    <span className="list-first-span-word">Simplified User Experience:</span> Users can log in and grant permissions through familiar interfaces without the need to create new accounts
-                    or remember additional passwords.
-                  </li>
-                  <li className="attribute-list-item oauth-list">
-                    <span className="list-first-span-word">Seamless API Key Generation:</span> Integrating OAuth 2.0 with the API key generation process ensures that API keys are only issued after a
-                    user has been authenticated and helps fortify Unidevweb's security and integrity.
-                  </li>
-                </ul>
+                leveraging OAuth 2.0, the goal is to empower the user with control over how their data is accessed and used. Trust and transparency is the name of the game!
               </span>
             </p>
+            <span className="separate">
+              <ul className="api-bread-text ul-list-separate">
+                <li className="attribute-list-item oauth-list">
+                  <span className="list-first-span-word">Enhanced Security:</span> OAuth 2.0 uses tokens instead of credentials for authentication, significantly reducing the risk of credential
+                  exposure. Each token is specific to the user's session, ensuring secure access to the API.
+                </li>
+                <li className="attribute-list-item oauth-list">
+                  <span className="list-first-span-word">Simplified User Experience:</span> Users can log in and grant permissions through familiar interfaces without the need to create new accounts
+                  or remember additional passwords.
+                </li>
+                <li className="attribute-list-item oauth-list">
+                  <span className="list-first-span-word">Seamless API Key Generation:</span> Integrating OAuth 2.0 with the API key generation process ensures that API keys are only issued after a
+                  user has been authenticated and helps fortify Unidevweb's security and integrity.
+                </li>
+              </ul>
+            </span>
           </div>
           <div className="header-underline-div ">
             <h3 className="section-title-h3 docs-title ">Resources</h3>
