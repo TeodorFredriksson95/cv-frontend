@@ -1,6 +1,5 @@
 import "./DashboardHeader.css";
 import React, { useEffect, useState, useRef } from "react";
-import { jwtDecode } from "jwt-decode";
 
 import useAxios from "../../util/useAxios";
 
@@ -34,12 +33,11 @@ const DashboardHeader = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    const decodedToken = jwtDecode(token);
+    const profileImage = localStorage.getItem("profileImage");
 
-    const userProfileImage = decodedToken.profileImage;
-    if (userProfileImage) {
-      setProfileImage(userProfileImage);
+    if (profileImage) {
+      console.log(profileImage);
+      setProfileImage(profileImage);
     }
   }, []);
   return (

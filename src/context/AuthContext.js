@@ -1,3 +1,4 @@
+import { jwtDecode } from "jwt-decode";
 import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +22,9 @@ export const AuthProvider = ({ children }) => {
   const login = (accessToken, refreshToken) => {
     localStorage.setItem("authToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
+    const decodeProfileImage = jwtDecode(accessToken);
+    const decodedProfileImage = decodeProfileImage.profileImage;
+    localStorage.setItem("profileImage", decodedProfileImage);
     setAccessToken(accessToken);
     setRefreshToken(refreshToken);
   };

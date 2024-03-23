@@ -42,7 +42,7 @@
 .api-page-sidebar {
   border-right: 1px solid rgba(255, 255, 255, 0.059);
   background-color: rgba(9, 9, 9, 0);
-  width: 200px;
+  width: 240px;
 }
 
 .api-page-main-section {
@@ -100,7 +100,12 @@ hr {
   font-family: var(--MS_Medium);
 }
 
+.pre-more-items {
+  color: white;
+}
+
 .api-sidebar-nav {
+  width: 240px;
   position: fixed;
 }
 
@@ -172,6 +177,8 @@ hr {
   margin-right: 5%;
 }
 .parameter-options {
+  font-family: var(--MS_Bold);
+
   color: #f863bc;
 }
 .parameter-description {
@@ -189,4 +196,18 @@ hr {
   position: sticky;
   top: 15%;
   z-index: 10;
+}
+
+.attribute-list-item-resource-section {
+  /* margin-bottom: 5px;
+  width: 70%;
+  font-family: var(--MS_Light); */
+}
+
+.attribute-list-item-resource-section li {
+  margin-bottom: 5px;
+  width: 100%;
+}
+.parameter-description {
+  padding-inline-start: 0px;
 }

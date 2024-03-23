@@ -1,11 +1,12 @@
 import "./ApiPageHeader.css";
 import React, { useEffect, useState, useRef } from "react";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import tech_stack_json_result from "../../../data/tech_stack_json_result";
 import { ApiAttribute } from "../../ApiAttribute/ApiAttribute";
 import { Fetch_tech_stack_list_example } from "../../../data/Fetch-tech-stack-list-example";
 import { SyntaxHighlighterContainer } from "../../SyntaxHighLighterContainer/SyntaxHighLighterContainer";
-import users_list_json_result from "../../../data/UsersListJsonResult";
+import { listOfCandidatesJson, specificCandidateJson } from "../../../data/UsersListJsonResult";
+import { techStackByIdJson, techStackListJson } from "../../../data/tech_stack_json_result";
+import { workExperienceByIdJson, workExperienceListJson } from "../../../data/workExperienceJson";
 
 const ApiPageHeader = () => {
   useEffect(() => {}, []);
@@ -46,10 +47,31 @@ const ApiPageHeader = () => {
               <h3 className="api-sidebar-title">Resources</h3>
               <ul className="api-sidebar-list">
                 <ul className="api-sidebar-item">
-                  <a href="#users">Users</a>
+                  <a href="#candidates">Candidates</a>
+                  <ul className="api-sidebar-item">
+                    <a href="#retrieve-a-candidate">Retrieve a candidate</a>
+                  </ul>
+                  <ul className="api-sidebar-item">
+                    <a href="#list-all-candidates">List all candidates</a>
+                  </ul>
                 </ul>
                 <ul className="api-sidebar-item">
                   <a href="#techstack">Tech Stack</a>
+                  <ul className="api-sidebar-item">
+                    <a href="#retrieve-a-tech">Retrieve a tech</a>
+                  </ul>
+                  <ul className="api-sidebar-item">
+                    <a href="#list-all-tech">List all tech</a>
+                  </ul>
+                </ul>
+                <ul className="api-sidebar-item">
+                  <a href="#work-experience">Work Experience</a>
+                  <ul className="api-sidebar-item">
+                    <a href="#retrieve-a-work-experience">Retrieve a work experience</a>
+                  </ul>
+                  <ul className="api-sidebar-item">
+                    <a href="#list-all-work-experiences">List all work experiences</a>
+                  </ul>
                 </ul>
               </ul>
             </div>
@@ -106,7 +128,8 @@ const ApiPageHeader = () => {
             </p>
             <p className="api-bread-text important-notice-text">
               <span className="important-notice">IMPORTANT:</span> notice that the personal API key is being passed through the "Authorization" header by supplying a Bearer token. This must be done
-              for all API requests.
+              for all API requests. The documentation is written with the assumption that every request made is supplying a valid API key as part of the authorization header. See below for an example
+              on how to supply the API key as part of the authorization header.
             </p>
             <div className="api-div-container">
               {" "}
@@ -120,7 +143,7 @@ const ApiPageHeader = () => {
           </div>
           <div className="api-div-container">
             {" "}
-            <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={tech_stack_json_result} />
+            <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackListJson} />
           </div>{" "}
           <p className="api-bread-text">In this response we're getting a few interesting pieces of data:</p>
           <span className="separate"></span>
@@ -206,215 +229,659 @@ const ApiPageHeader = () => {
             <h3 className="section-title-h3 docs-title ">Resources</h3>
             <hr></hr>
           </div>
-          <div className="api-section" id="users">
-            <h4 className="section-title-h4 docs-sub-title">Users</h4>{" "}
+          <div className="api-section" id="candidates">
+            <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-candidate">
+              Candidates
+            </h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a candidate</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates/ </p>
+                <p>GET https://unidevweb.com/api/candidates/{"{id}"}</p>
               </div>
             </div>
             <div className="api-section-flex-container">
               <div className="parameter-section-container">
-                <h4 className="parameter">Parameter</h4>
+                <h4 className="parameter">Attributes</h4>
                 <hr id="parameter-hr"></hr>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    API Key - <span className="parameter-options">Required</span>
+                    <span className="parameter-options">API Key</span> - Required, string
                   </p>
-                  <p className="parameter-description">A secret/unique number to gain access.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>{" "}
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Page - <span className="parameter-options">integer, optional, default is 1</span>
-                  </p>
-                  <p className="parameter-description">The page number you want to see.</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&page=3</p>
+                  <p className="parameter-description">A unique API Access Key.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    q - <span className="parameter-options">optional, string</span>
+                    <span className="parameter-options">publicUserId</span> - string
                   </p>
-                  <p className="parameter-description">A string/query consisting of keywords that are used to search for names of candidates.</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&q=teo</p>
+                  <p className="parameter-description">Unique identifier for the object.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Order - <span className="parameter-options">optional, string</span>
+                    <span className="parameter-options">firstname</span> - string
                   </p>
-                  <p className="parameter-description">Ascending or descending alphabetical order of candidates based on name.</p>
-                  <p className="parameter-description">Options - asc, desc</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&order=asc</p>
+                  <p className="parameter-description">Candidate first name.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">lastname</span> - string
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Candidate last name.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">email</span> - string
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Candidate email.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">country</span> - string
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Country of residency.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">workExperience</span> - array
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">workExperienceId</span> - integer
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
+                    <span className="parameter-options">description</span> - string
                   </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Company name related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">The category of work related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">The job title related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The start date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The end date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStack</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackName</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
               </div>
               <div className="code-display-section-container">
                 <div className="api-div-container stickydiv">
                   <div>
-                    <SyntaxHighlighterContainer codeLanguage={"javascript"} codeStyle={a11yDark} formatString={users_list_json_result} />
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={specificCandidateJson} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="api-section" id="list-all-candidates">
+            <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/candidates/full-profile </p>
+              </div>
+            </div>
+            <div className="api-section-flex-container" id="list-all-candidates">
+              <div className="parameter-section-container">
+                <h4 className="parameter">List all candidates</h4>
+                <hr id="parameter-hr"></hr>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">API Key</span> - Required, string
+                  </p>
+                  <p className="parameter-description">A unique API Access Key.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">publicUserId</span> - string
+                  </p>
+                  <p className="parameter-description">Unique identifier for the object.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">firstname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate first name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">lastname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate last name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">email</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate email.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">country</span> - string
+                  </p>
+                  <p className="parameter-description">Country of residency.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperience</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperienceId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">description</span> - string
+                  </p>
+                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Company name related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">The category of work related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">The job title related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The start date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The end date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStack</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackName</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className="api-div-container stickydiv">
+                  <div>
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={listOfCandidatesJson} />
+                    <pre className="pre-more-items">... 28 more candidates</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="api-section" id="list-all-candidates">
+            <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/candidates/full-profile </p>
+              </div>
+            </div>
+            <div className="api-section-flex-container" id="list-all-candidates">
+              <div className="parameter-section-container">
+                <h4 className="parameter">List all candidates</h4>
+                <hr id="parameter-hr"></hr>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">API Key</span> - Required, string
+                  </p>
+                  <p className="parameter-description">A unique API Access Key.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">publicUserId</span> - string
+                  </p>
+                  <p className="parameter-description">Unique identifier for the object.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">firstname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate first name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">lastname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate last name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">email</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate email.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">country</span> - string
+                  </p>
+                  <p className="parameter-description">Country of residency.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperience</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperienceId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">description</span> - string
+                  </p>
+                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Company name related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">The category of work related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">The job title related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The start date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The end date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStack</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackName</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className="api-div-container stickydiv">
+                  <div>
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={listOfCandidatesJson} />
+                    <pre className="pre-more-items">... 28 more candidates</pre>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="api-section" id="techstack">
-            <h4 className="section-title-h4 docs-sub-title">Tech Stack</h4>{" "}
+            <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-tech">
+              Tech Stack
+            </h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a tech</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/tech-stack-list/ </p>
+                <p>GET https://unidevweb.com/api/tech-stack-list/{"{id}"} </p>
               </div>
             </div>
             <div className="api-section-flex-container">
               <div className="parameter-section-container">
-                <h4 className="parameter">Parameter</h4>
+                <h4 className="parameter">Attributes</h4>
                 <hr id="parameter-hr"></hr>
+
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    API Key - <span className="parameter-options">Required</span>
+                    <span className="parameter-options">techStackId</span> - integer
                   </p>
-                  <p className="parameter-description">A secret/unique number to gain access.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>{" "}
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Page - <span className="parameter-options">integer, optional, default is 1</span>
-                  </p>
-                  <p className="parameter-description">The page number you want to see.</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&page=3</p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    q - <span className="parameter-options">optional, string</span>
+                    <span className="parameter-options">techStackName</span> - string
                   </p>
-                  <p className="parameter-description">A string/query consisting of keywords that are used to search for names of candidates.</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&q=teo</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Order - <span className="parameter-options">optional, string</span>
-                  </p>
-                  <p className="parameter-description">Ascending or descending alphabetical order of candidates based on name.</p>
-                  <p className="parameter-description">Options - asc, desc</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&order=asc</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    Open To Work - <span className="parameter-options">optional, boolean</span>
-                  </p>
-                  <p className="parameter-description">Indicates if the candidate is open to work or not.</p>
-                  <p className="parameter-description">Options - true, false</p>
-                  <p className="resource-api-endpoint">GET https://unidevweb.com/api/users&open-to-work=true</p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
               </div>
               <div className="code-display-section-container">
                 <div className="api-div-container stickydiv">
                   <div>
-                    <SyntaxHighlighterContainer codeLanguage={"javascript"} codeStyle={a11yDark} formatString={tech_stack_json_result} />
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackByIdJson} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="api-section" id="list-all-tech">
+            <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/tech-stack-list/</p>
+              </div>
+            </div>
+            <div className="api-section-flex-container">
+              <div className="parameter-section-container">
+                <h4 className="parameter">Attributes</h4>
+                <hr id="parameter-hr"></hr>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStack</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackName</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className="api-div-container stickydiv">
+                  <div>
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackListJson} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="api-section" id="work-experience">
+            <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-work-experience">
+              Work Experience
+            </h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a work experience</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/work-experiences/{"{id}"} </p>
+              </div>
+            </div>
+            <div className="api-section-flex-container">
+              <div className="parameter-section-container">
+                <h4 className="parameter">Attributes</h4>
+                <hr id="parameter-hr"></hr>
+
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperienceId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the company related to the work experience</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">Category related to the job title.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">Title the employee held during the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">Start date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">End date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">Start date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className="api-div-container stickydiv">
+                  <div>
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={workExperienceByIdJson} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="api-section" id="list-all-work-experiences">
+            <h4 className="section-title-h4 docs-sub-resource">List all work experiences</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/tech-stack-list/</p>
+              </div>
+            </div>
+            <div className="api-section-flex-container">
+              <div className="parameter-section-container">
+                <h4 className="parameter">Attributes</h4>
+                <hr id="parameter-hr"></hr>
+
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperiences</span> - array
+                  </p>
+                  <p className="parameter-description">An array containing a list of all work experiences.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperienceId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the company related to the work experience</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">Category related to the job title.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">Title the employee held during the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">Start date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">End date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">Start date of the related work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className="api-div-container stickydiv">
+                  <div>
+                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={workExperienceListJson} />
                   </div>
                 </div>
               </div>

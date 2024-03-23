@@ -1,4 +1,4 @@
-const tech_stack_js_result = {
+const techStackList = {
   data: {
     tech_stack: [
       {
@@ -29,5 +29,10 @@ const tech_stack_js_result = {
   },
 };
 
-const tech_stack_json_result = JSON.stringify(tech_stack_js_result, null, 2);
-export default tech_stack_json_result;
+const techStackById = {
+  tech_stack_id: 3,
+  tech_stack_name: "Node.JS",
+};
+
+export const techStackListJson = JSON.stringify(techStackList, null, 2);
+export const techStackByIdJson = JSON.stringify(techStackById, null, 2);
