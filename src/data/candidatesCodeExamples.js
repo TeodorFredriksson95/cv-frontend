@@ -33,7 +33,7 @@ const listOfCandidates = {
   ],
 };
 
-const specificCandidate = {
+const getCandidateById = {
   publicUserId: "b3ac8350-6729-4b21-8e95-37f4f6b5710e",
   firstname: "teodor fredriksson",
   lastname: "fredriksson",
@@ -64,5 +64,16 @@ const specificCandidate = {
   ],
 };
 
+const candidateEndpointData = {
+  getCandidateById: {
+    fetchSnippets: {
+      NET: `// .NET fetch code for specificCandidate`,
+      Node: `// Node.js fetch code for specificCandidate`,
+      Javascript: `// JavaScript fetch code for specificCandidate`,
+    },
+  },
+};
+
+export const candidateEndpointDataJS = candidateEndpointData;
 export const listOfCandidatesJson = JSON.stringify(listOfCandidates, null, 2);
-export const specificCandidateJson = JSON.stringify(specificCandidate, null, 2);
+export const getCandidateByIdJson = JSON.stringify(getCandidateById, null, 2);

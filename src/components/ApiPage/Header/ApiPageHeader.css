@@ -27,11 +27,6 @@
   background-color: rgb(43, 43, 43);
 }
 
-.api-div pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
 .api-input-text {
   position: relative;
   color: rgb(248, 248, 242);
@@ -70,14 +65,6 @@
   font-family: var(--MS_Medium);
 }
 
-.api-sidebar-item a:hover {
-  color: #fd50b8;
-}
-
-.api-sidebar-item {
-  margin-bottom: 5px;
-}
-
 .api-sidebar-resource-title {
   font-size: 14px;
   text-decoration: none;
@@ -110,8 +97,6 @@
 
 .api-sidebar-getting-started-subtitle {
   font-size: 14px;
-  text-decoration: none;
-  color: turquoise;
   font-family: var(--MS_Medium);
   padding: 2px 10px;
   border-radius: 0.25rem;
@@ -133,12 +118,6 @@
 .resource-flex-container:hover h4,
 .resource-flex-container.active h4 {
   color: #fd50b8;
-}
-
-.api-sidebar-item {
-  padding: 2px 10px;
-  border-radius: 0.25rem;
-  cursor: pointer;
 }
 
 .api-sidebar-section {
@@ -264,14 +243,6 @@ hr {
   z-index: 10;
 }
 
-.attribute-list-item-resource-section li {
-  margin-bottom: 5px;
-  width: 100%;
-}
-.parameter-description {
-  padding-inline-start: 0px;
-}
-
 .ep--arrow-right::after {
   display: inline-block;
   width: 1em;
@@ -292,4 +263,36 @@ hr {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.frontend-and-backend-examples-flex-container {
+  display: flex;
+}
+
+.api-button {
+  font-family: var(--MS_Bold);
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 8px;
+  margin-right: 1%;
+  border: none;
+  color: black;
+}
+.api-select {
+  margin-left: 2%;
+  padding: 8px;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  font-family: var(--MS_Bold);
+}
+
+.api-response-variations-container {
+  margin-bottom: 1%;
+}
+
+.response-button.api-button-is-active,
+.code-button.api-button-is-active {
+  background-color: green;
+  color: white;
 }

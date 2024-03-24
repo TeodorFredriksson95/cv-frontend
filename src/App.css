@@ -282,7 +282,7 @@ body {
     --response-paragraph-size: 2.3em;
     --narrator-paragraph-size: 2.3em;
     --bread-text-size: 2em;
-    --api-bread-text-size: 1em;
+    /* --api-bread-text-size: 1em; */
 
     --continuation-text-size: 5em;
   }
@@ -308,7 +308,7 @@ body {
     --response-paragraph-size: 2.8em;
     --narrator-paragraph-size: 2.8em;
     --bread-text-size: 2.5em;
-    --api-bread-text-size: 2.5em;
+    /* --api-bread-text-size: 2.5em; */
   }
 }
 

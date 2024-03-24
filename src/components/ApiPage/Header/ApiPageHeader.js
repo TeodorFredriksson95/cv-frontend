@@ -4,16 +4,41 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ApiAttribute } from "../../ApiAttribute/ApiAttribute";
 import { Fetch_tech_stack_list_example } from "../../../data/Fetch-tech-stack-list-example";
 import { SyntaxHighlighterContainer } from "../../SyntaxHighLighterContainer/SyntaxHighLighterContainer";
-import { listOfCandidatesJson, specificCandidateJson } from "../../../data/UsersListJsonResult";
+import { listOfCandidatesJson, getCandidateByIdJson } from "../../../data/candidatesCodeExamples";
 import { techStackByIdJson, techStackListJson } from "../../../data/tech_stack_json_result";
 import { workExperienceByIdJson, workExperienceListJson } from "../../../data/workExperienceJson";
+import { candidateEndpointDataJS } from "../../../data/candidatesCodeExamples";
 
 const ApiPageHeader = () => {
   const [expandedSection, setExpandedSection] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
+  const [activeTab, setActiveTab] = useState("Response");
+  const [selectedFramework, setSelectedFramework] = useState("Node");
+  const [activeApiResponseButtonColor, setactiveApiResponseButtonColor] = useState("");
+
+  const renderApiCodeSnippet = ({ endpoint, subProperty, activeTab, selectedFramework, formattedJson }) => {
+    if (activeTab === "Response") {
+      return <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={formattedJson} />;
+    }
+    if (activeTab === "Code" && selectedFramework) {
+      return <SyntaxHighlighterContainer codeLanguage={"javascript"} codeStyle={a11yDark} formatString={endpoint[subProperty].fetchSnippets[selectedFramework]} />;
+    }
+    return null;
+  };
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  const handleFrameworkChange = (event) => {
+    setSelectedFramework(event.target.value);
+  };
 
   const handleItemClick = (itemId) => {
     setActiveItem(itemId);
+  };
+  const setButtonColor = (itemId) => {
+    setactiveApiResponseButtonColor(itemId);
   };
   const handleSectionClick = (sectionName) => {
     setExpandedSection(expandedSection === sectionName ? null : sectionName);
@@ -108,7 +133,7 @@ const ApiPageHeader = () => {
                   }}
                 >
                   <h4 className={`api-sidebar-resource-title `}>Candidates</h4>
-                  {expandedSection === "candidates" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                  {expandedSection === "candidates" ? <span className="ep--arrow-down"></span> : <span className="ep--arrow-right"></span>}
                 </div>
                 {expandedSection === "candidates" && (
                   <ul className="api-sidebar-list">
@@ -134,7 +159,7 @@ const ApiPageHeader = () => {
                   }}
                 >
                   <h4 className={`api-sidebar-resource-title`}>Tech Stack</h4>
-                  {expandedSection === "tech-stack" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                  {expandedSection === "tech-stack" ? <span className="ep--arrow-down"></span> : <span className="ep--arrow-right"></span>}
                 </div>
                 {expandedSection === "tech-stack" && (
                   <ul className="api-sidebar-list">
@@ -161,7 +186,7 @@ const ApiPageHeader = () => {
                   }}
                 >
                   <h4 className={`api-sidebar-resource-title`}>Work Experience</h4>
-                  {expandedSection === "work-experience" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                  {expandedSection === "work-experience" ? <span className="ep--arrow-down"></span> : <span className="ep--arrow-right"></span>}
                 </div>
 
                 {expandedSection === "work-experience" && (
@@ -251,7 +276,6 @@ const ApiPageHeader = () => {
               on how to supply the API key as part of the authorization header.
             </p>
             <div className="api-div-container">
-              {" "}
               <div className="api-div-container">
                 <div>
                   <SyntaxHighlighterContainer codeLanguage={"javascript"} codeStyle={a11yDark} formatString={Fetch_tech_stack_list_example} />
@@ -261,9 +285,8 @@ const ApiPageHeader = () => {
             <p className="api-bread-text">The response we recieve comes in a JSON format:</p>
           </div>
           <div className="api-div-container">
-            {" "}
             <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackListJson} />
-          </div>{" "}
+          </div>
           <p className="api-bread-text">In this response we're getting a few interesting pieces of data:</p>
           <span className="separate"></span>
           <ul className="api-bread-text">
@@ -483,12 +506,59 @@ const ApiPageHeader = () => {
                 </div>
               </div>
               <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="">Select Framework</option>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Javascript">Javascript</option>
+                    </select>
+                  </div>
+                  {renderApiCodeSnippet({
+                    endpoint: candidateEndpointDataJS,
+                    subProperty: "getCandidateById",
+                    activeTab: activeTab,
+                    formattedJson: getCandidateByIdJson,
+                    selectedFramework: selectedFramework,
+                  })}
+                </div>
+              </div>
+
+              {/* <div className="code-display-section-container">
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button className="api-button">Response</button>
+                    <button className="api-button">Code</button>
+                    <select name="frameworks" id="select-frameworks" className="api-select">
+                      <option value="">.NET</option>
+                      <option value="dog">Node</option>
+                      <option value="hamster">Javascript</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container ">
                     <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={specificCandidateJson} />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="api-section" id="list-all-candidates">
