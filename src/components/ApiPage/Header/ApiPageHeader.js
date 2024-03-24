@@ -9,6 +9,16 @@ import { techStackByIdJson, techStackListJson } from "../../../data/tech_stack_j
 import { workExperienceByIdJson, workExperienceListJson } from "../../../data/workExperienceJson";
 
 const ApiPageHeader = () => {
+  const [expandedSection, setExpandedSection] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleItemClick = (itemId) => {
+    setActiveItem(itemId);
+  };
+  const handleSectionClick = (sectionName) => {
+    setExpandedSection(expandedSection === sectionName ? null : sectionName);
+  };
+
   useEffect(() => {}, []);
   return (
     <div className="api-page-header">
@@ -17,74 +27,183 @@ const ApiPageHeader = () => {
           <nav className="api-sidebar-nav">
             <div className="api-sidebar-section">
               <h3 className="api-sidebar-title">Getting Started</h3>
-              <ul className="api-sidebar-list">
-                <ul className="api-sidebar-item">
-                  <a href="#docs-intro-title">Introduction</a>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#getting-started">Getting Started</a>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#base-url">Base URL</a>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#rate-limiting">Rate Limiting</a>
-                </ul>
-              </ul>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "introduction" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("introduction");
+                  handleItemClick("introduction");
+                }}
+              >
+                <a href="#introduction">
+                  <div>Introduction</div>
+                </a>
+              </div>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "getting-started" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("getting-started");
+                  handleItemClick("getting-started");
+                }}
+              >
+                <a href="#getting-started">
+                  <div>Getting started</div>
+                </a>
+              </div>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "base-url" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("base-url");
+                  handleItemClick("base-url");
+                }}
+              >
+                <a href="#base-url">
+                  <div>Base URL</div>
+                </a>
+              </div>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "rate-limiting" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("rate-limiting");
+                  handleItemClick("rate-limiting");
+                }}
+              >
+                <a href="#rate-limiting">
+                  <div>Rate Limiting</div>
+                </a>
+              </div>
             </div>
             <div className="api-sidebar-section">
               <h3 className="api-sidebar-title">Authentication</h3>
-              <ul className="api-sidebar-list">
-                <ul className="api-sidebar-item">
-                  <a href="#api-keys">API Keys</a>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#oauth">OAuth2</a>
-                </ul>
-              </ul>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "api-keys" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("api-keys");
+                  handleItemClick("api-keys");
+                }}
+              >
+                <a href="#api-keys">
+                  <div>API keys</div>
+                </a>
+              </div>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "oauth" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("oauth");
+                  handleItemClick("oauth");
+                }}
+              >
+                <a href="#oauth">
+                  <div>OAuth 2.0</div>
+                </a>
+              </div>
             </div>
             <div className="api-sidebar-section">
               <h3 className="api-sidebar-title">Resources</h3>
-              <ul className="api-sidebar-list">
-                <ul className="api-sidebar-item">
-                  <a href="#candidates">Candidates</a>
-                  <ul className="api-sidebar-item">
-                    <a href="#retrieve-a-candidate">Retrieve a candidate</a>
+              <div>
+                <div
+                  className={`resource-flex-container ${activeItem === "candidates" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("candidates");
+                    handleItemClick("candidates");
+                  }}
+                >
+                  <h4 className={`api-sidebar-resource-title `}>Candidates</h4>
+                  {expandedSection === "candidates" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                </div>
+                {expandedSection === "candidates" && (
+                  <ul className="api-sidebar-list">
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "c.i1" ? "active" : ""}`} onClick={() => handleItemClick("c.i1")}>
+                      <a href="#retrieve-a-candidate">
+                        <div>Retrieve a candidate</div>
+                      </a>
+                    </div>
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "c.i2" ? "active" : ""}`} onClick={() => handleItemClick("c.i2")}>
+                      <a href="#list-all-candidates">
+                        <div>List all candidates</div>
+                      </a>
+                    </div>
                   </ul>
-                  <ul className="api-sidebar-item">
-                    <a href="#list-all-candidates">List all candidates</a>
+                )}
+              </div>
+              <div>
+                <div
+                  className={`resource-flex-container ${activeItem === "tech-stack" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("tech-stack");
+                    handleItemClick("tech-stack");
+                  }}
+                >
+                  <h4 className={`api-sidebar-resource-title`}>Tech Stack</h4>
+                  {expandedSection === "tech-stack" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                </div>
+                {expandedSection === "tech-stack" && (
+                  <ul className="api-sidebar-list">
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "ts.i1" ? "active" : ""}`} onClick={() => handleItemClick("ts.i1")}>
+                      {" "}
+                      <a href="#retrieve-a-tech">
+                        <div>Retrieve a tech</div>
+                      </a>
+                    </div>
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "ts.i2" ? "active" : ""}`} onClick={() => handleItemClick("ts.i2")}>
+                      <a href="#list-all-tech">
+                        <div>List all tech</div>
+                      </a>
+                    </div>
                   </ul>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#techstack">Tech Stack</a>
-                  <ul className="api-sidebar-item">
-                    <a href="#retrieve-a-tech">Retrieve a tech</a>
+                )}
+              </div>
+              <div>
+                <div
+                  className={`resource-flex-container ${activeItem === "work-experience" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("work-experience");
+                    handleItemClick("work-experience");
+                  }}
+                >
+                  <h4 className={`api-sidebar-resource-title`}>Work Experience</h4>
+                  {expandedSection === "work-experience" ? <span class="ep--arrow-down"></span> : <span class="ep--arrow-right"></span>}
+                </div>
+
+                {expandedSection === "work-experience" && (
+                  <ul className="api-sidebar-list">
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "we.i1" ? "active" : ""}`} onClick={() => handleItemClick("we.i1")}>
+                      <a href="#retrieve-a-work-experience">
+                        <div>Retrieve an experience</div>
+                      </a>
+                    </div>
+                    <div className={`api-sidebar-resource-subtitle ${activeItem === "we.i2" ? "active" : ""}`} onClick={() => handleItemClick("we.i2")}>
+                      <a href="#list-all-work-experiences">
+                        <div>List all experiences</div>
+                      </a>
+                    </div>
                   </ul>
-                  <ul className="api-sidebar-item">
-                    <a href="#list-all-tech">List all tech</a>
-                  </ul>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#work-experience">Work Experience</a>
-                  <ul className="api-sidebar-item">
-                    <a href="#retrieve-a-work-experience">Retrieve a work experience</a>
-                  </ul>
-                  <ul className="api-sidebar-item">
-                    <a href="#list-all-work-experiences">List all work experiences</a>
-                  </ul>
-                </ul>
-              </ul>
+                )}
+              </div>
             </div>
             <div className="api-sidebar-section">
               <h3 className="api-sidebar-title">Concepts</h3>
-              <ul className="api-sidebar-list">
-                <ul className="api-sidebar-item">
-                  <a href="#pagination">Pagination</a>
-                </ul>
-                <ul className="api-sidebar-item">
-                  <a href="#filtering">Filtering</a>
-                </ul>
-              </ul>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "pagination" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("pagination");
+                  handleItemClick("pagination");
+                }}
+              >
+                <a href="#pagination">
+                  <div>Pagination</div>
+                </a>
+              </div>
+              <div
+                className={`api-sidebar-getting-started-subtitle ${activeItem === "filtering" ? "active" : ""}`}
+                onClick={() => {
+                  handleSectionClick("filtering");
+                  handleItemClick("filtering");
+                }}
+              >
+                <a href="#filtering">
+                  <div>Filtering</div>
+                </a>
+              </div>
             </div>
           </nav>
         </div>
@@ -93,7 +212,7 @@ const ApiPageHeader = () => {
             <h3 className="section-title-h3 docs-title">Documentation</h3>
             <hr></hr>
           </div>
-          <div className="api-section" id="docs-intro-title">
+          <div className="api-section" id="introduction">
             <h4 className="section-title-h4 docs-sub-title">Introduction</h4>
             <p className="api-bread-text">
               Welcome to the Unidevweb API!
