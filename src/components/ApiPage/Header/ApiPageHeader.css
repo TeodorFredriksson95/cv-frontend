@@ -271,13 +271,24 @@ hr {
 
 .api-button {
   font-family: var(--MS_Bold);
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 0.25rem;
   padding: 8px;
   margin-right: 1%;
   border: none;
   color: black;
 }
+
+.api-button:hover {
+  cursor: pointer;
+  background-color: rgb(244, 241, 241);
+  outline: rgb(240, 240, 240) solid 1px;
+}
+
+.api-select:hover {
+  cursor: pointer;
+}
+
 .api-select {
   margin-left: 2%;
   padding: 8px;
@@ -285,6 +296,8 @@ hr {
   border: none;
   outline: none;
   font-family: var(--MS_Bold);
+  color: white;
+  background-color: #fd50b8;
 }
 
 .api-response-variations-container {
@@ -295,4 +308,10 @@ hr {
 .code-button.api-button-is-active {
   background-color: green;
   color: white;
+}
+
+.response-button.api-button-is-active:hover,
+.code-button.api-button-is-active:hover {
+  outline: rgb(3, 118, 3) solid 1px;
+  background-color: rgb(3, 118, 3);
 }

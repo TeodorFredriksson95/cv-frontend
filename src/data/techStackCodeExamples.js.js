@@ -1,81 +1,49 @@
-const listOfCandidates = {
-  candidates: [
+const techStackList = {
+  tech_stack: [
     {
-      publicUserId: "802d632d-021b-4705-b8a7-dd39924ce68c",
-      firstname: "teodor fredriksson",
-      lastname: "fredriksson",
-      email: "teoblu95@gmail.com",
-      country: "Other",
-      openToWork: true,
-      workExperience: [
-        {
-          workExperienceId: 6,
-          description:
-            "Responsible for the creation and maintenance of Social Politik's new webshop. Working in collaboration with the project group to develop user-friendly design and functionality. Adapted to accessibility recommendations and data security laws.",
-          company: "Sociala Bildbyrån",
-          category: "Technology Development",
-          jobTitle: "Webmaster",
-          startDate: "2023-01-01T00:00:00",
-          endDate: "",
-        },
-      ],
-      techStack: [
-        {
-          techStackId: 1,
-          techStackName: "C#",
-        },
-        {
-          techStackId: 2,
-          techStackName: "React",
-        },
-      ],
+      tech_stack_id: 1,
+      tech_stack_name: "C#",
+    },
+    {
+      tech_stack_id: 2,
+      tech_stack_name: ".NET",
+    },
+    {
+      tech_stack_id: 3,
+      tech_stack_name: "Node.JS",
+    },
+    {
+      tech_stack_id: 4,
+      tech_stack_name: "React",
+    },
+    {
+      tech_stack_id: 5,
+      tech_stack_name: "JavaScript",
+    },
+    {
+      tech_stack_id: 6,
+      tech_stack_name: "TypeScript",
     },
   ],
 };
 
-const getCandidateById = {
-  publicUserId: "b3ac8350-6729-4b21-8e95-37f4f6b5710e",
-  firstname: "teodor fredriksson",
-  lastname: "fredriksson",
-  email: "teofredev@gmail.com",
-  country: "Other",
-  openToWork: true,
-  workExperience: [
-    {
-      workExperienceId: 2,
-      description:
-        "Responsible for the creation and maintenance of Social Politik's new webshop. Working in collaboration with the project group to develop user-friendly design and functionality. Adapted to accessibility recommendations and data security laws.",
-      company: "Sociala Bildbyrån",
-      category: "Technology Development",
-      jobTitle: "Webmaster",
-      startDate: "2023-09-01T00:00:00",
-      endDate: "",
-    },
-  ],
-  techStack: [
-    {
-      techStackId: 1,
-      techStackName: "C#",
-    },
-    {
-      techStackId: 2,
-      techStackName: "React",
-    },
-  ],
+const techStackById = {
+  tech_stack_id: 3,
+  tech_stack_name: "Node.JS",
 };
 
-const candidateEndpointData = {
-  getCandidateById: {
+const techStackEndpointData = {
+  getTechStackById: {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/candidates/{id}");
+      var content = await client.GetStringAsync("https://unidevweb.com/api/tech-stack-list/{id}");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/candidates/{id}", {
+          const response = await fetch("https://unidevweb.com/api/tech-stack-list/{id}", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -90,7 +58,7 @@ const candidateEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/candidates/{id}", nil)
+          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/tech-stack-list/{id}", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -99,7 +67,7 @@ const candidateEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/candidates/{id}");
+      PHP: `$curl = curl_init("https://unidevweb.com/api/tech-stack-list/{id}");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -108,7 +76,7 @@ const candidateEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/candidates/{id}",
+          "https://unidevweb.com/api/tech-stack-list/{id}",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -116,7 +84,7 @@ const candidateEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/candidates/{id}")
+      uri = URI("https://unidevweb.com/api/tech-stack-list/{id}")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       
@@ -127,17 +95,17 @@ const candidateEndpointData = {
       `,
     },
   },
-  getCandidateList: {
+  getTechStackList: {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/candidates");
+      var content = await client.GetStringAsync("https://unidevweb.com/api/tech-stack-list");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/candidates/", {
+          const response = await fetch("https://unidevweb.com/api/tech-stack-list", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -152,7 +120,7 @@ const candidateEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/candidates", nil)
+          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/tech-stack-list", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -161,7 +129,7 @@ const candidateEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/candidates");
+      PHP: `$curl = curl_init("https://unidevweb.com/api/tech-stack-list");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -170,7 +138,7 @@ const candidateEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/candidates",
+          "https://unidevweb.com/api/tech-stack-list",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -178,7 +146,7 @@ const candidateEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/candidates")
+      uri = URI("https://unidevweb.com/api/tech-stack-list")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       
@@ -191,6 +159,6 @@ const candidateEndpointData = {
   },
 };
 
-export const candidateEndpointDataJS = candidateEndpointData;
-export const listOfCandidatesJson = JSON.stringify(listOfCandidates, null, 2);
-export const getCandidateByIdJson = JSON.stringify(getCandidateById, null, 2);
+export const techStackEndpointDataJS = techStackEndpointData;
+export const techStackListJson = JSON.stringify(techStackList, null, 2);
+export const techStackByIdJson = JSON.stringify(techStackById, null, 2);

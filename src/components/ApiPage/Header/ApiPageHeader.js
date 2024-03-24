@@ -5,8 +5,8 @@ import { ApiAttribute } from "../../ApiAttribute/ApiAttribute";
 import { Fetch_tech_stack_list_example } from "../../../data/Fetch-tech-stack-list-example";
 import { SyntaxHighlighterContainer } from "../../SyntaxHighLighterContainer/SyntaxHighLighterContainer";
 import { listOfCandidatesJson, getCandidateByIdJson } from "../../../data/candidatesCodeExamples";
-import { techStackByIdJson, techStackListJson } from "../../../data/tech_stack_json_result";
-import { workExperienceByIdJson, workExperienceListJson } from "../../../data/workExperienceJson";
+import { techStackByIdJson, techStackEndpointDataJS, techStackListJson } from "../../../data/techStackCodeExamples.js";
+import { workExperienceByIdJson, workExperienceEndpointDataJS, workExperienceListJson } from "../../../data/workExperienceCodeExamples.js.js";
 import { candidateEndpointDataJS } from "../../../data/candidatesCodeExamples";
 
 const ApiPageHeader = () => {
@@ -14,7 +14,7 @@ const ApiPageHeader = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [activeTab, setActiveTab] = useState("Response");
   const [selectedFramework, setSelectedFramework] = useState("Node");
-  const [activeApiResponseButtonColor, setactiveApiResponseButtonColor] = useState("");
+  const [activeApiResponseButtonColor, setactiveApiResponseButtonColor] = useState("response-button");
 
   const renderApiCodeSnippet = ({ endpoint, subProperty, activeTab, selectedFramework, formattedJson }) => {
     if (activeTab === "Response") {
@@ -164,7 +164,6 @@ const ApiPageHeader = () => {
                 {expandedSection === "tech-stack" && (
                   <ul className="api-sidebar-list">
                     <div className={`api-sidebar-resource-subtitle ${activeItem === "ts.i1" ? "active" : ""}`} onClick={() => handleItemClick("ts.i1")}>
-                      {" "}
                       <a href="#retrieve-a-tech">
                         <div>Retrieve a tech</div>
                       </a>
@@ -527,322 +526,203 @@ const ApiPageHeader = () => {
                       Code
                     </button>
                     <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
-                      <option value="">Select Framework</option>
                       <option value="NET">.NET</option>
                       <option value="Node">Node</option>
-                      <option value="Javascript">Javascript</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
                     </select>
                   </div>
-                  {renderApiCodeSnippet({
-                    endpoint: candidateEndpointDataJS,
-                    subProperty: "getCandidateById",
-                    activeTab: activeTab,
-                    formattedJson: getCandidateByIdJson,
-                    selectedFramework: selectedFramework,
-                  })}
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: candidateEndpointDataJS,
+                      subProperty: "getCandidateById",
+                      activeTab: activeTab,
+                      formattedJson: getCandidateByIdJson,
+                      selectedFramework: selectedFramework,
+                    })}
+                  </div>
                 </div>
               </div>
-
-              {/* <div className="code-display-section-container">
-                <div className="stickydiv">
+            </div>
+          </div>
+          <div className="api-section" id="list-all-candidates">
+            <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
+            <div className="api-div-container api-input-resource-section">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/candidates </p>
+              </div>
+            </div>
+            <div className="api-section-flex-container" id="list-all-candidates">
+              <div className="parameter-section-container">
+                <h4 className="parameter">List all candidates</h4>
+                <hr id="parameter-hr"></hr>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">API Key</span> - Required, string
+                  </p>
+                  <p className="parameter-description">A unique API Access Key.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">publicUserId</span> - string
+                  </p>
+                  <p className="parameter-description">Unique identifier for the object.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">firstname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate first name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">lastname</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate last name.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">email</span> - string
+                  </p>
+                  <p className="parameter-description">Candidate email.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">country</span> - string
+                  </p>
+                  <p className="parameter-description">Country of residency.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperience</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">workExperienceId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">description</span> - string
+                  </p>
+                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">company</span> - string
+                  </p>
+                  <p className="parameter-description">Company name related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">category</span> - string
+                  </p>
+                  <p className="parameter-description">The category of work related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">jobTitle</span> - string
+                  </p>
+                  <p className="parameter-description">The job title related to the work experience.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">startDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The start date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">endDate</span> - DateTime
+                  </p>
+                  <p className="parameter-description">The end date of the specified job role.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStack</span> - array
+                  </p>
+                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackId</span> - integer
+                  </p>
+                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+                <div className="attribute-options-container">
+                  <p className="parameter">
+                    <span className="parameter-options">techStackName</span> - string
+                  </p>
+                  <p className="parameter-description">Name of the programming language/framework.</p>
+                  <hr id="parameter-hr"></hr>
+                </div>
+              </div>
+              <div className="code-display-section-container">
+                <div className=" stickydiv">
                   <div className="api-response-variations-container">
-                    <button className="api-button">Response</button>
-                    <button className="api-button">Code</button>
-                    <select name="frameworks" id="select-frameworks" className="api-select">
-                      <option value="">.NET</option>
-                      <option value="dog">Node</option>
-                      <option value="hamster">Javascript</option>
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
                     </select>
                   </div>
-                  <div className="api-div-container ">
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={specificCandidateJson} />
-                  </div>
-                </div>
-              </div> */}
-            </div>
-          </div>
-          <div className="api-section" id="list-all-candidates">
-            <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
-            <div className="api-div-container api-input-resource-section">
-              <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates/full-profile </p>
-              </div>
-            </div>
-            <div className="api-section-flex-container" id="list-all-candidates">
-              <div className="parameter-section-container">
-                <h4 className="parameter">List all candidates</h4>
-                <hr id="parameter-hr"></hr>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">API Key</span> - Required, string
-                  </p>
-                  <p className="parameter-description">A unique API Access Key.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">publicUserId</span> - string
-                  </p>
-                  <p className="parameter-description">Unique identifier for the object.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">firstname</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate first name.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">lastname</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate last name.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">email</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate email.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">country</span> - string
-                  </p>
-                  <p className="parameter-description">Country of residency.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">workExperience</span> - array
-                  </p>
-                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">workExperienceId</span> - integer
-                  </p>
-                  <p className="parameter-description">Unique identifier for the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">description</span> - string
-                  </p>
-                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">company</span> - string
-                  </p>
-                  <p className="parameter-description">Company name related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">category</span> - string
-                  </p>
-                  <p className="parameter-description">The category of work related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">jobTitle</span> - string
-                  </p>
-                  <p className="parameter-description">The job title related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">startDate</span> - DateTime
-                  </p>
-                  <p className="parameter-description">The start date of the specified job role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">endDate</span> - DateTime
-                  </p>
-                  <p className="parameter-description">The end date of the specified job role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStack</span> - array
-                  </p>
-                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStackId</span> - integer
-                  </p>
-                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStackName</span> - string
-                  </p>
-                  <p className="parameter-description">Name of the programming language/framework.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-              </div>
-              <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={listOfCandidatesJson} />
-                    <pre className="pre-more-items">... 28 more candidates</pre>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: candidateEndpointDataJS,
+                      subProperty: "getCandidateList",
+                      activeTab: activeTab,
+                      formattedJson: listOfCandidatesJson,
+                      selectedFramework: selectedFramework,
+                    })}
+                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 28 more candidates</pre>}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="api-section" id="list-all-candidates">
-            <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
-            <div className="api-div-container api-input-resource-section">
-              <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates/full-profile </p>
-              </div>
-            </div>
-            <div className="api-section-flex-container" id="list-all-candidates">
-              <div className="parameter-section-container">
-                <h4 className="parameter">List all candidates</h4>
-                <hr id="parameter-hr"></hr>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">API Key</span> - Required, string
-                  </p>
-                  <p className="parameter-description">A unique API Access Key.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">publicUserId</span> - string
-                  </p>
-                  <p className="parameter-description">Unique identifier for the object.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">firstname</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate first name.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">lastname</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate last name.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">email</span> - string
-                  </p>
-                  <p className="parameter-description">Candidate email.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">country</span> - string
-                  </p>
-                  <p className="parameter-description">Country of residency.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">workExperience</span> - array
-                  </p>
-                  <p className="parameter-description">Array containing properties related to the candidates work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">workExperienceId</span> - integer
-                  </p>
-                  <p className="parameter-description">Unique identifier for the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">description</span> - string
-                  </p>
-                  <p className="parameter-description">Description of work responsibilites related to the specific role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">company</span> - string
-                  </p>
-                  <p className="parameter-description">Company name related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">category</span> - string
-                  </p>
-                  <p className="parameter-description">The category of work related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">jobTitle</span> - string
-                  </p>
-                  <p className="parameter-description">The job title related to the work experience.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">startDate</span> - DateTime
-                  </p>
-                  <p className="parameter-description">The start date of the specified job role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">endDate</span> - DateTime
-                  </p>
-                  <p className="parameter-description">The end date of the specified job role.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStack</span> - array
-                  </p>
-                  <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStackId</span> - integer
-                  </p>
-                  <p className="parameter-description">Unique identifier for the programming language/framework.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-                <div className="attribute-options-container">
-                  <p className="parameter">
-                    <span className="parameter-options">techStackName</span> - string
-                  </p>
-                  <p className="parameter-description">Name of the programming language/framework.</p>
-                  <hr id="parameter-hr"></hr>
-                </div>
-              </div>
-              <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={listOfCandidatesJson} />
-                    <pre className="pre-more-items">... 28 more candidates</pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div className="api-section" id="techstack">
             <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-tech">
               Tech Stack
@@ -874,9 +754,43 @@ const ApiPageHeader = () => {
                 </div>
               </div>
               <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackByIdJson} />
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: techStackEndpointDataJS,
+                      subProperty: "getTechStackById",
+                      activeTab: activeTab,
+                      formattedJson: techStackByIdJson,
+                      selectedFramework: selectedFramework,
+                    })}
                   </div>
                 </div>
               </div>
@@ -916,9 +830,44 @@ const ApiPageHeader = () => {
                 </div>
               </div>
               <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackListJson} />
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: techStackEndpointDataJS,
+                      subProperty: "getTechStackList",
+                      activeTab: activeTab,
+                      formattedJson: techStackListJson,
+                      selectedFramework: selectedFramework,
+                    })}
+                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 17 more tech stacks</pre>}
                   </div>
                 </div>
               </div>
@@ -990,9 +939,43 @@ const ApiPageHeader = () => {
                 </div>
               </div>
               <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={workExperienceByIdJson} />
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: workExperienceEndpointDataJS,
+                      subProperty: "getWorkExperienceById",
+                      activeTab: activeTab,
+                      formattedJson: workExperienceByIdJson,
+                      selectedFramework: selectedFramework,
+                    })}
                   </div>
                 </div>
               </div>
@@ -1068,9 +1051,44 @@ const ApiPageHeader = () => {
                 </div>
               </div>
               <div className="code-display-section-container">
-                <div className="api-div-container stickydiv">
-                  <div>
-                    <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={workExperienceListJson} />
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: workExperienceEndpointDataJS,
+                      subProperty: "getWorkExperienceList",
+                      activeTab: activeTab,
+                      formattedJson: workExperienceListJson,
+                      selectedFramework: selectedFramework,
+                    })}
+                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 33 more work experiences</pre>}
                   </div>
                 </div>
               </div>
