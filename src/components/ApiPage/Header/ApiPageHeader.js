@@ -8,6 +8,8 @@ import { listOfCandidatesJson, getCandidateByIdJson } from "../../../data/candid
 import { techStackByIdJson, techStackEndpointDataJS, techStackListJson } from "../../../data/techStackCodeExamples.js";
 import { workExperienceByIdJson, workExperienceEndpointDataJS, workExperienceListJson } from "../../../data/workExperienceCodeExamples.js.js";
 import { candidateEndpointDataJS } from "../../../data/candidatesCodeExamples";
+import { useLocation } from "react-router-dom";
+import ParameterComponent from "../../ParameterComponent/ParameterComponent.js";
 
 const ApiPageHeader = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -15,6 +17,7 @@ const ApiPageHeader = () => {
   const [activeTab, setActiveTab] = useState("Response");
   const [selectedFramework, setSelectedFramework] = useState("Node");
   const [activeApiResponseButtonColor, setactiveApiResponseButtonColor] = useState("response-button");
+  const location = useLocation();
 
   const renderApiCodeSnippet = ({ endpoint, subProperty, activeTab, selectedFramework, formattedJson }) => {
     if (activeTab === "Response") {
@@ -44,7 +47,17 @@ const ApiPageHeader = () => {
     setExpandedSection(expandedSection === sectionName ? null : sectionName);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const sectionElement = document.querySelector(hash);
+        if (sectionElement) {
+          sectionElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+    }
+  }, [location.hash]);
   return (
     <div className="api-page-header">
       <div className="api-page-grid-layout">
@@ -248,12 +261,10 @@ const ApiPageHeader = () => {
           </div>
           <div className="api-section" id="getting-started">
             <h4 className="section-title-h4 docs-sub-title">Getting Started</h4>
-            <p className="api-bread-text">
-              Before we can make any requests to the API, we need to obtain our personal API key. Follow these simple steps in order to obtain your own personal API key:{" "}
-            </p>
+            <p className="api-bread-text">Before we can make any requests to the API, we need to obtain our personal API key. Follow these steps in order to obtain your own personal API key: </p>
             <span className="separate api-bread-text">
               <ul className="ul-list-separate">
-                <li className="attribute-list-item">Login to the dashboard using your Google, Linkedin or Facebook account</li>
+                <li className="attribute-list-item">Login to the dashboard using your Google, Linkedin or Github account</li>
                 <li className="attribute-list-item">Navigate to the dashboard section</li>
                 <li className="attribute-list-item">Click on the "Generate Key" button</li>
                 <li className="attribute-list-item">Copy and save your personal API key in a safe location</li>
@@ -261,18 +272,13 @@ const ApiPageHeader = () => {
             </span>
             <p className="api-bread-text">
               <span className="separate">
-                For the purpose of this introduction we will be using Node.JS and the Axios library to make our HTTP requests to the API. For more code examples using different languages and
-                frameworks, take a look at the specific resource within the Resources section.
+                For the purpose of this introduction we will be using Node.JS and the Axios library to make our HTTP requests to the API.
+                <span className="separate">For more code examples using different languages and frameworks, take a look at the specific resource within the Resources section.</span>
               </span>
             </p>
-            <p className="api-bread-text">
+            <p className="api-bread-text extra-separator">
               <span className="separate"> Withou further ado, let's make our first request to the Unidevweb API!</span>
               <span className="separate">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
-            </p>
-            <p className="api-bread-text important-notice-text">
-              <span className="important-notice">IMPORTANT:</span> notice that the personal API key is being passed through the "Authorization" header by supplying a Bearer token. This must be done
-              for all API requests. The documentation is written with the assumption that every request made is supplying a valid API key as part of the authorization header. See below for an example
-              on how to supply the API key as part of the authorization header.
             </p>
             <div className="api-div-container">
               <div className="api-div-container">
@@ -281,14 +287,21 @@ const ApiPageHeader = () => {
                 </div>
               </div>
             </div>
-            <p className="api-bread-text">The response we recieve comes in a JSON format:</p>
+            <p className="api-bread-text important-notice-text">
+              <div className="note-container">
+                <span class="mingcute--information-line"></span>
+                <span className="important-notice">Note</span>
+              </div>
+              <span className="separate">All requests must supply the API key as a bearer token through 'Authorization' header.</span>
+            </p>
+            <p className="api-bread-text extra-separator">The response we recieve comes in a JSON format:</p>
           </div>
           <div className="api-div-container">
             <SyntaxHighlighterContainer codeLanguage={"json"} codeStyle={a11yDark} formatString={techStackListJson} />
           </div>
           <p className="api-bread-text">In this response we're getting a few interesting pieces of data:</p>
           <span className="separate"></span>
-          <ul className="api-bread-text">
+          <ul className="api-bread-text tech-stack-ul extra-separator">
             <li className="attribute-list-item">
               the array attribute <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
             </li>
@@ -302,7 +315,7 @@ const ApiPageHeader = () => {
           <div className="api-section" id="base-url">
             <h4 className="section-title-h4 docs-sub-title">Base URL</h4>
             <p className="api-bread-text">
-              The Base URL is the root URL for all of the API endpoints. If you make a request to Unidevweb and you get back a 404 NOT FOUND response it's a good idea to check the Base URL first.
+              The Base URL is the root URL for all of the API endpoints.
               <span className="separate">Unidevweb Base URL:</span>
             </p>
             <div className="api-div-container">
@@ -315,8 +328,8 @@ const ApiPageHeader = () => {
           <div className="api-section" id="rate-limiting">
             <h4 className="section-title-h4 docs-sub-title">Rate Limiting</h4>
             <p className="api-bread-text">
-              The rate limit at this point in time is set to 100 calls per hour. As this API is in early development it's likely the rate limit will be changed in the future. If you have concerns
-              regarding the rate limit, don't hesitate to reach out.
+              The rate limit is currently set to 100 calls per hour. As this API is in early development the rate limit is subject to change. If you have concerns regarding the rate limit, don't
+              hesitate to reach out.
             </p>
           </div>
           <div className="header-underline-div">
@@ -327,15 +340,17 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title">API Keys</h4>
             <p className="api-bread-text">
               In Unidevweb's commitment to adhere to REST API standards and ensure the security and integrity of the platform and it's users, API keys are utilized as a fundamental part of the
-              authorization process. As the Unidevweb platform is anticipated to grow over time, the use of API keys allow for secure scaling of both current and future services.
+              authorization process.
               <span className="separate">
                 Each API key is unique to the user, enabling monitoring of usage patterns, rate limit enforcements, and identification of any abnormal or potentially malicious activity. This approach
                 not only helps in safeguarding the platform but also in providing a personalized and optimized experience for each user.
               </span>
               <span className="separate">
-                To get started with the Unidevweb API, you will need to generate an API key through the user dashboard. This key will enable access to the entirety of Unidevweb's public API, enabling
-                you to explore and integrate the API's capabilities into your applications. Keep your API key confidential, and use it wisely to make the most out of our platform. If you have any
-                questions or need assistance, feel free to reach out to Teofredev@gmail.com.
+                To get started with the Unidevweb API, you will need to generate an API key through the user dashboard. This key will grant you access to the entirety of Unidevweb's API, enabling you
+                to explore and integrate the API's capabilities into your applications.
+                <span className="small-screen-separator">
+                  Keep your API key confidential, and use it wisely to make the most out of the platform. If you have any questions or need assistance, feel free to reach out to Teofredev@gmail.com.
+                </span>
               </span>
             </p>
           </div>
@@ -374,15 +389,14 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-candidate">
               Candidates
             </h4>
-            <h4 className="section-title-h4 docs-sub-resource">Retrieve a candidate</h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a candidate by id</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
                 <p>GET https://unidevweb.com/api/candidates/{"{id}"}</p>
               </div>
             </div>
             <div className="api-section-flex-container">
-              <div className="parameter-section-container">
-                <h4 className="parameter">Attributes</h4>
+              <ParameterComponent title="Candidate by id - attributes">
                 <hr id="parameter-hr"></hr>
                 <div className="attribute-options-container">
                   <p className="parameter">
@@ -503,7 +517,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">
@@ -555,8 +569,7 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <div className="api-section-flex-container" id="list-all-candidates">
-              <div className="parameter-section-container">
-                <h4 className="parameter">List all candidates</h4>
+              <ParameterComponent title="Candidates list - attributes">
                 <hr id="parameter-hr"></hr>
                 <div className="attribute-options-container">
                   <p className="parameter">
@@ -677,7 +690,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className=" stickydiv">
                   <div className="api-response-variations-container">
@@ -734,8 +747,7 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <div className="api-section-flex-container">
-              <div className="parameter-section-container">
-                <h4 className="parameter">Attributes</h4>
+              <ParameterComponent title="Tech stack list - attributes">
                 <hr id="parameter-hr"></hr>
 
                 <div className="attribute-options-container">
@@ -752,7 +764,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">
@@ -804,8 +816,7 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <div className="api-section-flex-container">
-              <div className="parameter-section-container">
-                <h4 className="parameter">Attributes</h4>
+              <ParameterComponent title="Tech Stack list - attributes">
                 <hr id="parameter-hr"></hr>
                 <div className="attribute-options-container">
                   <p className="parameter">
@@ -828,7 +839,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Name of the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">
@@ -877,15 +888,14 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-work-experience">
               Work Experience
             </h4>
-            <h4 className="section-title-h4 docs-sub-resource">Retrieve a work experience</h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a work experience by id</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
                 <p>GET https://unidevweb.com/api/work-experiences/{"{id}"} </p>
               </div>
             </div>
             <div className="api-section-flex-container">
-              <div className="parameter-section-container">
-                <h4 className="parameter">Attributes</h4>
+              <ParameterComponent title="Work experience by id - attributes">
                 <hr id="parameter-hr"></hr>
 
                 <div className="attribute-options-container">
@@ -937,7 +947,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Start date of the related work experience.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">
@@ -989,8 +999,7 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <div className="api-section-flex-container">
-              <div className="parameter-section-container">
-                <h4 className="parameter">Attributes</h4>
+              <ParameterComponent title="Work experiences list - attributes">
                 <hr id="parameter-hr"></hr>
 
                 <div className="attribute-options-container">
@@ -1049,7 +1058,7 @@ const ApiPageHeader = () => {
                   <p className="parameter-description">Start date of the related work experience.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
-              </div>
+              </ParameterComponent>
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">

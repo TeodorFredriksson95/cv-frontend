@@ -15,6 +15,15 @@ function generateRandomString(length) {
   return result;
 }
 
+const generateOAuthStateWithProvider = (provider) => {
+  const state = {
+    provider: provider,
+    nonce: generateRandomString(16),
+  };
+  localStorage.setItem("oauth_state", JSON.stringify(state));
+  return encodeURIComponent(JSON.stringify(state));
+};
+
 const LoginCard = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -26,95 +35,88 @@ const LoginCard = () => {
       callback: handleCredentialResponse,
     });
 
-    // if (!oauthResponseHandled.current) {
-    //   handleGithubAuthResponse();
-    //   oauthResponseHandled.current = true; // Mark the OAuth response as handled
-    // }
-    // if (!oauthResponseHandled.current) {
-    //   handleLinkedinOAuthResponse();
-    //   oauthResponseHandled.current = true; // Mark the OAuth response as handled
-    // }
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const encodedState = params.get("state");
+
+    const storedStateRaw = localStorage.getItem("oauth_state");
+    const storedState = storedStateRaw ? JSON.parse(storedStateRaw) : null;
+
+    if (code && encodedState && storedState) {
+      const { provider, nonce } = JSON.parse(decodeURIComponent(encodedState));
+      console.log("nonce: ", nonce);
+      const storedState = JSON.parse(localStorage.getItem("oauth_state"));
+
+      if (nonce === storedState.nonce) {
+        switch (provider) {
+          case "github":
+            handleGithubAuthResponse(code, encodedState);
+            break;
+          case "linkedin":
+            handleLinkedinOAuthResponse(code, encodedState);
+            break;
+          default:
+            console.error("Unknown or unsupported provider.");
+            break;
+        }
+        localStorage.removeItem("oauth_state");
+      } else {
+        console.error("State mismatch or missing state. Potential CSRF attack detected.");
+      }
+    }
   }, []);
   const handleGithubAuthResponse = async () => {
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     const state = params.get("state");
-    console.log("inside ghub auth");
-    console.log(code);
-    console.log(state);
-    console.log(params);
 
-    // Verify state matches
-    const storedState = localStorage.getItem("github_oauth_state");
-    if (code && state && state === storedState) {
-      try {
-        // Call your backend to handle the OAuth flow
-        const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/github`, {
-          code: code, // This matches the property name in your C# model
-        });
-        if (response.data.accessToken) {
-          // Assume login function manages session
-          login(response.data.accessToken, response.data.refreshToken.token);
-          navigate("/dashboard");
-        } else {
-          console.error("Authentication failed: No access token provided.");
-        }
-      } catch (error) {
-        console.error("OAuth callback error:", error);
-      } finally {
-        localStorage.removeItem("github_oauth_state");
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/github`, {
+        code: code,
+      });
+      if (response.data.accessToken) {
+        login(response.data.accessToken, response.data.refreshToken.token);
+        navigate("/dashboard");
+      } else {
+        console.error("Authentication failed: No access token provided.");
       }
+    } catch (error) {
+      console.error("OAuth callback error:", error);
     }
   };
+
   const handleGitHubLogin = () => {
-    const state = generateRandomString(16);
-    localStorage.setItem("github_oauth_state", state);
+    const state = generateOAuthStateWithProvider("github");
     const clientId = "9ddff8bc7ebe96a759b3";
     const redirectUri = encodeURIComponent("http://localhost:3000/login");
     const scope = encodeURIComponent("user:email");
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
   };
 
+  const handleLinkedInLogin = () => {
+    const state = generateOAuthStateWithProvider("linkedin");
+    window.location.href = `${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
+  };
+
   const handleLinkedinOAuthResponse = async () => {
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     const state = params.get("state");
-    console.log("before state check");
-    console.log(code);
-    console.log(state);
 
-    if (code && state) {
-      const storedState = localStorage.getItem("linkedin_oauth_state");
-      if (state === storedState) {
-        console.log("code", code);
-        try {
-          console.log("after state check");
-          const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
-            code: code,
-          });
-          console.log(response);
-          if (response.data.accessToken) {
-            login(response.data.accessToken, response.data.refreshToken.token);
-            navigate("/dashboard");
-          } else {
-            console.error("Authentication failed: No access token provided.");
-          }
-        } catch (error) {
-          console.error("Authentication error:", error);
-        } finally {
-          localStorage.removeItem("linkedin_oauth_state");
-        }
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
+        code: code,
+      });
+      console.log(response);
+      if (response.data.accessToken) {
+        login(response.data.accessToken, response.data.refreshToken.token);
+        navigate("/dashboard");
       } else {
-        console.error("State mismatch or missing state. Potential CSRF attack detected.");
+        console.error("Authentication failed: No access token provided.");
       }
+    } catch (error) {
+      console.error("Authentication error:", error);
     }
-  };
-
-  const handleLinkedInLogin = () => {
-    const state = generateRandomString(16);
-    localStorage.setItem("linkedin_oauth_state", state);
-    console.log("first statre");
-    window.location.href = `${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
   };
 
   const handleCredentialResponse = async (response) => {
@@ -135,9 +137,9 @@ const LoginCard = () => {
       window.google.accounts.id.prompt();
     }
   };
+
   return (
     <div>
-      <Navbar />
       <div id="g_id_onload" data-client_id="590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com" data-prompt_parent_id="g_id_onload"></div>
       <div className="login-card-container">
         <h2 className="section-title-h3 login-card-title">Login</h2>
@@ -152,18 +154,18 @@ const LoginCard = () => {
               </div>
             </div>
             <div className="oauth-text google">
-              <p>Continue with Google </p>
+              <p>Sign in with Google </p>
             </div>
           </div>
           <div className="oauth-facebook-container">
-            <div className="oauth-provider-flex-container facebook-button" onClick={handleGitHubLogin}>
+            <div className="oauth-provider-flex-container github-button" onClick={handleGitHubLogin}>
               <div className="icon-wrapper">
-                <div id="facebook-icon">
-                  <span className="devicon--facebook"></span>
+                <div id="github-icon">
+                  <span className="bytesize--github"></span>{" "}
                 </div>
               </div>
               <div className="oauth-text facebook">
-                <p>Continue with Facebook </p>
+                <p>Sign in with Github </p>
               </div>
             </div>
           </div>
@@ -175,7 +177,7 @@ const LoginCard = () => {
                 </div>
               </div>
               <div className="oauth-text linkedin">
-                <p>Continue with Linkedin </p>
+                <p>Sign in with Linkedin </p>
               </div>
             </div>
           </div>

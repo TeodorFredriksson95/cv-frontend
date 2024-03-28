@@ -20,7 +20,7 @@ export const SyntaxHighlighterContainer = ({ codeLanguage, codeStyle, formatStri
   return (
     <div>
       <div className="syntax-highlighter-container">
-        <SyntaxHighlighter language={codeLanguage} style={codeStyle} wrapLongLines={true} useInlineStyles={true} customStyle={{ overflowX: "hidden" }}>
+        <SyntaxHighlighter language={codeLanguage} style={codeStyle} useInlineStyles={true}>
           {formatString}
         </SyntaxHighlighter>
         <div className="clipboard-absolute" onClick={handleCopyToClipboard}>

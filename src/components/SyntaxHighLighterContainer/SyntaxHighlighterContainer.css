@@ -23,3 +23,8 @@
   border-radius: 0.25rem;
   margin-top: 5px;
 }
+
+.syntax-highlighter-container pre {
+  overflow-x: auto;
+  font-size: 12px;
+}

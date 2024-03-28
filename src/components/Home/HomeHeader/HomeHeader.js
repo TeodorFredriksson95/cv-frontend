@@ -4,8 +4,6 @@ import Navbar from "../../Navbar/Navbar";
 const HomeHeader = () => {
   return (
     <div className="home-header">
-      <Navbar />
-
       <div className="hero-content clearfix">
         <div className="hero-title">
           <h1 className="main-title">

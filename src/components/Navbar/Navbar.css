@@ -16,9 +16,30 @@
   cursor: pointer;
   display: block;
   position: fixed;
-  right: 20px;
+  left: 20px;
+  top: 10px;
+  z-index: 100;
+}
+
+.hamburger-container {
+  background-color: black;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 99;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+.healthicons--ui-menu-grid::after {
+  position: absolute;
   top: 20px;
-  z-index: 2;
+  left: 20px;
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.125em;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='white' d='M6 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2zM32 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2zm0 13a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2z'/%3E%3C/svg%3E");
 }
 
 ul {
@@ -53,7 +74,7 @@ ul {
   background-image: linear-gradient(to top, #4b012e 0%, #8a033e 100%);
   top: calc(20px + 2em);
   right: 0%;
-  z-index: 1;
+  z-index: 200;
   flex-direction: column;
   border-radius: 0.25rem;
 }
@@ -76,7 +97,7 @@ ul {
 
 .active-link {
   pointer-events: auto;
-  font-family: var(--MS_Bold);
+  font-family: var(--MS_Light);
   text-decoration: none;
   color: white;
   font-size: large;
@@ -131,6 +152,79 @@ ul {
   display: block;
   background-image: linear-gradient(to top, #4b012e 0%, #8a033e 100%);
 }
+.mingcute--close-line::after {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.125em;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23e3e3e3' d='m12 13.414l5.657 5.657a1 1 0 0 0 1.414-1.414L13.414 12l5.657-5.657a1 1 0 0 0-1.414-1.414L12 10.586L6.343 4.929A1 1 0 0 0 4.93 6.343L10.586 12l-5.657 5.657a1 1 0 1 0 1.414 1.414z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 45, 45, 0.667);
+  z-index: 150;
+}
+.overlay-visible {
+  display: block;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  left: -70%;
+  z-index: 200;
+  width: 70%;
+  height: 100%;
+  transition: left 0.5s ease;
+}
+.sidebar-visible {
+  left: 0;
+}
+
+.docs-menu-container {
+  margin-top: 10%;
+}
+
+.side-bar-main-title {
+  font-family: var(--MS_Medium);
+  color: white;
+  margin-block-end: 0;
+}
+
+.main-navigation-sidebar,
+.api-navigation-sidebar {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 1em 0 1em;
+}
+.main-navigation-sidebar ul,
+.api-navigation-sidebar ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-navigation-sidebar ul li,
+.api-navigation-sidebar ul li {
+  width: 100%;
+  padding: 0;
+}
+
+.mobile-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 0px 10px;
+  height: 5%;
+  background-color: black;
+}
 
 @media (min-width: 320px) {
   .mobile-dropdown {
@@ -144,13 +238,16 @@ ul {
     padding: 0;
   }
   .navbar a {
-    font-size: 1em;
+    font-size: 14px;
+  }
+  .navbar li {
+    padding: 1em 0;
   }
 }
 
 @media (min-width: 480px) {
   .navbar a {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
 @media (min-width: 480px) {
@@ -164,10 +261,16 @@ ul {
   }
 }
 @media (min-width: 768px) {
+  .navbar li {
+    padding: 2em 1em;
+  }
   .hamburger {
     display: none;
   }
   .mobile-dropdown {
+    display: none;
+  }
+  .hamburger-container {
     display: none;
   }
   .navbar {
