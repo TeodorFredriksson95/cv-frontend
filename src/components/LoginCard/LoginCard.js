@@ -1,19 +1,80 @@
 import "./LoginCard.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
+function generateRandomString(length) {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 const LoginCard = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const oauthResponseHandled = useRef(false);
+
   useEffect(() => {
-    window.google.accounts.id.initialize({
-      client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
-      callback: handleCredentialResponse,
-    });
+    if (window.google.accounts) {
+      window.google.accounts.id.initialize({
+        client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+      });
+    }
+
+    if (!oauthResponseHandled.current) {
+      handleLinkedinOAuthResponse();
+      oauthResponseHandled.current = true; // Mark the OAuth response as handled
+    }
   }, []);
+
+  const handleLinkedinOAuthResponse = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+    console.log("before state check");
+    console.log(code);
+    console.log(state);
+
+    if (code && state) {
+      const storedState = localStorage.getItem("linkedin_oauth_state");
+      if (state === storedState) {
+        console.log("code", code);
+        try {
+          console.log("after state check");
+          const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
+            code: code,
+          });
+          console.log(response);
+          if (response.data.accessToken) {
+            login(response.data.accessToken, response.data.refreshToken.token);
+            navigate("/dashboard");
+          } else {
+            console.error("Authentication failed: No access token provided.");
+          }
+        } catch (error) {
+          console.error("Authentication error:", error);
+        } finally {
+          localStorage.removeItem("linkedin_oauth_state");
+        }
+      } else {
+        console.error("State mismatch or missing state. Potential CSRF attack detected.");
+      }
+    }
+  };
+
+  const handleLinkedInLogin = () => {
+    const state = generateRandomString(16);
+    localStorage.setItem("linkedin_oauth_state", state);
+    console.log("first statre");
+    window.location.href = `${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
+  };
 
   const handleCredentialResponse = async (response) => {
     console.log("Encoded JWT ID token from Google: " + response.credential);
@@ -66,7 +127,7 @@ const LoginCard = () => {
             </div>
           </div>
           <div className="oauth-linkedin-container">
-            <div className="oauth-provider-flex-container linkedin-button">
+            <div className="oauth-provider-flex-container linkedin-button" onClick={handleLinkedInLogin}>
               <div className="icon-wrapper">
                 <div id="linkedin-icon">
                   <span className="devicon--linkedin"></span>

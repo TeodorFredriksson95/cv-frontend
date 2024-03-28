@@ -315,8 +315,8 @@ const ApiPageHeader = () => {
           <div className="api-section" id="rate-limiting">
             <h4 className="section-title-h4 docs-sub-title">Rate Limiting</h4>
             <p className="api-bread-text">
-              The Base URL is the root URL for all of the API. If you ever make a request to Unidevweb and you get back a 404 NOT FOUND response then check the Base URL first.
-              <span className="separate">Unidevweb Base URL:</span>
+              The rate limit at this point in time is set to 100 calls per hour. As this API is in early development it's likely the rate limit will be changed in the future. If you have concerns
+              regarding the rate limit, don't hesitate to reach out.
             </p>
           </div>
           <div className="header-underline-div">
