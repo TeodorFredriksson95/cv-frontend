@@ -21,18 +21,59 @@ const LoginCard = () => {
   const oauthResponseHandled = useRef(false);
 
   useEffect(() => {
-    if (window.google.accounts) {
-      window.google.accounts.id.initialize({
-        client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
-        callback: handleCredentialResponse,
-      });
-    }
+    window.google.accounts.id.initialize({
+      client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
+      callback: handleCredentialResponse,
+    });
 
-    if (!oauthResponseHandled.current) {
-      handleLinkedinOAuthResponse();
-      oauthResponseHandled.current = true; // Mark the OAuth response as handled
-    }
+    // if (!oauthResponseHandled.current) {
+    //   handleGithubAuthResponse();
+    //   oauthResponseHandled.current = true; // Mark the OAuth response as handled
+    // }
+    // if (!oauthResponseHandled.current) {
+    //   handleLinkedinOAuthResponse();
+    //   oauthResponseHandled.current = true; // Mark the OAuth response as handled
+    // }
   }, []);
+  const handleGithubAuthResponse = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+    console.log("inside ghub auth");
+    console.log(code);
+    console.log(state);
+    console.log(params);
+
+    // Verify state matches
+    const storedState = localStorage.getItem("github_oauth_state");
+    if (code && state && state === storedState) {
+      try {
+        // Call your backend to handle the OAuth flow
+        const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/github`, {
+          code: code, // This matches the property name in your C# model
+        });
+        if (response.data.accessToken) {
+          // Assume login function manages session
+          login(response.data.accessToken, response.data.refreshToken.token);
+          navigate("/dashboard");
+        } else {
+          console.error("Authentication failed: No access token provided.");
+        }
+      } catch (error) {
+        console.error("OAuth callback error:", error);
+      } finally {
+        localStorage.removeItem("github_oauth_state");
+      }
+    }
+  };
+  const handleGitHubLogin = () => {
+    const state = generateRandomString(16);
+    localStorage.setItem("github_oauth_state", state);
+    const clientId = "9ddff8bc7ebe96a759b3";
+    const redirectUri = encodeURIComponent("http://localhost:3000/login");
+    const scope = encodeURIComponent("user:email");
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+  };
 
   const handleLinkedinOAuthResponse = async () => {
     const params = new URLSearchParams(window.location.search);
@@ -115,7 +156,7 @@ const LoginCard = () => {
             </div>
           </div>
           <div className="oauth-facebook-container">
-            <div className="oauth-provider-flex-container facebook-button">
+            <div className="oauth-provider-flex-container facebook-button" onClick={handleGitHubLogin}>
               <div className="icon-wrapper">
                 <div id="facebook-icon">
                   <span className="devicon--facebook"></span>
