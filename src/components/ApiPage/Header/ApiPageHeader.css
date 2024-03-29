@@ -68,7 +68,7 @@
 .api-sidebar-resource-title {
   font-size: 14px;
   text-decoration: none;
-  color: turquoise;
+  color: white;
   font-family: var(--MS_Medium);
   padding: 2px 10px;
   border-radius: 0.25rem;
@@ -117,7 +117,7 @@
 .api-sidebar-resource-subtitle:hover a,
 .resource-flex-container:hover h4,
 .resource-flex-container.active h4 {
-  color: #fd50b8;
+  background-color: rgb(59, 58, 58);
 }
 
 .api-sidebar-section {

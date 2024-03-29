@@ -10,6 +10,7 @@ import { workExperienceByIdJson, workExperienceEndpointDataJS, workExperienceLis
 import { candidateEndpointDataJS } from "../../../data/candidatesCodeExamples";
 import { useLocation } from "react-router-dom";
 import ParameterComponent from "../../ParameterComponent/ParameterComponent.js";
+import { useScroll } from "../../../context/ScrollContext.js";
 
 const ApiPageHeader = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -18,6 +19,7 @@ const ApiPageHeader = () => {
   const [selectedFramework, setSelectedFramework] = useState("Node");
   const [activeApiResponseButtonColor, setactiveApiResponseButtonColor] = useState("response-button");
   const location = useLocation();
+  const { lastClicked } = useScroll();
 
   const renderApiCodeSnippet = ({ endpoint, subProperty, activeTab, selectedFramework, formattedJson }) => {
     if (activeTab === "Response") {
@@ -46,18 +48,22 @@ const ApiPageHeader = () => {
   const handleSectionClick = (sectionName) => {
     setExpandedSection(expandedSection === sectionName ? null : sectionName);
   };
-
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      setTimeout(() => {
-        const sectionElement = document.querySelector(hash);
-        if (sectionElement) {
-          sectionElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 0);
+    if (lastClicked) {
+      const { identifier } = lastClicked;
+      scrollToSection(identifier);
     }
-  }, [location.hash]);
+  }, [lastClicked]);
+
+  const scrollToSection = (hash) => {
+    // Wait for the DOM content to fully load
+    setTimeout(() => {
+      const sectionElement = document.querySelector(hash);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
+  };
   return (
     <div className="api-page-header">
       <div className="api-page-grid-layout">
@@ -76,7 +82,12 @@ const ApiPageHeader = () => {
                   <div>Introduction</div>
                 </a>
               </div>
-              <div
+              <div>
+                <a href="#getting-started">
+                  <div>Getting started</div>
+                </a>
+              </div>
+              {/* <div
                 className={`api-sidebar-getting-started-subtitle ${activeItem === "getting-started" ? "active" : ""}`}
                 onClick={() => {
                   handleSectionClick("getting-started");
@@ -86,7 +97,7 @@ const ApiPageHeader = () => {
                 <a href="#getting-started">
                   <div>Getting started</div>
                 </a>
-              </div>
+              </div> */}
               <div
                 className={`api-sidebar-getting-started-subtitle ${activeItem === "base-url" ? "active" : ""}`}
                 onClick={() => {
@@ -287,13 +298,13 @@ const ApiPageHeader = () => {
                 </div>
               </div>
             </div>
-            <p className="api-bread-text important-notice-text">
+            <div className="api-bread-text important-notice-text">
               <div className="note-container">
-                <span class="mingcute--information-line"></span>
+                <span className="mingcute--information-line"></span>
                 <span className="important-notice">Note</span>
               </div>
               <span className="separate">All requests must supply the API key as a bearer token through 'Authorization' header.</span>
-            </p>
+            </div>
             <p className="api-bread-text extra-separator">The response we recieve comes in a JSON format:</p>
           </div>
           <div className="api-div-container">
