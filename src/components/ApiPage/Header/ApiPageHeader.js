@@ -87,17 +87,7 @@ const ApiPageHeader = () => {
                   <div>Getting started</div>
                 </a>
               </div>
-              {/* <div
-                className={`api-sidebar-getting-started-subtitle ${activeItem === "getting-started" ? "active" : ""}`}
-                onClick={() => {
-                  handleSectionClick("getting-started");
-                  handleItemClick("getting-started");
-                }}
-              >
-                <a href="#getting-started">
-                  <div>Getting started</div>
-                </a>
-              </div> */}
+
               <div
                 className={`api-sidebar-getting-started-subtitle ${activeItem === "base-url" ? "active" : ""}`}
                 onClick={() => {
@@ -173,6 +163,40 @@ const ApiPageHeader = () => {
                     </div>
                   </ul>
                 )}
+                <h3 className="api-sidebar-title">Query Fields</h3>
+                <div
+                  className={`api-sidebar-getting-started-subtitle ${activeItem === "candidates-query-list" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("candidates-query-list");
+                    handleItemClick("candidates-query-list");
+                  }}
+                >
+                  <a href="#candidates-query-list">
+                    <div>Candidates</div>
+                  </a>
+                </div>
+                <div
+                  className={`api-sidebar-getting-started-subtitle ${activeItem === "work-experiences-query-list" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("work-experiences-query-list");
+                    handleItemClick("work-experiences-query-list");
+                  }}
+                >
+                  <a href="#work-experiences-query-list">
+                    <div>Work experiences</div>
+                  </a>
+                </div>
+                <div
+                  className={`api-sidebar-getting-started-subtitle ${activeItem === "tech-stack-query-list" ? "active" : ""}`}
+                  onClick={() => {
+                    handleSectionClick("tech-stack-query-list");
+                    handleItemClick("work-experiences-query-list");
+                  }}
+                >
+                  <a href="#tech-stack-query-list">
+                    <div>Tech stack</div>
+                  </a>
+                </div>
               </div>
               <div>
                 <div
@@ -275,21 +299,30 @@ const ApiPageHeader = () => {
             <p className="api-bread-text">Before we can make any requests to the API, we need to obtain our personal API key. Follow these steps in order to obtain your own personal API key: </p>
             <span className="separate api-bread-text">
               <ul className="ul-list-separate">
-                <li className="attribute-list-item">Login to the dashboard using your Google, Linkedin or Github account</li>
-                <li className="attribute-list-item">Navigate to the dashboard section</li>
-                <li className="attribute-list-item">Click on the "Generate Key" button</li>
-                <li className="attribute-list-item">Copy and save your personal API key in a safe location</li>
+                <li className="attribute-list-item">
+                  Login to the{" "}
+                  <a href="/dashboard">
+                    <span className="word-highlight-turq">dashboard </span>
+                  </a>
+                  using your Google, Linkedin or Github account
+                </li>
+                <li className="attribute-list-item">
+                  Click on the <span className="word-highlight-turq">"Generate Key"</span> button
+                </li>
+                <li className="attribute-list-item">
+                  Copy and save your personal API key in a <span className="word-highlight-turq">safe</span> location
+                </li>
               </ul>
             </span>
             <p className="api-bread-text">
               <span className="separate">
-                For the purpose of this introduction we will be using Node.JS and the Axios library to make our HTTP requests to the API.
+                For the purpose of this introduction we will be using NodeJS and the Axios library to make our HTTP requests to the API.
                 <span className="separate">For more code examples using different languages and frameworks, take a look at the specific resource within the Resources section.</span>
               </span>
             </p>
             <p className="api-bread-text extra-separator">
               <span className="separate"> Withou further ado, let's make our first request to the Unidevweb API!</span>
-              <span className="separate">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
+              <span className="separate extra-separator">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
             </p>
             <div className="api-div-container">
               <div className="api-div-container">
@@ -352,14 +385,14 @@ const ApiPageHeader = () => {
             <p className="api-bread-text">
               In Unidevweb's commitment to adhere to REST API standards and ensure the security and integrity of the platform and it's users, API keys are utilized as a fundamental part of the
               authorization process.
-              <span className="separate">
+              <span className="separate extra-separator">
                 Each API key is unique to the user, enabling monitoring of usage patterns, rate limit enforcements, and identification of any abnormal or potentially malicious activity. This approach
                 not only helps in safeguarding the platform but also in providing a personalized and optimized experience for each user.
               </span>
-              <span className="separate">
+              <span className="separate extra-separator">
                 To get started with the Unidevweb API, you will need to generate an API key through the user dashboard. This key will grant you access to the entirety of Unidevweb's API, enabling you
                 to explore and integrate the API's capabilities into your applications.
-                <span className="small-screen-separator">
+                <span className="separate extra-separator">
                   Keep your API key confidential, and use it wisely to make the most out of the platform. If you have any questions or need assistance, feel free to reach out to Teofredev@gmail.com.
                 </span>
               </span>
@@ -370,13 +403,13 @@ const ApiPageHeader = () => {
             <p className="api-bread-text">
               OAuth 2.0 is at the heart of Unidevweb's secure authentication system, playing a pivotal role in both user login and API access key generation. This protocol is designed to provide
               applications with secure delegated access, allowing users to grant apps (such as Unidevweb) access to their information without exposing their credentials.
-              <span className="separate">
+              <span className="separate extra-separator">
                 In the context of this API, OAuth 2.0 offers a robust and flexible framework that enables secure interactions between the user, the Unidevweb platform, and third-party applications. By
                 leveraging OAuth 2.0, the goal is to empower the user with control over how their data is accessed and used. Trust and transparency is the name of the game!
               </span>
             </p>
             <span className="separate">
-              <ul className="api-bread-text ul-list-separate">
+              {/* <ul className="api-bread-text ul-list-separate">
                 <li className="attribute-list-item oauth-list">
                   <span className="list-first-span-word">Enhanced Security:</span> OAuth 2.0 uses tokens instead of credentials for authentication, significantly reducing the risk of credential
                   exposure. Each token is specific to the user's session, ensuring secure access to the API.
@@ -389,7 +422,7 @@ const ApiPageHeader = () => {
                   <span className="list-first-span-word">Seamless API Key Generation:</span> Integrating OAuth 2.0 with the API key generation process ensures that API keys are only issued after a
                   user has been authenticated and helps fortify Unidevweb's security and integrity.
                 </li>
-              </ul>
+              </ul> */}
             </span>
           </div>
           <div className="header-underline-div ">
@@ -1121,16 +1154,221 @@ const ApiPageHeader = () => {
           <div className="api-section" id="pagination">
             <h4 className="section-title-h4 docs-sub-title">Pagination</h4>
             <p className="api-bread-text">
-              The Base URL is the root URL for all of the API. If you ever make a request to Unidevweb and you get back a 404 NOT FOUND response then check the Base URL first.
-              <span className="separate">Unidevweb Base URL:</span>
+              When you query a collection, you'll notice only 10 items are returned at a time. This is due to the results being paginated. Included in the response are a number of attributes that
+              indicate whether or not there are more items ready to be fetched.
             </p>
+            <ul className="api-bread-text tech-stack-ul extra-separator">
+              <li className="attribute-list-item">
+                <ApiAttribute attributeName={"links"} /> - an array that contains links to results on the first, last, current and next page.
+              </li>
+              <li className="attribute-list-item">
+                <ApiAttribute attributeName={"hasNextPage"} /> - a boolean, which tells you if there is another page to be fetched.
+              </li>
+            </ul>
+            <span className="separate extra-separator"></span>
+            <p className="api-bread-text">
+              You can use the parameter <ApiAttribute attributeName={"page"} /> to specify a specific page to fetch. You can also use the parameter <ApiAttribute attributeName={"pageSize"} /> to
+              specify an amount of items to fetch, between the range of 1-10.
+            </p>
+            <span className="separate extra-separator"></span>
+            <p className="api-bread-text">Let's look at en example where we implement both in a request to the tech-stack endpoint.</p>
+            <div className="api-section" id="list-all-tech">
+              <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
+              <div className="api-div-container api-input-resource-section">
+                <div className="api-input-text">
+                  <p>GET https://unidevweb.com/api/tech-stack-list?page=2&pageSize=5</p>
+                </div>
+              </div>
+              <div className="api-section-flex-container">
+                <div className="code-display-section-container">
+                  <div className="stickydiv">
+                    <div className="api-response-variations-container">
+                      <button
+                        className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                        onClick={() => {
+                          handleTabClick("Response");
+                          setButtonColor("response-button");
+                        }}
+                      >
+                        Response
+                      </button>
+                      <button
+                        className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                        onClick={() => {
+                          handleTabClick("Code");
+                          setButtonColor("code-button");
+                        }}
+                      >
+                        Code
+                      </button>
+                      <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                        <option value="NET">.NET</option>
+                        <option value="Node">Node</option>
+                        <option value="Go">Go</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Python">Python</option>
+                      </select>
+                    </div>
+                    <div className="api-div-container">
+                      {renderApiCodeSnippet({
+                        endpoint: techStackEndpointDataJS,
+                        subProperty: "getTechStackList",
+                        activeTab: activeTab,
+                        formattedJson: techStackListJson,
+                        selectedFramework: selectedFramework,
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="api-section" id="filtering">
             <h4 className="section-title-h4 docs-sub-title">Filtering</h4>
+            <p className="api-bread-text">There may be times when you want to filter results based on specific paramaters, such as a candidates firstname or job title.</p>
+            <p className="api-bread-text">Let's look at an example where we make a query to the candidates collection where we filter out candidates based on two parameters:</p>
+            <ul className="api-bread-text tech-stack-ul">
+              <li className="attribute-list-item extra-separator place-in-middle">
+                <ApiAttribute attributeName={"firstname"} /> and <ApiAttribute attributeName={"openToWork"} />
+              </li>
+            </ul>
+            <div className="api-div-container api-input-resource-section extra-separator">
+              <div className="api-input-text">
+                <p>GET https://unidevweb.com/api/candidates?firstname=teodor&opentowork=true</p>
+              </div>
+            </div>
+            <div className="api-section-flex-container">
+              <div className="code-display-section-container">
+                <div className="stickydiv">
+                  <div className="api-response-variations-container">
+                    <button
+                      className={`api-button response-button ${activeApiResponseButtonColor === "response-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Response");
+                        setButtonColor("response-button");
+                      }}
+                    >
+                      Response
+                    </button>
+                    <button
+                      className={`api-button code-button ${activeApiResponseButtonColor === "code-button" ? "api-button-is-active" : ""}`}
+                      onClick={() => {
+                        handleTabClick("Code");
+                        setButtonColor("code-button");
+                      }}
+                    >
+                      Code
+                    </button>
+                    <select name="frameworks" id="select-frameworks" className="api-select" onChange={handleFrameworkChange}>
+                      <option value="NET">.NET</option>
+                      <option value="Node">Node</option>
+                      <option value="Go">Go</option>
+                      <option value="PHP">PHP</option>
+                      <option value="Ruby">Ruby</option>
+                      <option value="Python">Python</option>
+                    </select>
+                  </div>
+                  <div className="api-div-container">
+                    {renderApiCodeSnippet({
+                      endpoint: techStackEndpointDataJS,
+                      subProperty: "getTechStackList",
+                      activeTab: activeTab,
+                      formattedJson: techStackListJson,
+                      selectedFramework: selectedFramework,
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
             <p className="api-bread-text">
-              The Base URL is the root URL for all of the API. If you ever make a request to Unidevweb and you get back a 404 NOT FOUND response then check the Base URL first.
-              <span className="separate">Unidevweb Base URL:</span>
+              For a complete list of all the supported query fields, take a look at <span className="word-highlight-turq">Query Fields</span>
             </p>
+          </div>
+          <div className="header-underline-div" id="candidates-query-list">
+            <h3 className="section-title-h3 docs-title">Query Fields</h3>
+            <hr></hr>
+            <div className="query-table">
+              <h4 className="section-title-h4">Query fields for candidates</h4>
+              <div class="query-table-container">
+                <table class="query-table">
+                  <tr>
+                    <th>Field</th>
+                    <th>Usage</th>
+                    <th>Type</th>
+                  </tr>
+                  <tr>
+                    <td>Firstname</td>
+                    <td>Firstname=John</td>
+                    <td>string</td>
+                  </tr>
+                  <tr>
+                    <td>Lastname</td>
+                    <td>Lastname=Doe</td>
+                    <td>string</td>
+                  </tr>
+                  <tr>
+                    <td>OpenToWork</td>
+                    <td>OptenToWork=true</td>
+                    <td>bool</td>
+                  </tr>
+                  <tr>
+                    <td>TechStackname</td>
+                    <td>TechStackname=React</td>
+                    <td>string</td>
+                  </tr>
+                  <tr>
+                    <td>Country</td>
+                    <td>Country=Sweden</td>
+                    <td>string</td>
+                  </tr>
+                </table>
+              </div>
+              <h4 className="section-title-h4" id="work-experiences-query-list">
+                Query fields for tech work experiences
+              </h4>
+              <div class="query-table-container">
+                <table class="query-table">
+                  <tr>
+                    <th>Field</th>
+                    <th>Usage</th>
+                    <th>Type</th>
+                  </tr>
+                  <tr>
+                    <td>Company</td>
+                    <td>Company=ICA</td>
+                    <td>string</td>
+                  </tr>
+                  <tr>
+                    <td>Category</td>
+                    <td>Category=InformationTechnology</td>
+                    <td>string</td>
+                  </tr>
+                  <tr>
+                    <td>JobTitle</td>
+                    <td>JobTitle=BackendDeveloper</td>
+                    <td>string</td>
+                  </tr>
+                </table>
+              </div>
+              <h4 className="section-title-h4" id="tech-stack-query-list">
+                Query fields for tech stack
+              </h4>
+              <div class="query-table-container">
+                <table class="query-table">
+                  <tr>
+                    <th>Field</th>
+                    <th>Usage</th>
+                    <th>Type</th>
+                  </tr>
+                  <tr>
+                    <td>TechName</td>
+                    <td>TechName=C#</td>
+                    <td>string</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>

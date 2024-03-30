@@ -98,6 +98,10 @@ body {
   font-size: var(--bread-text-size);
 }
 
+a {
+  text-decoration: none;
+}
+
 .api-bread-text {
   color: var(--text_color);
   font-family: var(--MS_Medium);
@@ -114,7 +118,6 @@ body {
 .word-highlight-turq {
   font-family: var(--MS_SBI);
   color: turquoise;
-  font-size: 1.1em;
 }
 
 .thought-word-highlight {

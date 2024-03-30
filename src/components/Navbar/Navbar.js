@@ -79,6 +79,30 @@ const Navbar = () => {
         <div className="hamburger" onClick={toggleMobileMenu}>
           {isMobileMenuVisible ? <span className="mdi--close"></span> : <span className="quill--hamburger"></span>}
         </div>
+        <div className="horizontal-nav-items">
+          <div
+            className="top-menu-nav-div"
+            onClick={() => {
+              setActiveLinkColor("docs");
+              handleLaggyMenuVisibility("/apipage");
+            }}
+          >
+            <a className={`log ${activeLinkColor === "docs" ? "active" : ""}`}>
+              <li>Docs</li>
+            </a>
+          </div>
+          <div className="top-menu-nav-div">
+            <a
+              className={`log ${activeLinkColor === "signin" ? "active" : ""}`}
+              onClick={() => {
+                handleLaggyMenuVisibility("/login");
+                setActiveLinkColor("signin");
+              }}
+            >
+              <li>Sign in</li>
+            </a>
+          </div>
+        </div>
       </div>
       <div className={`overlay ${isMobileMenuVisible ? "overlay-visible" : ""}`} onClick={() => setIsMobileMenuVisible(false)}></div>
 
@@ -350,6 +374,41 @@ const Navbar = () => {
                   </a>
                 </ul>
               </div>
+              <div className="sidebar-dropdown">
+                <h4 className="api-titles-sidebar">Query Fields</h4>
+                <ul onClick={() => setIsMobileMenuVisible(false)}>
+                  <a
+                    href="/apipage#candidates-query-list"
+                    className={`api-navigation-links ${activeLinkColor === "candidates-query-list" ? "active" : ""}`}
+                    onClick={(e) => {
+                      setActiveLinkColor("candidates-query-list");
+                      handleAnchorClick(e, "#candidates-query-list");
+                    }}
+                  >
+                    <li>Candidates</li>
+                  </a>
+                  <a
+                    href="/apipage#work-experiences-query-list"
+                    className={`api-navigation-links ${activeLinkColor === "work-experiences-query-list" ? "active" : ""}`}
+                    onClick={(e) => {
+                      setActiveLinkColor("work-experiences-query-list");
+                      handleAnchorClick(e, "#work-experiences-query-list");
+                    }}
+                  >
+                    <li>Work experiences</li>
+                  </a>
+                  <a
+                    href="/apipage#tech-stack-query-list"
+                    className={`api-navigation-links ${activeLinkColor === "tech-stack-query-list" ? "active" : ""}`}
+                    onClick={(e) => {
+                      setActiveLinkColor("tech-stack-query-list");
+                      handleAnchorClick(e, "#tech-stack-query-list");
+                    }}
+                  >
+                    <li>Tech stack</li>
+                  </a>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="sidebar-other-content">
@@ -415,7 +474,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <ul className="full-nav">
+      {/* <ul className="full-nav">
         <li>
           <NavLink to="/" end className="active-link" activeclassname="active">
             Home
@@ -448,7 +507,7 @@ const Navbar = () => {
           </li>
         )}
 
-        <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
+        {/* <li onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
           <a href="#" className="active-link other-link">
             Other ▼
           </a>
@@ -487,8 +546,8 @@ const Navbar = () => {
               </li>
             </ul>
           )}
-        </li>
-      </ul>
+        </li> 
+      </ul> */}
     </nav>
   );
 };

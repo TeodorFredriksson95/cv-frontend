@@ -21,12 +21,6 @@
   margin-top: 2%;
 }
 
-.api-div-container {
-  border-radius: 0.25rem;
-  padding: 1px 8px;
-  background-color: rgb(43, 43, 43);
-}
-
 .api-input-text {
   position: relative;
   color: rgb(248, 248, 242);
@@ -173,10 +167,6 @@ hr {
   font-family: var(--MS_Light);
 }
 
-.header-underline-div:not(:first-child) {
-  margin-top: 10%;
-}
-
 .list-first-span-word {
   font-family: var(--MS_Bold);
 }
@@ -187,18 +177,6 @@ hr {
 .important-notice {
   font-family: var(--MS_SBI);
   font-size: 1.4em;
-}
-.important-notice-text {
-  font-family: var(--MS_LI);
-  background-color: gray;
-  padding: 6px;
-  border-radius: 0.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.374);
-  box-shadow: -2px 2px 1px 0px rgb(187, 187, 187);
-}
-
-.api-section-flex-container {
-  display: flex;
 }
 
 .code-display-section-container {
@@ -336,6 +314,70 @@ pre {
 }
 
 @media (min-width: 320px) {
+  .header-underline-div:not(:first-child) {
+    margin-top: 20%;
+  }
+  .important-notice-text {
+    margin-top: 10%;
+    font-family: var(--MS_LI);
+    background-color: gray;
+    padding: 6px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.374);
+    box-shadow: -2px 2px 1px 0px rgb(187, 187, 187);
+  }
+
+  .query-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+  }
+  .query-table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20%;
+  }
+
+  .place-in-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .query-table th {
+    background-color: rgb(115, 249, 235);
+    text-align: left;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    font-family: var(--MS_Bold);
+  }
+
+  .query-table tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: var(--Medium);
+  }
+  .query-table tr {
+    background-color: #ddfffe;
+    color: rgb(0, 0, 0);
+    font-family: var(--MS_Medium);
+  }
+
+  .query-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .filtering-div {
+    padding: 5%;
+  }
+
+  .api-div-container {
+    border-radius: 0.25rem;
+    background-color: rgb(43, 43, 43);
+  }
+
   .api-page-sidebar {
     display: none;
   }
@@ -361,6 +403,7 @@ pre {
   .api-section-flex-container {
     display: flex;
     flex-direction: column-reverse;
+    margin-bottom: 20%;
   }
   .api-page-main-section {
     padding: 10px;
@@ -371,7 +414,12 @@ pre {
   }
   .api-bread-text,
   .api-input-text {
-    font-size: 13px;
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  .api-input-text {
+    margin: 2%;
+    -right: 2%;
   }
   .important-notice {
     font-size: 14px;
