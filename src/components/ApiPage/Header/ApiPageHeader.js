@@ -347,7 +347,7 @@ const ApiPageHeader = () => {
           <span className="separate"></span>
           <ul className="api-bread-text tech-stack-ul extra-separator">
             <li className="attribute-list-item">
-              the array attribute <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
+              <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
             </li>
             <li className="attribute-list-item">
               <ApiAttribute attributeName={"tech_stack_id"} /> - the id of each specific tech_stack object
@@ -1172,14 +1172,14 @@ const ApiPageHeader = () => {
             </p>
             <span className="separate extra-separator"></span>
             <p className="api-bread-text">Let's look at en example where we implement both in a request to the tech-stack endpoint.</p>
-            <div className="api-section" id="list-all-tech">
+            <div className="api-section " id="list-all-tech">
               <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
               <div className="api-div-container api-input-resource-section">
                 <div className="api-input-text">
                   <p>GET https://unidevweb.com/api/tech-stack-list?page=2&pageSize=5</p>
                 </div>
               </div>
-              <div className="api-section-flex-container">
+              <div className="api-section-flex-container concepts-code-section">
                 <div className="code-display-section-container">
                   <div className="stickydiv">
                     <div className="api-response-variations-container">
@@ -1227,18 +1227,17 @@ const ApiPageHeader = () => {
           <div className="api-section" id="filtering">
             <h4 className="section-title-h4 docs-sub-title">Filtering</h4>
             <p className="api-bread-text">There may be times when you want to filter results based on specific paramaters, such as a candidates firstname or job title.</p>
-            <p className="api-bread-text">Let's look at an example where we make a query to the candidates collection where we filter out candidates based on two parameters:</p>
-            <ul className="api-bread-text tech-stack-ul">
-              <li className="attribute-list-item extra-separator place-in-middle">
-                <ApiAttribute attributeName={"firstname"} /> and <ApiAttribute attributeName={"openToWork"} />
-              </li>
-            </ul>
+            <p className="api-bread-text">
+              Let's look at an example where we make a query to the candidates collection where we filter out candidates based on two parameters: <ApiAttribute attributeName={"firstname"} /> and{" "}
+              <ApiAttribute attributeName={"openToWork"} />
+            </p>
+
             <div className="api-div-container api-input-resource-section extra-separator">
               <div className="api-input-text">
                 <p>GET https://unidevweb.com/api/candidates?firstname=teodor&opentowork=true</p>
               </div>
             </div>
-            <div className="api-section-flex-container">
+            <div className="api-section-flex-container concepts-code-section">
               <div className="code-display-section-container">
                 <div className="stickydiv">
                   <div className="api-response-variations-container">

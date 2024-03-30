@@ -26,5 +26,59 @@
 
 .syntax-highlighter-container pre {
   overflow-x: auto;
-  font-size: 14px;
+}
+
+.syntax-highlighter-container pre::-webkit-scrollbar {
+  width: 3px;
+}
+
+.syntax-highlighter-container pre::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.syntax-highlighter-container pre::-webkit-scrollbar-thumb {
+  background: #88888844;
+  border-radius: 5px;
+}
+
+.syntax-highlighter-container pre::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.syntax-highlighter-container pre {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+@media (min-width: 320px) {
+  .syntax-highlighter-container pre {
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) {
+  .syntax-highlighter-container pre {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .syntax-highlighter-container pre {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1480px) {
+  .syntax-highlighter-container pre {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1680px) {
+  .syntax-highlighter-container pre {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1920px) {
+  .syntax-highlighter-container pre {
+    font-size: 20px;
+  }
 }

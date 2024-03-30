@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./SyntaxHighlighterContainer.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
@@ -17,10 +17,11 @@ export const SyntaxHighlighterContainer = ({ codeLanguage, codeStyle, formatStri
       console.error("Failed to copy to clipboard", error);
     }
   };
+
   return (
     <div>
       <div className="syntax-highlighter-container">
-        <SyntaxHighlighter language={codeLanguage} style={codeStyle} useInlineStyles={true}>
+        <SyntaxHighlighter language={codeLanguage} style={codeStyle} useInlineStyles={true} customStyle={{}}>
           {formatString}
         </SyntaxHighlighter>
         <div className="clipboard-absolute" onClick={handleCopyToClipboard}>
