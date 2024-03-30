@@ -42,15 +42,8 @@ const DashboardHeader = () => {
   }, []);
   return (
     <div className="dashboard-header">
+      <h3 className="section-title-h3 dashboard-title">Dashboard</h3>
       <div className="dashboard-grid-layout">
-        <div className="dashboard-sidebar">
-          <div className="profile-header">
-            <div className="profile-image">
-              <img src={profileImage} alt="Profile image" />
-            </div>
-            <h4 id="profile-name">Teodor Fredriksson</h4>
-          </div>
-        </div>
         <div className="dashboard-main-section">
           <div className="generate-api-key-section">
             <div className="api-key-header">

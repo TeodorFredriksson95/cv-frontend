@@ -100,7 +100,7 @@ textarea {
 input[type="text"],
 .text-area,
 input[type="select"] {
-  padding-left: 1em;
+  padding-left: 5px;
 }
 textarea {
   padding: 1%;

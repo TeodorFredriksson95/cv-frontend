@@ -91,17 +91,45 @@ const Navbar = () => {
               <li>Docs</li>
             </a>
           </div>
-          <div className="top-menu-nav-div">
-            <a
-              className={`log ${activeLinkColor === "signin" ? "active" : ""}`}
-              onClick={() => {
-                handleLaggyMenuVisibility("/login");
-                setActiveLinkColor("signin");
-              }}
-            >
-              <li>Sign in</li>
-            </a>
-          </div>
+          {!isAuthenticated && (
+            <div className="top-menu-nav-div">
+              <a
+                className={`log ${activeLinkColor === "signin" ? "active" : ""}`}
+                onClick={() => {
+                  handleLaggyMenuVisibility("/login");
+                  setActiveLinkColor("signin");
+                }}
+              >
+                <li>Sign in</li>
+              </a>
+            </div>
+          )}
+          {isAuthenticated && (
+            <div className="top-menu-nav-div">
+              <a
+                className={`log ${activeLinkColor === "dashboard" ? "active" : ""}`}
+                onClick={() => {
+                  handleLaggyMenuVisibility("/dashboard");
+                  setActiveLinkColor("dashboard");
+                }}
+              >
+                <li>Dashboard</li>
+              </a>
+            </div>
+          )}
+          {isAuthenticated && (
+            <div className="top-menu-nav-div">
+              <a
+                className={`log ${activeLinkColor === "logout" ? "active" : ""}`}
+                onClick={() => {
+                  handleLogout();
+                  setActiveLinkColor("logout");
+                }}
+              >
+                <li>Log out</li>
+              </a>
+            </div>
+          )}
         </div>
       </div>
       <div className={`overlay ${isMobileMenuVisible ? "overlay-visible" : ""}`} onClick={() => setIsMobileMenuVisible(false)}></div>
