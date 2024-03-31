@@ -1,17 +1,17 @@
 const workExperienceById = {
-  workExperienceId: 3,
+  id: 2,
   description:
-    "Utilized agile methodologies and pair programming to create internal REST APIs and user interfaces for a mobile application used by golf clubs for local task distribution. Developed with technologies including Node.JS, React, TypeScript, JavaScript, and Firebase.",
-  company: "Redmind AB",
+    "Responsible for the creation and maintenance of Social Politik's new webshop. Working in collaboration with the project group to develop user-friendly design and functionality. Adapted to accessibility recommendations and data security laws.",
+  company: "Sociala Bildbyrån",
   category: "Technology Development",
-  jobTitle: "Backend Developer",
-  startDate: "2022-09-01T00:00:00",
-  endDate: "2023-05-01T00:00:00",
+  jobTitle: "Webmaster",
+  startDate: "2023-09-01T00:00:00",
+  endDate: "0001-01-01T00:00:00",
 };
 const workExperienceList = {
-  workExperienceList: [
+  data: [
     {
-      workExperienceId: 5,
+      id: 1,
       description: "Responsible for maintaining safety and quality routines. Responsible for scheduling and work distribution during evenings and \nweekends.",
       company: "ICA",
       category: "Sales",
@@ -20,7 +20,17 @@ const workExperienceList = {
       endDate: "2021-08-01T00:00:00",
     },
     {
-      workExperienceId: 4,
+      id: 3,
+      description:
+        "Utilized agile methodologies and pair programming to create internal REST APIs \nand user interfaces for a mobile application used by golf clubs for local task \ndistribution. Developed with technologies including Node.JS, React, TypeScript, \nJavaScript, and Firebase.",
+      company: "Redmind AB",
+      category: "Technology Development",
+      jobTitle: "Backend Developer",
+      startDate: "2022-09-01T00:00:00",
+      endDate: "2023-05-01T00:00:00",
+    },
+    {
+      id: 4,
       description:
         "Oversaw daily operations and performed regular evaluations across \nmultiple departments. Developed strategic plans aimed at achieving long-term sales growth. Tasked with ongoing analysis of competitive landscapes and consumer \npurchasing trends. Orchestrated local marketing initiatives. Managed procurement planning",
       company: "ICA",
@@ -30,6 +40,16 @@ const workExperienceList = {
       endDate: "2021-08-01T00:00:00",
     },
   ],
+  pageSize: 3,
+  page: 1,
+  total: 8,
+  hasNextPage: true,
+  links: {
+    self: "https://localhost:7189/api/v1/work-experiences?page=1",
+    first: "https://localhost:7189/api/v1/work-experiences?page=1",
+    last: "https://localhost:7189/api/v1/work-experiences?page=3",
+    next: "https://localhost:7189/api/v1/work-experiences?page=2&pageSize=3",
+  },
 };
 
 const workExperienceEndpointData = {

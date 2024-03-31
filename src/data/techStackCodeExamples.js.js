@@ -1,34 +1,60 @@
 const techStackList = {
-  tech_stack: [
+  data: [
     {
-      tech_stack_id: 1,
-      tech_stack_name: "C#",
+      id: 1,
+      techStackName: "C#",
     },
     {
-      tech_stack_id: 2,
-      tech_stack_name: ".NET",
+      id: 2,
+      techStackName: ".NET",
     },
     {
-      tech_stack_id: 3,
-      tech_stack_name: "Node.JS",
+      id: 3,
+      techStackName: "NodeJS",
     },
     {
-      tech_stack_id: 4,
-      tech_stack_name: "React",
+      id: 4,
+      techStackName: "React",
     },
     {
-      tech_stack_id: 5,
-      tech_stack_name: "JavaScript",
+      id: 5,
+      techStackName: "JavaScript",
     },
     {
-      tech_stack_id: 6,
-      tech_stack_name: "TypeScript",
+      id: 6,
+      techStackName: "TypeScript",
+    },
+    {
+      id: 7,
+      techStackName: "Godot",
+    },
+    {
+      id: 8,
+      techStackName: "ASP.NET",
+    },
+    {
+      id: 9,
+      techStackName: "Entity Framework",
+    },
+    {
+      id: 10,
+      techStackName: "Entity Framework Core",
     },
   ],
+  pageSize: 10,
+  page: 1,
+  total: 28,
+  hasNextPage: true,
+  links: {
+    self: "https://localhost:7189/api/v1/tech-stack?page=1",
+    first: "https://localhost:7189/api/v1/tech-stack?page=1",
+    last: "https://localhost:7189/api/v1/tech-stack?page=3",
+    next: "https://localhost:7189/api/v1/tech-stack?page=2&pageSize=10",
+  },
 };
 
 const techStackById = {
-  tech_stack_id: 3,
+  id: 3,
   tech_stack_name: "Node.JS",
 };
 

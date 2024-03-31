@@ -77,8 +77,8 @@ const LoginCard = () => {
     window.google.accounts.id.initialize({
       client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
       callback: handleCredentialResponse,
-      auto_select: true,
-      credential_manifest: "https://yourdomain.com/.well-known/credential-manifest.json",
+      auto_select: false,
+      credential_manifest: "https://unidevweb.com/.well-known/credential-manifest.json",
     });
   };
 
@@ -156,8 +156,10 @@ const LoginCard = () => {
     }
   };
   const handleSignInClick = () => {
-    if (window.google.accounts.id) {
+    if (window.google && window.google.accounts && window.google.accounts.id) {
       window.google.accounts.id.prompt();
+    } else {
+      console.log("Google Accounts SDK not ready");
     }
   };
 

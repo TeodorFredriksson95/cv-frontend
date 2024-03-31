@@ -11,6 +11,8 @@ import { candidateEndpointDataJS } from "../../../data/candidatesCodeExamples";
 import { useLocation } from "react-router-dom";
 import ParameterComponent from "../../ParameterComponent/ParameterComponent.js";
 import { useScroll } from "../../../context/ScrollContext.js";
+import { paginationResult } from "../../../data/paginationExample.js";
+import { filteredCandidateResult } from "../../../data/filteringExample.js";
 
 const ApiPageHeader = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -336,7 +338,7 @@ const ApiPageHeader = () => {
                 <span className="mingcute--information-line"></span>
                 <span className="important-notice">Note</span>
               </div>
-              <span className="separate">All requests must supply the API key as a bearer token through the'Authorization' header.</span>
+              <span className="separate">All requests must supply the API key as a bearer token through the 'Authorization' header.</span>
             </div>
             <p className="api-bread-text extra-separator">The response we recieve comes in a JSON format:</p>
           </div>
@@ -347,15 +349,37 @@ const ApiPageHeader = () => {
           <span className="separate"></span>
           <ul className="api-bread-text tech-stack-ul extra-separator">
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"tech_stack"} /> - an array that contains all tech_stack objects
+              <ApiAttribute attributeName={"data"} /> - an array that contains all tech stack objects
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"tech_stack_id"} /> - the id of each specific tech_stack object
+              <ApiAttribute attributeName={"id"} /> - the id of each specific tech_stack object
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"tech_stack_name"} /> - the name of each specific tech_stack object
+              <ApiAttribute attributeName={"techStackName"} /> - the name of each specific tech_stack object
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"pageSize"} /> - indicates how many items are being returned. For the sake of this example, we have reduced it three items
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"page"} /> - the current page that is being queried
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"total"} /> - the total amount of items available to the collection
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"hasNextPage"} /> - indicates if there are more items to be fetched
+            </li>
+            <li className="attribute-list-item">
+              <ApiAttribute attributeName={"links"} /> - an object that contains references to pages relevant to the tech stack collection
             </li>
           </ul>
+          <p className="api-bread-text">
+            For more information regarding how the pagination works, take a look at the{" "}
+            <a href="#pagination">
+              <span className="word-highlight-turq">Pagination</span>
+            </a>{" "}
+            section.
+          </p>
           <div className="api-section" id="base-url">
             <h4 className="section-title-h4 docs-sub-title">Base URL</h4>
             <p className="api-bread-text">
@@ -408,22 +432,7 @@ const ApiPageHeader = () => {
                 leveraging OAuth 2.0, the goal is to empower the user with control over how their data is accessed and used. Trust and transparency is the name of the game!
               </span>
             </p>
-            <span className="separate">
-              {/* <ul className="api-bread-text ul-list-separate">
-                <li className="attribute-list-item oauth-list">
-                  <span className="list-first-span-word">Enhanced Security:</span> OAuth 2.0 uses tokens instead of credentials for authentication, significantly reducing the risk of credential
-                  exposure. Each token is specific to the user's session, ensuring secure access to the API.
-                </li>
-                <li className="attribute-list-item oauth-list">
-                  <span className="list-first-span-word">Simplified User Experience:</span> Users can log in and grant permissions through familiar interfaces without the need to create new accounts
-                  or remember additional passwords.
-                </li>
-                <li className="attribute-list-item oauth-list">
-                  <span className="list-first-span-word">Seamless API Key Generation:</span> Integrating OAuth 2.0 with the API key generation process ensures that API keys are only issued after a
-                  user has been authenticated and helps fortify Unidevweb's security and integrity.
-                </li>
-              </ul> */}
-            </span>
+            <span className="separate"></span>
           </div>
           <div className="header-underline-div ">
             <h3 className="section-title-h3 docs-title ">Resources</h3>
@@ -1173,7 +1182,6 @@ const ApiPageHeader = () => {
             <span className="separate extra-separator"></span>
             <p className="api-bread-text">Let's look at en example where we implement both in a request to the tech-stack endpoint.</p>
             <div className="api-section " id="list-all-tech">
-              <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
               <div className="api-div-container api-input-resource-section">
                 <div className="api-input-text">
                   <p>GET https://unidevweb.com/api/tech-stack-list?page=2&pageSize=5</p>
@@ -1215,7 +1223,7 @@ const ApiPageHeader = () => {
                         endpoint: techStackEndpointDataJS,
                         subProperty: "getTechStackList",
                         activeTab: activeTab,
-                        formattedJson: techStackListJson,
+                        formattedJson: paginationResult,
                         selectedFramework: selectedFramework,
                       })}
                     </div>
@@ -1228,13 +1236,13 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title">Filtering</h4>
             <p className="api-bread-text">There may be times when you want to filter results based on specific paramaters, such as a candidates firstname or job title.</p>
             <p className="api-bread-text">
-              Let's look at an example where we make a query to the candidates collection where we filter out candidates based on two parameters: <ApiAttribute attributeName={"firstname"} /> and{" "}
+              Let's look at an example where we make a query to the candidates collection where we filter out candidates based on two parameters: <ApiAttribute attributeName={"techName"} /> and{" "}
               <ApiAttribute attributeName={"openToWork"} />
             </p>
 
             <div className="api-div-container api-input-resource-section extra-separator">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates?firstname=teodor&opentowork=true</p>
+                <p>GET https://unidevweb.com/api/candidates?techName=react&openToWork=true</p>
               </div>
             </div>
             <div className="api-section-flex-container concepts-code-section">
@@ -1273,7 +1281,7 @@ const ApiPageHeader = () => {
                       endpoint: techStackEndpointDataJS,
                       subProperty: "getTechStackList",
                       activeTab: activeTab,
-                      formattedJson: techStackListJson,
+                      formattedJson: filteredCandidateResult,
                       selectedFramework: selectedFramework,
                     })}
                   </div>
@@ -1372,7 +1380,7 @@ const ApiPageHeader = () => {
                     </tr>
                     <tr>
                       <td>TechName</td>
-                      <td>TechName=C#</td>
+                      <td>TechName=C%23</td>
                       <td>string</td>
                     </tr>
                   </tbody>
