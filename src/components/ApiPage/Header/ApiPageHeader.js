@@ -336,7 +336,7 @@ const ApiPageHeader = () => {
                 <span className="mingcute--information-line"></span>
                 <span className="important-notice">Note</span>
               </div>
-              <span className="separate">All requests must supply the API key as a bearer token through 'Authorization' header.</span>
+              <span className="separate">All requests must supply the API key as a bearer token through the'Authorization' header.</span>
             </div>
             <p className="api-bread-text extra-separator">The response we recieve comes in a JSON format:</p>
           </div>
@@ -1281,14 +1281,19 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <p className="api-bread-text">
-              For a complete list of all the supported query fields, take a look at <span className="word-highlight-turq">Query Fields</span>
+              For a complete list of all the supported query fields, take a look at{" "}
+              <a href="#query-fields">
+                <span className="word-highlight-turq">Query Fields</span>
+              </a>
             </p>
           </div>
-          <div className="header-underline-div" id="candidates-query-list">
+          <div className="header-underline-div" id="query-fields">
             <h3 className="section-title-h3 docs-title">Query Fields</h3>
             <hr></hr>
             <div className="query-table">
-              <h4 className="section-title-h4">Query fields for candidates</h4>
+              <h4 className="section-title-h4" id="candidates-query-list">
+                Query fields for candidates
+              </h4>
               <div class="query-table-container">
                 <table class="query-table">
                   <tbody>
@@ -1330,26 +1335,28 @@ const ApiPageHeader = () => {
               </h4>
               <div class="query-table-container">
                 <table class="query-table">
-                  <tr>
-                    <th>Field</th>
-                    <th>Usage</th>
-                    <th>Type</th>
-                  </tr>
-                  <tr>
-                    <td>Company</td>
-                    <td>Company=ICA</td>
-                    <td>string</td>
-                  </tr>
-                  <tr>
-                    <td>Category</td>
-                    <td>Category=InformationTechnology</td>
-                    <td>string</td>
-                  </tr>
-                  <tr>
-                    <td>JobTitle</td>
-                    <td>JobTitle=BackendDeveloper</td>
-                    <td>string</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>Field</th>
+                      <th>Usage</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>Company</td>
+                      <td>Company=ICA</td>
+                      <td>string</td>
+                    </tr>
+                    <tr>
+                      <td>Category</td>
+                      <td>Category=InformationTechnology</td>
+                      <td>string</td>
+                    </tr>
+                    <tr>
+                      <td>JobTitle</td>
+                      <td>JobTitle=BackendDeveloper</td>
+                      <td>string</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <h4 className="section-title-h4" id="tech-stack-query-list">
@@ -1357,16 +1364,18 @@ const ApiPageHeader = () => {
               </h4>
               <div class="query-table-container">
                 <table class="query-table">
-                  <tr>
-                    <th>Field</th>
-                    <th>Usage</th>
-                    <th>Type</th>
-                  </tr>
-                  <tr>
-                    <td>TechName</td>
-                    <td>TechName=C#</td>
-                    <td>string</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>Field</th>
+                      <th>Usage</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>TechName</td>
+                      <td>TechName=C#</td>
+                      <td>string</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

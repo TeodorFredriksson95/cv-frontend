@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #88888844;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .parameter-flex-container:hover {
   cursor: pointer;
 }
@@ -231,22 +249,6 @@ pre {
   z-index: 10;
 }
 
-.ep--arrow-right::after {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.125em;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%2340e0d0' d='M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512L340.864 831.872a30.59 30.59 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z'/%3E%3C/svg%3E");
-}
-
-.ep--arrow-down::after {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.125em;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%2340e0d0' d='M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z'/%3E%3C/svg%3E");
-}
-
 .resource-flex-container {
   display: flex;
   justify-content: space-between;
@@ -319,6 +321,23 @@ pre {
 }
 
 @media (min-width: 320px) {
+  .ep--arrow-right {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='white' d='M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512L340.864 831.872a30.59 30.59 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z'/%3E%3C/svg%3E");
+  }
+
+  .ep--arrow-down {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='white' d='M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z'/%3E%3C/svg%3E");
+  }
   .api-page-main-section {
     margin-top: 5%;
     padding: 5%;
@@ -365,7 +384,7 @@ pre {
   .query-table tr:nth-child(even) {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    font-family: var(--Medium);
+    font-family: var(--MS_Medium);
   }
   .query-table tr {
     background-color: #ddfffe;
@@ -401,7 +420,7 @@ pre {
   }
 
   .api-section h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
   .attribute-list-item {
     width: 100%;
@@ -451,6 +470,9 @@ pre {
     cursor: pointer;
     user-select: none; /* Optional: Prevent text selection */
   }
+  .attribute-options-container {
+    margin-top: 8%;
+  }
 }
 @media (min-width: 360px) {
   .place-in-middle {
@@ -473,6 +495,21 @@ pre {
 @media (min-width: 768px) {
 }
 @media (min-width: 800px) {
+  .ep--arrow-right {
+    width: 2em;
+    height: 2em;
+  }
+
+  .ep--arrow-down {
+    width: 2em;
+    height: 2em;
+  }
+  .attribute-options-container {
+    margin-top: 0%;
+  }
+  .api-section h4 {
+    font-size: 24px;
+  }
   .query-table-container {
     width: 70%;
     margin-right: auto;
@@ -490,9 +527,7 @@ pre {
   .attribute-list-item {
     margin-bottom: 0;
   }
-  .api-input-resource-section {
-    width: 50%;
-  }
+
   .api-section-flex-container {
     flex-direction: row;
     width: 100%;
@@ -518,7 +553,7 @@ pre {
     font-size: 18px;
   }
   .api-section h4 {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 @media (min-width: 1280px) {
@@ -528,13 +563,19 @@ pre {
     margin-bottom: 0;
   }
   .api-section h4 {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 @media (min-width: 1680px) {
+  .api-page-main-section {
+    padding: 10%;
+  }
   .api-bread-text,
   .api-input-text {
     font-size: 20px;
+  }
+  .api-section h4 {
+    font-size: 40px;
   }
 }
 @media (min-width: 1920px) {

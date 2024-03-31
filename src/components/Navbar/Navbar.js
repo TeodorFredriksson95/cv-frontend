@@ -277,7 +277,9 @@ const Navbar = () => {
                     }}
                   >
                     <h5>Candidates</h5>
-                    {expandedSection === "quick-start" ? <span className="solar--alt-arrow-down-outline"></span> : <span className="solar--alt-arrow-right-outline"></span>}
+                    <div className="center-arrow">
+                      {expandedSection === "quick-start" ? <span className="solar--alt-arrow-down-outline"></span> : <span className="solar--alt-arrow-right-outline"></span>}
+                    </div>
                   </div>
                   {expandedSection === "quick-start" && (
                     <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>

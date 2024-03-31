@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ParameterComponent.css";
 
 const ParameterComponent = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [expandedSection, setExpandedSection] = useState(null);
   const handleSectionClick = (sectionName) => {
     setExpandedSection(expandedSection === sectionName ? null : sectionName);
@@ -17,7 +17,7 @@ const ParameterComponent = ({ title, children }) => {
         }}
       >
         <h4 className="parameter clickable">{title}</h4>
-        {expandedSection === title ? <span className="ep--arrow-down"></span> : <span className="ep--arrow-right"></span>}
+        {expandedSection === title ? <span className="ep--arrow-right"></span> : <span className="ep--arrow-down"></span>}
       </div>
       {isOpen && <div className="collapsible-content">{children}</div>}
     </div>

@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { LoadingComponent } from "../LoadingComponent/LoadingComponent";
 
 function generateRandomString(length) {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -25,16 +26,13 @@ const generateOAuthStateWithProvider = (provider) => {
 };
 
 const LoginCard = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const oauthResponseHandled = useRef(false);
 
   useEffect(() => {
-    // window.google.accounts.id.initialize({
-    //   client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
-    //   callback: handleCredentialResponse,
-    // });
-
     const script = document.createElement("script");
     script.src = "https://accounts.google.com/gsi/client";
     script.onload = () => initializeGoogleSignIn();
@@ -88,6 +86,7 @@ const LoginCard = () => {
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     const state = params.get("state");
+    setIsLoading(true);
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/github`, {
@@ -102,6 +101,7 @@ const LoginCard = () => {
     } catch (error) {
       console.error("OAuth callback error:", error);
     }
+    setIsLoading(false);
   };
 
   const handleGitHubLogin = () => {
@@ -122,6 +122,7 @@ const LoginCard = () => {
     const code = params.get("code");
     const state = params.get("state");
 
+    setIsLoading(true);
     try {
       const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
         code: code,
@@ -136,9 +137,11 @@ const LoginCard = () => {
     } catch (error) {
       console.error("Authentication error:", error);
     }
+    setIsLoading(false);
   };
 
   const handleCredentialResponse = async (response) => {
+    setIsLoading(true);
     console.log("Encoded JWT ID token from Google: " + response.credential);
     const authResponse = await axios.post(process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL + "/api/authenticate/google", {
       token: response.credential,
@@ -149,6 +152,7 @@ const LoginCard = () => {
       console.log("refresh token: " + authResponse.data.refreshToken.token);
       login(authResponse.data.accessToken, authResponse.data.refreshToken.token);
       navigate("/dashboard");
+      setIsLoading(false);
     }
   };
   const handleSignInClick = () => {
@@ -159,6 +163,7 @@ const LoginCard = () => {
 
   return (
     <div>
+      {isLoading && <LoadingComponent />}
       <div id="g_id_onload" data-client_id="590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com" data-prompt_parent_id="g_id_onload"></div>
       <div className="login-card-container">
         <h2 className="section-title-h3 login-card-title">Login</h2>

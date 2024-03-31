@@ -4,5 +4,50 @@
 }
 
 .parameter-flex-container span {
-  margin-left: 20px;
+  margin-left: 2%;
+  margin-right: 5%;
+}
+
+@media (min-width: 320px) {
+  .parameter-description {
+    font-size: 16px;
+  }
+
+  .parameter {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 360px) {
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 600px) {
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 800px) {
+}
+@media (min-width: 1024px) {
+  .parameter-description {
+    font-size: 18px;
+  }
+  .parameter {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 1440px) {
+}
+@media (min-width: 1680px) {
+}
+@media (min-width: 1920px) {
+  .parameter-description {
+    font-size: 20px;
+  }
+  .parameter {
+    font-size: 20px;
+  }
 }

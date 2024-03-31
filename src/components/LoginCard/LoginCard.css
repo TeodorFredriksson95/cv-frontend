@@ -26,15 +26,10 @@
 
 .login-img-logo {
   margin-top: 5%;
-  height: 20%;
+  margin-bottom: 5%;
+  height: 30%;
   display: flex;
   justify-content: center;
-}
-
-.oAuth-providers-container {
-  margin-top: 30%;
-  width: 100%;
-  padding-bottom: 10%;
 }
 
 .oauth-provider-flex-container {
@@ -50,13 +45,14 @@
 
 .google-button {
   background-color: white;
-  border: 2px solid rgba(17, 126, 15, 0.224);
-
+  box-sizing: border-box;
+  border: 2px solid rgba(159, 190, 159, 0);
   color: black;
 }
 .google-button:hover {
+  box-sizing: border-box;
   background-color: #f4f4f4;
-  border: 2px solid rgba(17, 126, 15, 0.605);
+  border: 2px solid rgba(159, 190, 159, 0.605);
 }
 
 .github-button {
@@ -129,9 +125,7 @@
     height: 50vh;
     width: 75%;
   }
-  .login-img-logo {
-    display: none;
-  }
+
   .oauth-text {
     font-size: 14px;
   }
@@ -151,13 +145,10 @@
 }
 @media (min-width: 320px) {
   .login-card-container {
-    margin-top: 20%;
     height: 50vh;
     width: 75%;
   }
-  .login-img-logo {
-    display: none;
-  }
+
   .oauth-text {
     font-size: 14px;
   }
@@ -165,24 +156,15 @@
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    margin-top: 4%;
   }
   .oAuth-providers-container {
-    margin-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 80%;
   }
 }
 @media (min-width: 360px) {
-  .oAuth-providers-container {
-    width: 90%;
-    margin: auto;
-  }
-  .oauth-provider-flex-container {
-    margin-top: 4%;
-  }
 }
 
 @media (min-width: 480px) {
@@ -193,17 +175,16 @@
 @media (min-width: 600px) {
   .login-card-container {
     width: 55%;
-    margin-top: 10%;
     height: 60vh;
   }
 }
 @media (min-width: 800px) {
   .oAuth-providers-container {
     width: 80%;
+    margin: auto;
   }
   .login-card-container {
     width: 45%;
-    margin-top: 10%;
     height: 60vh;
   }
 }
@@ -219,9 +200,11 @@
 }
 @media (min-width: 1440px) {
   .login-card-container {
-    margin-top: 5%;
     width: 25%;
     height: 70vh;
+  }
+  .oAuth-providers-container {
+    margin-top: 20%;
   }
 }
 @media (min-width: 1680px) {
