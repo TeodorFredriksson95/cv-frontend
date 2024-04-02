@@ -33,11 +33,11 @@ const LoginCard = () => {
   const oauthResponseHandled = useRef(false);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://accounts.google.com/gsi/client";
-    script.onload = () => initializeGoogleSignIn();
-    script.async = true;
-    document.body.appendChild(script);
+    // const script = document.createElement("script");
+    // script.src = "https://accounts.google.com/gsi/client";
+    // script.onload = () => initializeGoogleSignIn();
+    // script.async = true;
+    // document.body.appendChild(script);
 
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
@@ -68,19 +68,19 @@ const LoginCard = () => {
         console.error("State mismatch or missing state. Potential CSRF attack detected.");
       }
     }
-    return () => {
-      document.body.removeChild(script);
-    };
+    // return () => {
+    //   document.body.removeChild(script);
+    // };
   }, []);
 
-  const initializeGoogleSignIn = () => {
-    window.google.accounts.id.initialize({
-      client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
-      callback: handleCredentialResponse,
-      auto_select: false,
-      credential_manifest: "https://unidevweb.com/.well-known/credential-manifest.json",
-    });
-  };
+  // const initializeGoogleSignIn = () => {
+  //   window.google.accounts.id.initialize({
+  //     client_id: "590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com",
+  //     callback: handleCredentialResponse,
+  //     auto_select: false,
+  //     credential_manifest: "https://unidevweb.com/.well-known/credential-manifest.json",
+  //   });
+  // };
 
   const handleGithubAuthResponse = async () => {
     const params = new URLSearchParams(window.location.search);
