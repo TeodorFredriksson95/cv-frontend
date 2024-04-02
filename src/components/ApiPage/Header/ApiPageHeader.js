@@ -330,7 +330,7 @@ const ApiPageHeader = () => {
             </p>
             <p className="api-bread-text extra-separator">
               <span className="separate"> Withou further ado, let's make our first request to the Unidevweb API!</span>
-              <span className="separate extra-separator">In this example we will be making a call to the tech-stack-list endpoint, fetching a list of programming languages and frameworks.</span>
+              <span className="separate extra-separator">In this example we will be making a call to the tech-stack endpoint, fetching a list of programming languages and frameworks.</span>
             </p>
             <div className="api-div-container">
               <div className="api-div-container">
@@ -358,13 +358,13 @@ const ApiPageHeader = () => {
               <ApiAttribute attributeName={"data"} /> - an array that contains all tech stack objects
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"id"} /> - the id of each specific tech_stack object
+              <ApiAttribute attributeName={"id"} /> - the id of each specific tech stack object
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"techStackName"} /> - the name of each specific tech_stack object
+              <ApiAttribute attributeName={"techStackName"} /> - the name of each specific tech stack object
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"pageSize"} /> - indicates how many items are being returned. For the sake of this example, we have reduced it three items
+              <ApiAttribute attributeName={"pageSize"} /> - indicates how many items are being returned. For the sake of this example, we have reduced it to three items
             </li>
             <li className="attribute-list-item">
               <ApiAttribute attributeName={"page"} /> - the current page that is being queried
@@ -376,7 +376,7 @@ const ApiPageHeader = () => {
               <ApiAttribute attributeName={"hasNextPage"} /> - indicates if there are more items to be fetched
             </li>
             <li className="attribute-list-item">
-              <ApiAttribute attributeName={"links"} /> - an object that contains references to pages relevant to the tech stack collection
+              <ApiAttribute attributeName={"links"} /> - an object that contains references to pages relevant to the collection
             </li>
           </ul>
           <p className="api-bread-text">
@@ -393,7 +393,7 @@ const ApiPageHeader = () => {
             <span className="separate api-bread-text">Unidevweb Base URL:</span>
             <div className="api-div-container">
               <div className="api-input-text">
-                <p>https://udwapi.azure-api.net/api</p>
+                <p>https://udwapi.azure-api.net/api/</p>
               </div>
             </div>
             <div className="api-bread-text important-notice-text">
@@ -411,7 +411,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title">Rate Limiting</h4>
             <p className="api-bread-text">
               The rate limit is currently set to 100 calls per hour. As this API is in early development the rate limit is subject to change. If you have concerns regarding the rate limit, don't
-              hesitate to reach out.
+              hesitate to reach out at Teofredev@gmail.com
             </p>
           </div>
           <div className="header-underline-div">
@@ -796,7 +796,6 @@ const ApiPageHeader = () => {
                       formattedJson: listOfCandidatesJson,
                       selectedFramework: selectedFramework,
                     })}
-                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 28 more candidates</pre>}
                   </div>
                 </div>
               </div>
@@ -807,10 +806,10 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-title" id="retrieve-a-tech">
               Tech Stack
             </h4>
-            <h4 className="section-title-h4 docs-sub-resource">Retrieve a tech</h4>
+            <h4 className="section-title-h4 docs-sub-resource">Retrieve a tech by id</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/{"{id}"} </p>
+                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack/{"{id}"} </p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -819,7 +818,7 @@ const ApiPageHeader = () => {
 
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">techStackId</span> - integer
+                    <span className="parameter-options">id</span> - integer
                   </p>
                   <p className="parameter-description">Unique identifier for the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
@@ -879,7 +878,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack/</p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -887,14 +886,14 @@ const ApiPageHeader = () => {
                 <hr id="parameter-hr"></hr>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">techStack</span> - array
+                    <span className="parameter-options">data</span> - array
                   </p>
                   <p className="parameter-description">Array containing all the programming languages and frameworks the candidate has experience with.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">techStackId</span> - integer
+                    <span className="parameter-options">id</span> - integer
                   </p>
                   <p className="parameter-description">Unique identifier for the programming language/framework.</p>
                   <hr id="parameter-hr"></hr>
@@ -945,7 +944,6 @@ const ApiPageHeader = () => {
                       formattedJson: techStackListJson,
                       selectedFramework: selectedFramework,
                     })}
-                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 17 more tech stacks</pre>}
                   </div>
                 </div>
               </div>
@@ -967,7 +965,7 @@ const ApiPageHeader = () => {
 
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">workExperienceId</span> - integer
+                    <span className="parameter-options">id</span> - integer
                   </p>
                   <p className="parameter-description">Unique identifier for the work experience.</p>
                   <hr id="parameter-hr"></hr>
@@ -1062,7 +1060,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">List all work experiences</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/work-experiences/</p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -1071,16 +1069,16 @@ const ApiPageHeader = () => {
 
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">workExperiences</span> - array
+                    <span className="parameter-options">data</span> - array
                   </p>
                   <p className="parameter-description">An array containing a list of all work experiences.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
                   <p className="parameter">
-                    <span className="parameter-options">workExperienceId</span> - integer
+                    <span className="parameter-options">id</span> - integer
                   </p>
-                  <p className="parameter-description">Unique identifier for the work experience.</p>
+                  <p className="parameter-description">Unique identifier for each work experience.</p>
                   <hr id="parameter-hr"></hr>
                 </div>
                 <div className="attribute-options-container">
@@ -1164,7 +1162,6 @@ const ApiPageHeader = () => {
                       formattedJson: workExperienceListJson,
                       selectedFramework: selectedFramework,
                     })}
-                    {activeApiResponseButtonColor !== "code-button" && <pre className="pre-more-items">... 33 more work experiences</pre>}
                   </div>
                 </div>
               </div>
@@ -1198,7 +1195,7 @@ const ApiPageHeader = () => {
             <div className="api-section " id="list-all-tech">
               <div className="api-div-container api-input-resource-section">
                 <div className="api-input-text">
-                  <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list?page=2&pageSize=5</p>
+                  <p>GET https://udwapi.azure-api.net/api/v1/tech-stack?page=2&pageSize=5</p>
                 </div>
               </div>
               <div className="api-section-flex-container concepts-code-section">
