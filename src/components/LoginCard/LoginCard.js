@@ -107,7 +107,7 @@ const LoginCard = () => {
   const handleGitHubLogin = () => {
     const state = generateOAuthStateWithProvider("github");
     const clientId = "9ddff8bc7ebe96a759b3";
-    const redirectUri = encodeURIComponent("http://localhost:3000/login");
+    const redirectUri = encodeURIComponent("https://unidevweb.com/login");
     const scope = encodeURIComponent("user:email");
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
   };
@@ -174,7 +174,8 @@ const LoginCard = () => {
           <img src="physicalCVlogo.png" />
         </div>
         <div className="oAuth-providers-container">
-          <div className="oauth-provider-flex-container google-button" onClick={handleSignInClick}>
+          {/* NEED TO WAIT FOR GOOGLE VERIFICATION BEFORE I CAN USE IT */}
+          {/* <div className="oauth-provider-flex-container google-button" onClick={handleSignInClick}>
             <div className="icon-wrapper">
               <div id="google-icon">
                 <span className="devicon--google"></span>
@@ -183,7 +184,7 @@ const LoginCard = () => {
             <div className="oauth-text google">
               <p>Sign in with Google </p>
             </div>
-          </div>
+          </div> */}
           <div className="oauth-facebook-container">
             <div className="oauth-provider-flex-container github-button" onClick={handleGitHubLogin}>
               <div className="icon-wrapper">

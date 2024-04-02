@@ -453,7 +453,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">Retrieve a candidate by id</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates/{"{id}"}</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/candidates/{"{id}"}</p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -626,7 +626,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">List all candidates</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates </p>
+                <p>GET https://udwapi.azure-api.net/api/v1/api/candidates </p>
               </div>
             </div>
             <div className="api-section-flex-container" id="list-all-candidates">
@@ -804,7 +804,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">Retrieve a tech</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/tech-stack-list/{"{id}"} </p>
+                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/{"{id}"} </p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -873,7 +873,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">List all tech</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/tech-stack-list/</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/</p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -952,7 +952,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">Retrieve a work experience by id</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/work-experiences/{"{id}"} </p>
+                <p>GET https://udwapi.azure-api.net/api/v1/work-experiences/{"{id}"} </p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -1056,7 +1056,7 @@ const ApiPageHeader = () => {
             <h4 className="section-title-h4 docs-sub-resource">List all work experiences</h4>
             <div className="api-div-container api-input-resource-section">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/tech-stack-list/</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list/</p>
               </div>
             </div>
             <div className="api-section-flex-container">
@@ -1192,7 +1192,7 @@ const ApiPageHeader = () => {
             <div className="api-section " id="list-all-tech">
               <div className="api-div-container api-input-resource-section">
                 <div className="api-input-text">
-                  <p>GET https://unidevweb.com/api/tech-stack-list?page=2&pageSize=5</p>
+                  <p>GET https://udwapi.azure-api.net/api/v1/tech-stack-list?page=2&pageSize=5</p>
                 </div>
               </div>
               <div className="api-section-flex-container concepts-code-section">
@@ -1250,7 +1250,7 @@ const ApiPageHeader = () => {
 
             <div className="api-div-container api-input-resource-section extra-separator">
               <div className="api-input-text">
-                <p>GET https://unidevweb.com/api/candidates?techName=react&openToWork=true</p>
+                <p>GET https://udwapi.azure-api.net/api/v1/candidates?techName=react&openToWork=true</p>
               </div>
             </div>
             <div className="api-section-flex-container concepts-code-section">

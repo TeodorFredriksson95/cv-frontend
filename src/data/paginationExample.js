@@ -26,11 +26,11 @@ const paginationResultJson = {
   total: 28,
   hasNextPage: true,
   links: {
-    self: "https://localhost:7189/api/v1/tech-stack?page=2",
-    first: "https://localhost:7189/api/v1/tech-stack?page=1",
-    last: "https://localhost:7189/api/v1/tech-stack?page=6",
-    prev: "https://localhost:7189/api/v1/tech-stack?page=1&pageSize=5",
-    next: "https://localhost:7189/api/v1/tech-stack?page=3&pageSize=5",
+    self: "https://udwapi.azure-api.net/api/v1/tech-stack?page=2",
+    first: "https://udwapi.azure-api.net/api/v1/tech-stack?page=1",
+    last: "https://udwapi.azure-api.net/api/v1/tech-stack?page=6",
+    prev: "https://udwapi.azure-api.net/api/v1/tech-stack?page=1&pageSize=5",
+    next: "https://udwapi.azure-api.net/api/v1/tech-stack?page=3&pageSize=5",
   },
 };
 

@@ -93,10 +93,10 @@ const listOfCandidates = {
   total: 2,
   hasNextPage: true,
   links: {
-    self: "https://localhost:7189/api/v1/candidates?page=1",
-    first: "https://localhost:7189/api/v1/candidates?page=1",
-    last: "https://localhost:7189/api/v1/candidates?page=2",
-    next: "https://localhost:7189/api/v1/candidates?page=2&pageSize=1",
+    self: "https://udwapi.azure-api.net/api/v1/candidates?page=1",
+    first: "https://udwapi.azure-api.net/v1/v1/candidates?page=1",
+    last: "https://udwapi.azure-api.net/api/v1/candidates?page=2",
+    next: "https://udwapi.azure-api.net/api/v1/candidates?page=2&pageSize=1",
   },
 };
 
@@ -193,13 +193,13 @@ const candidateEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/candidates/{id}");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/candidates/{id}");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/candidates/{id}", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/candidates/{id}", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -214,7 +214,7 @@ const candidateEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/candidates/{id}", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/candidates/{id}", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -223,7 +223,7 @@ const candidateEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/candidates/{id}");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/candidates/{id}");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -232,7 +232,7 @@ const candidateEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/candidates/{id}",
+          "https://udwapi.azure-api.net/api/v1/candidates/{id}",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -240,7 +240,7 @@ const candidateEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/candidates/{id}")
+      uri = URI("https://udwapi.azure-api.net/api/v1/candidates/{id}")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       
@@ -255,13 +255,13 @@ const candidateEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/candidates");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/candidates");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/candidates/", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/candidates/", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -276,7 +276,7 @@ const candidateEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/candidates", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/candidates", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -285,7 +285,7 @@ const candidateEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/candidates");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/candidates");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -294,7 +294,7 @@ const candidateEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/candidates",
+          "https://udwapi.azure-api.net/api/v1/candidates",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -302,7 +302,7 @@ const candidateEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/candidates")
+      uri = URI("https://udwapi.azure-api.net/api/v1/candidates")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       

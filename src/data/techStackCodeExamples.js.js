@@ -46,10 +46,10 @@ const techStackList = {
   total: 28,
   hasNextPage: true,
   links: {
-    self: "https://localhost:7189/api/v1/tech-stack?page=1",
-    first: "https://localhost:7189/api/v1/tech-stack?page=1",
-    last: "https://localhost:7189/api/v1/tech-stack?page=3",
-    next: "https://localhost:7189/api/v1/tech-stack?page=2&pageSize=10",
+    self: "https://udwapi.azure-api.net/api/v1/tech-stack?page=1",
+    first: "https://udwapi.azure-api.net/api/v1/tech-stack?page=1",
+    last: "https://udwapi.azure-api.net/api/v1/tech-stack?page=3",
+    next: "https://udwapi.azure-api.net/api/v1/tech-stack?page=2&pageSize=10",
   },
 };
 
@@ -63,13 +63,13 @@ const techStackEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/tech-stack-list/{id}");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/tech-stack-list/{id}", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -84,7 +84,7 @@ const techStackEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/tech-stack-list/{id}", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -93,7 +93,7 @@ const techStackEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/tech-stack-list/{id}");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -102,7 +102,7 @@ const techStackEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/tech-stack-list/{id}",
+          "https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -110,7 +110,7 @@ const techStackEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/tech-stack-list/{id}")
+      uri = URI("https://udwapi.azure-api.net/api/v1/tech-stack-list/{id}")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       
@@ -125,13 +125,13 @@ const techStackEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/tech-stack-list");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/tech-stack-list");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/tech-stack-list", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/tech-stack-list", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -146,7 +146,7 @@ const techStackEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/tech-stack-list", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/tech-stack-list", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -155,7 +155,7 @@ const techStackEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/tech-stack-list");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/tech-stack-list");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -164,7 +164,7 @@ const techStackEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/tech-stack-list",
+          "https://udwapi.azure-api.net/api/v1/tech-stack-list",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -172,7 +172,7 @@ const techStackEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/tech-stack-list")
+      uri = URI("https://udwapi.azure-api.net/api/v1/tech-stack-list")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       

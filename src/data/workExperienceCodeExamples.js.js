@@ -45,10 +45,10 @@ const workExperienceList = {
   total: 8,
   hasNextPage: true,
   links: {
-    self: "https://localhost:7189/api/v1/work-experiences?page=1",
-    first: "https://localhost:7189/api/v1/work-experiences?page=1",
-    last: "https://localhost:7189/api/v1/work-experiences?page=3",
-    next: "https://localhost:7189/api/v1/work-experiences?page=2&pageSize=3",
+    self: "https://udwapi.azure-api.net/api/v1/work-experiences?page=1",
+    first: "https://udwapi.azure-api.net/api/v1/work-experiences?page=1",
+    last: "https://udwapi.azure-api.net/api/v1/work-experiences?page=3",
+    next: "https://udwapi.azure-api.net/api/v1/work-experiences?page=2&pageSize=3",
   },
 };
 
@@ -57,13 +57,13 @@ const workExperienceEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/work-experiences/{id}");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/work-experiences/{id}");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/work-experiences/{id}", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/work-experiences/{id}", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -78,7 +78,7 @@ const workExperienceEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/work-experiences/{id}", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/work-experiences/{id}", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -87,7 +87,7 @@ const workExperienceEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/work-experiences/{id}");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/work-experiences/{id}");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -96,7 +96,7 @@ const workExperienceEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/work-experiences/{id}",
+          "https://udwapi.azure-api.net/api/v1/work-experiences/{id}",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -104,7 +104,7 @@ const workExperienceEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/work-experiences/{id}")
+      uri = URI("https://udwapi.azure-api.net/api/v1/work-experiences/{id}")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       
@@ -119,13 +119,13 @@ const workExperienceEndpointData = {
     fetchSnippets: {
       NET: `var client = new HttpClient();
       client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "YOUR-PERSONAL-API-KEY-HERE");
-      var content = await client.GetStringAsync("https://unidevweb.com/api/work-experiences");
+      var content = await client.GetStringAsync("https://udwapi.azure-api.net/api/v1/work-experiences");
       Console.WriteLine(content);
       `,
       Node: `const fetch = require("node-fetch");
 
       (async () => {
-          const response = await fetch("https://unidevweb.com/api/work-experiences", {
+          const response = await fetch("https://udwapi.azure-api.net/api/v1/work-experiences", {
               method: 'GET',
               headers: { 'Authorization': 'Bearer YOUR-PERSONAL-API-KEY-HERE' }
           });
@@ -140,7 +140,7 @@ const workExperienceEndpointData = {
       )
       
       func main() {
-          req, _ := http.NewRequest("GET", "https://unidevweb.com/api/work-experiences", nil)
+          req, _ := http.NewRequest("GET", "https://udwapi.azure-api.net/api/v1/work-experiences", nil)
           req.Header.Add("Authorization", "Bearer YOUR-PERSONAL-API-KEY-HERE")
           
           resp, _ := http.DefaultClient.Do(req)
@@ -149,7 +149,7 @@ const workExperienceEndpointData = {
           println(string(body))
       }
       `,
-      PHP: `$curl = curl_init("https://unidevweb.com/api/work-experiences");
+      PHP: `$curl = curl_init("https://udwapi.azure-api.net/api/v1/work-experiences");
       curl_setopt($curl, CURLOPT_HTTPHEADER, ["Authorization: Bearer YOUR-PERSONAL-API-KEY-HERE"]);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
       echo curl_exec($curl);
@@ -158,7 +158,7 @@ const workExperienceEndpointData = {
       Python: `import requests
 
       response = requests.get(
-          "https://unidevweb.com/api/work-experiences",
+          "https://udwapi.azure-api.net/api/v1/work-experiences",
           headers={"Authorization": "Bearer YOUR-PERSONAL-API-KEY-HERE"}
       )
       print(response.text)
@@ -166,7 +166,7 @@ const workExperienceEndpointData = {
       Ruby: `require 'net/http'
       require 'uri'
       
-      uri = URI("https://unidevweb.com/api/work-experiences")
+      uri = URI("https://udwapi.azure-api.net/api/v1/work-experiences")
       req = Net::HTTP::Get.new(uri)
       req["Authorization"] = "Bearer YOUR-PERSONAL-API-KEY-HERE"
       

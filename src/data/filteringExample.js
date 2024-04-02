@@ -93,10 +93,10 @@ const filteredCandidate = {
   total: 2,
   hasNextPage: true,
   links: {
-    self: "https://localhost:7189/api/v1/candidates?page=1",
-    first: "https://localhost:7189/api/v1/candidates?page=1",
-    last: "https://localhost:7189/api/v1/candidates?page=2",
-    next: "https://localhost:7189/api/v1/candidates?page=2&pageSize=1",
+    self: "https://udwapi.azure-api.net/api/v1/candidates?page=1",
+    first: "https://udwapi.azure-api.net/api/v1/candidates?page=1",
+    last: "https://udwapi.azure-api.net/api/v1/candidates?page=2",
+    next: "https://udwapi.azure-api.net/api/v1/candidates?page=2&pageSize=1",
   },
 };
 
