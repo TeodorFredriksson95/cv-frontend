@@ -124,7 +124,6 @@ const LoginCard = () => {
 
     setIsLoading(true);
     try {
-      // const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
       const response = await axios.post(`${REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_AUTHORIZE}`, {
         code: code,
       });
