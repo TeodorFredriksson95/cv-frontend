@@ -9,6 +9,10 @@ const ApiPage = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Docs</title>
+        <meta name="description" content="Learn about the Unidevweb API and how you can integrate them into your own solutions." />
+      </Helmet>
       <ApiPageHeader />
     </div>
   );

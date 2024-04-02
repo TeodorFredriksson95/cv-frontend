@@ -42,7 +42,7 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="skillset" element={<SkillSet />} />
             <Route path="story" element={<Story />} />
-            <Route path="apipage" element={<ApiPage />} />
+            <Route path="docs" element={<ApiPage />} />
             <Route path="credits" element={<Credits />} />
             <Route path="privacypolicy" element={<PrivacyPolicy />} />
             {/* <Route path="termsofservice" element={<ToS />} /> */}

@@ -8,6 +8,10 @@ const Home = () => {
   }, []);
   return (
     <div className="content-page">
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Take part of a junior developer's ambition to grow, and become part of the growth yourself! Explore the public API and the story behind the making." />
+      </Helmet>
       <HomeHeader />
       <HomeContent />
     </div>

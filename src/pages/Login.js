@@ -10,7 +10,7 @@ const Login = () => {
     <div>
       <Helmet>
         <title>Login</title>
-        <meta name="description" content="Start making calls to our public API by logging in." />
+        <meta name="description" content="Start making calls to Unidevweb's public API by logging in and retrieving your personal API key." />
       </Helmet>
       <div className="test-page">
         <LoginCard />

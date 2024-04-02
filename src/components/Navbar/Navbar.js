@@ -67,7 +67,7 @@ const Navbar = () => {
 
   const handleAnchorClick = (e, hash) => {
     e.preventDefault();
-    navigate(`/apipage${hash}`);
+    navigate(`/docs${hash}`);
     triggerScroll(hash);
   };
   useEffect(() => {});
@@ -83,7 +83,7 @@ const Navbar = () => {
             className="top-menu-nav-div"
             onClick={() => {
               setActiveLinkColor("docs");
-              handleLaggyMenuVisibility("/apipage");
+              handleLaggyMenuVisibility("/docs");
             }}
           >
             <a className={`log ${activeLinkColor === "docs" ? "active" : ""}`}>
@@ -198,7 +198,7 @@ const Navbar = () => {
                 <h4 className="api-titles-sidebar">Quick Start</h4>
                 <ul onClick={() => setIsMobileMenuVisible(false)}>
                   <a
-                    href="/apipage#introduction"
+                    href="/docs#introduction"
                     className={`api-navigation-links ${activeLinkColor === "introduction" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("introduction");
@@ -208,7 +208,7 @@ const Navbar = () => {
                     <li>Introduction</li>
                   </a>
                   <a
-                    href="/apipage#getting-started"
+                    href="/docs#getting-started"
                     className={`api-navigation-links ${activeLinkColor === "getting-started" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("getting-started");
@@ -218,7 +218,7 @@ const Navbar = () => {
                     <li>Getting started</li>
                   </a>
                   <a
-                    href="/apipage#base-url"
+                    href="/docs#base-url"
                     className={`api-navigation-links ${activeLinkColor === "base-url" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("base-url");
@@ -228,7 +228,7 @@ const Navbar = () => {
                     <li>Base URL</li>
                   </a>
                   <a
-                    href="/apipage#rate-limiting"
+                    href="/docs#rate-limiting"
                     className={`api-navigation-links ${activeLinkColor === "rate-limiting" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("rate-limiting");
@@ -243,7 +243,7 @@ const Navbar = () => {
                 <h4 className="api-titles-sidebar">Authentication</h4>
                 <ul onClick={() => setIsMobileMenuVisible(false)}>
                   <a
-                    href="/apipage#api-keys"
+                    href="/docs#api-keys"
                     className={`api-navigation-links ${activeLinkColor === "api-keys" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("api-keys");
@@ -253,7 +253,7 @@ const Navbar = () => {
                     <li>API keys</li>
                   </a>
                   <a
-                    href="/apipage#oauth"
+                    href="/docs#oauth"
                     className={`api-navigation-links ${activeLinkColor === "oauth" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("oauth");
@@ -283,7 +283,7 @@ const Navbar = () => {
                   {expandedSection === "quick-start" && (
                     <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>
                       <a
-                        href="/apipage#retrieve-a-candidate"
+                        href="/docs#retrieve-a-candidate"
                         className={`api-navigation-links ${activeLinkColor === "retrieve-a-candidate" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("retrieve-a-candidate");
@@ -293,7 +293,7 @@ const Navbar = () => {
                         <li>Retrieve a candidate</li>
                       </a>
                       <a
-                        href="/apipage#list-all-candidates"
+                        href="/docs#list-all-candidates"
                         className={`api-navigation-links ${activeLinkColor === "list-all-candidates" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("list-all-candidates");
@@ -319,7 +319,7 @@ const Navbar = () => {
                   {expandedSection === "work-experiences" && (
                     <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>
                       <a
-                        href="/apipage#retrieve-a-work-experience"
+                        href="/docs#retrieve-a-work-experience"
                         className={`api-navigation-links ${activeLinkColor === "retrieve-a-work-experience" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("retrieve-a-work-experience");
@@ -329,7 +329,7 @@ const Navbar = () => {
                         <li>Retrieve an experience</li>
                       </a>
                       <a
-                        href="/apipage#list-all-work-experiences"
+                        href="/docs#list-all-work-experiences"
                         className={`api-navigation-links ${activeLinkColor === "list-all-work-experiences" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("list-all-work-experiences");
@@ -355,7 +355,7 @@ const Navbar = () => {
                   {expandedSection === "tech-stack" && (
                     <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>
                       <a
-                        href="/apipage#retrieve-a-tech"
+                        href="/docs#retrieve-a-tech"
                         className={`api-navigation-links ${activeLinkColor === "retrieve-a-tech" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("retrieve-a-tech");
@@ -365,7 +365,7 @@ const Navbar = () => {
                         <li>Retrieve a tech</li>
                       </a>
                       <a
-                        href="/apipage#list-all-tech"
+                        href="/docs#list-all-tech"
                         className={`api-navigation-links ${activeLinkColor === "" ? "active" : ""}`}
                         onClick={(e) => {
                           setActiveLinkColor("");
@@ -382,7 +382,7 @@ const Navbar = () => {
                 <h4 className="api-titles-sidebar">Concepts</h4>
                 <ul onClick={() => setIsMobileMenuVisible(false)}>
                   <a
-                    href="/apipage#pagination"
+                    href="/docs#pagination"
                     className={`api-navigation-links ${activeLinkColor === "pagination" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("pagination");
@@ -392,7 +392,7 @@ const Navbar = () => {
                     <li>Pagination</li>
                   </a>
                   <a
-                    href="/apipage#filtering"
+                    href="/docs#filtering"
                     className={`api-navigation-links ${activeLinkColor === "filtering" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("filtering");
@@ -407,7 +407,7 @@ const Navbar = () => {
                 <h4 className="api-titles-sidebar">Query Fields</h4>
                 <ul onClick={() => setIsMobileMenuVisible(false)}>
                   <a
-                    href="/apipage#candidates-query-list"
+                    href="/docs#candidates-query-list"
                     className={`api-navigation-links ${activeLinkColor === "candidates-query-list" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("candidates-query-list");
@@ -417,7 +417,7 @@ const Navbar = () => {
                     <li>Candidates</li>
                   </a>
                   <a
-                    href="/apipage#work-experiences-query-list"
+                    href="/docs#work-experiences-query-list"
                     className={`api-navigation-links ${activeLinkColor === "work-experiences-query-list" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("work-experiences-query-list");
@@ -427,7 +427,7 @@ const Navbar = () => {
                     <li>Work experiences</li>
                   </a>
                   <a
-                    href="/apipage#tech-stack-query-list"
+                    href="/docs#tech-stack-query-list"
                     className={`api-navigation-links ${activeLinkColor === "tech-stack-query-list" ? "active" : ""}`}
                     onClick={(e) => {
                       setActiveLinkColor("tech-stack-query-list");
@@ -518,7 +518,7 @@ const Navbar = () => {
           </li>
         )}
         <li className="dropdown-li">
-          <NavLink to="/apipage" className="active-link">
+          <NavLink to="/docs" className="active-link">
             API
           </NavLink>
         </li>
