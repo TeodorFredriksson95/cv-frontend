@@ -89,7 +89,7 @@ const LoginCard = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/github`, {
+      const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/auth/github`, {
         code: code,
       });
       if (response.data.accessToken) {
