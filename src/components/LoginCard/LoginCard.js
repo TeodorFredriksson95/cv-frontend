@@ -114,7 +114,7 @@ const LoginCard = () => {
 
   const handleLinkedInLogin = () => {
     const state = generateOAuthStateWithProvider("linkedin");
-    window.location.href = `${REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_INITIATE}/initiate?state=${encodeURIComponent(state)}`;
+    window.location.href = `${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_INITIATE}/initiate?state=${encodeURIComponent(state)}`;
   };
 
   const handleLinkedinOAuthResponse = async () => {
@@ -124,7 +124,7 @@ const LoginCard = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_AUTHORIZE}`, {
+      const response = await axios.post(`${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_AUTHORIZE}`, {
         code: code,
       });
       console.log(response);
