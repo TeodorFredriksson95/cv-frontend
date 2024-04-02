@@ -138,7 +138,7 @@ const ApiPageHeader = () => {
                 </a>
               </div>
             </div>
-            <div className="api-sidebar-section">
+            <div className="api-sidebar-section" id="resources">
               <h3 className="api-sidebar-title">Resources</h3>
               <div>
                 <div
@@ -306,7 +306,7 @@ const ApiPageHeader = () => {
                   <a href="/dashboard">
                     <span className="word-highlight-turq">dashboard </span>
                   </a>
-                  using your Google, Linkedin or Github account
+                  using your Linkedin or Github account
                 </li>
                 <li className="attribute-list-item">
                   Click on the <span className="word-highlight-turq">"Generate Key"</span> button
@@ -318,8 +318,14 @@ const ApiPageHeader = () => {
             </span>
             <p className="api-bread-text">
               <span className="separate">
-                For the purpose of this introduction we will be using NodeJS and the Axios library to make our HTTP requests to the API.
-                <span className="separate">For more code examples using different languages and frameworks, take a look at the specific resource within the Resources section.</span>
+                For the purpose of this introduction we will be using NodeJS and the Axios library to make our HTTP request to the API.
+                <span className="separate">
+                  For more code examples using different languages and frameworks, take a look at the specific resource within the{" "}
+                  <a href="#resources">
+                    <span className="word-highlight-turq">Resources</span>
+                  </a>{" "}
+                  section.
+                </span>
               </span>
             </p>
             <p className="api-bread-text extra-separator">
