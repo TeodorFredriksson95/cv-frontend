@@ -138,7 +138,7 @@ const ApiPageHeader = () => {
                 </a>
               </div>
             </div>
-            <div className="api-sidebar-section" id="resources">
+            <div className="api-sidebar-section">
               <h3 className="api-sidebar-title">Resources</h3>
               <div>
                 <div
@@ -448,7 +448,7 @@ const ApiPageHeader = () => {
             </p>
             <span className="separate"></span>
           </div>
-          <div className="header-underline-div ">
+          <div className="header-underline-div" id="resources">
             <h3 className="section-title-h3 docs-title ">Resources</h3>
             <hr></hr>
           </div>
@@ -813,7 +813,7 @@ const ApiPageHeader = () => {
               </div>
             </div>
             <div className="api-section-flex-container">
-              <ParameterComponent title="Tech stack list - attributes">
+              <ParameterComponent title="Tech stack by id - attributes">
                 <hr id="parameter-hr"></hr>
 
                 <div className="attribute-options-container">

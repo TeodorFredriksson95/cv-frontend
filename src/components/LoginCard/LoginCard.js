@@ -48,7 +48,6 @@ const LoginCard = () => {
 
     if (code && encodedState && storedState) {
       const { provider, nonce } = JSON.parse(decodeURIComponent(encodedState));
-      console.log("nonce: ", nonce);
       const storedState = JSON.parse(localStorage.getItem("oauth_state"));
 
       if (nonce === storedState.nonce) {
@@ -127,7 +126,6 @@ const LoginCard = () => {
       const response = await axios.post(`${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_AUTHORIZE}`, {
         code: code,
       });
-      console.log(response);
       if (response.data.accessToken) {
         login(response.data.accessToken, response.data.refreshToken.token);
         navigate("/dashboard");
@@ -142,14 +140,11 @@ const LoginCard = () => {
 
   const handleCredentialResponse = async (response) => {
     setIsLoading(true);
-    console.log("Encoded JWT ID token from Google: " + response.credential);
     const authResponse = await axios.post(process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL + "/api/authenticate/google", {
       token: response.credential,
     });
 
     if (authResponse.data.accessToken) {
-      console.log("jwt token from auth service: ", authResponse.data.accessToken);
-      console.log("refresh token: " + authResponse.data.refreshToken.token);
       login(authResponse.data.accessToken, authResponse.data.refreshToken.token);
       navigate("/dashboard");
       setIsLoading(false);

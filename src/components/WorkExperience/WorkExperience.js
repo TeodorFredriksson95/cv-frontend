@@ -19,9 +19,7 @@ const WorkExperience = () => {
   const para5_overflow_4 = useRef();
 
   useEffect(() => {
-    console.log(window.innerWidth);
     const updateIconSize = () => {
-      console.log(window.innerWidth);
       if (window.innerWidth >= 320 && window.innerWidth <= 379) {
         const newSize = { width: 25, height: 25 };
         setCheckboxIconSize(newSize);

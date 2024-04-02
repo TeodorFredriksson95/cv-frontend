@@ -3,7 +3,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useAuth } from "../../context/AuthContext";
 
-const baseURL = process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL;
+const baseURL = process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL_PRODUCTION;
 
 const useAxios = () => {
   const { accessToken, refreshToken, setAccessToken, setRefreshToken } = useAuth();

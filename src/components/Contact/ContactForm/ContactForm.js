@@ -27,9 +27,6 @@ const ContactForm = () => {
 
     emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID).then(
       (result) => {
-        console.log(result);
-        console.log(result.text);
-        console.log(event.target);
         setShowToast(true);
         setTimeout(() => setShowToast(false), 5000);
         setFormData({
@@ -41,7 +38,6 @@ const ContactForm = () => {
         });
       },
       (error) => {
-        console.log(error.text);
         <Toast show={showToast} message="There was an error sending your message" />;
       }
     );

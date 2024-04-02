@@ -42,8 +42,6 @@ const FixedTimeLine = () => {
 
     const scrollPosition = window.scrollY;
 
-    console.log(scrollPosition);
-
     if (scrollPosition < 510) {
       img1.classList.remove("active");
       img2.classList.remove("active");
@@ -90,8 +88,6 @@ const FixedTimeLine = () => {
   };
 
   useEffect(() => {
-    console.log("height: " + window.innerHeight);
-    console.log("width: " + window.innerWidth);
     const debouncedOnScroll = (debounce = () => (handleScroll(), 100));
     handleScroll();
 

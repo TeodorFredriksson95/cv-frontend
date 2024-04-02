@@ -23,7 +23,6 @@ const TechStack = () => {
   const searching = useRef();
 
   useEffect(() => {
-    console.log(window.innerWidth);
     const updateIconSize = () => {
       if (window.innerWidth >= 320 && window.innerWidth <= 379) {
         const newSize = { width: 40, height: 40 };

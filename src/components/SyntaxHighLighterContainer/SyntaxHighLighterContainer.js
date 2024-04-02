@@ -8,7 +8,6 @@ export const SyntaxHighlighterContainer = ({ codeLanguage, codeStyle, formatStri
   const handleCopyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(formatString);
-      console.log(isCTCBVisible);
       setIsCTCBVisible(true);
       setTimeout(() => {
         setIsCTCBVisible(false);

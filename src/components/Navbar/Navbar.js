@@ -63,7 +63,6 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuVisible(!isMobileMenuVisible);
-    console.log("mobile menu triggered");
   };
 
   const handleAnchorClick = (e, hash) => {
