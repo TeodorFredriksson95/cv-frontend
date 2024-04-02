@@ -305,42 +305,7 @@ const Navbar = () => {
                     </ul>
                   )}
                 </div>
-                <div>
-                  <div
-                    className={`sidebar-dropdown-flex-container ${activeLinkColor === "work-experiences" ? "active" : ""}`}
-                    onClick={(e) => {
-                      setActiveLinkColor("work-experiences");
-                      handleSectionClick("work-experiences");
-                    }}
-                  >
-                    <h5>Work experiences</h5>
-                    {expandedSection === "work-experiences" ? <span className="solar--alt-arrow-down-outline"></span> : <span className="solar--alt-arrow-right-outline"></span>}
-                  </div>
-                  {expandedSection === "work-experiences" && (
-                    <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>
-                      <a
-                        href="/docs#retrieve-a-work-experience"
-                        className={`api-navigation-links ${activeLinkColor === "retrieve-a-work-experience" ? "active" : ""}`}
-                        onClick={(e) => {
-                          setActiveLinkColor("retrieve-a-work-experience");
-                          handleAnchorClick(e, "#retrieve-a-work-experience");
-                        }}
-                      >
-                        <li>Retrieve an experience</li>
-                      </a>
-                      <a
-                        href="/docs#list-all-work-experiences"
-                        className={`api-navigation-links ${activeLinkColor === "list-all-work-experiences" ? "active" : ""}`}
-                        onClick={(e) => {
-                          setActiveLinkColor("list-all-work-experiences");
-                          handleAnchorClick(e, "#list-all-work-experiences");
-                        }}
-                      >
-                        <li>List all experiences</li>
-                      </a>
-                    </ul>
-                  )}
-                </div>
+
                 <div>
                   <div
                     className={`sidebar-dropdown-flex-container ${activeLinkColor === "tech-stack" ? "active" : ""}`}
@@ -373,6 +338,42 @@ const Navbar = () => {
                         }}
                       >
                         <li>List all tech</li>
+                      </a>
+                    </ul>
+                  )}
+                </div>
+                <div>
+                  <div
+                    className={`sidebar-dropdown-flex-container ${activeLinkColor === "work-experiences" ? "active" : ""}`}
+                    onClick={(e) => {
+                      setActiveLinkColor("work-experiences");
+                      handleSectionClick("work-experiences");
+                    }}
+                  >
+                    <h5>Work experiences</h5>
+                    {expandedSection === "work-experiences" ? <span className="solar--alt-arrow-down-outline"></span> : <span className="solar--alt-arrow-right-outline"></span>}
+                  </div>
+                  {expandedSection === "work-experiences" && (
+                    <ul className="api-sidebar-list" onClick={() => setIsMobileMenuVisible(false)}>
+                      <a
+                        href="/docs#retrieve-a-work-experience"
+                        className={`api-navigation-links ${activeLinkColor === "retrieve-a-work-experience" ? "active" : ""}`}
+                        onClick={(e) => {
+                          setActiveLinkColor("retrieve-a-work-experience");
+                          handleAnchorClick(e, "#retrieve-a-work-experience");
+                        }}
+                      >
+                        <li>Retrieve an experience</li>
+                      </a>
+                      <a
+                        href="/docs#list-all-work-experiences"
+                        className={`api-navigation-links ${activeLinkColor === "list-all-work-experiences" ? "active" : ""}`}
+                        onClick={(e) => {
+                          setActiveLinkColor("list-all-work-experiences");
+                          handleAnchorClick(e, "#list-all-work-experiences");
+                        }}
+                      >
+                        <li>List all experiences</li>
                       </a>
                     </ul>
                   )}
