@@ -20,6 +20,7 @@ import Story from "./pages/Story";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import { ProtectedRoute } from "./Helpers/ProtectedRoute";
+import ToS from "./pages/ToS";
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="apipage" element={<ApiPage />} />
             <Route path="credits" element={<Credits />} />
             <Route path="privacypolicy" element={<PrivacyPolicy />} />
+            {/* <Route path="termsofservice" element={<ToS />} /> */}
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

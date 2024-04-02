@@ -114,7 +114,7 @@ const LoginCard = () => {
 
   const handleLinkedInLogin = () => {
     const state = generateOAuthStateWithProvider("linkedin");
-    window.location.href = `${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
+    window.location.href = `https://cvidentity20240402010107.azurewebsites.net/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
   };
 
   const handleLinkedinOAuthResponse = async () => {
@@ -124,7 +124,8 @@ const LoginCard = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
+      // const response = await axios.post(`${process.env.REACT_APP_AUTHENTICATION_SERVICE_BASE_URL}/api/authenticate/linkedin`, {
+      const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/authenticate/linkedin`, {
         code: code,
       });
       console.log(response);
@@ -168,7 +169,7 @@ const LoginCard = () => {
       {isLoading && <LoadingComponent />}
       <div id="g_id_onload" data-client_id="590785779954-5gusittjkdj2ci5tf5d5ker9nnqimdju.apps.googleusercontent.com" data-prompt_parent_id="g_id_onload"></div>
       <div className="login-card-container">
-        <h2 className="section-title-h3 login-card-title">Login</h2>
+        <h2 className="section-title-h3 login-card-title">Sign in</h2>
         <div className="login-img-logo">
           <img src="physicalCVlogo.png" />
         </div>

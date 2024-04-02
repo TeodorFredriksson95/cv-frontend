@@ -474,6 +474,7 @@ const Navbar = () => {
                   >
                     <li>Privacy Policy</li>
                   </a>
+
                   <a
                     className={`api-navigation-links ${activeLinkColor === "credits" ? "active" : ""}`}
                     onClick={(e) => {

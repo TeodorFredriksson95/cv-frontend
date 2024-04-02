@@ -382,16 +382,24 @@ const ApiPageHeader = () => {
           </p>
           <div className="api-section" id="base-url">
             <h4 className="section-title-h4 docs-sub-title">Base URL</h4>
-            <p className="api-bread-text">
-              The Base URL is the root URL for all of the API endpoints.
-              <span className="separate">Unidevweb Base URL:</span>
-            </p>
+            <p className="api-bread-text">The Base URL is the root URL for all of the API endpoints.</p>
+            <p className="api-bread-text">The documentation is based on the assumption that you are prepending the Base URL to the endpoints in order to make requests.</p>
+            <span className="separate api-bread-text">Unidevweb Base URL:</span>
             <div className="api-div-container">
               <div className="api-input-text">
-                <p>https://unidevweb.com/api/ </p>
+                <p>https://udwapi.azure-api.net/api</p>
               </div>
             </div>
-            <p className="api-bread-text">The documentation is based on the assumption that you are prepending the Base URL to the endpoints in order to make requests.</p>
+            <div className="api-bread-text important-notice-text">
+              <div className="note-container">
+                <span className="mingcute--information-line"></span>
+                <span className="important-notice">Note</span>
+              </div>
+              <span className="separate">
+                For the time being, Unidevweb's API is accessed through the above default API gateway. This is likely to change in the near future, so be sure to check back here for the upcoming
+                custom domain.
+              </span>
+            </div>
           </div>
           <div className="api-section" id="rate-limiting">
             <h4 className="section-title-h4 docs-sub-title">Rate Limiting</h4>
