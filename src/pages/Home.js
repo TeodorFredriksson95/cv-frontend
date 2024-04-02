@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import HomeHeader from "../components/Home/HomeHeader/HomeHeader";
 import HomeContent from "../components/Home/HomeContent/HomeContent";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   useEffect(() => {

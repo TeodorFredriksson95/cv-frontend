@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import ApiPageHeader from "../components/ApiPage/Header/ApiPageHeader";
 import TimeLineWebDev from "../components/TimeLineWebDev/TimeLineWebDev";
+import { Helmet } from "react-helmet";
 
 const ApiPage = () => {
   useEffect(() => {
