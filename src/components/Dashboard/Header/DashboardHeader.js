@@ -70,7 +70,7 @@ const DashboardHeader = () => {
               </a>{" "}
               page.
               <span id="separate-dashboard-info">
-                Remember to always store your API key in a safe in order to protect it's integrity. You can read more about best practices regarding storage of sensitive information{" "}
+                Remember to always store your API key in a safe place in order to protect it's integrity. You can read more about best practices regarding storage of sensitive information{" "}
                 <a className="links" href="/linktobestpractices">
                   here.
                 </a>
