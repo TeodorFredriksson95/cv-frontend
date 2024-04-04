@@ -88,7 +88,7 @@ const LoginCard = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_GITHUB}`, {
+      const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/auth/github`, {
         code: code,
       });
       if (response.data.accessToken) {
@@ -113,7 +113,7 @@ const LoginCard = () => {
 
   const handleLinkedInLogin = () => {
     const state = generateOAuthStateWithProvider("linkedin");
-    window.location.href = `${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_INITIATE}/initiate?state=${encodeURIComponent(state)}`;
+    window.location.href = `https://cvidentity20240402010107.azurewebsites.net/api/auth/linkedin/initiate?state=${encodeURIComponent(state)}`;
   };
 
   const handleLinkedinOAuthResponse = async () => {
@@ -123,7 +123,7 @@ const LoginCard = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${process.env.REACT_APP_AUTH_SERVICE_PRODUCTION_LINKEDIN_AUTHORIZE}`, {
+      const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/authenticate/linkedin`, {
         code: code,
       });
       if (response.data.accessToken) {
