@@ -65,13 +65,13 @@ const DashboardHeader = () => {
             <p>
               By generating an API key and including it in your authorization header as a bearer token you will gain instant access to the Unidevweb API. For more information about how to use the API,
               please visit the{" "}
-              <a className="links" href="/doc">
+              <a className="links" href="/docs">
                 documentaion
               </a>{" "}
               page.
               <span id="separate-dashboard-info">
                 Remember to always store your API key in a safe place in order to protect it's integrity. You can read more about best practices regarding storage of sensitive information{" "}
-                <a className="links" href="/linktobestpractices">
+                <a className="links" href="/https://medium.com/@satyendra.jaiswal/securing-apis-oauth-2-0-and-api-keys-best-practices-6d779b00d934">
                   here.
                 </a>
               </span>
