@@ -89,8 +89,8 @@ const LoginCard = () => {
 
     try {
       console.log(code);
-      // const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/auth/github`, {
-      const response = await axios.post(`http://localhost:7275/api/auth/github`, {
+      const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/auth/github`, {
+        // const response = await axios.post(`http://localhost:7275/api/auth/github`, {
         code: code,
       });
       console.log(response);
