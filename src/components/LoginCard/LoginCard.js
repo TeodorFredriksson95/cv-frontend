@@ -81,9 +81,9 @@ const LoginCard = () => {
   //   });
   // };
 
-  const handleGithubAuthResponse = async () => {
+  const handleGithubAuthResponse = async (code) => {
     const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
+    // const code = params.get("code");
     const state = params.get("state");
     setIsLoading(true);
 
