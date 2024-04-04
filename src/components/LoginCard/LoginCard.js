@@ -93,6 +93,7 @@ const LoginCard = () => {
       const response = await axios.post(`http://localhost:7275/api/auth/github`, {
         code: code,
       });
+      console.log(response);
       if (response.data.accessToken) {
         login(response.data.accessToken, response.data.refreshToken.token);
         navigate("/dashboard");
