@@ -88,10 +88,10 @@ const LoginCard = () => {
     setIsLoading(true);
 
     try {
+      console.log(code);
       const response = await axios.post(`https://cvidentity20240402010107.azurewebsites.net/api/auth/github`, {
         code: code,
       });
-      console.log(code);
       if (response.data.accessToken) {
         login(response.data.accessToken, response.data.refreshToken.token);
         navigate("/dashboard");
