@@ -25,7 +25,7 @@ const DashboardHeader = () => {
   };
 
   const handleButtonFetchApi = async () => {
-    let response = await api.get(process.env.REACT_APP_GENERATE_PERSONAL_API_KEY_PRODUCTION + "/api/generate-personal-api-key");
+    let response = await api.get("https://cvidentity20240402010107.azurewebsites.net/api/generate-personal-api-key");
 
     if (response.status === 200) {
       setApiAccessKey(response.data.apiKey);
