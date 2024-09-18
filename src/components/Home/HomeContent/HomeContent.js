@@ -8,8 +8,9 @@ const HomeContent = () => {
     <div>
       <div className="home-content-container">
         <h4 className="section-title-h4 docs-sub-title">
-          This website, and the API project in particular, has been terminated. The website will remain for demonstrational purposes but nothing else. All the best! <br>/Teo</br>
+          This website, and the API project in particular, has been terminated. The website will remain for demonstrational purposes but nothing else.
         </h4>
+        <h4 className="section-title-h4 docs-sub-title">All the best! /Teo</h4>
         <div className="grid-container">
           <NavLink to="/story" className="active-link" activeclassname="active">
             <div className="box b1">
